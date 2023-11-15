@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "typedef.h": "c",
+        "scheduler.h": "c",
+        "command.h": "c",
+        "stdio.h": "c"
+    }
+}
