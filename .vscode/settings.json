@@ -4,6 +4,10 @@
         "typedef.h": "c",
         "scheduler.h": "c",
         "command.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "main.h": "c",
+        "memory": "c",
+        "random": "c",
+        "optional": "c"
     }
 }

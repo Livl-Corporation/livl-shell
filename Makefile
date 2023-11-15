@@ -20,8 +20,10 @@ GEXEC=$(EXEC).cov
 
 AR_NAME=archive_$(EXEC).tar.gz
 
-
 all: $(SRC) $(EXEC)
+
+# To remove the .o files 
+.INTERMEDIATE: $(OBJ)
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
