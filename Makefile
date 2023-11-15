@@ -22,6 +22,10 @@ AR_NAME=archive_$(EXEC).tar.gz
 
 all: $(SRC) $(EXEC)
 
+run: all
+	@echo "Running the executable..."
+	@$(BIN_DIR)/$(EXEC) && echo "Execution successful!"
+
 # To remove the .o files 
 .INTERMEDIATE: $(OBJ)
 
@@ -65,3 +69,5 @@ mrproper: clean
 	rm -rf $(GCOV_DIR)/*
 
 .PHONY: doc
+
+.PHONY: run
