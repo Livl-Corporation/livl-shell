@@ -25,4 +25,12 @@ void freeCommand(Command *cmd);
 */
 void printCommand(Command *cmd);
 
+/**
+ * Get the complete command (command + arguments) as a string 
+ * It is useful for execvp(const char* command, char* argv[])
+ * @param cmd: the command to get
+ * @return the complete command
+*/
+char** getCompleteCommand(Command *cmd);
+
 #endif //COMMAND_H

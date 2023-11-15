@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <string.h>
+#include "command.h"
 
 #define CHILD_PROCESS 0
 
@@ -20,5 +22,11 @@ int executeCommand(const Command *cmd);
  * 
 */
 int executeCommands(const Command *cmd1, const Command *cmd2, const char *control_operator);
+
+/**
+ * @brief Prints a command
+ * @param cmd The command to print
+*/
+void printCommand(Command *cmd);
 
 #endif //SCHEDULER_H

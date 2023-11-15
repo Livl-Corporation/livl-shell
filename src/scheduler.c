@@ -11,7 +11,7 @@ int executeCommand(const Command *cmd) {
     }
 
     if (pid == CHILD_PROCESS) {
-        if(execvp(cmd->command, cmd->arguments) < -1) {
+        if(execvp(cmd->command, cmd->complete_command) < 0) {
             perror("execvp");
             exit(EXIT_FAILURE);
             return EXIT_FAILURE;

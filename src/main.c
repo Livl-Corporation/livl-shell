@@ -1,14 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "command.h"
-#include "scheduler.h"
-#include "typedef.h"
+#include "main.h"
 
 int ready() {
-    printf("prompt> ls -l && grep Makefile\n");
+    print_info("prompt> ls -l && pwd");
 
     const char *input1 = "ls -l";
-    const char *input2 = "grep something";
+    const char *input2 = "pwd";
 
     Command cmd1 = evaluateCommand(input1);
     Command cmd2 = evaluateCommand(input2);
@@ -43,9 +39,9 @@ int ready() {
 
 int main(int argc, char** argv)
 {
-    printf("Welcome to Livl Shell !\n");
+    print_title();
 
-        ready();
+    ready();
 
     // while(1) {
     // }
