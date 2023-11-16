@@ -6,7 +6,6 @@ int main() {
 
     char input[MAX_INPUT_LENGTH];
 
-    // Prompt the user for input
     printf(">livl-shell$ ");
     if (fgets(input, sizeof(input), stdin) == NULL) {
         fprintf(stderr, "Error reading input\n");

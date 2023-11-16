@@ -10,6 +10,7 @@
         "random": "c",
         "optional": "c",
         "stdlib.h": "c",
-        "console.h": "c"
+        "console.h": "c",
+        "stddef.h": "c"
     }
 }

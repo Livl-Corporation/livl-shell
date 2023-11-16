@@ -1,5 +1,5 @@
-#ifndef TYPEDEF
-#define TYPEDEF
+#ifndef TYPEDEF_H
+#define TYPEDEF_H
 
 #include <stddef.h>
 
@@ -18,11 +18,16 @@ typedef struct {
 } Command;
 
 
-// Define a structure to represent a sequence of commands and operators
+/**
+ * Structur that represents a command sequence
+ * @param commands: the commands
+ * @param operators: the operators between commands
+ * @param num_commands: the number of commands
+*/
 typedef struct {
     Command *commands;      // Array of commands
     char **operators;       // Array of operators
     size_t num_commands;    // Number of commands
 } CommandSequence;
 
-#endif //TYPEDEF
+#endif //TYPEDEF_H

@@ -6,15 +6,13 @@ int executeCommand(const Command *cmd) {
 
     if (pid < 0) {
         perror("fork");
-        exit(EXIT_FAILURE);
-        return EXIT_FAILURE;
+        _exit(EXIT_FAILURE);
     }
 
     if (pid == CHILD_PROCESS) {
         if(execvp(cmd->command, cmd->complete_command) < 0) {
             perror("execvp");
-            exit(EXIT_FAILURE);
-            return EXIT_FAILURE;
+            _exit(EXIT_FAILURE);
         }
     } 
 
