@@ -6,13 +6,13 @@ int executeCommand(const Command *cmd) {
 
     if (pid < 0) {
         perror("fork");
-        _exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 
     if (pid == CHILD_PROCESS) {
         if(execvp(cmd->command, cmd->complete_command) < 0) {
             perror("execvp");
-            _exit(EXIT_FAILURE);
+            exit(EXIT_FAILURE);
         }
     } 
 
@@ -37,6 +37,13 @@ int executeCommandSequence(const CommandSequence *sequence) {
             if (strcmp(sequence->operators[i], "&&") == 0) {
                 // Execute next command only if the previous one succeeded
                 if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
+                    continue;
+                } else {
+                    break;
+                }
+            } else if(strcmp(sequence->operators[i], "||") == 0) {
+                // Execute next command only if the previous one failed
+                if (WIFEXITED(status) && WEXITSTATUS(status) != 0) {
                     continue;
                 } else {
                     break;
