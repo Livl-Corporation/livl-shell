@@ -7,52 +7,40 @@ Command evaluateCommand(const char *input) {
     cmd.complete_command = NULL;
     cmd.num_arguments = 0;
 
-    // Copie de la commande d'origine pour la manipulation
+    char delimiters[] = " \t\n";
+
+    // Copy the input for manipulation
     char *input_copy = strdup(input);
 
-    // Découpage en tokens
-    char *token = strtok(input_copy, " \t\n"); // Espaces, tabulations et sauts de ligne comme délimiteurs
+    // Tokenize by spaces, tabs, and newline characters
+    char *token = strtok(input_copy, delimiters);
 
-    // 1. La première partie est le nom de la commande
+    // 1. The first part is the command (from the first letter to the one of the first delimiters)
     if (token != NULL) {
         cmd.command = strdup(token);
     } else {
-        // Gestion d'une entrée vide ou malformée
         fprintf(stderr, "Invalid command\n");
         free(input_copy);
         return cmd;
     }
 
-    // 2. Après avoir récupéré le nom de la commande, on récupère tous les arguments
-    while ((token = strtok(NULL, "\r\n\t")) != NULL) {
-        char **temp = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
-        if (temp == NULL) {
-            // Gérer l'échec de l'allocation de mémoire
-            fprintf(stderr, "Memory allocation failed\n");
-            freeCommand(&cmd);
-            exit(EXIT_FAILURE);
-        }
-        cmd.arguments = temp;
+    // 2. After getting the command name, collect all arguments (each token = 1 argument depending on the delimiters)
+    while ((token = strtok(NULL, delimiters)) != NULL) {
+        cmd.arguments = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
         cmd.arguments[cmd.num_arguments] = strdup(token);
         cmd.num_arguments++;
     }
 
-    // 2.2 Ajout du NULL à la fin du tableau d'arguments pour indiquer la fin du tableau à execvp
-    char **temp = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
-    if (temp == NULL) {
-        // Gérer l'échec de l'allocation de mémoire
-        fprintf(stderr, "Memory allocation failed\n");
-        freeCommand(&cmd);
-        exit(EXIT_FAILURE);
-    }
-    cmd.arguments = temp;
+    // Add NULL at the end of the arguments array for execvp
+    cmd.arguments = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
     cmd.arguments[cmd.num_arguments] = NULL;
 
-    // 3. On récupère la commande complète
+    // Get the complete command
     cmd.complete_command = getCompleteCommand(&cmd);
 
-    free(input_copy);
+    printCommand(&cmd);
 
+    free(input_copy);
     return cmd;
 }
 
@@ -88,4 +76,11 @@ void freeCommand(Command *cmd) {
     }
     free(cmd->arguments);
     free(cmd->complete_command);
+}
+
+void freeCommandSequence(CommandSequence *sequence) {
+    for (int i = 0; i < sequence->num_commands; ++i) {
+        freeCommand(&sequence->commands[i]);
+    }
+    free(sequence->commands);
 }

@@ -5,7 +5,7 @@ int executeCommand(const Command *cmd) {
     int status;
 
     if (pid < 0) {
-        perror("fork"); // En cas d'erreur
+        perror("fork");
         exit(EXIT_FAILURE);
         return EXIT_FAILURE;
     }
@@ -23,16 +23,32 @@ int executeCommand(const Command *cmd) {
     return status;
 }
 
-int executeCommands(const Command *cmd1, const Command *cmd2, const char *control_operator) {
+int executeCommandSequence(const CommandSequence *sequence) {
+    int status = 0;
 
-    int status = executeCommand(cmd1);
+    for (size_t i = 0; i < sequence->num_commands; ++i) {
+        status = executeCommand(&(sequence->commands[i]));
 
-    // Vérification du statut de la première commande
-    if ((WIFEXITED(status) && WEXITSTATUS(status) == 0 && strcmp(control_operator, "&&") == 0) ||
-        (WIFEXITED(status) && WEXITSTATUS(status) != 0 && strcmp(control_operator, "||") == 0)) {
-        // La première commande s'est terminée avec succès (pour &&) ou a échoué (pour ||),
-        // exécuter la deuxième commande
-        status = executeCommand(cmd2);
+        // If an error occurs or a command fails, break the loop
+        if (status != 0) {
+            break;
+        }
+
+        // If there are more commands, execute the next one based on the operator
+        if (i < sequence->num_commands - 1) {
+            if (strcmp(sequence->operators[i], "&&") == 0) {
+                // Execute next command only if the previous one succeeded
+                if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
+                    continue;
+                } else {
+                    break;
+                }
+            } else {
+                fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
+                status = EXIT_FAILURE;
+                break;
+            }
+        }
     }
 
     return status;

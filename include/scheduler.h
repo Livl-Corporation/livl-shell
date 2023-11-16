@@ -14,15 +14,11 @@
 int executeCommand(const Command *cmd);
 
 /**
- * @brief Executes a command
- * @param cmd1 The command to execute
- * @param cmd2 The second to execute
- * @param control_operator The control operator
- * @return 0 if success, -1 if error
- * 
+ * @brief Executes a sequence of commands with operators
+ * @param sequence The sequence of commands to execute
+ * @return The status of the execution
 */
-int executeCommands(const Command *cmd1, const Command *cmd2, const char *control_operator);
-
+int executeCommandSequence(const CommandSequence *sequence);
 /**
  * @brief Prints a command
  * @param cmd The command to print
