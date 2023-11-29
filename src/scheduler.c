@@ -48,7 +48,11 @@ int executeCommandSequence(const CommandSequence *sequence) {
                 } else {
                     break;
                 }
-            } else {
+            } 
+            else if(strcmp(sequence->operators[i], ";") == 0) {
+                continue;
+            }            
+            else {
                 fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
                 status = EXIT_FAILURE;
                 break;

@@ -36,7 +36,7 @@ int main() {
 
     while (token != NULL) {
         if (strcmp(token, "&&") == 0 || strcmp(token, "||") == 0 || strcmp(token, ">") == 0 ||
-            strcmp(token, "<") == 0 || strcmp(token, "&") == 0) {
+            strcmp(token, "<") == 0 || strcmp(token, "&") == 0 || strcmp(token, ";") == 0) {
             // It's an operator
             operators[opIndex++] = strdup(token);
         } else {
@@ -56,7 +56,7 @@ int main() {
 
         // If an operator is encountered or we reach the end, store the current command
         if (token == NULL || strcmp(token, "&&") == 0 || strcmp(token, "||") == 0 ||
-            strcmp(token, ">") == 0 || strcmp(token, "<") == 0 || strcmp(token, "&") == 0) {
+            strcmp(token, ">") == 0 || strcmp(token, "<") == 0 || strcmp(token, "&") == 0 || strcmp(token, ";") == 0) {
             if (currentCommand != NULL) {
                 commands[cmdIndex++] = currentCommand;
                 currentCommand = NULL;

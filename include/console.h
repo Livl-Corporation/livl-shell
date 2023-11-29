@@ -8,7 +8,14 @@
 #define RESET "\e[0m"
 #define BLUE "\e[1;34m"
 
+/**
+ * @brief Print the title of the program
+*/
 void print_title();
+
+/**
+ * @brief Print the prompt
+*/
 void print_info(const char *text, ...);
 
 #endif //CONSOLE_H

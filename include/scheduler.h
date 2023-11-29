@@ -11,6 +11,11 @@
 
 #define CHILD_PROCESS 0
 
+/**
+ * @brief Executes a command
+ * @param cmd The command to execute
+ * @return The status of the execution
+*/
 int executeCommand(const Command *cmd);
 
 /**
@@ -19,6 +24,7 @@ int executeCommand(const Command *cmd);
  * @return The status of the execution
 */
 int executeCommandSequence(const CommandSequence *sequence);
+
 /**
  * @brief Prints a command
  * @param cmd The command to print
