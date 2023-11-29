@@ -24,39 +24,45 @@ int executeCommand(const Command *cmd) {
 int executeCommandSequence(const CommandSequence *sequence) {
     int status = 0;
 
+    int hasFailed = 0;
+    int skipNext = 0;
+
     for (size_t i = 0; i < sequence->num_commands; ++i) {
+        
+        if (skipNext) {
+            skipNext = 0;
+            continue;
+        };
+
         status = executeCommand(&(sequence->commands[i]));
 
-        // If an error occurs or a command fails, break the loop
-        if (status != 0) {
+        hasFailed = WIFEXITED(status) && WEXITSTATUS(status) == 0;
+
+        // If there are more commands, execute the next one based on the operator
+        if (i >= sequence->num_commands - 1) {
             break;
         }
 
-        // If there are more commands, execute the next one based on the operator
-        if (i < sequence->num_commands - 1) {
-            if (strcmp(sequence->operators[i], "&&") == 0) {
-                // Execute next command only if the previous one succeeded
-                if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
-                    continue;
-                } else {
-                    break;
-                }
-            } else if(strcmp(sequence->operators[i], "||") == 0) {
-                // Execute next command only if the previous one failed
-                if (WIFEXITED(status) && WEXITSTATUS(status) != 0) {
-                    continue;
-                } else {
-                    break;
-                }
-            } 
-            else if(strcmp(sequence->operators[i], ";") == 0) {
-                continue;
-            }            
-            else {
-                fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
-                status = EXIT_FAILURE;
-                break;
+        if (strcmp(sequence->operators[i], "&&") == 0) {
+            // Execute next command only if the previous one succeeded
+            if (hasFailed) {
+                skipNext = 1;
             }
+            continue;
+        } else if(strcmp(sequence->operators[i], "||") == 0) {
+            // Execute next command only if the previous one failed
+            if (!hasFailed) {
+                skipNext = 1;
+            }
+            continue;
+        } 
+        else if(strcmp(sequence->operators[i], ";") == 0) {
+            continue;
+        }            
+        else {
+            fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
+            status = EXIT_FAILURE;
+            break;
         }
     }
 
