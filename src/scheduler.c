@@ -45,13 +45,13 @@ int executeCommandSequence(const CommandSequence *sequence) {
 
         if (strcmp(sequence->operators[i], "&&") == 0) {
             // Execute next command only if the previous one succeeded
-            if (hasFailed) {
+            if (hasFailed == 0) {
                 skipNext = 1;
             }
             continue;
         } else if(strcmp(sequence->operators[i], "||") == 0) {
             // Execute next command only if the previous one failed
-            if (!hasFailed) {
+            if (hasFailed != 0) {
                 skipNext = 1;
             }
             continue;
