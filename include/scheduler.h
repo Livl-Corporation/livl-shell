@@ -31,4 +31,9 @@ int executeCommandSequence(const CommandSequence *sequence);
 */
 void printCommand(Command *cmd);
 
+void pwd();
+void cd(char* path);
+void exit_shell();
+void echo(char* message);
+
 #endif //SCHEDULER_H
