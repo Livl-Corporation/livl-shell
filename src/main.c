@@ -1,5 +1,24 @@
 #include "main.h"
 
+#include "main.h"
+
+void preprocess_input(char* input) {
+    char* operators[] = {"&&", "||", ">", "<", "&", ";"};
+    int num_operators = sizeof(operators) / sizeof(char*);
+
+    for (int i = 0; i < num_operators; i++) {
+        char* pos = input;
+        while ((pos = strstr(pos, operators[i])) != NULL) {
+            memmove(pos + 1, pos, strlen(pos) + 1);
+            *pos = ' ';
+            pos += 3;
+            memmove(pos + 1, pos, strlen(pos) + 1);
+            *pos = ' ';
+        }
+    }
+}
+
+
 int main() {
 
     print_title();
@@ -11,6 +30,9 @@ int main() {
         fprintf(stderr, "Error reading input\n");
         return EXIT_FAILURE;
     }
+
+    // Preprocess the input
+    preprocess_input(input);
 
     // Remove newline character if present
     size_t len = strlen(input);
