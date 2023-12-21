@@ -2,6 +2,28 @@
 
 const char* operators[] = {"&&", "||", ">", "<", "&", ";"};
 
+char* read_input() {
+    char* input = malloc(MAX_INPUT_LENGTH * sizeof(char));
+    if (input == NULL) {
+        fprintf(stderr, "Error allocating memory for input\n");
+        return NULL;
+    }
+
+    if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL) {
+        fprintf(stderr, "Error reading input\n");
+        free(input);
+        return NULL;
+    }
+
+    size_t len = strlen(input);
+    if (len > 0 && input[len - 1] == '\n') {
+        input[len - 1] = '\0';
+    }
+
+    return input;
+}
+
+
 void preprocess_input(char* input) {
     int num_operators = sizeof(operators) / sizeof(char*);
     char* new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input

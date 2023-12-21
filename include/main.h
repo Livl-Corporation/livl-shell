@@ -6,7 +6,6 @@
 #include "console.h"
 #include "input_parser.h"
 
-#define MAX_INPUT_LENGTH 1024
 #define MAX_COMMANDS 3
 
 #endif //MAIN_H

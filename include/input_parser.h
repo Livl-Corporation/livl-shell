@@ -5,8 +5,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define MAX_INPUT_LENGTH 1024
+
 // The list of operators that can be used
 extern const char* operators[];
+
+/**
+ * @brief Reads the input from the console
+ * @return The input string
+*/
+char* read_input();
 
 /**
  * @brief Parses the input string into commands and operators
