@@ -8,15 +8,16 @@
 #include <sys/wait.h>
 #include <string.h>
 #include "command.h"
+#include "builtin_commands.h"
 
 #define CHILD_PROCESS 0
 
 /**
  * @brief Executes a command
- * @param cmd The command to execute
+ * @param command The command to execute
  * @return The status of the execution
 */
-int executeCommand(const Command *cmd);
+int execute_external_command(const Command *command);
 
 /**
  * @brief Executes a sequence of commands with operators
@@ -31,9 +32,6 @@ int executeCommandSequence(const CommandSequence *sequence);
 */
 void printCommand(Command *cmd);
 
-void pwd();
-void cd(char* path);
-void exit_shell();
-void echo(char* message);
+
 
 #endif //SCHEDULER_H

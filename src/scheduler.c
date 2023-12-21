@@ -1,71 +1,10 @@
 #include "scheduler.h"
 
-void cd(char* path) {
-    if (chdir(path) != 0) {
-        perror("cd");
-    }
-}
+int execute_external_command(const Command *command) {
+    printf("Executing external command: %s\n", command->command);
 
-// Implementation of pwd command
-void pwd() {
-    char cwd[1024];
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        printf("%s\n", cwd);
-    } else {
-        perror("getcwd");
-    }
-}
-
-void exit_shell() {
-    exit(0);
-}
-
-void echo(char* message) {
-    printf("%s\n", message);
-}
-
-int executeCommand(const Command *cmd) {
-     if (strcmp(cmd->command, "cd") == 0) {
-        // Commande cd
-        if (cmd->num_arguments == 1) {
-            cd(cmd->arguments[0]);
-            return 0;  // La commande a réussi (statut 0)
-        } else {
-            fprintf(stderr, "Usage: cd <directory>\n");
-            return EXIT_FAILURE;  // La commande a échoué
-        }
-    } else if (strcmp(cmd->command, "pwd") == 0) {
-        // Commande pwd
-        if (cmd->num_arguments == 0) {
-            pwd();
-            return 0;  // La commande a réussi (statut 0)
-        } else {
-            fprintf(stderr, "Usage: pwd\n");
-            return EXIT_FAILURE;  // La commande a échoué
-        }
-    } else if (strcmp(cmd->command, "exit") == 0) {
-        // Commande exit
-        if (cmd->num_arguments == 0) {
-            exit_shell();
-            return 0;  // La commande a réussi (statut 0)
-        } else {
-            fprintf(stderr, "Usage: exit\n");
-            return EXIT_FAILURE;  // La commande a échoué
-        }
-    } else if (strcmp(cmd->command, "echo") == 0) {
-        // Commande echo
-        if (cmd->num_arguments == 1) {
-            echo(cmd->arguments[0]);
-            return 0;  // La commande a réussi (statut 0)
-        } else {
-            fprintf(stderr, "Usage: echo <message>\n");
-            return EXIT_FAILURE;  // La commande a échoué
-        }
-    }
-
-    // Si la commande n'est pas interne, exécutez-la comme une commande externe
     pid_t pid = fork();
-    int status;
+    int execution_status;
 
     if (pid < 0) {
         perror("fork");
@@ -73,15 +12,25 @@ int executeCommand(const Command *cmd) {
     }
 
     if (pid == CHILD_PROCESS) {
-        if(execvp(cmd->command, cmd->complete_command) < 0) {
+        if(execvp(command->command, command->complete_command) < 0) {
             perror("execvp");
             exit(EXIT_FAILURE);
         }
     } 
 
     // Processus père
-    waitpid(pid, &status, 0);
-    return status;
+    waitpid(pid, &execution_status, 0);
+    return execution_status;
+}
+
+int executeCommand(const Command *command) {
+    int execution_status = execute_builtin_command(command);
+
+    if (execution_status == IS_NOT_BUILTIN_COMMAND) {
+        execution_status = execute_external_command(command);
+    }
+
+    return execution_status;
 }
 
 int executeCommandSequence(const CommandSequence *sequence) {
