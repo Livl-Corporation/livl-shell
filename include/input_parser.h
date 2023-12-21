@@ -3,6 +3,10 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+
+// The list of operators that can be used
+extern const char* operators[];
 
 /**
  * @brief Parses the input string into commands and operators

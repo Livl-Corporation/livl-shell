@@ -1,9 +1,16 @@
 #include "input_parser.h"
 
+const char* operators[] = {"&&", "||", ">", "<", "&", ";"};
+
 void preprocess_input(char* input) {
-    char* operators[] = {"&&", "||", ">", "<", "&", ";"};
     int num_operators = sizeof(operators) / sizeof(char*);
     char* new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input
+
+    if (new_input == NULL) {
+        fprintf(stderr, "Error allocating memory\n");
+        return;
+    }
+
     int j = 0;
 
     // Iterate over the input and add spaces around the operators
@@ -32,8 +39,7 @@ void preprocess_input(char* input) {
     free(new_input);
 }
 
-int is_operator(char *token) {
-    char* operators[] = {"&&", "||", ">", "<", "&", ";"};
+int is_operator(const char *token) {
     int num_operators = sizeof(operators) / sizeof(char*);
 
     for (int i = 0; i < num_operators; i++) {
@@ -52,7 +58,12 @@ void process_token(char *token, char **commands, char **operators, char **curren
             *currentCommand = strdup(token);
         } else {
             size_t len = strlen(*currentCommand) + strlen(token) + 2;
-            *currentCommand = realloc(*currentCommand, len);
+            char* temp = realloc(*currentCommand, len);
+            if (temp == NULL) {
+                fprintf(stderr, "Error reallocating memory\n");
+                return;
+            }
+            *currentCommand = temp;
             strcat(*currentCommand, " ");
             strcat(*currentCommand, token);
         }
