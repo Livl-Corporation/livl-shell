@@ -1,8 +1,6 @@
 #include "scheduler.h"
 
 int execute_external_command(const Command *command) {
-    printf("Executing external command: %s\n", command->command);
-
     pid_t pid = fork();
     int execution_status;
 
