@@ -1,7 +1,5 @@
 #include "input_parser.h"
 
-const char* operators[] = {"&&", "||", ">", "<", "&", ";"};
-
 char* read_input() {
     char* input = malloc(MAX_INPUT_LENGTH * sizeof(char));
     if (input == NULL) {
@@ -25,7 +23,6 @@ char* read_input() {
 
 
 void preprocess_input(char* input) {
-    int num_operators = sizeof(operators) / sizeof(char*);
     char* new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input
 
     if (new_input == NULL) {
@@ -61,40 +58,3 @@ void preprocess_input(char* input) {
     free(new_input);
 }
 
-int is_operator(const char *token) {
-    int num_operators = sizeof(operators) / sizeof(char*);
-
-    for (int i = 0; i < num_operators; i++) {
-        if (strcmp(token, operators[i]) == 0) {
-            return 1;
-        }
-    }
-    return 0;
-}
-
-void process_token(char *token, char **commands, char **operators, char **currentCommand, int *cmdIndex, int *opIndex) {
-    if (is_operator(token)) {
-        operators[(*opIndex)++] = strdup(token);
-    } else {
-        if (*currentCommand == NULL) {
-            *currentCommand = strdup(token);
-        } else {
-            size_t len = strlen(*currentCommand) + strlen(token) + 2;
-            char* temp = realloc(*currentCommand, len);
-            if (temp == NULL) {
-                fprintf(stderr, "Error reallocating memory\n");
-                return;
-            }
-            *currentCommand = temp;
-            strcat(*currentCommand, " ");
-            strcat(*currentCommand, token);
-        }
-    }
-}
-
-void store_command(char **commands, char **currentCommand, int *cmdIndex) {
-    if (*currentCommand != NULL) {
-        commands[(*cmdIndex)++] = *currentCommand;
-        *currentCommand = NULL;
-    }
-}

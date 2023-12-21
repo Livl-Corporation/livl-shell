@@ -11,6 +11,10 @@
         "optional": "c",
         "stdlib.h": "c",
         "console.h": "c",
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "unistd.h": "c",
+        "input_parser.h": "c",
+        "string.h": "c",
+        "operator.h": "c"
     }
 }
