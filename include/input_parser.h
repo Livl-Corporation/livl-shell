@@ -19,7 +19,7 @@ void preprocess_input(char* input);
  * @param token The token to be checked
  * @return 1 if the token is an operator, 0 otherwise
 */
-int is_operator(char *token);
+int is_operator(const char *token);
 
 /**
  * @brief Checks if the given token is a command
