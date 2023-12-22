@@ -20,4 +20,11 @@ extern const int num_operators;
 */
 int is_operator(const char *token);
 
+/**
+ * @brief Checks if the given token is a redirection operator
+ * @param token The token to be checked
+ * @return 1 if the token is a redirection operator, 0 otherwise
+*/
+int is_redirection_operator(const char *token);
+
 #endif //OPERATOR_H

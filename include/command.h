@@ -14,6 +14,13 @@
 Command evaluateCommand(const char *input);
 
 /**
+ * @brief Handle quotes in a string (remove them)
+ * @param input: the string to evaluate
+ * @param cmd: the command structure
+*/
+void handle_quotes(char **token);
+
+/**
  * @brief Free a command
  * @param cmd: the command to free
 */

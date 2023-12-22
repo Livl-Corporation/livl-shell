@@ -20,6 +20,6 @@
         "fcntl.h": "c",
         "wait.h": "c",
         "command_sequence.h": "c",
-        "redirection.h": "c"
+        "redirection.h": "c",
     }
 }

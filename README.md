@@ -55,6 +55,7 @@ livl-shell/
 - `ls -l > output.txt` : redirect the output of a command to a file
 - `pwd >> output.txt` : redirect the output of a command to a file (append)
 - `wc -l < output.txt` : count the number of lines in the file
+- `ls -l | grep '.txt'` : redirect the output of a command to another command you can use single, double or without quotes
 
 # **🔧 Pipeline**
 

@@ -11,6 +11,7 @@
 #include "console.h"
 #include "builtin_commands.h"
 #include "redirection.h"
+#include "operator.h"
 
 /**
  * @brief The child process id (pid)

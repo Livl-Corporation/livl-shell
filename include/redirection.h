@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
+#include <sys/wait.h>
 
 /**
  * @brief Handles input redirection with '<' operator with '<<' operator
@@ -27,6 +29,14 @@ void handle_output_redirection(const Command *command);
  * @param sequence: The command sequence to evaluate
 */
 void evaluate_redirection(CommandSequence *sequence);
+
+/**
+ * @brief Execute a command with pipe operator
+ * @param cmd1: The first command
+ * @param cmd2: The second command
+ * @return void
+*/
+void execute_pipe(Command *cmd1, Command *cmd2);
 
 /**
  * @brief Evaluate if a command is a stream redirection command

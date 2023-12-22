@@ -51,6 +51,16 @@ int executeCommandSequence(const CommandSequence *sequence) {
             continue;
         };
 
+        // If there are more commands, execute the next one based on the operator
+        if (i < sequence->num_commands - 1) {
+            if (strcmp(sequence->operators[i], "|") == 0) {
+                // Execute a pipe between the current command and the next command
+                execute_pipe(&(sequence->commands[i]), &(sequence->commands[i + 1]));
+                skipNext = 1;
+                continue;
+            }
+        }
+
         status = executeCommand(&(sequence->commands[i]));
 
         hasFailed = WIFEXITED(status) && WEXITSTATUS(status) == 0;
@@ -66,7 +76,8 @@ int executeCommandSequence(const CommandSequence *sequence) {
                 skipNext = 1;
             }
             continue;
-        } else if(strcmp(sequence->operators[i], "||") == 0) {
+        } 
+        else if(strcmp(sequence->operators[i], "||") == 0) {
             // Execute next command only if the previous one failed
             if (hasFailed != 0) {
                 skipNext = 1;
@@ -75,22 +86,12 @@ int executeCommandSequence(const CommandSequence *sequence) {
         } 
         else if(strcmp(sequence->operators[i], ";") == 0) {
             continue;
-        }  else if(strcmp(sequence->operators[i], ">") == 0) {
-            skipNext = 1;
-            continue;
-        }  else if(strcmp(sequence->operators[i], "<") == 0) {
-            skipNext = 1;
-            continue;
-        }  else if(strcmp(sequence->operators[i], ">>") == 0) {
-            skipNext = 1;
-            continue;
-        }  else if(strcmp(sequence->operators[i], "<<") == 0) {
+        } 
+        else if(is_redirection_operator(sequence->operators[i])) {
             skipNext = 1;
             continue;
         }
-         else if(strcmp(sequence->operators[i], "|") == 0) {
-            continue;
-        }  else if(strcmp(sequence->operators[i], "&") == 0) {
+        else if(strcmp(sequence->operators[i], "&") == 0) {
             continue;
         }      
         else {

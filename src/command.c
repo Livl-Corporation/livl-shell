@@ -23,6 +23,7 @@ Command evaluateCommand(const char *input) {
 
     // 2. After getting the command name, collect all arguments (each token = 1 argument depending on the delimiters)
     while ((token = strtok(NULL, delimiters)) != NULL) {
+        handle_quotes(&token);
         cmd.arguments = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
         cmd.arguments[cmd.num_arguments] = strdup(token);
         cmd.num_arguments++;
@@ -41,7 +42,17 @@ Command evaluateCommand(const char *input) {
     return cmd;
 }
 
+void handle_quotes(char **token) {
+    char quote_type = (*token)[0];
+    if (quote_type == '"' || quote_type == '\'') {
+        char *end_quote = strchr(&(*token)[1], quote_type);
 
+        if (end_quote != NULL) {
+            *end_quote = '\0';  // Remove the quotation mark
+            (*token)++;         // Skip the initial quotation mark
+        }
+    }
+}
 
 void printCommand(Command *cmd)
 {

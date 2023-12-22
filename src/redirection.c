@@ -103,6 +103,62 @@ void evaluate_redirection(CommandSequence *sequence)
     }
 }
 
-int is_redirection_command(const Command *command) {
+int is_redirection_command(const Command *command) 
+{
     return command->redirection.input_file != NULL || command->redirection.output_file != NULL;
+}
+
+void execute_pipe(Command *cmd1, Command *cmd2) 
+{
+    int pipefd[2];
+    pid_t p1, p2;
+
+    if (pipe(pipefd) < 0) {
+        perror("pipe");
+        exit(EXIT_FAILURE);
+    }
+    p1 = fork();
+    if (p1 < 0) {
+        perror("fork");
+        exit(EXIT_FAILURE);
+    }
+
+    if (p1 == 0) {
+        // Child 1 executing..
+        // It only needs to write at the write end
+        close(pipefd[0]);
+        dup2(pipefd[1], STDOUT_FILENO);
+        close(pipefd[1]);
+
+        if (execvp(cmd1->command, cmd1->complete_command) < 0) {
+            perror(cmd1->command);
+            exit(EXIT_FAILURE);
+        }
+    } else {
+        // Parent executing
+        p2 = fork();
+
+        if (p2 < 0) {
+            perror("fork");
+            exit(EXIT_FAILURE);
+        }
+
+        // Child 2 executing..
+        // It only needs to read at the read end
+        if (p2 == 0) {
+            close(pipefd[1]);
+            dup2(pipefd[0], STDIN_FILENO);
+            close(pipefd[0]);
+            if (execvp(cmd2->command, cmd2->complete_command) < 0) {
+                perror(cmd2->command);
+                exit(EXIT_FAILURE);
+            }
+        } else {
+            // parent executing, waiting for two children
+            close(pipefd[0]);
+            close(pipefd[1]);
+            wait(NULL);
+            wait(NULL);
+        }
+    }
 }

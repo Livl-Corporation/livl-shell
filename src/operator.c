@@ -28,3 +28,7 @@ int is_operator(const char *token) {
 
     return 0; // The token is not an operator
 }
+
+int is_redirection_operator(const char *token) {
+    return strcmp(token, "<") == 0 || strcmp(token, "<<") == 0 || strcmp(token, ">") == 0 || strcmp(token, ">>") == 0;
+}
