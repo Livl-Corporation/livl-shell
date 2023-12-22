@@ -41,60 +41,7 @@ Command evaluateCommand(const char *input) {
     return cmd;
 }
 
-void evaluateStreamRedirection(CommandSequence *sequence) 
-{
-    for (int i = 0; i < sequence->num_commands-1; ++i) {
-        Command *cmd = &sequence->commands[i];
 
-        // Get the operator between the current command and the next one
-        char *operator = sequence->operators[i];
-
-        if (strcmp(operator, "<") == 0) {
-            // Input redirection
-            if (i < sequence->num_commands - 1) {
-                Command *next_cmd = &sequence->commands[i + 1];
-                cmd->redirection.input_file = strdup(next_cmd->command);
-            } else {
-                fprintf(stderr, "Missing command after input redirection\n");
-                break;
-            }
-        } else if (strcmp(operator, "<<") == 0) {
-            // Input redirection (append)
-            if (i < sequence->num_commands - 1) {
-                Command *next_cmd = &sequence->commands[i + 1];
-                cmd->redirection.input_file = strdup(next_cmd->command);
-                cmd->redirection.append_input = 1;
-            } else {
-                fprintf(stderr, "Missing command after input redirection\n");
-                break;
-            }
-        }
-        else if (strcmp(operator, ">") == 0) {
-            // Output redirection
-            if (i < sequence->num_commands - 1) {
-                Command *next_cmd = &sequence->commands[i + 1];
-                cmd->redirection.output_file = strdup(next_cmd->command);
-            } else {
-                fprintf(stderr, "Missing command after output redirection\n");
-                break;
-            }
-        } else if (strcmp(operator, ">>") == 0) {
-            // Output redirection (append)
-            if (i < sequence->num_commands - 1) {
-                Command *next_cmd = &sequence->commands[i + 1];
-                cmd->redirection.output_file = strdup(next_cmd->command);
-                cmd->redirection.append_output = 1;
-            } else {
-                fprintf(stderr, "Missing command after output redirection\n");
-                break;
-            }
-        }
-    }
-}
-
-int isRedirectionCommand(const Command *command) {
-    return command->redirection.input_file != NULL || command->redirection.output_file != NULL;
-}
 
 void printCommand(Command *cmd)
 {

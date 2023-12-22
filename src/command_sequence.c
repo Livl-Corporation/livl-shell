@@ -38,7 +38,7 @@ void command_sequence_init(char *input) {
         free(operators[i]);
     }
 
-    evaluateStreamRedirection(&sequence);
+    evaluate_redirection(&sequence);
 
     int result = executeCommandSequence(&sequence);
 
@@ -46,7 +46,7 @@ void command_sequence_init(char *input) {
         fprintf(stderr, "An error occurred while executing the commands\n");
     }
 
-    freeCommandSequence(&sequence);
+    free_command_sequence(&sequence);
 }
 
 
@@ -80,7 +80,7 @@ void store_command(char **commands, char **currentCommand, int *cmdIndex) {
     }
 }
 
-void freeCommandSequence(CommandSequence *sequence) {
+void free_command_sequence(CommandSequence *sequence) {
     for (int i = 0; i < sequence->num_commands; ++i) {
         freeCommand(&sequence->commands[i]);
     }

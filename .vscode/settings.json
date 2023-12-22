@@ -18,6 +18,8 @@
         "operator.h": "c",
         "cstdlib": "c",
         "fcntl.h": "c",
-        "wait.h": "c"
+        "wait.h": "c",
+        "command_sequence.h": "c",
+        "redirection.h": "c"
     }
 }

@@ -14,18 +14,6 @@
 Command evaluateCommand(const char *input);
 
 /**
- * @brief Evaluate if a command sequence contains stream redirection operators
- * @param sequence: The command sequence to evaluate
-*/
-void evaluateStreamRedirection(CommandSequence *sequence);
-
-/**
- * @brief Evaluate if a command is a stream redirection command
- * @param command: The command to evaluate
-*/
-int isRedirectionCommand(const Command *command);
-
-/**
  * @brief Free a command
  * @param cmd: the command to free
 */

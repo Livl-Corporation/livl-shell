@@ -7,11 +7,10 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <string.h>
-#include <fcntl.h>
-#include <sys/stat.h>
 #include "command.h"
 #include "console.h"
 #include "builtin_commands.h"
+#include "redirection.h"
 
 /**
  * @brief The child process id (pid)

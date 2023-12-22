@@ -4,6 +4,7 @@
 #include "command.h"
 #include "scheduler.h"
 #include "operator.h"
+#include "redirection.h"
 
 #define MAX_COMMANDS 3
 #define MAX_OPERATORS 2
@@ -33,6 +34,6 @@ void store_command(char **commands, char **currentCommand, int *cmdIndex);
  * Each command in the sequence is also freed
  * @param sequence: the command sequence to free
 */
-void freeCommandSequence(CommandSequence *sequence);
+void free_command_sequence(CommandSequence *sequence);
 
 #endif //COMMAND_SEQUENCE_H
