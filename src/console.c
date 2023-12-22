@@ -1,6 +1,5 @@
 #include "console.h"
 
-
 void print_title()
 {
     printf("\n" YELB"    __    _____    ____       _____ __  __________    __  " RESET);
@@ -37,10 +36,11 @@ void print_prompt()
     if(username == NULL)
         username = "username";
 
-    char hostname[1024];
-    gethostname(hostname, 1024);
-    if(username == NULL)
-        username = "hostname";
+    // Use this if you want to print the hostname
+    // char hostname[1024];
+    // gethostname(hostname, 1024);
+    // if(username == NULL)
+    //     username = "hostname";
 
-    printf(GREEN "%s" RESET "@" BLUE "%s" RESET ":$ ", username, hostname);
+    printf(YELLOW "%s" RESET "@" BLUE "livl-bash" RESET ":$ ", username);
 }

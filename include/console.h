@@ -10,6 +10,7 @@
 #define RESET "\e[0m"
 #define BLUE "\e[1;34m"
 #define GREEN "\e[1;32m"
+#define YELLOW "\e[1;33m"
 
 /**
  * @brief Print the title of the program
