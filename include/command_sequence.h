@@ -28,4 +28,11 @@ void process_token(char *token, char **commands, char **operators, char **curren
 */
 void store_command(char **commands, char **currentCommand, int *cmdIndex);
 
+/**
+ * Free the memory allocated for a command sequence
+ * Each command in the sequence is also freed
+ * @param sequence: the command sequence to free
+*/
+void freeCommandSequence(CommandSequence *sequence);
+
 #endif //COMMAND_SEQUENCE_H

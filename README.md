@@ -7,6 +7,7 @@
 - [📦 Prerequisites](#-prerequisites)
 - [🚀 Quick start](#-quick-start)
 - [📁 Project structure](#-project-structure)
+- [📝 List of insane commands](#-list-of-insane-commands)
 - [🔧 Pipeline](#-pipeline)
 - [🧍🏽Project team](#-project-team)
 
@@ -43,6 +44,16 @@ livl-shell/
 |   └── ...
 └── Makefile
 ```
+
+# **📝 List of insane commands**
+
+- `ls` : list the files in the current directory
+- `cd` : change the current directory
+- `pwd` : print the current directory
+- `cat <<EOF` : display the content of a file (EOF is the end of the file) 
+- `echo` : display a line of text
+- `ls -l > output.txt` : redirect the output of a command to a file
+- `pwd >> output.txt` : redirect the output of a command to a file (append)
 
 # **🔧 Pipeline**
 

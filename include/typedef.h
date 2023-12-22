@@ -4,23 +4,34 @@
 #include <stddef.h>
 
 /**
+ * Structur that represents a redirection
+ * @param input_file: the input file (a file that will be read)
+ * @param output_file: the output file (a file that will be written)
+ * @param append_input: 0 for false, 1 for true (<<)
+ * @param append_output: 0 for false, 1 for true (>>)
+*/
+typedef struct {
+    char *input_file;
+    char *output_file;
+    int append_input;
+    int append_output;
+} Redirection;
+
+/**
  * Structur that represents a command
  * @param command: the command name
  * @param arguments: the command arguments
  * @param complete_command: the complete command (command + arguments)
  * @param num_arguments: the number of arguments
- * @param input_file: the input file (if any) for stream redirection
- * @param output_file: the output file (if any) for stream redirection
+ * @param redirection: the redirection (input and output files)
 */
 typedef struct {
     char *command;   
     char **arguments;
     char **complete_command;
     int num_arguments;
-    char *input_file;
-    char *output_file;
+    Redirection redirection;
 } Command;
-
 
 /**
  * Structur that represents a command sequence

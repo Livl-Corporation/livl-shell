@@ -79,3 +79,10 @@ void store_command(char **commands, char **currentCommand, int *cmdIndex) {
         *currentCommand = NULL;
     }
 }
+
+void freeCommandSequence(CommandSequence *sequence) {
+    for (int i = 0; i < sequence->num_commands; ++i) {
+        freeCommand(&sequence->commands[i]);
+    }
+    free(sequence->commands);
+}

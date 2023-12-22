@@ -2,12 +2,7 @@
 
 Command evaluateCommand(const char *input) {
     Command cmd;
-    cmd.command = NULL;
-    cmd.arguments = NULL;
-    cmd.complete_command = NULL;
-    cmd.output_file = NULL;
-    cmd.input_file = NULL;
-    cmd.num_arguments = 0;
+    initializeCommand(&cmd);
 
     char delimiters[] = " \t\n";
 
@@ -58,25 +53,37 @@ void evaluateStreamRedirection(CommandSequence *sequence)
             // Input redirection
             if (i < sequence->num_commands - 1) {
                 Command *next_cmd = &sequence->commands[i + 1];
-                cmd->input_file = strdup(next_cmd->command);
+                cmd->redirection.input_file = strdup(next_cmd->command);
             } else {
                 fprintf(stderr, "Missing command after input redirection\n");
                 break;
             }
-        } else if (strcmp(operator, ">") == 0) {
+        } else if (strcmp(operator, "<<") == 0) {
+            // Input redirection (append)
+            if (i < sequence->num_commands - 1) {
+                Command *next_cmd = &sequence->commands[i + 1];
+                cmd->redirection.input_file = strdup(next_cmd->command);
+                cmd->redirection.append_input = 1;
+            } else {
+                fprintf(stderr, "Missing command after input redirection\n");
+                break;
+            }
+        }
+        else if (strcmp(operator, ">") == 0) {
             // Output redirection
             if (i < sequence->num_commands - 1) {
                 Command *next_cmd = &sequence->commands[i + 1];
-                cmd->output_file = strdup(next_cmd->command);
+                cmd->redirection.output_file = strdup(next_cmd->command);
             } else {
                 fprintf(stderr, "Missing command after output redirection\n");
                 break;
             }
         } else if (strcmp(operator, ">>") == 0) {
-            // Output redirection
+            // Output redirection (append)
             if (i < sequence->num_commands - 1) {
                 Command *next_cmd = &sequence->commands[i + 1];
-                cmd->output_file = strdup(next_cmd->command);
+                cmd->redirection.output_file = strdup(next_cmd->command);
+                cmd->redirection.append_output = 1;
             } else {
                 fprintf(stderr, "Missing command after output redirection\n");
                 break;
@@ -85,6 +92,9 @@ void evaluateStreamRedirection(CommandSequence *sequence)
     }
 }
 
+int isRedirectionCommand(const Command *command) {
+    return command->redirection.input_file != NULL || command->redirection.output_file != NULL;
+}
 
 void printCommand(Command *cmd)
 {
@@ -110,20 +120,24 @@ char** getCompleteCommand(Command *cmd) {
     return new_arguments;
 }
 
+void initializeCommand(Command *cmd) {
+    cmd->command = NULL;
+    cmd->arguments = NULL;
+    cmd->complete_command = NULL;
+    cmd->redirection.input_file = NULL;
+    cmd->redirection.output_file = NULL;
+    cmd->redirection.append_input = 0;
+    cmd->redirection.append_output = 0;
+    cmd->num_arguments = 0;
+}
+
 void freeCommand(Command *cmd) {
     free(cmd->command);
     for (int i = 0; i < cmd->num_arguments; ++i) {
         free(cmd->arguments[i]);
     }
     free(cmd->arguments);
-    free(cmd->input_file);
-    free(cmd->output_file);
+    free(cmd->redirection.input_file);
+    free(cmd->redirection.output_file);
     free(cmd->complete_command);
-}
-
-void freeCommandSequence(CommandSequence *sequence) {
-    for (int i = 0; i < sequence->num_commands; ++i) {
-        freeCommand(&sequence->commands[i]);
-    }
-    free(sequence->commands);
 }

@@ -1,15 +1,18 @@
 #include "operator.h"
 
+/**
+ * Order by operator length (longest first) to avoid matching << when looking for <
+*/
 const char *operators[] = {
-    ";",
     "&&",
     "||",
+    ">>",
+    "<<",
+    ";",
     "|",
     "&",
     "<",
     ">",
-    ">>",
-    "<<"
 };
 
 const int num_operators = sizeof(operators) / sizeof(char*);

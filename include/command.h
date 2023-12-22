@@ -20,6 +20,12 @@ Command evaluateCommand(const char *input);
 void evaluateStreamRedirection(CommandSequence *sequence);
 
 /**
+ * @brief Evaluate if a command is a stream redirection command
+ * @param command: The command to evaluate
+*/
+int isRedirectionCommand(const Command *command);
+
+/**
  * @brief Free a command
  * @param cmd: the command to free
 */
@@ -40,10 +46,9 @@ void printCommand(Command *cmd);
 char** getCompleteCommand(Command *cmd);
 
 /**
- * Free the memory allocated for a command sequence
- * Each command in the sequence is also freed
- * @param sequence: the command sequence to free
+ * @brief Initialize a command
+ * @param cmd: the command to initialize
 */
-void freeCommandSequence(CommandSequence *sequence);
+void initializeCommand(Command *cmd);
 
 #endif //COMMAND_H
