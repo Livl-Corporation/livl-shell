@@ -9,8 +9,7 @@ const char *operators[] = {
     "<",
     ">",
     ">>",
-    "<<",
-    ">"
+    "<<"
 };
 
 const int num_operators = sizeof(operators) / sizeof(char*);

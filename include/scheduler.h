@@ -7,9 +7,14 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 #include "command.h"
 #include "builtin_commands.h"
 
+/**
+ * @brief The child process id (pid)
+*/
 #define CHILD_PROCESS 0
 
 /**
@@ -31,7 +36,5 @@ int executeCommandSequence(const CommandSequence *sequence);
  * @param cmd The command to print
 */
 void printCommand(Command *cmd);
-
-
 
 #endif //SCHEDULER_H

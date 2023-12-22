@@ -14,6 +14,12 @@
 Command evaluateCommand(const char *input);
 
 /**
+ * @brief Evaluate if a command sequence contains stream redirection operators
+ * @param sequence: The command sequence to evaluate
+*/
+void evaluateStreamRedirection(CommandSequence *sequence);
+
+/**
  * @brief Free a command
  * @param cmd: the command to free
 */

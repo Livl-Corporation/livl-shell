@@ -25,16 +25,20 @@ void command_sequence_init(char *input) {
         }
     }
 
+    // Build the command sequence with its commands
     for (int i = 0; i < command_count; i++) {
         sequence.commands[sequence.num_commands++] = evaluateCommand(commands[i]);
         free(commands[i]);
     }
 
+    // Build the command sequence with its operators
     for (int i = 0; i < operator_count; i++) {
         sequence.operators[i] = strdup(operators[i]);
         printf(" * Operator: %s\n", sequence.operators[i]);
         free(operators[i]);
     }
+
+    evaluateStreamRedirection(&sequence);
 
     int result = executeCommandSequence(&sequence);
 

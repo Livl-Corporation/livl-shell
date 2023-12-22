@@ -5,6 +5,8 @@ Command evaluateCommand(const char *input) {
     cmd.command = NULL;
     cmd.arguments = NULL;
     cmd.complete_command = NULL;
+    cmd.output_file = NULL;
+    cmd.input_file = NULL;
     cmd.num_arguments = 0;
 
     char delimiters[] = " \t\n";
@@ -44,6 +46,45 @@ Command evaluateCommand(const char *input) {
     return cmd;
 }
 
+void evaluateStreamRedirection(CommandSequence *sequence) 
+{
+    for (int i = 0; i < sequence->num_commands-1; ++i) {
+        Command *cmd = &sequence->commands[i];
+
+        // Get the operator between the current command and the next one
+        char *operator = sequence->operators[i];
+
+        if (strcmp(operator, "<") == 0) {
+            // Input redirection
+            if (i < sequence->num_commands - 1) {
+                Command *next_cmd = &sequence->commands[i + 1];
+                cmd->input_file = strdup(next_cmd->command);
+            } else {
+                fprintf(stderr, "Missing command after input redirection\n");
+                break;
+            }
+        } else if (strcmp(operator, ">") == 0) {
+            // Output redirection
+            if (i < sequence->num_commands - 1) {
+                Command *next_cmd = &sequence->commands[i + 1];
+                cmd->output_file = strdup(next_cmd->command);
+            } else {
+                fprintf(stderr, "Missing command after output redirection\n");
+                break;
+            }
+        } else if (strcmp(operator, ">>") == 0) {
+            // Output redirection
+            if (i < sequence->num_commands - 1) {
+                Command *next_cmd = &sequence->commands[i + 1];
+                cmd->output_file = strdup(next_cmd->command);
+            } else {
+                fprintf(stderr, "Missing command after output redirection\n");
+                break;
+            }
+        }
+    }
+}
+
 
 void printCommand(Command *cmd)
 {
@@ -75,6 +116,8 @@ void freeCommand(Command *cmd) {
         free(cmd->arguments[i]);
     }
     free(cmd->arguments);
+    free(cmd->input_file);
+    free(cmd->output_file);
     free(cmd->complete_command);
 }
 

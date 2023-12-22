@@ -15,6 +15,9 @@
         "unistd.h": "c",
         "input_parser.h": "c",
         "string.h": "c",
-        "operator.h": "c"
+        "operator.h": "c",
+        "cstdlib": "c",
+        "fcntl.h": "c",
+        "wait.h": "c"
     }
 }

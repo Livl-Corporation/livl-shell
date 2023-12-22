@@ -10,6 +10,20 @@ int execute_external_command(const Command *command) {
     }
 
     if (pid == CHILD_PROCESS) {
+         // Check for input redirection
+        if (command->input_file != NULL) {
+            int in = open(command->input_file, O_RDONLY);
+            dup2(in, STDIN_FILENO);
+            close(in);
+        }
+
+        // Check for output redirection
+        if (command->output_file != NULL) {
+            int out = open(command->output_file, O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IRGRP | S_IWGRP | S_IWUSR);
+            dup2(out, STDOUT_FILENO);
+            close(out);
+        }
+
         if(execvp(command->command, command->complete_command) < 0) {
             perror("execvp");
             exit(EXIT_FAILURE);
@@ -68,7 +82,24 @@ int executeCommandSequence(const CommandSequence *sequence) {
         } 
         else if(strcmp(sequence->operators[i], ";") == 0) {
             continue;
-        }            
+        }  else if(strcmp(sequence->operators[i], ">") == 0) {
+            skipNext = 1;
+            continue;
+        }  else if(strcmp(sequence->operators[i], "<") == 0) {
+            skipNext = 1;
+            continue;
+        }  else if(strcmp(sequence->operators[i], ">>") == 0) {
+            skipNext = 1;
+            continue;
+        }  else if(strcmp(sequence->operators[i], "<<") == 0) {
+            skipNext = 1;
+            continue;
+        }
+         else if(strcmp(sequence->operators[i], "|") == 0) {
+            continue;
+        }  else if(strcmp(sequence->operators[i], "&") == 0) {
+            continue;
+        }      
         else {
             fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
             status = EXIT_FAILURE;
