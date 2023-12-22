@@ -61,7 +61,7 @@ int execute_external_command(const Command *command) {
         }
 
         if(execvp(command->command, command->complete_command) < 0) {
-            perror("execvp");
+            print_perror("%s: command not found. ", command->command);
             exit(EXIT_FAILURE);
         }
     } 

@@ -50,10 +50,11 @@ livl-shell/
 - `ls` : list the files in the current directory
 - `cd` : change the current directory
 - `pwd` : print the current directory
-- `cat <<EOF` : display the content of a file (EOF is the end of the file) 
+- `cat <<EOF` : let the user enter text until he types `EOF` and display it (thanks to the cat command)
 - `echo` : display a line of text
 - `ls -l > output.txt` : redirect the output of a command to a file
 - `pwd >> output.txt` : redirect the output of a command to a file (append)
+- `wc -l < output.txt` : count the number of lines in the file
 
 # **🔧 Pipeline**
 

@@ -11,6 +11,16 @@ void print_title()
     printf("\n" YELB"                                                          "RESET "\n\n");
 }
 
+void print_perror(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+
+    vfprintf(stderr, format, args);
+    perror("");
+
+    va_end(args);
+}
+
 void print_info(const char *text, ...)
 {
     printf(BLUE);

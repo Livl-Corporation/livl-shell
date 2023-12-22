@@ -28,4 +28,11 @@ void print_info(const char *text, ...);
 */
 void print_prompt();
 
+/**
+ * @brief Print the error to the console
+ * @param format The format of the error
+ * @param ... optional arguments like %s, %d, etc.
+*/
+void print_perror(const char *format, ...);
+
 #endif //CONSOLE_H
