@@ -30,7 +30,7 @@ This project is developed in C language, so you need to have a C compiler instal
 The project is structured as follows:
 
 ```
-<lab-number>-<exercise-name>
+livl-shell/
 ├── bin/
 │   └── livl-shell
 ├── doc/
