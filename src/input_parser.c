@@ -21,6 +21,14 @@ char* read_input() {
     return input;
 }
 
+int is_all_whitespace(const char* input) {
+    for (int i = 0; i < strlen(input); i++) {
+        if (!isspace(input[i])) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 void preprocess_input(char* input) {
     char* new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input

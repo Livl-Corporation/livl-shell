@@ -6,8 +6,8 @@ int main() {
 
         // Read the input
         char* input = read_input();
-        if (input == NULL) {
-            return EXIT_FAILURE;
+        if (input == NULL || is_all_whitespace(input)) {
+            continue;
         }
 
         preprocess_input(input);
