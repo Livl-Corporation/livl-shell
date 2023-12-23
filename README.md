@@ -45,7 +45,7 @@ livl-shell/
 └── Makefile
 ```
 
-# **📝 List of insane commands**
+# **📝 List of insane livl-bash commands**
 
 - `ls` : list the files in the current directory
 - `cd` : change the current directory
@@ -56,6 +56,10 @@ livl-shell/
 - `pwd >> output.txt` : redirect the output of a command to a file (append)
 - `wc -l < output.txt` : count the number of lines in the file
 - `ls -l | grep '.txt'` : redirect the output of a command to another command you can use single, double or without quotes
+- `sleep 4 && echo "Second command executed"` : execute a command after another one
+- `false && echo "This won't be executed"` : execute a command after another one only if the first one succeeded
+- `false || echo "This will be executed"` : execute a command after another one only if the first one failed
+- `echo "Command 1"; sleep 3; echo "Command 2"; ls -l` : execute multiple commands regardless of the success of the previous ones
 
 # **🔧 Pipeline**
 
