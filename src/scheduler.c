@@ -46,72 +46,60 @@ int execute_command(const Command *command, int run_in_background) {
 
 int executeCommandSequence(const CommandSequence *sequence) {
     int status = 0;
-
-    int hasFailed = 0;
-    int skipNext = 0;
+    int is_current_command_failed = 0;
+    int is_skipping_next_command = 0;
+    OperatorType current_operator;
+    int is_running_in_background = 0;
+    const int last_command = sequence->num_commands - 1;
 
     for (size_t i = 0; i < sequence->num_commands; ++i) {
-        
-        if (skipNext) {
-            skipNext = 0;
-            continue;
-        };
+        is_running_in_background = 0;
+        current_operator = UNKNOWN;
 
-        // If there are more commands, execute the next one based on the operator
-        if (i < sequence->num_commands - 1) {
-            if (strcmp(sequence->operators[i], "|") == 0) {
-                // Execute a pipe between the current command and the next command
-                execute_pipe(&(sequence->commands[i]), &(sequence->commands[i + 1]));
-                skipNext = 1;
-                continue;
-            }
+        if (is_skipping_next_command) {
+            is_skipping_next_command = 0;
+            continue;
         }
 
-        // check if the command is a background command
-        int run_in_background = 0;
-        if (i < sequence->num_commands - 1) {
-            if (strcmp(sequence->operators[i], "&") == 0) {
-                run_in_background = 1;
-            }
+        if(sequence->operators[i] != NULL) 
+            current_operator = get_operator_type(sequence->operators[i]);
+
+        // Before executing the current command, check if it is a pipe or a background operator
+        if(current_operator == PIPE && i < last_command) {
+            execute_pipe(&(sequence->commands[i]), &(sequence->commands[i + 1]));
+            is_skipping_next_command = 1;
+            continue; // No need to execute the current command because it is a pipe
+        } else if (current_operator == BACKGROUND) {
+            is_running_in_background = 1;
         }
 
-        status = execute_command(&(sequence->commands[i]), run_in_background);
+        status = execute_command(&(sequence->commands[i]), is_running_in_background);
+        is_current_command_failed = WIFEXITED(status) && WEXITSTATUS(status) == 0;
 
-        hasFailed = WIFEXITED(status) && WEXITSTATUS(status) == 0;
+        // If the current command is the last one, break the loop because there is no next command
+        if (i == last_command) break;
 
-        // If there are more commands, execute the next one based on the operator
-        if (i >= sequence->num_commands - 1) {
-            break;
-        }
-
-        if (strcmp(sequence->operators[i], "&&") == 0) {
-            // Execute next command only if the previous one succeeded
-            if (hasFailed == 0) {
-                skipNext = 1;
-            }
-            continue;
-        } 
-        else if(strcmp(sequence->operators[i], "||") == 0) {
-            // Execute next command only if the previous one failed
-            if (hasFailed != 0) {
-                skipNext = 1;
-            }
-            continue;
-        } 
-        else if(strcmp(sequence->operators[i], ";") == 0) {
-            continue;
-        } 
-        else if(is_redirection_operator(sequence->operators[i])) {
-            skipNext = 1;
-            continue;
-        }    
-        else if(strcmp(sequence->operators[i], "&") == 0) {
-            continue;
-        }      
-        else {
-            fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
-            status = EXIT_FAILURE;
-            break;
+        switch (current_operator) {
+            case AND:
+                is_skipping_next_command = (is_current_command_failed == 0);
+                break;
+            case OR:
+                is_skipping_next_command = (is_current_command_failed != 0);
+                break;
+            case REDIRECTION_APPEND_OUTPUT:
+            case REDIRECTION_APPEND_INPUT:
+            case REDIRECTION_OUTPUT:
+            case REDIRECTION_INPUT:
+                is_skipping_next_command = 1; // Skip the next command because it is a redirection
+                break;
+            case SEMICOLON:
+            case PIPE:
+            case BACKGROUND:
+                break; // Continue to the next command
+            case UNKNOWN:
+                fprintf(stderr, "Unsupported operator: %s\n", sequence->operators[i]);
+                status = EXIT_FAILURE;
+                break;
         }
     }
 

@@ -2,6 +2,7 @@
 #define OPERATOR_H
 
 #include <string.h> 
+#include "typedef.h"
 
 /**
  * The list of operators that can be used
@@ -21,10 +22,17 @@ extern const int num_operators;
 int is_operator(const char *token);
 
 /**
- * @brief Checks if the given token is a redirection operator
- * @param token The token to be checked
- * @return 1 if the token is a redirection operator, 0 otherwise
+ * @brief Gets the type of the given operator
+ * @param operator_str The operator string
+ * @return The type of the operator
 */
-int is_redirection_operator(const char *token);
+OperatorType get_operator_type(const char *operator_str);
+
+/**
+ * @brief Gets the string representation of the given operator
+ * @param op The operator
+ * @return The string representation of the operator
+*/
+const char *get_operator_string(OperatorType op);
 
 #endif //OPERATOR_H

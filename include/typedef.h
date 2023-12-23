@@ -5,6 +5,22 @@
 #include <sys/types.h>
 
 /**
+ * Enum that represents the type of an operator
+*/
+typedef enum {
+    AND,
+    OR,
+    REDIRECTION_APPEND_OUTPUT,
+    REDIRECTION_APPEND_INPUT,
+    SEMICOLON,
+    PIPE,
+    BACKGROUND,
+    REDIRECTION_OUTPUT,
+    REDIRECTION_INPUT,
+    UNKNOWN,
+} OperatorType;
+
+/**
  * Structur that represents a background process
  * @param pid: the process id
  * @param job_number: the job number

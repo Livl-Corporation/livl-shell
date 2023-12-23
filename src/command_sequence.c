@@ -17,6 +17,11 @@ void command_sequence_init(char *input) {
 
     char *token = strtok(input, delimeters);
     while (token != NULL) {
+        if(command_count >= MAX_COMMANDS) {
+            print_info("livl-shell$ is informing you that only the three first commands will be executed. Limit of commands reached.");
+            break;
+        }
+
         process_token(token, commands, operators, &currentCommand, &command_count, &operator_count);
         token = strtok(NULL, delimeters);
 

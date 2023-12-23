@@ -60,6 +60,9 @@ livl-shell/
 - `false && echo "This won't be executed"` : execute a command after another one only if the first one succeeded
 - `false || echo "This will be executed"` : execute a command after another one only if the first one failed
 - `echo "Command 1"; sleep 3; echo "Command 2"; ls -l` : execute multiple commands regardless of the success of the previous ones
+- `sleep 3 & echo hey` : execute a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: `[1] 1234`)
+    - `pwd` : running this command will dispkay the job id of the background process terminated (ex: `[1]  done       sleep 3`)
+
 
 # **🔧 Pipeline**
 
