@@ -34,7 +34,6 @@ void command_sequence_init(char *input) {
     // Build the command sequence with its operators
     for (int i = 0; i < operator_count; i++) {
         sequence.operators[i] = strdup(operators[i]);
-        printf(" * Operator: %s\n", sequence.operators[i]);
         free(operators[i]);
     }
 

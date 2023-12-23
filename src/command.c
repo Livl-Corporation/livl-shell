@@ -36,8 +36,6 @@ Command evaluateCommand(const char *input) {
     // Get the complete command
     cmd.complete_command = getCompleteCommand(&cmd);
 
-    printCommand(&cmd);
-
     free(input_copy);
     return cmd;
 }
@@ -54,13 +52,28 @@ void handle_quotes(char **token) {
     }
 }
 
-void printCommand(Command *cmd)
-{
-    printf(" * Command to execute: %s ", cmd->command);
+char* get_complete_command(const Command *cmd) {
+    int total_length = strlen(cmd->command) + 1;  // Include space for the null terminator
+
     for (int i = 0; i < cmd->num_arguments; ++i) {
-        printf("%s ", cmd->arguments[i]);
+        total_length += strlen(cmd->arguments[i]) + 1;  // Include space for the null terminator and space between arguments
     }
-    printf("\n");
+
+    char *complete_command = malloc(total_length);
+    if (complete_command == NULL) {
+        // Handle memory allocation failure
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+
+    strcpy(complete_command, cmd->command);
+
+    for (int i = 0; i < cmd->num_arguments; ++i) {
+        strcat(complete_command, " ");  // Add space between arguments
+        strcat(complete_command, cmd->arguments[i]);
+    }
+
+    return complete_command;
 }
 
 char** getCompleteCommand(Command *cmd) {

@@ -46,4 +46,11 @@ char** getCompleteCommand(Command *cmd);
 */
 void initializeCommand(Command *cmd);
 
+/**
+ * @brief Get the complete command (command + arguments) as a string
+ * @param cmd: the command to get
+ * @return the complete command
+*/
+char* get_complete_command(const Command *cmd);
+
 #endif //COMMAND_H

@@ -12,6 +12,7 @@
 #include "builtin_commands.h"
 #include "redirection.h"
 #include "operator.h"
+#include "background_manager.h"
 
 /**
  * @brief The child process id (pid)
@@ -21,9 +22,18 @@
 /**
  * @brief Executes a command
  * @param command The command to execute
+ * @param run_in_background 0 for false, 1 for true
  * @return The status of the execution
 */
-int execute_external_command(const Command *command);
+int execute_external_command(const Command *command, int run_in_background);
+
+/**
+ * @brief Executes a command
+ * @param command The command to execute
+ * @param run_in_background 0 for false, 1 for true
+ * @return The status of the execution
+*/
+int execute_command(const Command *command, int run_in_background);
 
 /**
  * @brief Executes a sequence of commands with operators

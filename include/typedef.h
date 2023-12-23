@@ -2,6 +2,19 @@
 #define TYPEDEF_H
 
 #include <stddef.h>
+#include <sys/types.h>
+
+/**
+ * Structur that represents a background process
+ * @param pid: the process id
+ * @param job_number: the job number
+ * @param command: the command and its arguments
+*/
+typedef struct {
+    pid_t pid;
+    int job_number;
+    char *command;
+} BackgroundProcess;
 
 /**
  * Structur that represents a redirection

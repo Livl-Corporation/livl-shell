@@ -1,8 +1,7 @@
 #include "scheduler.h"
 
-int execute_external_command(const Command *command) {
+int execute_external_command(const Command *command, int run_in_background) {
     pid_t pid = fork();
-    int execution_status;
 
     if (pid < 0) {
         perror("fork");
@@ -17,22 +16,29 @@ int execute_external_command(const Command *command) {
             print_perror("%s: command not found. ", command->command);
             exit(EXIT_FAILURE);
         }
-    } 
+    }  else {
+        if (run_in_background) {
+            add_background_process(pid, command);
+        } else {
+            int execution_status;
+            waitpid(pid, &execution_status, 0);
+            return execution_status;
+        }
+    }
 
-    waitpid(pid, &execution_status, 0);
-    return execution_status;
+    return 0;
 }
 
 
-int executeCommand(const Command *command) {
+int execute_command(const Command *command, int run_in_background) {
     if (is_redirection_command(command)) {
-        return execute_external_command(command);
+        return execute_external_command(command, run_in_background);
     }
 
     int execution_status = execute_builtin_command(command);
 
     if (execution_status == IS_NOT_BUILTIN_COMMAND) {
-        execution_status = execute_external_command(command);
+        execution_status = execute_external_command(command, run_in_background);
     }
 
     return execution_status;
@@ -61,7 +67,15 @@ int executeCommandSequence(const CommandSequence *sequence) {
             }
         }
 
-        status = executeCommand(&(sequence->commands[i]));
+        // check if the command is a background command
+        int run_in_background = 0;
+        if (i < sequence->num_commands - 1) {
+            if (strcmp(sequence->operators[i], "&") == 0) {
+                run_in_background = 1;
+            }
+        }
+
+        status = execute_command(&(sequence->commands[i]), run_in_background);
 
         hasFailed = WIFEXITED(status) && WEXITSTATUS(status) == 0;
 
@@ -90,7 +104,7 @@ int executeCommandSequence(const CommandSequence *sequence) {
         else if(is_redirection_operator(sequence->operators[i])) {
             skipNext = 1;
             continue;
-        }
+        }    
         else if(strcmp(sequence->operators[i], "&") == 0) {
             continue;
         }      
@@ -100,6 +114,8 @@ int executeCommandSequence(const CommandSequence *sequence) {
             break;
         }
     }
+
+    check_completed_background_processes();
 
     return status;
 }

@@ -21,5 +21,8 @@
         "wait.h": "c",
         "command_sequence.h": "c",
         "redirection.h": "c",
+        "background_manager.h": "c",
+        "types.h": "c",
+        "builtin_commands.h": "c"
     }
 }
