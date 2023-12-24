@@ -8,6 +8,10 @@
 - [🚀 Quick start](#-quick-start)
 - [📁 Project structure](#-project-structure)
 - [📝 List of insane livl-bash commands](#-list-of-insane-livl-bash-commands)
+- [📜 Use DOXYGEN documentation](#-use-doxygen-documentation)
+- [🧪 Use GCOV test coverage](#-use-gcov-test-coverage)
+    - [Prerequisites](#prerequisites-1)
+    - [Generate the coverage report](#generate-the-coverage-report)
 - [🔧 Pipeline](#-pipeline)
 - [🧍🏽Project team](#-project-team)
 
@@ -63,6 +67,26 @@ livl-shell/
 - `sleep 3 & echo hey` : execute a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: `[1] 1234`)
     - `pwd` : running this command will dispkay the job id of the background process terminated (ex: `[1]  done       sleep 3`)
 
+# 📜 Use DOXYGEN documentation
+
+> You probably need to install doxygen to generate the documentation : `sudo apt install doxygen`
+
+- Run `make doc` to generate the documentation
+
+# 🧪 Use GCOV test coverage
+
+> GCOV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code.
+
+## Prerequisites
+
+- `gcov` : `sudo apt install gcov`
+- `lcov` : `sudo apt install lcov`
+
+## Generate the coverage report
+- Run `make gcov` to generate the coverage report
+- To exit the coverage report, press `exit` two times (one for the shell and one for the coverage report)
+- To view the coverage report, open the `index.html` file in the `gcov` folder or run `gcovr -r .`
+- Run `make clean-gcov` to clean the `gcov` folder
 
 # 🔧 Pipeline
 

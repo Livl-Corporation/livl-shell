@@ -46,12 +46,12 @@ doc:
 
 gcov: $(GEXEC)
 	# generate some data for gcov by calling the generated binary with various options
+	find $(ROOT_DIR) -name "*.gcno" -not -path "./gcov/*" -exec mv {} $(GCOV_DIR) \;
+
 	$(GCOV_DIR)/$(GEXEC) -h
 	$(GCOV_DIR)/$(GEXEC) -i input -o output -v
 
-	find ./ -maxdepth 1 -name *.gcno -exec mv {} $(GCOV_DIR) \;
-	find ./ -maxdepth 1 -name *.gcda -exec mv {} $(GCOV_DIR) \;
-
+	find $(ROOT_DIR) -name "*.gcda" -not -path "./gcov/*" -exec mv {} $(GCOV_DIR) \;
 	gcov -o $(GCOV_DIR) $(GEXEC)
 	lcov -o $(GCOV_DIR)/$(LCOV_REPORT) -c -f -d $(GCOV_DIR)
 	genhtml -o $(GCOV_DIR)/report $(GCOV_DIR)/$(LCOV_REPORT)
@@ -59,8 +59,12 @@ gcov: $(GEXEC)
 package: gcov doc all
 	rm -rf $(AR_NAME)
 	tar cvfz $(AR_NAME) ./*
+
 clean:	
 	rm -rf $(OBJ)
+
+clean-gcov:
+	rm -rf $(GCOV_DIR)/*
 
 mrproper: clean
 	rm -rf $(BIN_DIR)/*
@@ -69,5 +73,5 @@ mrproper: clean
 	rm -rf $(GCOV_DIR)/*
 
 .PHONY: doc
-
+.PHONY: clean-gcov
 .PHONY: run
