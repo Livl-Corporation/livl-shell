@@ -8,11 +8,11 @@
 - [🚀 Quick start](#-quick-start)
 - [📁 Project structure](#-project-structure)
 - [📝 List of insane livl-bash commands](#-list-of-insane-livl-bash-commands)
-- [📖 Use the livl-bash `man` command](#📖-use-the-livl-bash-man-command)
+- [📖 Use the livl-bash man command](#📖-use-the-livl-bash-man-command)
 - [📜 Use DOXYGEN documentation](#-use-doxygen-documentation)
 - [🧪 Use GCOV test coverage](#-use-gcov-test-coverage)
-    - [Prerequisites](#prerequisites-1)
-    - [Generate the coverage report](#generate-the-coverage-report)
+    - [📦 Prerequisites of gcov](#📦-prerequisites-of-gcov)
+    - [🚀 Generate the coverage report](#🚀-generate-the-coverage-report)
 - [🔧 Pipeline](#-pipeline)
 - [🧍🏽Project team](#-project-team)
 
@@ -30,6 +30,7 @@ This project is developed in C language, so you need to have a C compiler instal
 - Run `./bin/livl-shell` or `make run` to run the executable
 - Run `make clean` to clean the project
 
+> 💡 The command `make run` will compile and immediately run the executable. It is equivalent to `make && ./bin/livl-shell`
 
 # 📁 Project structure
 
@@ -40,17 +41,25 @@ livl-shell/
 ├── bin/
 │   └── livl-shell
 ├── doc/
+│   └── html/
+│       └── index.html
 ├── gcov/
+│   └── report/
+│       └── index.html
 ├── include/
 │   └── file.h
 |   └── ...
 ├── src/
 │   └── file.c
 |   └── ...
+├── livl-shell.1
+├── history.txt
 └── Makefile
 ```
 
 # 📝 List of insane livl-bash commands
+
+> 💡 The livl-shell is limited to run max 3 commands in a row. 
 
 - `ls` : list the files in the current directory
 - `cd` : change the current directory
@@ -66,7 +75,7 @@ livl-shell/
 - `false || echo "This will be executed"` : execute a command after another one only if the first one failed
 - `echo "Command 1"; sleep 3; echo "Command 2"; ls -l` : execute multiple commands regardless of the success of the previous ones
 - `sleep 3 & echo hey` : execute a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: `[1] 1234`)
-    - `pwd` : running this command will dispkay the job id of the background process terminated (ex: `[1]  done       sleep 3`)
+    - `pwd` : running this command will dispkay the job id of the background process terminated (ex: `[1] done sleep 3`)
 
 # 📖 Use the livl-bash `man` command 
 
@@ -86,12 +95,13 @@ livl-shell/
 
 > GCOV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code.
 
-## Prerequisites
+## 📦 Prerequisites of gcov
 
 - `gcov` : `sudo apt install gcov`
 - `lcov` : `sudo apt install lcov`
 
-## Generate the coverage report
+## 🚀 Generate the coverage report
+
 - Run `make gcov` to generate the coverage report
 - To exit the coverage report, press `exit` two times (one for the shell and one for the coverage report)
 - To view the coverage report, open the [`index.html`](/gcov/report/index.html) file in the `gcov/report/` folder or run `gcovr -r .`
@@ -103,15 +113,10 @@ livl-shell/
 
 > You can find the pipeline configuration in the [`.github/workflows/c-make.yml`](.github/workflows/c-make.yml) file.
 
-# 🧍🏽Project team
 
-<table align="center">
-    <tr>
-        <th><img src="https://avatars.githubusercontent.com/u/19238963?v=4?v=4?size=115" width="115"><br><strong>@FranckG28</strong></th>
-        <th><img src="https://avatars.githubusercontent.com/u/62793491?v=4?size=115" width="115"><br><strong>@jvondermarck</strong></th>
-    </tr>
-    <tr align="center">
-        <td><b>Franck Gutmann</b></td>
-        <td><b>Julien Von Der Marck</b></td>
-    </tr>
-</table>
+# 🧍🏽 Project Team
+
+| ![Franck Gutmann](https://avatars.githubusercontent.com/u/19238963?v=4?v=4?size=115) | ![Julien Von Der Marck](https://avatars.githubusercontent.com/u/62793491?v=4?size=115) |
+| :---: | :---: |
+| [**@FranckG28**](https://github.com/FranckG28) | [**@jvondermarck**](https://github.com/jvondermarck) |
+| **Franck Gutmann** | **Julien Von Der Marck** |
