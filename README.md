@@ -8,11 +8,11 @@
 - [🚀 Quick start](#-quick-start)
 - [📁 Project structure](#-project-structure)
 - [📝 List of insane livl-bash commands](#-list-of-insane-livl-bash-commands)
-- [📖 Use the livl-bash man command](#📖-use-the-livl-bash-man-command)
+- [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
 - [📜 Use DOXYGEN documentation](#-use-doxygen-documentation)
 - [🧪 Use GCOV test coverage](#-use-gcov-test-coverage)
-    - [📦 Prerequisites of gcov](#📦-prerequisites-of-gcov)
-    - [🚀 Generate the coverage report](#🚀-generate-the-coverage-report)
+    - [📦 Prerequisites of gcov](#-prerequisites-of-gcov)
+    - [🚀 Generate the coverage report](#-generate-the-coverage-report)
 - [🔧 Pipeline](#-pipeline)
 - [🧍🏽Project team](#-project-team)
 
@@ -64,7 +64,7 @@ livl-shell/
 - `ls` : list the files in the current directory
 - `cd` : change the current directory
 - `pwd` : print the current directory
-- `cat <<EOF` : let the user enter text until he types `EOF` and display it (thanks to the cat command)
+- `cat <<EOF` : let the user enter text until he types `EOF` and display it (thank to the cat command)
 - `echo` : display a line of text
 - `ls -l > output.txt` : redirect the output of a command to a file
 - `pwd >> output.txt` : redirect the output of a command to a file (append)
