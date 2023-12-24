@@ -1,0 +1,11 @@
+<map id="include/background_manager.h" name="include/background_manager.h">
+<area shape="rect" id="node1" title="File containing the background manager functions to manage the background processes." alt="" coords="203,5,352,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,72,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,169,167,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="359,244,455,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="444,95,532,121"/>
+<area shape="rect" id="node6" href="$typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="287,169,369,196"/>
+<area shape="rect" id="node8" href="$command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="177,95,276,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="260,244,335,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="191,169,262,196"/>
+</map>

@@ -1,3 +1,9 @@
+/**
+ * @file typedef.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing all the typedefs used in the shell program.
+ */
 #ifndef TYPEDEF_H
 #define TYPEDEF_H
 

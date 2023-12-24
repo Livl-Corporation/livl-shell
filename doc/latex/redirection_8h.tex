@@ -1,0 +1,142 @@
+\hypertarget{redirection_8h}{}\doxysection{include/redirection.h File Reference}
+\label{redirection_8h}\index{include/redirection.h@{include/redirection.h}}
+
+
+File containing the redirection functions to manage the redirection operators such as \textquotesingle{}$<$\textquotesingle{}, \textquotesingle{}$<$$<$\textquotesingle{}, \textquotesingle{}$>$\textquotesingle{}, \textquotesingle{}$>$$>$\textquotesingle{} and \textquotesingle{}$\vert$\textquotesingle{}.  
+
+
+{\ttfamily \#include \char`\"{}typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+Include dependency graph for redirection.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{redirection_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{redirection_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{redirection_8h_a0b23a9cf2be37c2a6ec055ab7a0b00aa}{handle\+\_\+input\+\_\+redirection}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command)
+\begin{DoxyCompactList}\small\item\em Handles input redirection with \textquotesingle{}$<$\textquotesingle{} operator with \textquotesingle{}$<$$<$\textquotesingle{} operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{redirection_8h_a160de42d6b2073cc297fda577c86444b}{handle\+\_\+output\+\_\+redirection}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command)
+\begin{DoxyCompactList}\small\item\em Handles output redirection with \textquotesingle{}$>$\textquotesingle{} operator with \textquotesingle{}$>$$>$\textquotesingle{} operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{redirection_8h_a178970ec513c740946e0b00ae4373257}{evaluate\+\_\+redirection}} (\mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$sequence)
+\begin{DoxyCompactList}\small\item\em Evaluate if a command sequence contains stream redirection operators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{redirection_8h_af2eefa532afcb1e65ca49374b1227635}{execute\+\_\+pipe}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd1, \mbox{\hyperlink{structCommand}{Command}} $\ast$cmd2)
+\begin{DoxyCompactList}\small\item\em Execute a command with pipe operator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{redirection_8h_aab688e0c0a6a5cc4ffc8f756ee65f5ab}{is\+\_\+redirection\+\_\+command}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command)
+\begin{DoxyCompactList}\small\item\em Evaluate if a command is a stream redirection command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the redirection functions to manage the redirection operators such as \textquotesingle{}$<$\textquotesingle{}, \textquotesingle{}$<$$<$\textquotesingle{}, \textquotesingle{}$>$\textquotesingle{}, \textquotesingle{}$>$$>$\textquotesingle{} and \textquotesingle{}$\vert$\textquotesingle{}. 
+
+\begin{DoxyAuthor}{Author}
+Julien \& Franck 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{redirection_8h_a178970ec513c740946e0b00ae4373257}\label{redirection_8h_a178970ec513c740946e0b00ae4373257}} 
+\index{redirection.h@{redirection.h}!evaluate\_redirection@{evaluate\_redirection}}
+\index{evaluate\_redirection@{evaluate\_redirection}!redirection.h@{redirection.h}}
+\doxysubsubsection{\texorpdfstring{evaluate\_redirection()}{evaluate\_redirection()}}
+{\footnotesize\ttfamily void evaluate\+\_\+redirection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Evaluate if a command sequence contains stream redirection operators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & The command sequence to evaluate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{redirection_8h_af2eefa532afcb1e65ca49374b1227635}\label{redirection_8h_af2eefa532afcb1e65ca49374b1227635}} 
+\index{redirection.h@{redirection.h}!execute\_pipe@{execute\_pipe}}
+\index{execute\_pipe@{execute\_pipe}!redirection.h@{redirection.h}}
+\doxysubsubsection{\texorpdfstring{execute\_pipe()}{execute\_pipe()}}
+{\footnotesize\ttfamily void execute\+\_\+pipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd1,  }\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd2 }\end{DoxyParamCaption})}
+
+
+
+Execute a command with pipe operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd1} & The first command \\
+\hline
+{\em cmd2} & The second command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redirection_8h_a0b23a9cf2be37c2a6ec055ab7a0b00aa}\label{redirection_8h_a0b23a9cf2be37c2a6ec055ab7a0b00aa}} 
+\index{redirection.h@{redirection.h}!handle\_input\_redirection@{handle\_input\_redirection}}
+\index{handle\_input\_redirection@{handle\_input\_redirection}!redirection.h@{redirection.h}}
+\doxysubsubsection{\texorpdfstring{handle\_input\_redirection()}{handle\_input\_redirection()}}
+{\footnotesize\ttfamily void handle\+\_\+input\+\_\+redirection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Handles input redirection with \textquotesingle{}$<$\textquotesingle{} operator with \textquotesingle{}$<$$<$\textquotesingle{} operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \mbox{\hyperlink{structCommand}{Command}} to be check for input redirection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redirection_8h_a160de42d6b2073cc297fda577c86444b}\label{redirection_8h_a160de42d6b2073cc297fda577c86444b}} 
+\index{redirection.h@{redirection.h}!handle\_output\_redirection@{handle\_output\_redirection}}
+\index{handle\_output\_redirection@{handle\_output\_redirection}!redirection.h@{redirection.h}}
+\doxysubsubsection{\texorpdfstring{handle\_output\_redirection()}{handle\_output\_redirection()}}
+{\footnotesize\ttfamily void handle\+\_\+output\+\_\+redirection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Handles output redirection with \textquotesingle{}$>$\textquotesingle{} operator with \textquotesingle{}$>$$>$\textquotesingle{} operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \mbox{\hyperlink{structCommand}{Command}} to be check for output redirection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redirection_8h_aab688e0c0a6a5cc4ffc8f756ee65f5ab}\label{redirection_8h_aab688e0c0a6a5cc4ffc8f756ee65f5ab}} 
+\index{redirection.h@{redirection.h}!is\_redirection\_command@{is\_redirection\_command}}
+\index{is\_redirection\_command@{is\_redirection\_command}!redirection.h@{redirection.h}}
+\doxysubsubsection{\texorpdfstring{is\_redirection\_command()}{is\_redirection\_command()}}
+{\footnotesize\ttfamily int is\+\_\+redirection\+\_\+command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Evaluate if a command is a stream redirection command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to evaluate \\
+\hline
+\end{DoxyParams}

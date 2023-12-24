@@ -1,0 +1,72 @@
+\hypertarget{background__manager_8h}{}\doxysection{include/background\+\_\+manager.h File Reference}
+\label{background__manager_8h}\index{include/background\_manager.h@{include/background\_manager.h}}
+
+
+File containing the background manager functions to manage the background processes.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}command.\+h\char`\"{}}\newline
+Include dependency graph for background\+\_\+manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{background__manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{background__manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{background__manager_8h_a1fdfe1cdda4ae5d0820f020bf1769432}\label{background__manager_8h_a1fdfe1cdda4ae5d0820f020bf1769432}} 
+\#define \mbox{\hyperlink{background__manager_8h_a1fdfe1cdda4ae5d0820f020bf1769432}{M\+A\+X\+\_\+\+B\+A\+C\+K\+G\+R\+O\+U\+N\+D\+\_\+\+P\+R\+O\+C\+E\+S\+S\+ES}}~100
+\begin{DoxyCompactList}\small\item\em Variable that represents the number of background processes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{background__manager_8h_a7f2d9e59b9aca24fc1385cb7f3a8972f}\label{background__manager_8h_a7f2d9e59b9aca24fc1385cb7f3a8972f}} 
+void \mbox{\hyperlink{background__manager_8h_a7f2d9e59b9aca24fc1385cb7f3a8972f}{check\+\_\+completed\+\_\+background\+\_\+processes}} ()
+\begin{DoxyCompactList}\small\item\em Method that checks if a background process has completed and prints corresponding information to the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{background__manager_8h_acfd8c6f3440a73d3c6167ec255ee21b4}{add\+\_\+background\+\_\+process}} (pid\+\_\+t pid, const \mbox{\hyperlink{structCommand}{Command}} $\ast$command)
+\begin{DoxyCompactList}\small\item\em Add background process to store information about the process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the background manager functions to manage the background processes. 
+
+\begin{DoxyAuthor}{Author}
+Julien \& Franck 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{background__manager_8h_acfd8c6f3440a73d3c6167ec255ee21b4}\label{background__manager_8h_acfd8c6f3440a73d3c6167ec255ee21b4}} 
+\index{background\_manager.h@{background\_manager.h}!add\_background\_process@{add\_background\_process}}
+\index{add\_background\_process@{add\_background\_process}!background\_manager.h@{background\_manager.h}}
+\doxysubsubsection{\texorpdfstring{add\_background\_process()}{add\_background\_process()}}
+{\footnotesize\ttfamily void add\+\_\+background\+\_\+process (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Add background process to store information about the process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & \+: the pid of the process \\
+\hline
+{\em command} & \+: the command executed \\
+\hline
+\end{DoxyParams}

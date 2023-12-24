@@ -1,0 +1,7 @@
+<map id="include/command.h" name="include/command.h">
+<area shape="rect" id="node1" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="117,5,267,32"/>
+<area shape="rect" id="node2" href="$background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="5,80,155,121"/>
+<area shape="rect" id="node3" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="59,169,205,196"/>
+<area shape="rect" id="node4" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="77,244,296,271"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="127,319,246,345"/>
+</map>

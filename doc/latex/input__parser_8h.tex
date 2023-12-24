@@ -1,0 +1,101 @@
+\hypertarget{input__parser_8h}{}\doxysection{include/input\+\_\+parser.h File Reference}
+\label{input__parser_8h}\index{include/input\_parser.h@{include/input\_parser.h}}
+
+
+File containing the input parser functions to manage the input entered by the user (parsing, evaluation, etc.).  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}operator.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+Include dependency graph for input\+\_\+parser.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input__parser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{input__parser_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{input__parser_8h_a975fc9874a52790d9a5ca6d4e6a228ce}\label{input__parser_8h_a975fc9874a52790d9a5ca6d4e6a228ce}} 
+\#define {\bfseries M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+L\+E\+N\+G\+TH}~1024
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{input__parser_8h_ab4bce2e60d1b3548c7511026019e488c}{read\+\_\+input}} ()
+\begin{DoxyCompactList}\small\item\em Reads the input from the console. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{input__parser_8h_aed9107ab2657d16984676d83fb78e2f1}{is\+\_\+all\+\_\+whitespace}} (const char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Checks if the input string is all whitespace. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input__parser_8h_a826c6cef019e8e33c896dd991edb98a4}{preprocess\+\_\+input}} (char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Parses the input string into commands and operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the input parser functions to manage the input entered by the user (parsing, evaluation, etc.). 
+
+\begin{DoxyAuthor}{Author}
+Julien \& Franck 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input__parser_8h_aed9107ab2657d16984676d83fb78e2f1}\label{input__parser_8h_aed9107ab2657d16984676d83fb78e2f1}} 
+\index{input\_parser.h@{input\_parser.h}!is\_all\_whitespace@{is\_all\_whitespace}}
+\index{is\_all\_whitespace@{is\_all\_whitespace}!input\_parser.h@{input\_parser.h}}
+\doxysubsubsection{\texorpdfstring{is\_all\_whitespace()}{is\_all\_whitespace()}}
+{\footnotesize\ttfamily int is\+\_\+all\+\_\+whitespace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Checks if the input string is all whitespace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the input string is all whitespace, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input__parser_8h_a826c6cef019e8e33c896dd991edb98a4}\label{input__parser_8h_a826c6cef019e8e33c896dd991edb98a4}} 
+\index{input\_parser.h@{input\_parser.h}!preprocess\_input@{preprocess\_input}}
+\index{preprocess\_input@{preprocess\_input}!input\_parser.h@{input\_parser.h}}
+\doxysubsubsection{\texorpdfstring{preprocess\_input()}{preprocess\_input()}}
+{\footnotesize\ttfamily void preprocess\+\_\+input (\begin{DoxyParamCaption}\item[{char $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Parses the input string into commands and operators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to be parsed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input__parser_8h_ab4bce2e60d1b3548c7511026019e488c}\label{input__parser_8h_ab4bce2e60d1b3548c7511026019e488c}} 
+\index{input\_parser.h@{input\_parser.h}!read\_input@{read\_input}}
+\index{read\_input@{read\_input}!input\_parser.h@{input\_parser.h}}
+\doxysubsubsection{\texorpdfstring{read\_input()}{read\_input()}}
+{\footnotesize\ttfamily char$\ast$ read\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the input from the console. 
+
+\begin{DoxyReturn}{Returns}
+The input string 
+\end{DoxyReturn}

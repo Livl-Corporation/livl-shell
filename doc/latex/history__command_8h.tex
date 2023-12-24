@@ -1,0 +1,113 @@
+\hypertarget{history__command_8h}{}\doxysection{include/history\+\_\+command.h File Reference}
+\label{history__command_8h}\index{include/history\_command.h@{include/history\_command.h}}
+
+
+File containing the history command functions to manage the history of commands entered by the user (saving, loading, etc.) to a file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for history\+\_\+command.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{history__command_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{history__command_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{history__command_8h_a7a7c87173dc0b32eb0086b66359963a5}\label{history__command_8h_a7a7c87173dc0b32eb0086b66359963a5}} 
+\#define {\bfseries M\+A\+X\+\_\+\+H\+I\+S\+T\+O\+R\+Y\+\_\+\+S\+I\+ZE}~1000
+\item 
+\mbox{\Hypertarget{history__command_8h_ae41c75682d94c3f1a2c7e1e28ed0391a}\label{history__command_8h_ae41c75682d94c3f1a2c7e1e28ed0391a}} 
+\#define {\bfseries H\+I\+S\+T\+O\+R\+Y\+\_\+\+F\+I\+LE}~\char`\"{}history.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{history__command_8h_aeb735e34a5bc474c20650fd8e3b1f83f}\label{history__command_8h_aeb735e34a5bc474c20650fd8e3b1f83f}} 
+void \mbox{\hyperlink{history__command_8h_aeb735e34a5bc474c20650fd8e3b1f83f}{initialize\+\_\+command\+\_\+history}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the global command history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{history__command_8h_a0135db9a08f020d272a87145e01d70b2}{add\+\_\+to\+\_\+command\+\_\+history}} (const char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Add a command to the global command history. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{history__command_8h_a5e425bc624bb440d663e2625cdf0630b}{get\+\_\+previous\+\_\+command}} ()
+\begin{DoxyCompactList}\small\item\em Get the previous command from the global command history. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{history__command_8h_ab3d6d88d9280692e058c81fb16099cdc}{get\+\_\+next\+\_\+command}} ()
+\begin{DoxyCompactList}\small\item\em Get the next command from the global command history. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{history__command_8h_a262bdb9998d3688eac04c371ab16b032}\label{history__command_8h_a262bdb9998d3688eac04c371ab16b032}} 
+void \mbox{\hyperlink{history__command_8h_a262bdb9998d3688eac04c371ab16b032}{save\+\_\+command\+\_\+history\+\_\+to\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Save the command history to the history file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{history__command_8h_a691462d54fade9c0bc8b49df3333f6bd}\label{history__command_8h_a691462d54fade9c0bc8b49df3333f6bd}} 
+void \mbox{\hyperlink{history__command_8h_a691462d54fade9c0bc8b49df3333f6bd}{load\+\_\+command\+\_\+history\+\_\+from\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Load the command history from the history file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{history__command_8h_ae4b79f4ef463444f1dbd4dc15371ae45}\label{history__command_8h_ae4b79f4ef463444f1dbd4dc15371ae45}} 
+\mbox{\hyperlink{structCommandHistory}{Command\+History}} \mbox{\hyperlink{history__command_8h_ae4b79f4ef463444f1dbd4dc15371ae45}{global\+\_\+command\+\_\+history}}
+\begin{DoxyCompactList}\small\item\em The global history of commands entered by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the history command functions to manage the history of commands entered by the user (saving, loading, etc.) to a file. 
+
+\begin{DoxyAuthor}{Author}
+Julien \& Franck 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{history__command_8h_a0135db9a08f020d272a87145e01d70b2}\label{history__command_8h_a0135db9a08f020d272a87145e01d70b2}} 
+\index{history\_command.h@{history\_command.h}!add\_to\_command\_history@{add\_to\_command\_history}}
+\index{add\_to\_command\_history@{add\_to\_command\_history}!history\_command.h@{history\_command.h}}
+\doxysubsubsection{\texorpdfstring{add\_to\_command\_history()}{add\_to\_command\_history()}}
+{\footnotesize\ttfamily void add\+\_\+to\+\_\+command\+\_\+history (\begin{DoxyParamCaption}\item[{const char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Add a command to the global command history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history__command_8h_ab3d6d88d9280692e058c81fb16099cdc}\label{history__command_8h_ab3d6d88d9280692e058c81fb16099cdc}} 
+\index{history\_command.h@{history\_command.h}!get\_next\_command@{get\_next\_command}}
+\index{get\_next\_command@{get\_next\_command}!history\_command.h@{history\_command.h}}
+\doxysubsubsection{\texorpdfstring{get\_next\_command()}{get\_next\_command()}}
+{\footnotesize\ttfamily const char$\ast$ get\+\_\+next\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the next command from the global command history. 
+
+\begin{DoxyReturn}{Returns}
+The next command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{history__command_8h_a5e425bc624bb440d663e2625cdf0630b}\label{history__command_8h_a5e425bc624bb440d663e2625cdf0630b}} 
+\index{history\_command.h@{history\_command.h}!get\_previous\_command@{get\_previous\_command}}
+\index{get\_previous\_command@{get\_previous\_command}!history\_command.h@{history\_command.h}}
+\doxysubsubsection{\texorpdfstring{get\_previous\_command()}{get\_previous\_command()}}
+{\footnotesize\ttfamily const char$\ast$ get\+\_\+previous\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the previous command from the global command history. 
+
+\begin{DoxyReturn}{Returns}
+The previous command 
+\end{DoxyReturn}
