@@ -15,10 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy-doc-doxygen:
+  livl-shell-documentation:
     environment:
-      name: github-pages-doc-html
-      url: https://livl-corporation.github.io/livl-shell/doxygen/
+      name: livl-shell-documentation
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,25 +28,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './doc/html/'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  deploy-gcov-report:
-    environment:
-      name: github-pages-gcov-report
-      url: https://livl-corporation.github.io/livl-shell/gcov/
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './gcov/report/'
+          path: './'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
