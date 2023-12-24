@@ -1,3 +1,9 @@
+/**
+ * @file input_parser.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the input parser functions to manage the input entered by the user (parsing, evaluation, etc.).
+ */
 #ifndef INPUT_PARSER_H
 #define INPUT_PARSER_H
 

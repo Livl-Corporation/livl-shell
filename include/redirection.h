@@ -1,3 +1,9 @@
+/**
+ * @file redirection.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the redirection functions to manage the redirection operators such as '<', '<<', '>', '>>' and '|'.
+ */
 #ifndef REDIRECTION_H
 #define REDIRECTION_H
 

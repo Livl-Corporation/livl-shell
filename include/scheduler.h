@@ -1,3 +1,9 @@
+/**
+ * @file scheduler.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the scheduler functions to manage the execution of commands.
+ */
 #ifndef SCHEDULER_H
 #define SCHEDULER_H
 

@@ -1,3 +1,9 @@
+/**
+ * @file operator.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the operator functions to manage the operators that can be used in the shell.
+ */
 #ifndef OPERATOR_H
 #define OPERATOR_H
 

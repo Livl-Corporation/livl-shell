@@ -1,3 +1,9 @@
+/**
+ * @file history_command.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the history command functions to manage the history of commands entered by the user (saving, loading, etc.) to a file.
+ */
 #ifndef HISTORY_COMMAND_H
 #define HISTORY_COMMAND_H
 

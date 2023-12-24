@@ -1,3 +1,9 @@
+/**
+ * @file main.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the main header file to include all the other header files.
+ */
 #ifndef MAIN_H
 #define MAIN_H
 

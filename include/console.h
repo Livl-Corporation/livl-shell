@@ -1,3 +1,9 @@
+/**
+ * @file console.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the console functions to manage the console (print information, etc.) to avoid code duplication.
+ */
 #ifndef CONSOLE_H
 #define CONSOLE_H
 

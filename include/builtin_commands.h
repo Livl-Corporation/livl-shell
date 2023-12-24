@@ -1,3 +1,9 @@
+/**
+ * @file builtin_commands.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the built-in commands functions to manage the built-in commands such as cd, pwd, echo, exit.
+ */
 #ifndef BUILTIN_COMMANDS_H
 #define BUILTIN_COMMANDS_H
 

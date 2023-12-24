@@ -1,3 +1,9 @@
+/**
+ * @file command_sequence.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the command sequence functions to manage the command sequence (commands and operators).
+ */
 #ifndef COMMAND_SEQUENCE_H
 #define COMMAND_SEQUENCE_H
 

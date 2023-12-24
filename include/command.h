@@ -1,3 +1,9 @@
+/**
+ * @file command.h
+ * @author Julien & Franck
+ * @date 24 Dec 2023
+ * @brief File containing the command functions to manage the commands entered by the user (parsing, evaluation, etc.).
+ */
 #ifndef COMMAND_H
 #define COMMAND_H
 
