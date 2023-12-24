@@ -80,6 +80,13 @@ Table of Contents</h1>
 <li><a href="#-quick-start">🚀 Quick start</a></li>
 <li><a href="#-project-structure">📁 Project structure</a></li>
 <li><a href="#-list-of-insane-livl-bash-commands">📝 List of insane livl-bash commands</a></li>
+<li><a href="#-use-the-livl-bash-man-command">📖 Use the livl-bash man command</a></li>
+<li><a href="#-use-doxygen-documentation">📜 Use DOXYGEN documentation</a></li>
+<li><a href="#-use-gcov-test-coverage">🧪 Use GCOV test coverage</a><ul>
+<li><a href="#-prerequisites-of-gcov">📦 Prerequisites of gcov</a></li>
+<li><a href="#-generate-the-coverage-report">🚀 Generate the coverage report</a></li>
+</ul>
+</li>
 <li><a href="#-pipeline">🔧 Pipeline</a></li>
 <li><a href="#-project-team">🧍🏽Project team</a></li>
 </ul>
@@ -101,6 +108,9 @@ Table of Contents</h1>
 <li>Run <code>./bin/livl-shell</code> or <code>make run</code> to run the executable</li>
 <li>Run <code>make clean</code> to clean the project</li>
 </ul>
+<blockquote class="doxtable">
+<p>💡 The command <code>make run</code> will compile and immediately run the executable. It is equivalent to <code>make &amp;&amp; ./bin/livl-shell</code> </p>
+</blockquote>
 <h1><a class="anchor" id="autotoc_md3"></a>
 📁 Project structure</h1>
 <p>The project is structured as follows:</p>
@@ -108,21 +118,30 @@ Table of Contents</h1>
 <div class="line">├── bin/</div>
 <div class="line">│   └── livl-shell</div>
 <div class="line">├── doc/</div>
+<div class="line">│   └── html/</div>
+<div class="line">│       └── index.html</div>
 <div class="line">├── gcov/</div>
+<div class="line">│   └── report/</div>
+<div class="line">│       └── index.html</div>
 <div class="line">├── include/</div>
 <div class="line">│   └── file.h</div>
 <div class="line">|   └── ...</div>
 <div class="line">├── src/</div>
 <div class="line">│   └── file.c</div>
 <div class="line">|   └── ...</div>
+<div class="line">├── livl-shell.1</div>
+<div class="line">├── history.txt</div>
 <div class="line">└── Makefile</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 📝 List of insane livl-bash commands</h1>
+<blockquote class="doxtable">
+<p>💡 The livl-shell is limited to run max 3 commands in a row. </p>
+</blockquote>
 <ul>
 <li><code>ls</code> : list the files in the current directory</li>
 <li><code>cd</code> : change the current directory</li>
 <li><code>pwd</code> : print the current directory</li>
-<li><code>cat &lt;&lt;EOF</code> : let the user enter text until he types <code>EOF</code> and display it (thanks to the cat command)</li>
+<li><code>cat &lt;&lt;EOF</code> : let the user enter text until he types <code>EOF</code> and display it (thank to the cat command)</li>
 <li><code>echo</code> : display a line of text</li>
 <li><code>ls -l &gt; output.txt</code> : redirect the output of a command to a file</li>
 <li><code>pwd &gt;&gt; output.txt</code> : redirect the output of a command to a file (append)</li>
@@ -130,6 +149,43 @@ Table of Contents</h1>
 <li>&lsquo;ls -l | grep &rsquo;.txt'<code>: redirect the output of a command to another command you can use single, double or without quotes -</code>sleep 4 &amp;&amp; echo "Second command executed"<code>: execute a command after another one -</code>false &amp;&amp; echo "This won't be executed"<code>: execute a command after another one only if the first one succeeded -</code>false || echo "This will be executed"<code>: execute a command after another one only if the first one failed -</code>echo "Command 1"; sleep 3; echo "Command 2"; ls -l<code>: execute multiple commands regardless of the success of the previous ones -</code>sleep 3 &amp; echo hey<code>: execute a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex:</code>[1] 1234<code>) -</code>pwd<code>: running this command will dispkay the job id of the background process terminated (ex:</code>[1] done sleep 3`)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
+📖 Use the livl-bash &lt;tt&gt;man&lt;/tt&gt; command</h1>
+<blockquote class="doxtable">
+<p>To edit the man you can download a TROFF Syntax Highlighter for Visual Studio Code. </p>
+</blockquote>
+<ul>
+<li>The <code>man livl-shell</code> manual is located in the <a href="livl-shell.1"><code>livl-shell.1</code></a> file</li>
+<li>To view the manual, run : <code>man ./livl-shell.1</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+📜 Use DOXYGEN documentation</h1>
+<blockquote class="doxtable">
+<p>You probably need to install doxygen to generate the documentation : <code>sudo apt install doxygen</code> </p>
+</blockquote>
+<ul>
+<li>Run <code>make doc</code> to generate the documentation</li>
+<li>To view the documentation, open the <a href="/doc/html/index.html"><code>index.html</code></a> file in the <code>doc</code> folder</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+🧪 Use GCOV test coverage</h1>
+<blockquote class="doxtable">
+<p>GCOV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code. </p>
+</blockquote>
+<h2><a class="anchor" id="autotoc_md8"></a>
+📦 Prerequisites of gcov</h2>
+<ul>
+<li><code>gcov</code> : <code>sudo apt install gcov</code></li>
+<li><code>lcov</code> : <code>sudo apt install lcov</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+🚀 Generate the coverage report</h2>
+<ul>
+<li>Run <code>make gcov</code> to generate the coverage report</li>
+<li>To exit the coverage report, press <code>exit</code> two times (one for the shell and one for the coverage report)</li>
+<li>To view the coverage report, open the <a href="/gcov/report/index.html"><code>index.html</code></a> file in the <code>gcov/report/</code> folder or run <code>gcovr -r .</code></li>
+<li>Run <code>make clean-gcov</code> to clean the <code>gcov</code> folder</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
 🔧 Pipeline</h1>
 <ul>
 <li>The pipeline is configured to run on each push and pull request on the <code>master</code> branch</li>
@@ -137,7 +193,7 @@ Table of Contents</h1>
 <blockquote class="doxtable">
 <p>You can find the pipeline configuration in the <a href=".github/workflows/c-make.yml"><code>.github/workflows/c-make.yml</code></a> file. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 🧍🏽Project team</h1>
 <table align="center">
 <tr>
