@@ -74,4 +74,16 @@ typedef struct {
     size_t num_commands;    // Number of commands
 } CommandSequence;
 
+/**
+ * Structur that represents a command history
+ * @param history: the history of commands
+ * @param history_count: the number of commands in the history
+ * @param current_index: the current index in the history
+*/
+typedef struct {
+    char history[1000][1000];
+    int history_count;
+    int current_index;
+} CommandHistory;
+
 #endif //TYPEDEF_H

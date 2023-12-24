@@ -1,4 +1,7 @@
 #include "input_parser.h"
+#include "history_command.h"
+#include "input_parser.h"
+#include "history_command.h"
 
 char* read_input() {
     char* input = malloc(MAX_INPUT_LENGTH * sizeof(char));

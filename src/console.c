@@ -44,3 +44,9 @@ void print_prompt()
 
     printf(YELLOW "%s" RESET "@" BLUE "livl-shell" RESET ":$ ", username);
 }
+
+void print_exit_info()
+{
+    printf("\n" GREEN "Thank you for using livl-shell!\n" RESET);
+    printf(YELLOW "All commands are stored in an history.txt file.\n" RESET);
+}

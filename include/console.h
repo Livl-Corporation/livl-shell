@@ -36,4 +36,9 @@ void print_prompt();
 */
 void print_perror(const char *format, ...);
 
+/**
+ * @brief Print the exit information to the console
+*/
+void print_exit_info();
+
 #endif //CONSOLE_H

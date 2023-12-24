@@ -23,6 +23,8 @@
         "redirection.h": "c",
         "background_manager.h": "c",
         "types.h": "c",
-        "builtin_commands.h": "c"
+        "builtin_commands.h": "c",
+        "ctype.h": "c",
+        "history_command.h": "c"
     }
 }
