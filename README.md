@@ -113,10 +113,15 @@ livl-shell/
 
 > You can find the pipeline configuration in the [`.github/workflows/c-make.yml`](.github/workflows/c-make.yml) file.
 
+# 🧍🏽Project team
 
-# 🧍🏽 Project Team
-
-| ![Franck Gutmann](https://avatars.githubusercontent.com/u/19238963?v=4?v=4?size=115) | ![Julien Von Der Marck](https://avatars.githubusercontent.com/u/62793491?v=4?size=115) |
-| :---: | :---: |
-| [**@FranckG28**](https://github.com/FranckG28) | [**@jvondermarck**](https://github.com/jvondermarck) |
-| **Franck Gutmann** | **Julien Von Der Marck** |
+<table align="center">
+    <tr>
+        <th><img src="https://avatars.githubusercontent.com/u/19238963?v=4?v=4?size=115" width="115"><br><strong>@FranckG28</strong></th>
+        <th><img src="https://avatars.githubusercontent.com/u/62793491?v=4?size=115" width="115"><br><strong>@jvondermarck</strong></th>
+    </tr>
+    <tr align="center">
+        <td><b>Franck Gutmann</b></td>
+        <td><b>Julien Von Der Marck</b></td>
+    </tr>
+</table>
