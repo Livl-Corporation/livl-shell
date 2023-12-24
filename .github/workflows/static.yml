@@ -15,10 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy-doc-html:
+  deploy-doc-doxygen:
     environment:
       name: github-pages-doc-html
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://livl-corporation.github.io/livl-shell/doxygen/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,7 +36,7 @@ jobs:
   deploy-gcov-report:
     environment:
       name: github-pages-gcov-report
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://livl-corporation.github.io/livl-shell/gcov/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
