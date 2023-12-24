@@ -71,40 +71,79 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Struct that represents a command sequence.  
+ <a href="structCommandSequence.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="typedef_8h_source.html">typedef.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for CommandSequence:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCommandSequence__coll__graph.png" border="0" usemap="#CommandSequence_coll__map" alt="Collaboration graph"/></div>
 <map name="CommandSequence_coll__map" id="CommandSequence_coll__map">
-<area shape="rect" title=" " alt="" coords="5,184,157,211"/>
-<area shape="rect" href="structCommand.html" title=" " alt="" coords="37,95,126,121"/>
-<area shape="rect" href="structRedirection.html" title=" " alt="" coords="33,5,129,32"/>
+<area shape="rect" title="Struct that represents a command sequence." alt="" coords="5,184,157,211"/>
+<area shape="rect" href="structCommand.html" title="Struct that represents a command." alt="" coords="37,95,126,121"/>
+<area shape="rect" href="structRedirection.html" title="Struct that represents a redirection." alt="" coords="33,5,129,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a22faf92b4b8bbea1d40d3ee947b721d5"><td class="memItemLeft" align="right" valign="top"><a id="a22faf92b4b8bbea1d40d3ee947b721d5"></a>
-<a class="el" href="structCommand.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>commands</b></td></tr>
-<tr class="separator:a22faf92b4b8bbea1d40d3ee947b721d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3c9df4bebd773c64ac518f953076cb8"><td class="memItemLeft" align="right" valign="top"><a id="aa3c9df4bebd773c64ac518f953076cb8"></a>
-char **&#160;</td><td class="memItemRight" valign="bottom"><b>operators</b></td></tr>
-<tr class="separator:aa3c9df4bebd773c64ac518f953076cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adff91568336656fb8ee87e6ea7aa946c"><td class="memItemLeft" align="right" valign="top"><a id="adff91568336656fb8ee87e6ea7aa946c"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>num_commands</b></td></tr>
-<tr class="separator:adff91568336656fb8ee87e6ea7aa946c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f38d84300b76c57f3a98f393451aba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCommand.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommandSequence.html#ab5f38d84300b76c57f3a98f393451aba">commands</a></td></tr>
+<tr class="separator:ab5f38d84300b76c57f3a98f393451aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300a79e2963aaf77bb262e6161c24ca7"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommandSequence.html#a300a79e2963aaf77bb262e6161c24ca7">operators</a></td></tr>
+<tr class="separator:a300a79e2963aaf77bb262e6161c24ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4686c3b588ec9d38c77b4381f20d5761"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommandSequence.html#a4686c3b588ec9d38c77b4381f20d5761">num_commands</a></td></tr>
+<tr class="separator:a4686c3b588ec9d38c77b4381f20d5761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Structur that represents a command sequence </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">commands</td><td>the commands </td></tr>
-    <tr><td class="paramname">operators</td><td>the operators between commands </td></tr>
-    <tr><td class="paramname">num_commands</td><td>the number of commands </td></tr>
-  </table>
-  </dd>
-</dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Struct that represents a command sequence. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="ab5f38d84300b76c57f3a98f393451aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f38d84300b76c57f3a98f393451aba">&#9670;&nbsp;</a></span>commands</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommandSequence::commands</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Array of commands. </p>
+
+</div>
+</div>
+<a id="a4686c3b588ec9d38c77b4381f20d5761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4686c3b588ec9d38c77b4381f20d5761">&#9670;&nbsp;</a></span>num_commands</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommandSequence::num_commands</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of commands. </p>
+
+</div>
+</div>
+<a id="a300a79e2963aaf77bb262e6161c24ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300a79e2963aaf77bb262e6161c24ca7">&#9670;&nbsp;</a></span>operators</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommandSequence::operators</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Array of operators. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="typedef_8h_source.html">typedef.h</a></li>
 </ul>
 </div><!-- contents -->

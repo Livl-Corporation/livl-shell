@@ -19,14 +19,12 @@
 /**
  * @brief Handles input redirection with '<' operator with '<<' operator
  * @param command Command to be check for input redirection
- * @return void
 */
 void handle_input_redirection(const Command *command);
 
 /**
  * @brief Handles output redirection with '>' operator with '>>' operator
  * @param command Command to be check for output redirection
- * @return void
 */
 void handle_output_redirection(const Command *command);
 
@@ -40,13 +38,13 @@ void evaluate_redirection(CommandSequence *sequence);
  * @brief Execute a command with pipe operator
  * @param cmd1: The first command
  * @param cmd2: The second command
- * @return void
 */
 void execute_pipe(Command *cmd1, Command *cmd2);
 
 /**
  * @brief Evaluate if a command is a stream redirection command
  * @param command: The command to evaluate
+ * @return 1 if the command is a stream redirection command, 0 otherwise
 */
 int is_redirection_command(const Command *command);
 

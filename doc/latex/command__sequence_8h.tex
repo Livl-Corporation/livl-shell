@@ -27,11 +27,11 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}\label{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}} 
-\#define {\bfseries M\+A\+X\+\_\+\+C\+O\+M\+M\+A\+N\+DS}~3
-\item 
+\#define \mbox{\hyperlink{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}{M\+A\+X\+\_\+\+C\+O\+M\+M\+A\+N\+DS}}~3
+\begin{DoxyCompactList}\small\item\em The maximum number of commands in a command sequence. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{command__sequence_8h_a30892ce590446910ea3159e79f2f31f3}\label{command__sequence_8h_a30892ce590446910ea3159e79f2f31f3}} 
-\#define {\bfseries M\+A\+X\+\_\+\+O\+P\+E\+R\+A\+T\+O\+RS}~2
-\end{DoxyCompactItemize}
+\#define \mbox{\hyperlink{command__sequence_8h_a30892ce590446910ea3159e79f2f31f3}{M\+A\+X\+\_\+\+O\+P\+E\+R\+A\+T\+O\+RS}}~(\mbox{\hyperlink{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}{M\+A\+X\+\_\+\+C\+O\+M\+M\+A\+N\+DS}} -\/ 1)
+\begin{DoxyCompactList}\small\item\em The maximum number of operators in a command sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -96,6 +96,16 @@ Checks if the given token is a command or an operator.
 
 \begin{DoxyParams}{Parameters}
 {\em token} & The token to be checked \\
+\hline
+{\em commands} & The array of commands \\
+\hline
+{\em operators} & The array of operators \\
+\hline
+{\em current\+Command} & The current command \\
+\hline
+{\em cmd\+Index} & The index of the current command \\
+\hline
+{\em op\+Index} & The index of the current operator \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{command__sequence_8h_a8946c9988071f3e0e4aed15a3d95dc1a}\label{command__sequence_8h_a8946c9988071f3e0e4aed15a3d95dc1a}} 

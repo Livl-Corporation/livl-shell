@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['operator_2eh_47',['operator.h',['../operator_8h.html',1,'']]],
-  ['operators_48',['operators',['../operator_8h.html#a47bfd392ff22b9804148ca320a7ff649',1,'operator.c']]],
-  ['operatortype_49',['OperatorType',['../typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117',1,'typedef.h']]]
+  ['num_5farguments_65',['num_arguments',['../structCommand.html#a8ac69a02f63787cd6508a2aaf2d16c63',1,'Command']]],
+  ['num_5fcommands_66',['num_commands',['../structCommandSequence.html#a4686c3b588ec9d38c77b4381f20d5761',1,'CommandSequence']]],
+  ['num_5foperators_67',['num_operators',['../operator_8h.html#a71b1adb143f33ddd1d26a28b8c2dcdf5',1,'operator.c']]]
 ];

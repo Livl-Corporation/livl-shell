@@ -12,10 +12,29 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+/**
+ * @brief The YELB color
+*/
 #define YELB "\e[43m"
+
+/**
+ * @brief The RESET color (default color)
+*/
 #define RESET "\e[0m"
+
+/**
+ * @brief The RED color
+*/
 #define BLUE "\e[1;34m"
+
+/**
+ * @brief The RED color
+*/
 #define GREEN "\e[1;32m"
+
+/**
+ * @brief The RED color
+*/
 #define YELLOW "\e[1;33m"
 
 /**
@@ -31,7 +50,7 @@ void print_title();
 void print_info(const char *text, ...);
 
 /**
- * @brief Print the prompt to the console (username@hostname:$)
+ * @brief Print the prompt to the console (username @ hostname:$)
 */
 void print_prompt();
 

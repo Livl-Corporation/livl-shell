@@ -71,47 +71,112 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Struct that represents a command.  
+ <a href="structCommand.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="typedef_8h_source.html">typedef.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Command:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCommand__coll__graph.png" border="0" usemap="#Command_coll__map" alt="Collaboration graph"/></div>
 <map name="Command_coll__map" id="Command_coll__map">
-<area shape="rect" title=" " alt="" coords="9,95,98,121"/>
-<area shape="rect" href="structRedirection.html" title=" " alt="" coords="5,5,101,32"/>
+<area shape="rect" title="Struct that represents a command." alt="" coords="9,95,98,121"/>
+<area shape="rect" href="structRedirection.html" title="Struct that represents a redirection." alt="" coords="5,5,101,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aa33931974cdda4f3ae6c8cb45fc5de50"><td class="memItemLeft" align="right" valign="top"><a id="aa33931974cdda4f3ae6c8cb45fc5de50"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
-<tr class="separator:aa33931974cdda4f3ae6c8cb45fc5de50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8948d5c7720fa62f6832379189fbc33a"><td class="memItemLeft" align="right" valign="top"><a id="a8948d5c7720fa62f6832379189fbc33a"></a>
-char **&#160;</td><td class="memItemRight" valign="bottom"><b>arguments</b></td></tr>
-<tr class="separator:a8948d5c7720fa62f6832379189fbc33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf2d10d6f6ac491258c74cf5fc2b1d1"><td class="memItemLeft" align="right" valign="top"><a id="a2bf2d10d6f6ac491258c74cf5fc2b1d1"></a>
-char **&#160;</td><td class="memItemRight" valign="bottom"><b>complete_command</b></td></tr>
-<tr class="separator:a2bf2d10d6f6ac491258c74cf5fc2b1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a490a4cb217c2863280732dde6ee62b60"><td class="memItemLeft" align="right" valign="top"><a id="a490a4cb217c2863280732dde6ee62b60"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>num_arguments</b></td></tr>
-<tr class="separator:a490a4cb217c2863280732dde6ee62b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeff90f044650218564bfbd5e50712dbf"><td class="memItemLeft" align="right" valign="top"><a id="aeff90f044650218564bfbd5e50712dbf"></a>
-<a class="el" href="structRedirection.html">Redirection</a>&#160;</td><td class="memItemRight" valign="bottom"><b>redirection</b></td></tr>
-<tr class="separator:aeff90f044650218564bfbd5e50712dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7321a9fdb8ee1bbb459fb6ef62188279"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommand.html#a7321a9fdb8ee1bbb459fb6ef62188279">command</a></td></tr>
+<tr class="separator:a7321a9fdb8ee1bbb459fb6ef62188279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e638b58d6d2cea1d0ea70d3f2d496b"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommand.html#a24e638b58d6d2cea1d0ea70d3f2d496b">arguments</a></td></tr>
+<tr class="separator:a24e638b58d6d2cea1d0ea70d3f2d496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb07b690dff9b678a7dce226f98a2c4c"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommand.html#adb07b690dff9b678a7dce226f98a2c4c">complete_command</a></td></tr>
+<tr class="separator:adb07b690dff9b678a7dce226f98a2c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac69a02f63787cd6508a2aaf2d16c63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommand.html#a8ac69a02f63787cd6508a2aaf2d16c63">num_arguments</a></td></tr>
+<tr class="separator:a8ac69a02f63787cd6508a2aaf2d16c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d866a071e3e9f2bc0f771b489361a3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRedirection.html">Redirection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCommand.html#a5d866a071e3e9f2bc0f771b489361a3d">redirection</a></td></tr>
+<tr class="separator:a5d866a071e3e9f2bc0f771b489361a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Structur that represents a command </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">command</td><td>the command name </td></tr>
-    <tr><td class="paramname">arguments</td><td>the command arguments </td></tr>
-    <tr><td class="paramname">complete_command</td><td>the complete command (command + arguments) </td></tr>
-    <tr><td class="paramname">num_arguments</td><td>the number of arguments </td></tr>
-    <tr><td class="paramname">redirection</td><td>the redirection (input and output files) </td></tr>
-  </table>
-  </dd>
-</dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Struct that represents a command. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a24e638b58d6d2cea1d0ea70d3f2d496b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e638b58d6d2cea1d0ea70d3f2d496b">&#9670;&nbsp;</a></span>arguments</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Command::arguments</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Arguments. </p>
+
+</div>
+</div>
+<a id="a7321a9fdb8ee1bbb459fb6ef62188279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7321a9fdb8ee1bbb459fb6ef62188279">&#9670;&nbsp;</a></span>command</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Command::command</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="structCommand.html" title="Struct that represents a command.">Command</a>. </p>
+
+</div>
+</div>
+<a id="adb07b690dff9b678a7dce226f98a2c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb07b690dff9b678a7dce226f98a2c4c">&#9670;&nbsp;</a></span>complete_command</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Command::complete_command</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Complete command. </p>
+
+</div>
+</div>
+<a id="a8ac69a02f63787cd6508a2aaf2d16c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac69a02f63787cd6508a2aaf2d16c63">&#9670;&nbsp;</a></span>num_arguments</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Command::num_arguments</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of arguments. </p>
+
+</div>
+</div>
+<a id="a5d866a071e3e9f2bc0f771b489361a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d866a071e3e9f2bc0f771b489361a3d">&#9670;&nbsp;</a></span>redirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Command::redirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="structRedirection.html" title="Struct that represents a redirection.">Redirection</a>. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="typedef_8h_source.html">typedef.h</a></li>
 </ul>
 </div><!-- contents -->

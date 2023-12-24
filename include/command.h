@@ -21,8 +21,7 @@ Command evaluateCommand(const char *input);
 
 /**
  * @brief Handle quotes in a string (remove them)
- * @param input: the string to evaluate
- * @param cmd: the command structure
+ * @param token: the string to handle
 */
 void handle_quotes(char **token);
 

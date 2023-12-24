@@ -12,8 +12,15 @@
 #include "operator.h"
 #include "redirection.h"
 
+/**
+ * @brief The maximum number of commands in a command sequence
+*/
 #define MAX_COMMANDS 3
-#define MAX_OPERATORS 2
+
+/**
+ * @brief The maximum number of operators in a command sequence
+*/
+#define MAX_OPERATORS (MAX_COMMANDS - 1)
 
 /**
  * @brief Initialize the command sequence module.
@@ -24,6 +31,12 @@ void command_sequence_init(char *input);
 /**
  * @brief Checks if the given token is a command or an operator
  * @param token The token to be checked
+ * @param commands The array of commands
+ * @param operators The array of operators
+ * @param currentCommand The current command
+ * @param cmdIndex The index of the current command
+ * @param opIndex The index of the current operator
+ * 
 */
 void process_token(char *token, char **commands, char **operators, char **currentCommand, int *cmdIndex, int *opIndex);
 

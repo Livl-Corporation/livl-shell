@@ -123,10 +123,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a4b2b20c68bee625b7dc737c4d05699fd"><td class="memItemLeft" align="right" valign="top"><a id="a4b2b20c68bee625b7dc737c4d05699fd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_COMMANDS</b>&#160;&#160;&#160;3</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command__sequence_8h.html#a4b2b20c68bee625b7dc737c4d05699fd">MAX_COMMANDS</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a4b2b20c68bee625b7dc737c4d05699fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of commands in a command sequence. <br /></td></tr>
 <tr class="separator:a4b2b20c68bee625b7dc737c4d05699fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30892ce590446910ea3159e79f2f31f3"><td class="memItemLeft" align="right" valign="top"><a id="a30892ce590446910ea3159e79f2f31f3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_OPERATORS</b>&#160;&#160;&#160;2</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command__sequence_8h.html#a30892ce590446910ea3159e79f2f31f3">MAX_OPERATORS</a>&#160;&#160;&#160;(<a class="el" href="command__sequence_8h.html#a4b2b20c68bee625b7dc737c4d05699fd">MAX_COMMANDS</a> - 1)</td></tr>
+<tr class="memdesc:a30892ce590446910ea3159e79f2f31f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of operators in a command sequence. <br /></td></tr>
 <tr class="separator:a30892ce590446910ea3159e79f2f31f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -252,6 +254,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">token</td><td>The token to be checked </td></tr>
+    <tr><td class="paramname">commands</td><td>The array of commands </td></tr>
+    <tr><td class="paramname">operators</td><td>The array of operators </td></tr>
+    <tr><td class="paramname">currentCommand</td><td>The current command </td></tr>
+    <tr><td class="paramname">cmdIndex</td><td>The index of the current command </td></tr>
+    <tr><td class="paramname">opIndex</td><td>The index of the current operator </td></tr>
   </table>
   </dd>
 </dl>

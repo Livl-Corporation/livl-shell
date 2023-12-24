@@ -27,23 +27,40 @@ typedef enum {
 } OperatorType;
 
 /**
- * Structur that represents a background process
- * @param pid: the process id
- * @param job_number: the job number
- * @param command: the command and its arguments
-*/
+ * @struct BackgroundProcess
+ * @brief Struct that represents a background process.
+ * 
+ * @var BackgroundProcess::pid
+ * Process ID.
+ * 
+ * @var BackgroundProcess::job_number
+ * Job number.
+ * 
+ * @var BackgroundProcess::command
+ * Command and its arguments.
+ */
 typedef struct {
     pid_t pid;
     int job_number;
     char *command;
 } BackgroundProcess;
 
+
 /**
- * Structur that represents a redirection
- * @param input_file: the input file (a file that will be read)
- * @param output_file: the output file (a file that will be written)
- * @param append_input: 0 for false, 1 for true (<<)
- * @param append_output: 0 for false, 1 for true (>>)
+ * @struct Redirection
+ * @brief Struct that represents a redirection.
+ * 
+ * @var Redirection::input_file
+ * Input file.
+ * 
+ * @var Redirection::output_file
+ * Output file.
+ * 
+ * @var Redirection::append_input
+ * Append input.
+ * 
+ * @var Redirection::append_output
+ * Append output.
 */
 typedef struct {
     char *input_file;
@@ -52,13 +69,25 @@ typedef struct {
     int append_output;
 } Redirection;
 
+
 /**
- * Structur that represents a command
- * @param command: the command name
- * @param arguments: the command arguments
- * @param complete_command: the complete command (command + arguments)
- * @param num_arguments: the number of arguments
- * @param redirection: the redirection (input and output files)
+ * @struct Command
+ * @brief Struct that represents a command.
+ * 
+ * @var Command::command
+ * Command.
+ * 
+ * @var Command::arguments
+ * Arguments.
+ * 
+ * @var Command::complete_command
+ * Complete command.
+ * 
+ * @var Command::num_arguments
+ * Number of arguments.
+ * 
+ * @var Command::redirection
+ * Redirection.
 */
 typedef struct {
     char *command;   
@@ -69,10 +98,17 @@ typedef struct {
 } Command;
 
 /**
- * Structur that represents a command sequence
- * @param commands: the commands
- * @param operators: the operators between commands
- * @param num_commands: the number of commands
+ * @struct CommandSequence
+ * @brief Struct that represents a command sequence.
+ * 
+ * @var CommandSequence::commands
+ * Array of commands.
+ * 
+ * @var CommandSequence::operators
+ * Array of operators.
+ * 
+ * @var CommandSequence::num_commands
+ * Number of commands.
 */
 typedef struct {
     Command *commands;      // Array of commands
@@ -81,11 +117,18 @@ typedef struct {
 } CommandSequence;
 
 /**
- * Structur that represents a command history
- * @param history: the history of commands
- * @param history_count: the number of commands in the history
- * @param current_index: the current index in the history
-*/
+ * @struct CommandHistory
+ * @brief Struct that represents the command history.
+ * 
+ * @var CommandHistory::history
+ * Array of commands.
+ * 
+ * @var CommandHistory::history_count
+ * Number of commands in the history.
+ * 
+ * @var CommandHistory::current_index
+ * Current index in the history.
+ */
 typedef struct {
     char history[1000][1000];
     int history_count;

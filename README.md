@@ -7,11 +7,11 @@
 - [📦 Prerequisites](#-prerequisites)
 - [🚀 Quick start](#-quick-start)
 - [📁 Project structure](#-project-structure)
-- [📝 List of insane commands](#-list-of-insane-commands)
+- [📝 List of insane livl-bash commands](#-list-of-insane-livl-bash-commands)
 - [🔧 Pipeline](#-pipeline)
 - [🧍🏽Project team](#-project-team)
 
-# **📦 Prerequisites**
+# 📦 Prerequisites
 This project is developed in C language, so you need to have a C compiler installed on your machine. It would be better to run it on a Linux distribution, but it is possible to run it on Windows with the WSL (Windows Subsystem for Linux).
 
 - `gcc` : `sudo apt install gcc`
@@ -26,7 +26,7 @@ This project is developed in C language, so you need to have a C compiler instal
 - Run `make clean` to clean the project
 
 
-# **📁 Project structure**
+# 📁 Project structure
 
 The project is structured as follows:
 
@@ -45,7 +45,7 @@ livl-shell/
 └── Makefile
 ```
 
-# **📝 List of insane livl-bash commands**
+# 📝 List of insane livl-bash commands
 
 - `ls` : list the files in the current directory
 - `cd` : change the current directory
@@ -64,13 +64,13 @@ livl-shell/
     - `pwd` : running this command will dispkay the job id of the background process terminated (ex: `[1]  done       sleep 3`)
 
 
-# **🔧 Pipeline**
+# 🔧 Pipeline
 
 - The pipeline is configured to run on each push and pull request on the `master` branch
 
 > You can find the pipeline configuration in the [`.github/workflows/c-make.yml`](.github/workflows/c-make.yml) file.
 
-# **🧍🏽Project team**
+# 🧍🏽Project team
 
 <table align="center">
     <tr>

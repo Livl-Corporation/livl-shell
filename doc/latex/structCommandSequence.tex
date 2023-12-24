@@ -2,6 +2,11 @@
 \label{structCommandSequence}\index{CommandSequence@{CommandSequence}}
 
 
+Struct that represents a command sequence.  
+
+
+
+
 {\ttfamily \#include $<$typedef.\+h$>$}
 
 
@@ -16,28 +21,37 @@ Collaboration diagram for Command\+Sequence\+:\nopagebreak
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structCommandSequence_a22faf92b4b8bbea1d40d3ee947b721d5}\label{structCommandSequence_a22faf92b4b8bbea1d40d3ee947b721d5}} 
-\mbox{\hyperlink{structCommand}{Command}} $\ast$ {\bfseries commands}
+\mbox{\hyperlink{structCommand}{Command}} $\ast$ \mbox{\hyperlink{structCommandSequence_ab5f38d84300b76c57f3a98f393451aba}{commands}}
 \item 
-\mbox{\Hypertarget{structCommandSequence_aa3c9df4bebd773c64ac518f953076cb8}\label{structCommandSequence_aa3c9df4bebd773c64ac518f953076cb8}} 
-char $\ast$$\ast$ {\bfseries operators}
+char $\ast$$\ast$ \mbox{\hyperlink{structCommandSequence_a300a79e2963aaf77bb262e6161c24ca7}{operators}}
 \item 
-\mbox{\Hypertarget{structCommandSequence_adff91568336656fb8ee87e6ea7aa946c}\label{structCommandSequence_adff91568336656fb8ee87e6ea7aa946c}} 
-size\+\_\+t {\bfseries num\+\_\+commands}
+size\+\_\+t \mbox{\hyperlink{structCommandSequence_a4686c3b588ec9d38c77b4381f20d5761}{num\+\_\+commands}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Structur that represents a command sequence 
-\begin{DoxyParams}{Parameters}
-{\em commands} & the commands \\
-\hline
-{\em operators} & the operators between commands \\
-\hline
-{\em num\+\_\+commands} & the number of commands \\
-\hline
-\end{DoxyParams}
+Struct that represents a command sequence. 
 
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structCommandSequence_ab5f38d84300b76c57f3a98f393451aba}\label{structCommandSequence_ab5f38d84300b76c57f3a98f393451aba}} 
+\index{CommandSequence@{CommandSequence}!commands@{commands}}
+\index{commands@{commands}!CommandSequence@{CommandSequence}}
+\doxysubsubsection{\texorpdfstring{commands}{commands}}
+{\footnotesize\ttfamily Command\+Sequence\+::commands}
+
+Array of commands. \mbox{\Hypertarget{structCommandSequence_a4686c3b588ec9d38c77b4381f20d5761}\label{structCommandSequence_a4686c3b588ec9d38c77b4381f20d5761}} 
+\index{CommandSequence@{CommandSequence}!num\_commands@{num\_commands}}
+\index{num\_commands@{num\_commands}!CommandSequence@{CommandSequence}}
+\doxysubsubsection{\texorpdfstring{num\_commands}{num\_commands}}
+{\footnotesize\ttfamily Command\+Sequence\+::num\+\_\+commands}
+
+Number of commands. \mbox{\Hypertarget{structCommandSequence_a300a79e2963aaf77bb262e6161c24ca7}\label{structCommandSequence_a300a79e2963aaf77bb262e6161c24ca7}} 
+\index{CommandSequence@{CommandSequence}!operators@{operators}}
+\index{operators@{operators}!CommandSequence@{CommandSequence}}
+\doxysubsubsection{\texorpdfstring{operators}{operators}}
+{\footnotesize\ttfamily Command\+Sequence\+::operators}
+
+Array of operators. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

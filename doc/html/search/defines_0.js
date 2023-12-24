@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['child_5fprocess_130',['CHILD_PROCESS',['../scheduler_8h.html#a6d2f57209406fc467f85e3d235ca0af8',1,'scheduler.h']]]
+  ['blue_172',['BLUE',['../console_8h.html#a79d10e672abb49ad63eeaa8aaef57c38',1,'console.h']]]
 ];

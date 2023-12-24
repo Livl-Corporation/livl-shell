@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2eh_44',['main.h',['../main_8h.html',1,'']]],
-  ['max_5fbackground_5fprocesses_45',['MAX_BACKGROUND_PROCESSES',['../background__manager_8h.html#a1fdfe1cdda4ae5d0820f020bf1769432',1,'background_manager.h']]]
+  ['load_5fcommand_5fhistory_5ffrom_5ffile_58',['load_command_history_from_file',['../history__command_8h.html#a691462d54fade9c0bc8b49df3333f6bd',1,'history_command.c']]]
 ];

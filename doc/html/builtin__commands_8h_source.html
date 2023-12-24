@@ -82,25 +82,26 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="typedef_8h.html">typedef.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define IS_BUILTIN_COMMAND 0</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define IS_NOT_BUILTIN_COMMAND -1</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="builtin__commands_8h.html#a781ff6d524e1f4351da33834f24f8af2">execute_builtin_command</a>(<span class="keyword">const</span> <a class="code" href="structCommand.html">Command</a> *command);</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="builtin__commands_8h.html#af1ac97845439a21cde4ecd82a1cf524b">   19</a></span>&#160;<span class="preprocessor">#define IS_BUILTIN_COMMAND 0</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="builtin__commands_8h.html#ad889acd58df3e95c48a6fc260dd06cd2">   24</a></span>&#160;<span class="preprocessor">#define IS_NOT_BUILTIN_COMMAND -1</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#a54dcfda54fd3632f5c5ac3351da9a98f">pwd</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#ac7db3834e1401f1663685f47d6d415f7">cd</a>(<span class="keywordtype">char</span>* path);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#ae09b8b85c6e55332d774f081faf8b6e1">exit_shell</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#aa616508f4db3ba7d6e828370015ce134">echo</a>(<span class="keyword">const</span> <a class="code" href="structCommand.html">Command</a> *command);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif //BUILTIN_COMMANDS_H</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">int</span> <a class="code" href="builtin__commands_8h.html#a781ff6d524e1f4351da33834f24f8af2">execute_builtin_command</a>(<span class="keyword">const</span> <a class="code" href="structCommand.html">Command</a> *command);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#a54dcfda54fd3632f5c5ac3351da9a98f">pwd</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#ac7db3834e1401f1663685f47d6d415f7">cd</a>(<span class="keywordtype">char</span>* path);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#ae09b8b85c6e55332d774f081faf8b6e1">exit_shell</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="builtin__commands_8h.html#aa616508f4db3ba7d6e828370015ce134">echo</a>(<span class="keyword">const</span> <a class="code" href="structCommand.html">Command</a> *command);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif //BUILTIN_COMMANDS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="abuiltin__commands_8h_html_a781ff6d524e1f4351da33834f24f8af2"><div class="ttname"><a href="builtin__commands_8h.html#a781ff6d524e1f4351da33834f24f8af2">execute_builtin_command</a></div><div class="ttdeci">int execute_builtin_command(const Command *command)</div><div class="ttdoc">Executes a command.</div><div class="ttdef"><b>Definition:</b> builtin_commands.c:29</div></div>
 <div class="ttc" id="abuiltin__commands_8h_html_aa616508f4db3ba7d6e828370015ce134"><div class="ttname"><a href="builtin__commands_8h.html#aa616508f4db3ba7d6e828370015ce134">echo</a></div><div class="ttdeci">void echo(const Command *command)</div><div class="ttdoc">Prints a message.</div><div class="ttdef"><b>Definition:</b> builtin_commands.c:22</div></div>
 <div class="ttc" id="abuiltin__commands_8h_html_ae09b8b85c6e55332d774f081faf8b6e1"><div class="ttname"><a href="builtin__commands_8h.html#ae09b8b85c6e55332d774f081faf8b6e1">exit_shell</a></div><div class="ttdeci">void exit_shell()</div><div class="ttdoc">Exits the shell.</div><div class="ttdef"><b>Definition:</b> builtin_commands.c:18</div></div>
-<div class="ttc" id="astructCommand_html"><div class="ttname"><a href="structCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> typedef.h:63</div></div>
+<div class="ttc" id="astructCommand_html"><div class="ttname"><a href="structCommand.html">Command</a></div><div class="ttdoc">Struct that represents a command.</div><div class="ttdef"><b>Definition:</b> typedef.h:92</div></div>
 <div class="ttc" id="abuiltin__commands_8h_html_a54dcfda54fd3632f5c5ac3351da9a98f"><div class="ttname"><a href="builtin__commands_8h.html#a54dcfda54fd3632f5c5ac3351da9a98f">pwd</a></div><div class="ttdeci">void pwd()</div><div class="ttdoc">Prints the current working directory.</div><div class="ttdef"><b>Definition:</b> builtin_commands.c:9</div></div>
 <div class="ttc" id="abuiltin__commands_8h_html_ac7db3834e1401f1663685f47d6d415f7"><div class="ttname"><a href="builtin__commands_8h.html#ac7db3834e1401f1663685f47d6d415f7">cd</a></div><div class="ttdeci">void cd(char *path)</div><div class="ttdoc">Changes the current directory.</div><div class="ttdef"><b>Definition:</b> builtin_commands.c:3</div></div>
 <div class="ttc" id="atypedef_8h_html"><div class="ttname"><a href="typedef_8h.html">typedef.h</a></div><div class="ttdoc">File containing all the typedefs used in the shell program.</div></div>

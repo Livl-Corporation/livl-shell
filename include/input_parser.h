@@ -13,6 +13,9 @@
 #include "operator.h"
 #include <ctype.h>
 
+/**
+ * @brief The max length of the input string
+*/
 #define MAX_INPUT_LENGTH 1024
 
 /**

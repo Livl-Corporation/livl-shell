@@ -13,7 +13,14 @@
 #include <string.h>
 #include "typedef.h"
 
+/**
+ * @brief The status value if the execution is a built-in command
+*/
 #define IS_BUILTIN_COMMAND 0
+
+/**
+ * @brief The status value if the execution is not a built-in command
+*/
 #define IS_NOT_BUILTIN_COMMAND -1
 
 /**

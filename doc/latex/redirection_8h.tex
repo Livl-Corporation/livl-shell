@@ -86,9 +86,6 @@ Execute a command with pipe operator.
 {\em cmd2} & The second command \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \mbox{\Hypertarget{redirection_8h_a0b23a9cf2be37c2a6ec055ab7a0b00aa}\label{redirection_8h_a0b23a9cf2be37c2a6ec055ab7a0b00aa}} 
 \index{redirection.h@{redirection.h}!handle\_input\_redirection@{handle\_input\_redirection}}
 \index{handle\_input\_redirection@{handle\_input\_redirection}!redirection.h@{redirection.h}}
@@ -104,9 +101,6 @@ Handles input redirection with \textquotesingle{}$<$\textquotesingle{} operator 
 {\em command} & \mbox{\hyperlink{structCommand}{Command}} to be check for input redirection \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \mbox{\Hypertarget{redirection_8h_a160de42d6b2073cc297fda577c86444b}\label{redirection_8h_a160de42d6b2073cc297fda577c86444b}} 
 \index{redirection.h@{redirection.h}!handle\_output\_redirection@{handle\_output\_redirection}}
 \index{handle\_output\_redirection@{handle\_output\_redirection}!redirection.h@{redirection.h}}
@@ -122,9 +116,6 @@ Handles output redirection with \textquotesingle{}$>$\textquotesingle{} operator
 {\em command} & \mbox{\hyperlink{structCommand}{Command}} to be check for output redirection \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \mbox{\Hypertarget{redirection_8h_aab688e0c0a6a5cc4ffc8f756ee65f5ab}\label{redirection_8h_aab688e0c0a6a5cc4ffc8f756ee65f5ab}} 
 \index{redirection.h@{redirection.h}!is\_redirection\_command@{is\_redirection\_command}}
 \index{is\_redirection\_command@{is\_redirection\_command}!redirection.h@{redirection.h}}
@@ -140,3 +131,6 @@ Evaluate if a command is a stream redirection command.
 {\em command} & The command to evaluate \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the command is a stream redirection command, 0 otherwise 
+\end{DoxyReturn}

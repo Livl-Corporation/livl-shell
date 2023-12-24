@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5fbackground_5fprocesses_131',['MAX_BACKGROUND_PROCESSES',['../background__manager_8h.html#a1fdfe1cdda4ae5d0820f020bf1769432',1,'background_manager.h']]]
+  ['child_5fprocess_173',['CHILD_PROCESS',['../scheduler_8h.html#a6d2f57209406fc467f85e3d235ca0af8',1,'scheduler.h']]]
 ];
