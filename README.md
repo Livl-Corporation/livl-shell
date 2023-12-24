@@ -8,6 +8,7 @@
 - [🚀 Quick start](#-quick-start)
 - [📁 Project structure](#-project-structure)
 - [📝 List of insane livl-bash commands](#-list-of-insane-livl-bash-commands)
+- [📖 Use the livl-bash `man` command](#📖-use-the-livl-bash-man-command)
 - [📜 Use DOXYGEN documentation](#-use-doxygen-documentation)
 - [🧪 Use GCOV test coverage](#-use-gcov-test-coverage)
     - [Prerequisites](#prerequisites-1)
@@ -67,11 +68,19 @@ livl-shell/
 - `sleep 3 & echo hey` : execute a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: `[1] 1234`)
     - `pwd` : running this command will dispkay the job id of the background process terminated (ex: `[1]  done       sleep 3`)
 
+# 📖 Use the livl-bash `man` command 
+
+> To edit the man you can download a TROFF Syntax Highlighter for Visual Studio Code.
+
+- The `man livl-shell` manual is located in the [`livl-shell.1`](livl-shell.1) file
+- To view the manual, run : `man ./livl-shell.1`
+
 # 📜 Use DOXYGEN documentation
 
 > You probably need to install doxygen to generate the documentation : `sudo apt install doxygen`
 
 - Run `make doc` to generate the documentation
+- To view the documentation, open the [`index.html`](/doc/html/index.html) file in the `doc` folder
 
 # 🧪 Use GCOV test coverage
 
@@ -85,7 +94,7 @@ livl-shell/
 ## Generate the coverage report
 - Run `make gcov` to generate the coverage report
 - To exit the coverage report, press `exit` two times (one for the shell and one for the coverage report)
-- To view the coverage report, open the `index.html` file in the `gcov` folder or run `gcovr -r .`
+- To view the coverage report, open the [`index.html`](/gcov/report/index.html) file in the `gcov/report/` folder or run `gcovr -r .`
 - Run `make clean-gcov` to clean the `gcov` folder
 
 # 🔧 Pipeline
