@@ -132,9 +132,12 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtin__commands_8h.html#a54dcfda54fd3632f5c5ac3351da9a98f">pwd</a> ()</td></tr>
 <tr class="memdesc:a54dcfda54fd3632f5c5ac3351da9a98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the current working directory. <br /></td></tr>
 <tr class="separator:a54dcfda54fd3632f5c5ac3351da9a98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7db3834e1401f1663685f47d6d415f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtin__commands_8h.html#ac7db3834e1401f1663685f47d6d415f7">cd</a> (char *path)</td></tr>
-<tr class="memdesc:ac7db3834e1401f1663685f47d6d415f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the current directory.  <a href="builtin__commands_8h.html#ac7db3834e1401f1663685f47d6d415f7">More...</a><br /></td></tr>
-<tr class="separator:ac7db3834e1401f1663685f47d6d415f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a283498b4598cc71d8db4403ca37a34e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtin__commands_8h.html#a283498b4598cc71d8db4403ca37a34e8">cd</a> (const char *path)</td></tr>
+<tr class="memdesc:a283498b4598cc71d8db4403ca37a34e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the current directory.  <a href="builtin__commands_8h.html#a283498b4598cc71d8db4403ca37a34e8">More...</a><br /></td></tr>
+<tr class="separator:a283498b4598cc71d8db4403ca37a34e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec324aee6306e0d7ff42b6c6746179d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtin__commands_8h.html#a2ec324aee6306e0d7ff42b6c6746179d">is_builtin_command</a> (const <a class="el" href="structCommand.html">Command</a> *command, const char *expected)</td></tr>
+<tr class="memdesc:a2ec324aee6306e0d7ff42b6c6746179d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the command is a built-in command.  <a href="builtin__commands_8h.html#a2ec324aee6306e0d7ff42b6c6746179d">More...</a><br /></td></tr>
+<tr class="separator:a2ec324aee6306e0d7ff42b6c6746179d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae09b8b85c6e55332d774f081faf8b6e1"><td class="memItemLeft" align="right" valign="top"><a id="ae09b8b85c6e55332d774f081faf8b6e1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtin__commands_8h.html#ae09b8b85c6e55332d774f081faf8b6e1">exit_shell</a> ()</td></tr>
 <tr class="memdesc:ae09b8b85c6e55332d774f081faf8b6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the shell. <br /></td></tr>
@@ -148,8 +151,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buil
 <dl class="section author"><dt>Author</dt><dd>Julien &amp; Franck </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>24 Dec 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac7db3834e1401f1663685f47d6d415f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7db3834e1401f1663685f47d6d415f7">&#9670;&nbsp;</a></span>cd()</h2>
+<a id="a283498b4598cc71d8db4403ca37a34e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a283498b4598cc71d8db4403ca37a34e8">&#9670;&nbsp;</a></span>cd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +160,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buil
         <tr>
           <td class="memname">void cd </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>path</em></td><td>)</td>
           <td></td>
         </tr>
@@ -224,6 +227,43 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buil
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The status of the execution (0 if success, -1 if not a built-in command, 1 if error) </dd></dl>
+
+</div>
+</div>
+<a id="a2ec324aee6306e0d7ff42b6c6746179d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ec324aee6306e0d7ff42b6c6746179d">&#9670;&nbsp;</a></span>is_builtin_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_builtin_command </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structCommand.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>expected</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the command is a built-in command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The command to check </td></tr>
+    <tr><td class="paramname">expected</td><td>The expected command name </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

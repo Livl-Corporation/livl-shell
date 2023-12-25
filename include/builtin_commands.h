@@ -39,7 +39,15 @@ void pwd();
  * @brief Changes the current directory
  * @param path The path to the new directory
 */
-void cd(char* path);
+void cd(const char* path);
+
+/**
+ * @brief Checks if the command is a built-in command
+ * @param command The command to check
+ * @param expected The expected command name
+ * @return 1 if the command is a built-in command, 0 if not
+*/
+int is_builtin_command(const Command* command, const char* expected);
 
 /**
  * @brief Exits the shell
