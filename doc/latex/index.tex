@@ -12,13 +12,28 @@ Livl Shell is an intermediate reimplementation of the bash shell in C language.\
 \item \href{\#-project-structure}{\texttt{ 📁 Project structure}}
 \item \href{\#-list-of-insane-livl-bash-commands}{\texttt{ 📝 List of insane livl-\/bash commands}}
 \item \href{\#-use-the-livl-bash-man-command}{\texttt{ 📖 Use the livl-\/bash man command}}
-\item \href{\#-use-doxygen-documentation}{\texttt{ 📜 Use D\+O\+X\+Y\+G\+EN documentation}}
-\item \href{\#-use-gcov-test-coverage}{\texttt{ 🧪 Use G\+C\+OV test coverage}}
+\begin{DoxyItemize}
+\item \href{\#basic-commands}{\texttt{ Basic Commands}}
+\item \href{\#inputoutput-redirection}{\texttt{ Input/\+Output Redirection}}
+\item \href{\#pipelines}{\texttt{ Pipelines}}
+\item \href{\#command-sequencing}{\texttt{ Command Sequencing}}
+\item \href{\#background-execution}{\texttt{ Background Execution}}
+\end{DoxyItemize}
+\item \href{\#-doxygen-documentation}{\texttt{ 📜 Doxygen documentation}}
+\begin{DoxyItemize}
+\item \href{\#-prerequisites-of-doxygen}{\texttt{ 📦 Prerequisites of Doxygen}}
+\item \href{\#-generate-the-doxygen-documentation}{\texttt{ 🚀 Generate the Doxygen documentation}}
+\end{DoxyItemize}
+\item \href{\#-gcov-test-coverage}{\texttt{ 🧪 G\+C\+OV test coverage}}
 \begin{DoxyItemize}
 \item \href{\#-prerequisites-of-gcov}{\texttt{ 📦 Prerequisites of gcov}}
 \item \href{\#-generate-the-coverage-report}{\texttt{ 🚀 Generate the coverage report}}
 \end{DoxyItemize}
-\item \href{\#-pipeline}{\texttt{ 🔧 Pipeline}}
+\item \href{\#️-pipeline}{\texttt{ 🛠️ Pipeline}}
+\begin{DoxyItemize}
+\item \href{\#1-c-make-pipeline}{\texttt{ 1. C-\/\+Make Pipeline}}
+\item \href{\#2-static-pipeline}{\texttt{ 2. Static Pipeline}}
+\end{DoxyItemize}
 \item \href{\#-project-team}{\texttt{ 🧍🏽\+Project team}}
 \end{DoxyItemize}\hypertarget{index_autotoc_md1}{}\doxysection{📦 Prerequisites}\label{index_autotoc_md1}
 This project is developed in C language, so you need to have a C compiler installed on your machine. It would be better to run it on a Linux distribution, but it is possible to run it on Windows with the W\+SL (Windows Subsystem for Linux).
@@ -30,59 +45,79 @@ This project is developed in C language, so you need to have a C compiler instal
 \end{DoxyItemize}
 
 \begin{quote}
-To install the W\+SL, follow this \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{\texttt{ tutorial}}. \end{quote}
+To install the W\+SL on Windows, follow this \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{\texttt{ tutorial}}. \end{quote}
 \hypertarget{index_autotoc_md2}{}\doxysection{🚀 Quick start}\label{index_autotoc_md2}
+Follow these steps to quickly get started\+:
 
-\begin{DoxyItemize}
-\item In the root folder, go to the lab folder you want to use (ex\+: {\ttfamily cd 02-\/proc})
-\item Run {\ttfamily make} to compile the project, it will create an executable file in the {\ttfamily bin} folder called {\ttfamily livl-\/shell}
-\item Run {\ttfamily ./bin/livl-\/shell} or {\ttfamily make run} to run the executable
-\item Run {\ttfamily make clean} to clean the project
-\end{DoxyItemize}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Compile the Project}}\+: Run the {\ttfamily make} command. This will compile the project and create an executable file called {\ttfamily livl-\/shell} in the {\ttfamily bin} folder.
+\item {\bfseries{Run the Executable}}\+: You can run the executable by using the command {\ttfamily ./bin/livl-\/shell} or {\ttfamily make run}.
+\item {\bfseries{Clean the Project}}\+: Use the {\ttfamily make clean} command to clean the project.
+\end{DoxyEnumerate}
 
 \begin{quote}
-💡 The command {\ttfamily make run} will compile and immediately run the executable. It is equivalent to {\ttfamily make \&\& ./bin/livl-\/shell} \end{quote}
+💡 {\bfseries{Tip}}\+: The command {\ttfamily make run} will compile and immediately run the executable. It is equivalent to running {\ttfamily make \&\& ./bin/livl-\/shell}. \end{quote}
 \hypertarget{index_autotoc_md3}{}\doxysection{📁 Project structure}\label{index_autotoc_md3}
 The project is structured as follows\+:
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{livl-\/shell/}
-\DoxyCodeLine{├── bin/}
-\DoxyCodeLine{│   └── livl-\/shell}
-\DoxyCodeLine{├── doc/}
+\DoxyCodeLine{├── bin/ \# Contains the compiled binary}
+\DoxyCodeLine{│   └── livl-\/shell \# Executable}
+\DoxyCodeLine{├── doc/ \# Contains the Doxygen documentation}
 \DoxyCodeLine{│   └── html/}
 \DoxyCodeLine{│       └── index.html}
-\DoxyCodeLine{├── gcov/}
+\DoxyCodeLine{├── gcov/ \# Contains the coverage report}
 \DoxyCodeLine{│   └── report/}
 \DoxyCodeLine{│       └── index.html}
-\DoxyCodeLine{├── include/}
+\DoxyCodeLine{├── include/ \# Contains the header files}
 \DoxyCodeLine{│   └── file.h}
 \DoxyCodeLine{|   └── ...}
-\DoxyCodeLine{├── src/}
+\DoxyCodeLine{├── src/ \# Contains the source files}
 \DoxyCodeLine{│   └── file.c}
 \DoxyCodeLine{|   └── ...}
-\DoxyCodeLine{├── livl-\/shell.1}
-\DoxyCodeLine{├── history.txt}
-\DoxyCodeLine{└── Makefile}
+\DoxyCodeLine{├── livl-\/shell.1 \# Manual of the livl-\/shell}
+\DoxyCodeLine{├── index.html \# Static Livl Shell website}
+\DoxyCodeLine{├── history.txt \# History of your commands}
+\DoxyCodeLine{└── Makefile \# Makefile}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md4}{}\doxysection{📝 List of insane livl-\/bash commands}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md4}{}\doxysection{📝 List of Insane livl-\/bash Commands}\label{index_autotoc_md4}
 \begin{quote}
-💡 The livl-\/shell is limited to run max 3 commands in a row. \end{quote}
-
-
+💡 The livl-\/shell is limited to run a maximum of 3 commands in a row. \end{quote}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{Basic Commands}\label{index_autotoc_md5}
 
 \begin{DoxyItemize}
-\item {\ttfamily ls} \+: list the files in the current directory
-\item {\ttfamily cd} \+: change the current directory
-\item {\ttfamily pwd} \+: print the current directory
-\item {\ttfamily cat $<$$<$E\+OF} \+: let the user enter text until he types {\ttfamily E\+OF} and display it (thank to the cat command)
-\item {\ttfamily echo} \+: display a line of text
-\item {\ttfamily ls -\/l $>$ output.\+txt} \+: redirect the output of a command to a file
-\item {\ttfamily pwd $>$$>$ output.\+txt} \+: redirect the output of a command to a file (append)
-\item {\ttfamily wc -\/l $<$ output.\+txt} \+: count the number of lines in the file
-\item `ls -\/l $\vert$ grep '.txt\textquotesingle{}{\ttfamily \+: redirect the output of a command to another command you can use single, double or without quotes -\/}sleep 4 \&\& echo \char`\"{}\+Second command executed\char`\"{}{\ttfamily \+: execute a command after another one -\/}false \&\& echo \char`\"{}\+This won\textquotesingle{}t be executed\char`\"{}{\ttfamily \+: execute a command after another one only if the first one succeeded -\/}false $\vert$$\vert$ echo \char`\"{}\+This will be executed\char`\"{}{\ttfamily \+: execute a command after another one only if the first one failed -\/}echo \char`\"{}\+Command 1\char`\"{}; sleep 3; echo \char`\"{}\+Command 2\char`\"{}; ls -\/l{\ttfamily \+: execute multiple commands regardless of the success of the previous ones -\/}sleep 3 \& echo hey{\ttfamily \+: execute a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex\+:}\mbox{[}1\mbox{]} 1234{\ttfamily ) -\/}pwd{\ttfamily \+: running this command will dispkay the job id of the background process terminated (ex\+:}\mbox{[}1\mbox{]} done sleep 3\`{})
-\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{📖 Use the livl-\/bash $<$tt$>$man$<$/tt$>$ command}\label{index_autotoc_md5}
+\item {\ttfamily ls}\+: Lists the files in the current directory.
+\item {\ttfamily cd}\+: Changes the current directory.
+\item {\ttfamily pwd}\+: Prints the current directory.
+\item {\ttfamily echo}\+: Displays a line of text.
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{Input/\+Output Redirection}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\ttfamily ls -\/l $>$ output.\+txt}\+: Redirects the output of a command to a file.
+\item {\ttfamily pwd $>$$>$ output.\+txt}\+: Appends the output of a command to a file.
+\item {\ttfamily wc -\/l $<$ output.\+txt}\+: Counts the number of lines in the file.
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Pipelines}\label{index_autotoc_md7}
+
+\begin{DoxyItemize}
+\item `ls -\/l $\vert$ grep '.txt\textquotesingle{}\`{}\+: Redirects the output of a command to another command. You can use single, double, or no quotes.
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Command Sequencing}\label{index_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\ttfamily sleep 4 \&\& echo \char`\"{}\+Second command executed\char`\"{}}\+: Executes a command after another one.
+\item {\ttfamily false \&\& echo \char`\"{}\+This won\textquotesingle{}t be executed\char`\"{}}\+: Executes a command after another one only if the first one succeeded.
+\item {\ttfamily false $\vert$$\vert$ echo \char`\"{}\+This will be executed\char`\"{}}\+: Executes a command after another one only if the first one failed.
+\item {\ttfamily echo \char`\"{}\+Command 1\char`\"{}; sleep 3; echo \char`\"{}\+Command 2\char`\"{}; ls -\/l}\+: Executes multiple commands regardless of the success of the previous ones.
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsection{Background Execution}\label{index_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\ttfamily sleep 3 \& echo hey}\+: Executes a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex\+: {\ttfamily \mbox{[}1\mbox{]} 1234}).
+\begin{DoxyItemize}
+\item {\ttfamily pwd}\+: Running this command will display the job id of the background process terminated (ex\+: {\ttfamily \mbox{[}1\mbox{]} done sleep 3}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{📖 Use the livl-\/bash $<$tt$>$man$<$/tt$>$ command}\label{index_autotoc_md10}
 \begin{quote}
 To edit the man you can download a T\+R\+O\+FF Syntax Highlighter for Visual Studio Code. \end{quote}
 
@@ -91,39 +126,39 @@ To edit the man you can download a T\+R\+O\+FF Syntax Highlighter for Visual Stu
 \begin{DoxyItemize}
 \item The {\ttfamily man livl-\/shell} manual is located in the \href{livl-shell.1}{\texttt{ {\ttfamily livl-\/shell.\+1}}} file
 \item To view the manual, run \+: {\ttfamily man ./livl-\/shell.1}
-\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysection{📜 Use D\+O\+X\+Y\+G\+E\+N documentation}\label{index_autotoc_md6}
+\end{DoxyItemize}\hypertarget{index_autotoc_md11}{}\doxysection{📜 Doxygen documentation}\label{index_autotoc_md11}
 \begin{quote}
-You probably need to install doxygen to generate the documentation \+: {\ttfamily sudo apt install doxygen} \end{quote}
+❓ Doxygen is a documentation generator, a tool for writing software reference documentation. \end{quote}
+\hypertarget{index_autotoc_md12}{}\doxysubsection{📦 Prerequisites of Doxygen}\label{index_autotoc_md12}
 
-
+\begin{DoxyItemize}
+\item {\ttfamily Download doxygen} \+: {\ttfamily sudo apt install doxygen}
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysubsection{🚀 Generate the Doxygen documentation}\label{index_autotoc_md13}
 
 \begin{DoxyItemize}
 \item Run {\ttfamily make doc} to generate the documentation
-\item To view the documentation, open the \href{/doc/html/index.html}{\texttt{ {\ttfamily index.\+html}}} file in the {\ttfamily doc} folder
-\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysection{🧪 Use G\+C\+O\+V test coverage}\label{index_autotoc_md7}
+\item To view the documentation, open the \href{/doc/html/index.html}{\texttt{ {\ttfamily index.\+html}}} file in the {\ttfamily doc/html/} folder.
+\end{DoxyItemize}\hypertarget{index_autotoc_md14}{}\doxysection{🧪 G\+C\+O\+V test coverage}\label{index_autotoc_md14}
 \begin{quote}
-G\+C\+OV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code. \end{quote}
-\hypertarget{index_autotoc_md8}{}\doxysubsection{📦 Prerequisites of gcov}\label{index_autotoc_md8}
+❓ G\+C\+OV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code. \end{quote}
+\hypertarget{index_autotoc_md15}{}\doxysubsection{📦 Prerequisites of gcov}\label{index_autotoc_md15}
 
 \begin{DoxyItemize}
-\item {\ttfamily gcov} \+: {\ttfamily sudo apt install gcov}
-\item {\ttfamily lcov} \+: {\ttfamily sudo apt install lcov}
-\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsection{🚀 Generate the coverage report}\label{index_autotoc_md9}
+\item {\ttfamily Download gcov} \+: {\ttfamily sudo apt install gcov}
+\item {\ttfamily Download lcov} \+: {\ttfamily sudo apt install lcov}
+\end{DoxyItemize}\hypertarget{index_autotoc_md16}{}\doxysubsection{🚀 Generate the coverage report}\label{index_autotoc_md16}
 
 \begin{DoxyItemize}
 \item Run {\ttfamily make gcov} to generate the coverage report
 \item To exit the coverage report, press {\ttfamily exit} two times (one for the shell and one for the coverage report)
 \item To view the coverage report, open the \href{/gcov/report/index.html}{\texttt{ {\ttfamily index.\+html}}} file in the {\ttfamily gcov/report/} folder or run {\ttfamily gcovr -\/r .}
 \item Run {\ttfamily make clean-\/gcov} to clean the {\ttfamily gcov} folder
-\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{🔧 Pipeline}\label{index_autotoc_md10}
+\end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysection{🛠️ Pipeline}\label{index_autotoc_md17}
+Our pipelines are configured to be triggered on each {\ttfamily push} and {\ttfamily pull request} event on the {\ttfamily master} branch. We have two main pipelines\+:\hypertarget{index_autotoc_md18}{}\doxysubsubsection{1. C-\/\+Make Pipeline}\label{index_autotoc_md18}
+The {\ttfamily c-\/make} pipeline compiles the project using the {\ttfamily make} command.\hypertarget{index_autotoc_md19}{}\doxysubsubsection{2. Static Pipeline}\label{index_autotoc_md19}
+The {\ttfamily static} pipeline hosts the static website on Git\+Hub Pages at the root of the repository. This allows access to the Doxygen documentation and the Coverage report at the following address\+: \href{https://livl-corporation.github.io/livl-shell/}{\texttt{ https\+://livl-\/corporation.\+github.\+io/livl-\/shell/}}\hypertarget{index_autotoc_md20}{}\doxysection{🧍🏽\+Project team}\label{index_autotoc_md20}
+The Livl team is composed of two members from the C\+N\+AM of Strasbourg\+:
 
-\begin{DoxyItemize}
-\item The pipeline is configured to run on each push and pull request on the {\ttfamily master} branch
-\end{DoxyItemize}
-
-\begin{quote}
-You can find the pipeline configuration in the \href{.github/workflows/c-make.yml}{\texttt{ {\ttfamily .github/workflows/c-\/make.\+yml}}} file. \end{quote}
-\hypertarget{index_autotoc_md11}{}\doxysection{🧍🏽\+Project team}\label{index_autotoc_md11}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
