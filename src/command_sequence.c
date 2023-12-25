@@ -67,7 +67,7 @@ void process_token(char *token, char **commands, char **operators, char **curren
         size_t len = strlen(*currentCommand) + strlen(token) + 2;
         char* temp = realloc(*currentCommand, len);
         if (temp == NULL) {
-            fprintf(stderr, "Error reallocating memory\n");
+            perror("realloc");
             return;
         }
         *currentCommand = temp;

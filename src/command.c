@@ -16,7 +16,7 @@ Command evaluate_command(const char *input) {
     if (token != NULL) {
         cmd.command = strdup(token);
     } else {
-        fprintf(stderr, "Invalid command\n");
+        perror("strtok");
         free(input_copy);
         return cmd;
     }
@@ -61,8 +61,7 @@ char* get_complete_command(const Command *cmd) {
 
     char *complete_command = malloc(total_length);
     if (complete_command == NULL) {
-        // Handle memory allocation failure
-        fprintf(stderr, "Memory allocation failed\n");
+        perror("malloc");
         exit(EXIT_FAILURE);
     }
 
@@ -79,8 +78,7 @@ char* get_complete_command(const Command *cmd) {
 char** get_complete_command_array(Command *cmd) {
     char **new_arguments = malloc((cmd->num_arguments + 2) * sizeof(char *));
     if (new_arguments == NULL) {
-        // Gérer l'échec de l'allocation de mémoire
-        fprintf(stderr, "Memory allocation failed\n");
+        perror("malloc");
         free_command(cmd);
         exit(EXIT_FAILURE);
     }

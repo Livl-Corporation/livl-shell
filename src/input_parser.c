@@ -6,12 +6,12 @@
 char* read_input() {
     char* input = malloc(MAX_INPUT_LENGTH * sizeof(char));
     if (input == NULL) {
-        fprintf(stderr, "Error allocating memory for input\n");
+        perror("malloc");
         return NULL;
     }
 
     if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL) {
-        fprintf(stderr, "Error reading input\n");
+        perror("fgets");
         free(input);
         return NULL;
     }
@@ -37,7 +37,7 @@ void preprocess_input(char* input) {
     char* new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input
 
     if (new_input == NULL) {
-        fprintf(stderr, "Error allocating memory\n");
+        perror("malloc");
         return;
     }
 
