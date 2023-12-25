@@ -1,7 +1,52 @@
+/* CUSTOM LIVL DOXYGEN CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body, table, div, p, dl {
+    font-family: 'Inter', sans-serif;
+}
+
+.textblock-livl {
+    margin: 0 10%;
+}
+
+code {
+    font-size: small;
+    background-color: #f7fafc;
+    color: #374151;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+#livl-table {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+}
+
+.livl-th, .livl-td {
+        border: 1px solid #ddd;
+        padding: 8px;
+}
+
+th {
+        background-color: #f2f2f2;
+}
+
+.fragment {
+        font-family: 'Inter', sans-serif !important; 
+        color: #333 !important; 
+        white-space: break-spaces !important;
+}
+
+.fragment .line {
+        margin-bottom: 0px !important; 
+}
+
 /* The standard CSS for doxygen 1.8.17 */
 
 body, table, div, p, dl {
-	font: 400 14px/22px Roboto,sans-serif;
+        //font: 400 14px/22px Roboto,sans-serif;
 }
 
 p.reference, p.definition {
