@@ -17,7 +17,7 @@
  * @param input: the string to evaluate
  * @return the command structure
 */
-Command evaluateCommand(const char *input);
+Command evaluate_command(const char *input);
 
 /**
  * @brief Handle quotes in a string (remove them)
@@ -29,32 +29,26 @@ void handle_quotes(char **token);
  * @brief Free a command
  * @param cmd: the command to free
 */
-void freeCommand(Command *cmd);
-
-/**
- * @brief Print a command
- * @param cmd: the command to print
-*/
-void printCommand(Command *cmd);
+void free_command(Command *cmd);
 
 /**
  * @brief Get the complete command (command + arguments) as a string 
  * @brief It is useful for execvp(const char* command, char* argv[])
  * @param cmd: the command to get
- * @return the complete command
+ * @return the complete command as an array of strings
 */
-char** getCompleteCommand(Command *cmd);
+char** get_complete_command_array(Command *cmd);
 
 /**
  * @brief Initialize a command
  * @param cmd: the command to initialize
 */
-void initializeCommand(Command *cmd);
+void initialize_command(Command *cmd);
 
 /**
  * @brief Get the complete command (command + arguments) as a string
  * @param cmd: the command to get
- * @return the complete command
+ * @return the complete command as a string
 */
 char* get_complete_command(const Command *cmd);
 

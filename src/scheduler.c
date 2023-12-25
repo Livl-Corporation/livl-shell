@@ -44,7 +44,7 @@ int execute_command(const Command *command, int run_in_background) {
     return execution_status;
 }
 
-int executeCommandSequence(const CommandSequence *sequence) {
+int execute_command_sequence(const CommandSequence *sequence) {
     int status = 0;
     int is_current_command_failed = 0;
     int is_skipping_next_command = 0;

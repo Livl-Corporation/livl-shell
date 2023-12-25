@@ -1,8 +1,8 @@
 #include "command.h"
 
-Command evaluateCommand(const char *input) {
+Command evaluate_command(const char *input) {
     Command cmd;
-    initializeCommand(&cmd);
+    initialize_command(&cmd);
 
     char delimiters[] = " \t\n";
 
@@ -34,7 +34,7 @@ Command evaluateCommand(const char *input) {
     cmd.arguments[cmd.num_arguments] = NULL;
 
     // Get the complete command
-    cmd.complete_command = getCompleteCommand(&cmd);
+    cmd.complete_command = get_complete_command_array(&cmd);
 
     free(input_copy);
     return cmd;
@@ -76,12 +76,12 @@ char* get_complete_command(const Command *cmd) {
     return complete_command;
 }
 
-char** getCompleteCommand(Command *cmd) {
+char** get_complete_command_array(Command *cmd) {
     char **new_arguments = malloc((cmd->num_arguments + 2) * sizeof(char *));
     if (new_arguments == NULL) {
         // Gérer l'échec de l'allocation de mémoire
         fprintf(stderr, "Memory allocation failed\n");
-        freeCommand(cmd);
+        free_command(cmd);
         exit(EXIT_FAILURE);
     }
     new_arguments[0] = cmd->command;
@@ -91,7 +91,7 @@ char** getCompleteCommand(Command *cmd) {
     return new_arguments;
 }
 
-void initializeCommand(Command *cmd) {
+void initialize_command(Command *cmd) {
     cmd->command = NULL;
     cmd->arguments = NULL;
     cmd->complete_command = NULL;
@@ -102,7 +102,7 @@ void initializeCommand(Command *cmd) {
     cmd->num_arguments = 0;
 }
 
-void freeCommand(Command *cmd) {
+void free_command(Command *cmd) {
     free(cmd->command);
     for (int i = 0; i < cmd->num_arguments; ++i) {
         free(cmd->arguments[i]);

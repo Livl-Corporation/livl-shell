@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['initialize_5fcommand_5fhistory_48',['initialize_command_history',['../history__command_8h.html#aeb735e34a5bc474c20650fd8e3b1f83f',1,'history_command.c']]],
-  ['initializecommand_49',['initializeCommand',['../command_8h.html#a82a2ebe269e347aa6d9a3f30d379aa7e',1,'command.c']]],
+  ['initialize_5fcommand_48',['initialize_command',['../command_8h.html#ac5f62bc2440691f04fdcc0cb5f7e7c03',1,'command.c']]],
+  ['initialize_5fcommand_5fhistory_49',['initialize_command_history',['../history__command_8h.html#aeb735e34a5bc474c20650fd8e3b1f83f',1,'history_command.c']]],
   ['input_5ffile_50',['input_file',['../structRedirection.html#a910401c3440918ab3fd2b4a0c195cb0d',1,'Redirection']]],
   ['input_5fparser_2eh_51',['input_parser.h',['../input__parser_8h.html',1,'']]],
   ['is_5fall_5fwhitespace_52',['is_all_whitespace',['../input__parser_8h.html#aed9107ab2657d16984676d83fb78e2f1',1,'input_parser.c']]],

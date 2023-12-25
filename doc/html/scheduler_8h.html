@@ -143,12 +143,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac4af5eae73e9a990c2955968e084086b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#ac4af5eae73e9a990c2955968e084086b">execute_command</a> (const <a class="el" href="structCommand.html">Command</a> *command, int run_in_background)</td></tr>
 <tr class="memdesc:ac4af5eae73e9a990c2955968e084086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a command.  <a href="scheduler_8h.html#ac4af5eae73e9a990c2955968e084086b">More...</a><br /></td></tr>
 <tr class="separator:ac4af5eae73e9a990c2955968e084086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19e25fbb8ec661bad23ad625f92c538e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#a19e25fbb8ec661bad23ad625f92c538e">executeCommandSequence</a> (const <a class="el" href="structCommandSequence.html">CommandSequence</a> *sequence)</td></tr>
-<tr class="memdesc:a19e25fbb8ec661bad23ad625f92c538e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a sequence of commands with operators.  <a href="scheduler_8h.html#a19e25fbb8ec661bad23ad625f92c538e">More...</a><br /></td></tr>
-<tr class="separator:a19e25fbb8ec661bad23ad625f92c538e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61b3a3af6c5d568e0dbe2c1ace942b72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#a61b3a3af6c5d568e0dbe2c1ace942b72">printCommand</a> (<a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
-<tr class="memdesc:a61b3a3af6c5d568e0dbe2c1ace942b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a command.  <a href="scheduler_8h.html#a61b3a3af6c5d568e0dbe2c1ace942b72">More...</a><br /></td></tr>
-<tr class="separator:a61b3a3af6c5d568e0dbe2c1ace942b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24cf790ac1c74a572125ced4b750ccb6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#a24cf790ac1c74a572125ced4b750ccb6">execute_command_sequence</a> (const <a class="el" href="structCommandSequence.html">CommandSequence</a> *sequence)</td></tr>
+<tr class="memdesc:a24cf790ac1c74a572125ced4b750ccb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a sequence of commands with operators.  <a href="scheduler_8h.html#a24cf790ac1c74a572125ced4b750ccb6">More...</a><br /></td></tr>
+<tr class="separator:a24cf790ac1c74a572125ced4b750ccb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the scheduler functions to manage the execution of commands. </p>
@@ -193,6 +190,33 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a24cf790ac1c74a572125ced4b750ccb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24cf790ac1c74a572125ced4b750ccb6">&#9670;&nbsp;</a></span>execute_command_sequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int execute_command_sequence </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structCommandSequence.html">CommandSequence</a> *&#160;</td>
+          <td class="paramname"><em>sequence</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes a sequence of commands with operators. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sequence</td><td>The sequence of commands to execute </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The status of the execution </dd></dl>
+
+</div>
+</div>
 <a id="aac24a47138916b8751e346825bfef85d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac24a47138916b8751e346825bfef85d">&#9670;&nbsp;</a></span>execute_external_command()</h2>
 
@@ -228,59 +252,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The status of the execution </dd></dl>
-
-</div>
-</div>
-<a id="a19e25fbb8ec661bad23ad625f92c538e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19e25fbb8ec661bad23ad625f92c538e">&#9670;&nbsp;</a></span>executeCommandSequence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int executeCommandSequence </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structCommandSequence.html">CommandSequence</a> *&#160;</td>
-          <td class="paramname"><em>sequence</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Executes a sequence of commands with operators. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sequence</td><td>The sequence of commands to execute </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The status of the execution </dd></dl>
-
-</div>
-</div>
-<a id="a61b3a3af6c5d568e0dbe2c1ace942b72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61b3a3af6c5d568e0dbe2c1ace942b72">&#9670;&nbsp;</a></span>printCommand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void printCommand </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structCommand.html">Command</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Prints a command. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmd</td><td>The command to print </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

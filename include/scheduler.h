@@ -46,12 +46,6 @@ int execute_command(const Command *command, int run_in_background);
  * @param sequence The sequence of commands to execute
  * @return The status of the execution
 */
-int executeCommandSequence(const CommandSequence *sequence);
-
-/**
- * @brief Prints a command
- * @param cmd The command to print
-*/
-void printCommand(Command *cmd);
+int execute_command_sequence(const CommandSequence *sequence);
 
 #endif //SCHEDULER_H

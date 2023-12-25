@@ -32,7 +32,7 @@ void command_sequence_init(char *input) {
 
     // Build the command sequence with its commands
     for (int i = 0; i < command_count; i++) {
-        sequence.commands[sequence.num_commands++] = evaluateCommand(commands[i]);
+        sequence.commands[sequence.num_commands++] = evaluate_command(commands[i]);
         free(commands[i]);
     }
 
@@ -44,7 +44,7 @@ void command_sequence_init(char *input) {
 
     evaluate_redirection(&sequence);
 
-    int result = executeCommandSequence(&sequence);
+    int result = execute_command_sequence(&sequence);
 
     if (result < 0) {
         fprintf(stderr, "An error occurred while executing the commands\n");
@@ -86,7 +86,7 @@ void store_command(char **commands, char **currentCommand, int *cmdIndex) {
 
 void free_command_sequence(CommandSequence *sequence) {
     for (int i = 0; i < sequence->num_commands; ++i) {
-        freeCommand(&sequence->commands[i]);
+        free_command(&sequence->commands[i]);
     }
     free(sequence->commands);
 }

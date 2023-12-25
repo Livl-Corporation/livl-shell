@@ -44,10 +44,8 @@ int \mbox{\hyperlink{scheduler_8h_aac24a47138916b8751e346825bfef85d}{execute\+\_
 \begin{DoxyCompactList}\small\item\em Executes a command. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{scheduler_8h_ac4af5eae73e9a990c2955968e084086b}{execute\+\_\+command}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command, int run\+\_\+in\+\_\+background)
 \begin{DoxyCompactList}\small\item\em Executes a command. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{scheduler_8h_a19e25fbb8ec661bad23ad625f92c538e}{execute\+Command\+Sequence}} (const \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$sequence)
-\begin{DoxyCompactList}\small\item\em Executes a sequence of commands with operators. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{scheduler_8h_a61b3a3af6c5d568e0dbe2c1ace942b72}{print\+Command}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
-\begin{DoxyCompactList}\small\item\em Prints a command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{scheduler_8h_a24cf790ac1c74a572125ced4b750ccb6}{execute\+\_\+command\+\_\+sequence}} (const \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$sequence)
+\begin{DoxyCompactList}\small\item\em Executes a sequence of commands with operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -82,6 +80,24 @@ Executes a command.
 \begin{DoxyReturn}{Returns}
 The status of the execution 
 \end{DoxyReturn}
+\mbox{\Hypertarget{scheduler_8h_a24cf790ac1c74a572125ced4b750ccb6}\label{scheduler_8h_a24cf790ac1c74a572125ced4b750ccb6}} 
+\index{scheduler.h@{scheduler.h}!execute\_command\_sequence@{execute\_command\_sequence}}
+\index{execute\_command\_sequence@{execute\_command\_sequence}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{execute\_command\_sequence()}{execute\_command\_sequence()}}
+{\footnotesize\ttfamily int execute\+\_\+command\+\_\+sequence (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Executes a sequence of commands with operators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & The sequence of commands to execute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of the execution 
+\end{DoxyReturn}
 \mbox{\Hypertarget{scheduler_8h_aac24a47138916b8751e346825bfef85d}\label{scheduler_8h_aac24a47138916b8751e346825bfef85d}} 
 \index{scheduler.h@{scheduler.h}!execute\_external\_command@{execute\_external\_command}}
 \index{execute\_external\_command@{execute\_external\_command}!scheduler.h@{scheduler.h}}
@@ -102,36 +118,3 @@ Executes a command.
 \begin{DoxyReturn}{Returns}
 The status of the execution 
 \end{DoxyReturn}
-\mbox{\Hypertarget{scheduler_8h_a19e25fbb8ec661bad23ad625f92c538e}\label{scheduler_8h_a19e25fbb8ec661bad23ad625f92c538e}} 
-\index{scheduler.h@{scheduler.h}!executeCommandSequence@{executeCommandSequence}}
-\index{executeCommandSequence@{executeCommandSequence}!scheduler.h@{scheduler.h}}
-\doxysubsubsection{\texorpdfstring{executeCommandSequence()}{executeCommandSequence()}}
-{\footnotesize\ttfamily int execute\+Command\+Sequence (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$}]{sequence }\end{DoxyParamCaption})}
-
-
-
-Executes a sequence of commands with operators. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sequence} & The sequence of commands to execute \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The status of the execution 
-\end{DoxyReturn}
-\mbox{\Hypertarget{scheduler_8h_a61b3a3af6c5d568e0dbe2c1ace942b72}\label{scheduler_8h_a61b3a3af6c5d568e0dbe2c1ace942b72}} 
-\index{scheduler.h@{scheduler.h}!printCommand@{printCommand}}
-\index{printCommand@{printCommand}!scheduler.h@{scheduler.h}}
-\doxysubsubsection{\texorpdfstring{printCommand()}{printCommand()}}
-{\footnotesize\ttfamily void print\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
-
-
-
-Prints a command. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em cmd} & The command to print \\
-\hline
-\end{DoxyParams}
