@@ -2,9 +2,9 @@
   <img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png" width="224px"/><br/>
   <b>Livl Shell</b>
 </h1>  
-<h3 align="center">
+<h4 align="center">
   An Intermediate Reimplementation of the Bash Shell in C
-</h3><br>
+</h4>
 
 # Table of Contents
 - [📦 Prerequisites](#-prerequisites)
