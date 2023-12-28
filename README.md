@@ -13,6 +13,7 @@
     - [Pipelines](#pipelines)
     - [Command Sequencing](#command-sequencing)
     - [Background Execution](#background-execution)
+    - [Batch Mode](#batch-mode)
 - [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
 - [📜 Doxygen documentation](#-doxygen-documentation)
     - [📦 Prerequisites of Doxygen](#-prerequisites-of-doxygen)
@@ -41,6 +42,8 @@ Follow these steps to quickly get started:
 1. **Compile the Project**: Run the `make` command. This will compile the project and create an executable file called `livl-shell` in the `bin` folder.
 
 2. **Run the Executable**: You can run the executable by using the command `./bin/livl-shell` or `make run`.
+
+> 😀 **Insane feature**: You can run the executable in batch mode by using the command `./bin/livl-shell -c "ls -l"`.
 
 3. **Clean the Project**: Use the `make clean` command to clean the project.
 
@@ -99,6 +102,13 @@ livl-shell/
 - `false && echo "This won't be executed"`: Executes a command after another one only if the first one succeeded.
 - `false || echo "This will be executed"`: Executes a command after another one only if the first one failed.
 - `echo "Command 1"; sleep 3; echo "Command 2"; ls -l`: Executes multiple commands regardless of the success of the previous ones.
+
+## Batch Mode
+
+> ⚠️ The command should be enclosed in quotes to ensure it is passed as a single argument
+
+- `./livl-shell -c "ls -l|grep txt && echo heyyy"`: Executes a list of commands from the command line.
+- `./livl-shell --command "echo livl"`: Executes a list of commands from the command line.
 
 ## Background Execution
 

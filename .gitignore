@@ -1,3 +1,5 @@
 *.o
 *.txt
 bin/*
+
+doc/html/doxygen.css

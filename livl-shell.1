@@ -2,16 +2,14 @@
 .SH NAME
 livl-shell \- the Livl Shell program interpreter
 .SH SYNOPSIS
-livl-shell [options] [file...]
+livl-shell [argument] ["command..."]
 .SH DESCRIPTION
 livl-shell is a custom shell program interpreter for the Livl Shell language. It is a command-line program that takes a Livl Shell command as input and executes it. It then prints the output of the command to the standard output. 
-It can executes a combination of built-in commands and external commands. You can combine maximum 3 commands in a single line separated by operators.
+It can execute a combination of built-in commands and external commands. You can combine a maximum of 3 commands in a single line separated by operators. In addition to the interactive mode, livl-shell also supports a batch mode, which allows you to execute a command directly from the command line.
 .SH OPTIONS
 livl-shell accepts the following options:
-.IP "\fB\-h, \-\-help\fR"
-Display the help message and exit.
-.IP "\fB\-v, \-\-version\fR"
-Display the version information and exit.
+.IP "\fB\-c, \-\-command\fR"
+Execute the given command in batch mode. The command should be enclosed in quotes to ensure it is passed as a single argument. For example, `livl-shell -c "ls -l | grep txt"`.
 .SH AUTHOR
 Written by Julien Von Der Marck and Franck Gutmann.
 .SH COPYRIGHT
