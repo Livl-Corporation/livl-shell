@@ -1,14 +1,16 @@
 \doxysection*{~\newline
- Livl Shell }
+ {\bfseries{Livl Shell}} }
 
 ~\newline
- 
+ \doxysubsubsection*{An Intermediate Reimplementation of the Bash Shell in C }
 
-Livl Shell is an intermediate reimplementation of the bash shell in C language.\hypertarget{index_autotoc_md0}{}\doxysection{Table of Contents}\label{index_autotoc_md0}
+~\newline
+\hypertarget{index_autotoc_md0}{}\doxysection{Table of Contents}\label{index_autotoc_md0}
 
 \begin{DoxyItemize}
 \item \href{\#-prerequisites}{\texttt{ 📦 Prerequisites}}
 \item \href{\#-quick-start}{\texttt{ 🚀 Quick start}}
+\item \href{\#-makefile-guide}{\texttt{ 📚 Makefile Guide}}
 \item \href{\#-project-structure}{\texttt{ 📁 Project structure}}
 \item \href{\#-list-of-insane-livl-bash-commands}{\texttt{ 📝 List of insane livl-\/bash commands}}
 \begin{DoxyItemize}
@@ -16,8 +18,8 @@ Livl Shell is an intermediate reimplementation of the bash shell in C language.\
 \item \href{\#inputoutput-redirection}{\texttt{ Input/\+Output Redirection}}
 \item \href{\#pipelines}{\texttt{ Pipelines}}
 \item \href{\#command-sequencing}{\texttt{ Command Sequencing}}
-\item \href{\#background-execution}{\texttt{ Background Execution}}
 \item \href{\#batch-mode}{\texttt{ Batch Mode}}
+\item \href{\#background-execution}{\texttt{ Background Execution}}
 \end{DoxyItemize}
 \item \href{\#-use-the-livl-bash-man-command}{\texttt{ 📖 Use the livl-\/bash man command}}
 \item \href{\#-doxygen-documentation}{\texttt{ 📜 Doxygen documentation}}
@@ -67,7 +69,23 @@ Follow these steps to quickly get started\+:
 
 \begin{quote}
 💡 {\bfseries{Tip}}\+: The command {\ttfamily make run} will compile and immediately run the executable. It is equivalent to running {\ttfamily make \&\& ./bin/livl-\/shell}. \end{quote}
-\hypertarget{index_autotoc_md3}{}\doxysection{📁 Project structure}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md3}{}\doxysection{📚 Makefile Guide}\label{index_autotoc_md3}
+The project uses a Makefile for managing build tasks. Here are some of the available targets\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily all}\+: Compile the project.
+\item {\ttfamily run}\+: Run the executable.
+\item {\ttfamily doc}\+: Generate documentation using Doxygen.
+\item {\ttfamily gcov}\+: Generate code coverage data using gcov and lcov.
+\item {\ttfamily package}\+: Package the project into a tar.\+gz file.
+\item {\ttfamily clean}\+: Remove all object files.
+\item {\ttfamily clean-\/gcov}\+: Remove all gcov-\/related files.
+\item {\ttfamily mrproper}\+: Perform a deep clean of the project.
+\item {\ttfamily clear}\+: Clear the console.
+\end{DoxyItemize}
+
+You can use the {\ttfamily make help} command to display a brief description of each target.\hypertarget{index_autotoc_md4}{}\doxysection{📁 Project structure}\label{index_autotoc_md4}
 The project is structured as follows\+:
 
 
@@ -92,34 +110,34 @@ The project is structured as follows\+:
 \DoxyCodeLine{├── history.txt \# History of your commands}
 \DoxyCodeLine{└── Makefile \# Makefile}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md4}{}\doxysection{📝 List of Insane livl-\/bash Commands}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysection{📝 List of Insane livl-\/bash Commands}\label{index_autotoc_md5}
 \begin{quote}
 💡 The livl-\/shell is limited to run a maximum of 3 commands in a row. \end{quote}
-\hypertarget{index_autotoc_md5}{}\doxysubsection{Basic Commands}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{Basic Commands}\label{index_autotoc_md6}
 
 \begin{DoxyItemize}
 \item {\ttfamily ls}\+: Lists the files in the current directory.
 \item {\ttfamily cd}\+: Changes the current directory.
 \item {\ttfamily pwd}\+: Prints the current directory.
 \item {\ttfamily echo}\+: Displays a line of text.
-\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{Input/\+Output Redirection}\label{index_autotoc_md6}
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Input/\+Output Redirection}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
 \item {\ttfamily ls -\/l $>$ output.\+txt}\+: Redirects the output of a command to a file.
 \item {\ttfamily pwd $>$$>$ output.\+txt}\+: Appends the output of a command to a file.
 \item {\ttfamily wc -\/l $<$ output.\+txt}\+: Counts the number of lines in the file.
-\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{Pipelines}\label{index_autotoc_md7}
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Pipelines}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
 \item `ls -\/l $\vert$ grep '.txt\textquotesingle{}\`{}\+: Redirects the output of a command to another command. You can use single, double, or no quotes.
-\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{Command Sequencing}\label{index_autotoc_md8}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsection{Command Sequencing}\label{index_autotoc_md9}
 
 \begin{DoxyItemize}
 \item {\ttfamily sleep 4 \&\& echo \char`\"{}\+Second command executed\char`\"{}}\+: Executes a command after another one.
 \item {\ttfamily false \&\& echo \char`\"{}\+This won\textquotesingle{}t be executed\char`\"{}}\+: Executes a command after another one only if the first one succeeded.
 \item {\ttfamily false $\vert$$\vert$ echo \char`\"{}\+This will be executed\char`\"{}}\+: Executes a command after another one only if the first one failed.
 \item {\ttfamily echo \char`\"{}\+Command 1\char`\"{}; sleep 3; echo \char`\"{}\+Command 2\char`\"{}; ls -\/l}\+: Executes multiple commands regardless of the success of the previous ones.
-\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsection{Batch Mode}\label{index_autotoc_md9}
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysubsection{Batch Mode}\label{index_autotoc_md10}
 \begin{quote}
 ⚠️ The command should be enclosed in quotes to ensure it is passed as a single argument \end{quote}
 
@@ -128,14 +146,14 @@ The project is structured as follows\+:
 \begin{DoxyItemize}
 \item {\ttfamily ./livl-\/shell -\/c \char`\"{}ls -\/l$\vert$grep txt \&\& echo heyyy\char`\"{}}\+: Executes a list of commands from the command line.
 \item {\ttfamily ./livl-\/shell -\/-\/command \char`\"{}echo livl\char`\"{}}\+: Executes a list of commands from the command line.
-\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysubsection{Background Execution}\label{index_autotoc_md10}
+\end{DoxyItemize}\hypertarget{index_autotoc_md11}{}\doxysubsection{Background Execution}\label{index_autotoc_md11}
 
 \begin{DoxyItemize}
 \item {\ttfamily sleep 3 \& echo hey}\+: Executes a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex\+: {\ttfamily \mbox{[}1\mbox{]} 1234}).
 \begin{DoxyItemize}
 \item {\ttfamily pwd}\+: Running this command will display the job id of the background process terminated (ex\+: {\ttfamily \mbox{[}1\mbox{]} done sleep 3}).
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md11}{}\doxysection{📖 Use the livl-\/bash $<$tt$>$man$<$/tt$>$ command}\label{index_autotoc_md11}
+\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysection{📖 Use the livl-\/bash $<$tt$>$man$<$/tt$>$ command}\label{index_autotoc_md12}
 \begin{quote}
 To edit the man you can download a T\+R\+O\+FF Syntax Highlighter for Visual Studio Code. \end{quote}
 
@@ -144,37 +162,37 @@ To edit the man you can download a T\+R\+O\+FF Syntax Highlighter for Visual Stu
 \begin{DoxyItemize}
 \item The {\ttfamily man livl-\/shell} manual is located in the \href{livl-shell.1}{\texttt{ {\ttfamily livl-\/shell.\+1}}} file
 \item To view the manual, run \+: {\ttfamily man ./livl-\/shell.1}
-\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysection{📜 Doxygen documentation}\label{index_autotoc_md12}
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysection{📜 Doxygen documentation}\label{index_autotoc_md13}
 \begin{quote}
 ❓ Doxygen is a documentation generator, a tool for writing software reference documentation. \end{quote}
-\hypertarget{index_autotoc_md13}{}\doxysubsection{📦 Prerequisites of Doxygen}\label{index_autotoc_md13}
+\hypertarget{index_autotoc_md14}{}\doxysubsection{📦 Prerequisites of Doxygen}\label{index_autotoc_md14}
 
 \begin{DoxyItemize}
 \item {\ttfamily Download doxygen} \+: {\ttfamily sudo apt install doxygen}
-\end{DoxyItemize}\hypertarget{index_autotoc_md14}{}\doxysubsection{🚀 Generate the Doxygen documentation}\label{index_autotoc_md14}
+\end{DoxyItemize}\hypertarget{index_autotoc_md15}{}\doxysubsection{🚀 Generate the Doxygen documentation}\label{index_autotoc_md15}
 
 \begin{DoxyItemize}
 \item Run {\ttfamily make doc} to generate the documentation
 \item To view the documentation, open the \href{/doc/html/index.html}{\texttt{ {\ttfamily index.\+html}}} file in the {\ttfamily doc/html/} folder.
-\end{DoxyItemize}\hypertarget{index_autotoc_md15}{}\doxysection{🧪 G\+C\+O\+V test coverage}\label{index_autotoc_md15}
+\end{DoxyItemize}\hypertarget{index_autotoc_md16}{}\doxysection{🧪 G\+C\+O\+V test coverage}\label{index_autotoc_md16}
 \begin{quote}
 ❓ G\+C\+OV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code. \end{quote}
-\hypertarget{index_autotoc_md16}{}\doxysubsection{📦 Prerequisites of gcov}\label{index_autotoc_md16}
+\hypertarget{index_autotoc_md17}{}\doxysubsection{📦 Prerequisites of gcov}\label{index_autotoc_md17}
 
 \begin{DoxyItemize}
 \item {\ttfamily Download gcov} \+: {\ttfamily sudo apt install gcov}
 \item {\ttfamily Download lcov} \+: {\ttfamily sudo apt install lcov}
-\end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysubsection{🚀 Generate the coverage report}\label{index_autotoc_md17}
+\end{DoxyItemize}\hypertarget{index_autotoc_md18}{}\doxysubsection{🚀 Generate the coverage report}\label{index_autotoc_md18}
 
 \begin{DoxyItemize}
 \item Run {\ttfamily make gcov} to generate the coverage report
 \item To exit the coverage report, press {\ttfamily exit} two times (one for the shell and one for the coverage report)
 \item To view the coverage report, open the \href{/gcov/report/index.html}{\texttt{ {\ttfamily index.\+html}}} file in the {\ttfamily gcov/report/} folder or run {\ttfamily gcovr -\/r .}
 \item Run {\ttfamily make clean-\/gcov} to clean the {\ttfamily gcov} folder
-\end{DoxyItemize}\hypertarget{index_autotoc_md18}{}\doxysection{🛠️ Pipeline}\label{index_autotoc_md18}
-Our pipelines are configured to be triggered on each {\ttfamily push} and {\ttfamily pull request} event on the {\ttfamily master} branch. We have two main pipelines\+:\hypertarget{index_autotoc_md19}{}\doxysubsubsection{1. C-\/\+Make Pipeline}\label{index_autotoc_md19}
-The {\ttfamily c-\/make} pipeline compiles the project using the {\ttfamily make} command.\hypertarget{index_autotoc_md20}{}\doxysubsubsection{2. Static Pipeline}\label{index_autotoc_md20}
-The {\ttfamily static} pipeline hosts the static website on Git\+Hub Pages at the root of the repository. This allows access to the Doxygen documentation and the Coverage report at the following address\+: \href{https://livl-corporation.github.io/livl-shell/}{\texttt{ https\+://livl-\/corporation.\+github.\+io/livl-\/shell/}}\hypertarget{index_autotoc_md21}{}\doxysection{🧍🏽\+Project team}\label{index_autotoc_md21}
+\end{DoxyItemize}\hypertarget{index_autotoc_md19}{}\doxysection{🛠️ Pipeline}\label{index_autotoc_md19}
+Our pipelines are configured to be triggered on each {\ttfamily push} and {\ttfamily pull request} event on the {\ttfamily master} branch. We have two main pipelines\+:\hypertarget{index_autotoc_md20}{}\doxysubsubsection{1. C-\/\+Make Pipeline}\label{index_autotoc_md20}
+The {\ttfamily c-\/make} pipeline compiles the project using the {\ttfamily make} command.\hypertarget{index_autotoc_md21}{}\doxysubsubsection{2. Static Pipeline}\label{index_autotoc_md21}
+The {\ttfamily static} pipeline hosts the static website on Git\+Hub Pages at the root of the repository. This allows access to the Doxygen documentation and the Coverage report at the following address\+: \href{https://livl-corporation.github.io/livl-shell/}{\texttt{ https\+://livl-\/corporation.\+github.\+io/livl-\/shell/}}\hypertarget{index_autotoc_md22}{}\doxysection{🧍🏽\+Project team}\label{index_autotoc_md22}
 The Livl team is composed of two members from the C\+N\+AM of Strasbourg\+:
 
 \tabulinesep=1mm

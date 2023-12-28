@@ -1,19 +1,23 @@
-<h1 align="center"><img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png" width="224px"/><br/>
-  Livl Shell
+<h1 align="center">
+  <img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png" width="224px"/><br/>
+  <b>Livl Shell</b>
 </h1>  
-<p align="center">Livl Shell is an intermediate reimplementation of the bash shell in C language.</p> 
+<h3 align="center">
+  An Intermediate Reimplementation of the Bash Shell in C
+</h3><br>
 
 # Table of Contents
 - [📦 Prerequisites](#-prerequisites)
 - [🚀 Quick start](#-quick-start)
+- [📚 Makefile Guide](#-makefile-guide)
 - [📁 Project structure](#-project-structure)
 - [📝 List of insane livl-bash commands](#-list-of-insane-livl-bash-commands)
     - [Basic Commands](#basic-commands)
     - [Input/Output Redirection](#inputoutput-redirection)
     - [Pipelines](#pipelines)
     - [Command Sequencing](#command-sequencing)
-    - [Background Execution](#background-execution)
     - [Batch Mode](#batch-mode)
+    - [Background Execution](#background-execution)
 - [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
 - [📜 Doxygen documentation](#-doxygen-documentation)
     - [📦 Prerequisites of Doxygen](#-prerequisites-of-doxygen)
@@ -48,6 +52,22 @@ Follow these steps to quickly get started:
 3. **Clean the Project**: Use the `make clean` command to clean the project.
 
 > 💡 **Tip**: The command `make run` will compile and immediately run the executable. It is equivalent to running `make && ./bin/livl-shell`.
+
+# 📚 Makefile Guide
+
+The project uses a Makefile for managing build tasks. Here are some of the available targets:
+
+- `all`: Compile the project.
+- `run`: Run the executable.
+- `doc`: Generate documentation using Doxygen.
+- `gcov`: Generate code coverage data using gcov and lcov.
+- `package`: Package the project into a tar.gz file.
+- `clean`: Remove all object files.
+- `clean-gcov`: Remove all gcov-related files.
+- `mrproper`: Perform a deep clean of the project.
+- `clear`: Clear the console.
+
+You can use the `make help` command to display a brief description of each target.
 
 # 📁 Project structure
 

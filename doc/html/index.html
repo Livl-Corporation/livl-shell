@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/Livl-Corporation/livl-shell/master/img/livl_logo.ico">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
@@ -69,23 +70,25 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock-livl"><h1 align="center"><img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png" alt="" width="224px" class="inline"/><br  />
- Livl Shell </h1>
-<p align="center"><br  />
- </p>
-<p>Livl Shell is an intermediate reimplementation of the bash shell in C language.</p>
+ <b>Livl Shell</b> </h1>
+<p><br  />
+ </p><h3 align="center">An Intermediate Reimplementation of the Bash Shell in C </h3>
+<p><br  />
+</p>
 <h1><a class="anchor" id="autotoc_md0"></a>
 Table of Contents</h1>
 <ul>
 <li><a href="#-prerequisites">📦 Prerequisites</a></li>
 <li><a href="#-quick-start">🚀 Quick start</a></li>
+<li><a href="#-makefile-guide">📚 Makefile Guide</a></li>
 <li><a href="#-project-structure">📁 Project structure</a></li>
 <li><a href="#-list-of-insane-livl-bash-commands">📝 List of insane livl-bash commands</a><ul>
 <li><a href="#basic-commands">Basic Commands</a></li>
 <li><a href="#inputoutput-redirection">Input/Output Redirection</a></li>
 <li><a href="#pipelines">Pipelines</a></li>
 <li><a href="#command-sequencing">Command Sequencing</a></li>
-<li><a href="#background-execution">Background Execution</a></li>
 <li><a href="#batch-mode">Batch Mode</a></li>
+<li><a href="#background-execution">Background Execution</a></li>
 </ul>
 </li>
 <li><a href="#-use-the-livl-bash-man-command">📖 Use the livl-bash man command</a></li>
@@ -133,6 +136,21 @@ Table of Contents</h1>
 <p>💡 <b>Tip</b>: The command <code>make run</code> will compile and immediately run the executable. It is equivalent to running <code>make &amp;&amp; ./bin/livl-shell</code>. </p>
 </blockquote>
 <h1><a class="anchor" id="autotoc_md3"></a>
+📚 Makefile Guide</h1>
+<p>The project uses a Makefile for managing build tasks. Here are some of the available targets:</p>
+<ul>
+<li><code>all</code>: Compile the project.</li>
+<li><code>run</code>: Run the executable.</li>
+<li><code>doc</code>: Generate documentation using Doxygen.</li>
+<li><code>gcov</code>: Generate code coverage data using gcov and lcov.</li>
+<li><code>package</code>: Package the project into a tar.gz file.</li>
+<li><code>clean</code>: Remove all object files.</li>
+<li><code>clean-gcov</code>: Remove all gcov-related files.</li>
+<li><code>mrproper</code>: Perform a deep clean of the project.</li>
+<li><code>clear</code>: Clear the console.</li>
+</ul>
+<p>You can use the <code>make help</code> command to display a brief description of each target.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
 📁 Project structure</h1>
 <p>The project is structured as follows:</p>
 <div class="fragment"><div class="line">livl-shell/</div>
@@ -154,12 +172,12 @@ Table of Contents</h1>
 <div class="line">├── index.html # Static Livl Shell website</div>
 <div class="line">├── history.txt # History of your commands</div>
 <div class="line">└── Makefile # Makefile</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
 📝 List of Insane livl-bash Commands</h1>
 <blockquote class="doxtable">
 <p>💡 The livl-shell is limited to run a maximum of 3 commands in a row. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Basic Commands</h2>
 <ul>
 <li><code>ls</code>: Lists the files in the current directory.</li>
@@ -167,19 +185,19 @@ Basic Commands</h2>
 <li><code>pwd</code>: Prints the current directory.</li>
 <li><code>echo</code>: Displays a line of text.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Input/Output Redirection</h2>
 <ul>
 <li><code>ls -l &gt; output.txt</code>: Redirects the output of a command to a file.</li>
 <li><code>pwd &gt;&gt; output.txt</code>: Appends the output of a command to a file.</li>
 <li><code>wc -l &lt; output.txt</code>: Counts the number of lines in the file.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Pipelines</h2>
 <ul>
 <li>&lsquo;ls -l | grep &rsquo;.txt'`: Redirects the output of a command to another command. You can use single, double, or no quotes.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Command Sequencing</h2>
 <ul>
 <li><code>sleep 4 &amp;&amp; echo "Second command executed"</code>: Executes a command after another one.</li>
@@ -187,7 +205,7 @@ Command Sequencing</h2>
 <li><code>false || echo "This will be executed"</code>: Executes a command after another one only if the first one failed.</li>
 <li><code>echo "Command 1"; sleep 3; echo "Command 2"; ls -l</code>: Executes multiple commands regardless of the success of the previous ones.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Batch Mode</h2>
 <blockquote class="doxtable">
 <p>⚠️ The command should be enclosed in quotes to ensure it is passed as a single argument </p>
@@ -196,7 +214,7 @@ Batch Mode</h2>
 <li><code>./livl-shell -c "ls -l|grep txt &amp;&amp; echo heyyy"</code>: Executes a list of commands from the command line.</li>
 <li><code>./livl-shell --command "echo livl"</code>: Executes a list of commands from the command line.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Background Execution</h2>
 <ul>
 <li><code>sleep 3 &amp; echo hey</code>: Executes a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: <code>[1] 1234</code>).<ul>
@@ -204,7 +222,7 @@ Background Execution</h2>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 📖 Use the livl-bash &lt;tt&gt;man&lt;/tt&gt; command</h1>
 <blockquote class="doxtable">
 <p>To edit the man you can download a TROFF Syntax Highlighter for Visual Studio Code. </p>
@@ -213,34 +231,34 @@ Background Execution</h2>
 <li>The <code>man livl-shell</code> manual is located in the <a href="livl-shell.1"><code>livl-shell.1</code></a> file</li>
 <li>To view the manual, run : <code>man ./livl-shell.1</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 📜 Doxygen documentation</h1>
 <blockquote class="doxtable">
 <p>❓ Doxygen is a documentation generator, a tool for writing software reference documentation. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 📦 Prerequisites of Doxygen</h2>
 <ul>
 <li><code>Download doxygen</code> : <code>sudo apt install doxygen</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 🚀 Generate the Doxygen documentation</h2>
 <ul>
 <li>Run <code>make doc</code> to generate the documentation</li>
 <li>To view the documentation, open the <a href="/doc/html/index.html"><code>index.html</code></a> file in the <code>doc/html/</code> folder.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 🧪 GCOV test coverage</h1>
 <blockquote class="doxtable">
 <p>❓ GCOV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 📦 Prerequisites of gcov</h2>
 <ul>
 <li><code>Download gcov</code> : <code>sudo apt install gcov</code></li>
 <li><code>Download lcov</code> : <code>sudo apt install lcov</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 🚀 Generate the coverage report</h2>
 <ul>
 <li>Run <code>make gcov</code> to generate the coverage report</li>
@@ -248,16 +266,16 @@ Background Execution</h2>
 <li>To view the coverage report, open the <a href="/gcov/report/index.html"><code>index.html</code></a> file in the <code>gcov/report/</code> folder or run <code>gcovr -r .</code></li>
 <li>Run <code>make clean-gcov</code> to clean the <code>gcov</code> folder</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 🛠️ Pipeline</h1>
 <p>Our pipelines are configured to be triggered on each <code>push</code> and <code>pull request</code> event on the <code>master</code> branch. We have two main pipelines:</p>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 1. C-Make Pipeline</h3>
 <p>The <code>c-make</code> pipeline compiles the project using the <code>make</code> command.</p>
-<h3><a class="anchor" id="autotoc_md20"></a>
+<h3><a class="anchor" id="autotoc_md21"></a>
 2. Static Pipeline</h3>
 <p>The <code>static</code> pipeline hosts the static website on GitHub Pages at the root of the repository. This allows access to the Doxygen documentation and the Coverage report at the following address: <a href="https://livl-corporation.github.io/livl-shell/">https://livl-corporation.github.io/livl-shell/</a></p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 🧍🏽Project team</h1>
 <p>The Livl team is composed of two members from the CNAM of Strasbourg:</p>
 <table id="livl-table" align="center">
