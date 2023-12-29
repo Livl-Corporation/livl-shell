@@ -10,7 +10,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <curses.h>
 #include "operator.h"
 #include <ctype.h>
 #include "constants.h"

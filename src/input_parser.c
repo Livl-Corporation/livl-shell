@@ -150,7 +150,7 @@ void handle_backspace(char *input, int *index)
     if (*index > 0)
     {
         printf("\b \b"); // Move cursor back, overwrite character with space, move cursor back again
-        (*index)--;
+        input[((*index)--) - 1] = '\0';
     }
 }
 
