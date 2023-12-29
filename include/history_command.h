@@ -21,7 +21,7 @@ extern CommandHistory global_command_history;
 /**
  * @brief Initialize the global command history
  */
-void initialize_command_history();
+void init_command_history();
 
 /**
  * @brief Add a command to the global command history
