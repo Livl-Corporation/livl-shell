@@ -16,40 +16,40 @@
  * @brief Evaluate a command from a string
  * @param input: the string to evaluate
  * @return the command structure
-*/
+ */
 Command evaluate_command(const char *input);
 
 /**
  * @brief Handle quotes in a string (remove them)
  * @param token: the string to handle
-*/
+ */
 void handle_quotes(char **token);
 
 /**
  * @brief Free a command
  * @param cmd: the command to free
-*/
+ */
 void free_command(Command *cmd);
 
 /**
- * @brief Get the complete command (command + arguments) as a string 
+ * @brief Get the complete command (command + arguments) as a string
  * @brief It is useful for execvp(const char* command, char* argv[])
  * @param cmd: the command to get
  * @return the complete command as an array of strings
-*/
-char** get_complete_command_array(Command *cmd);
+ */
+char **get_complete_command_array(Command *cmd);
 
 /**
  * @brief Initialize a command
  * @param cmd: the command to initialize
-*/
-void initialize_command(Command *cmd);
+ */
+void init_command(Command *cmd);
 
 /**
  * @brief Get the complete command (command + arguments) as a string
  * @param cmd: the command to get
  * @return the complete command as a string
-*/
-char* get_complete_command(const Command *cmd);
+ */
+char *get_complete_command(const Command *cmd);
 
-#endif //COMMAND_H
+#endif // COMMAND_H
