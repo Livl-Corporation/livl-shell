@@ -50,7 +50,7 @@ char *read_input()
             input[index++] = c;
         }
     }
-    input[index] = '\0';
+    input[strlen(input)] = '\0';
 
     tcsetattr(STDIN_FILENO, TCSANOW, &old_termios);
     printf("\n");
@@ -160,5 +160,5 @@ void replace_input(char *input, int *index, const char *replacement)
     print_prompt();
     printf("%s", replacement);
     strcpy(input, replacement);
-    *index = strlen(input);
+    *index = strlen(replacement);
 }
