@@ -40,6 +40,7 @@ Command evaluate_command(const char *input)
 
     // Get the complete command
     cmd.complete_command = get_complete_command_array(&cmd);
+    cmd.input_string = strdup(input);
 
     free(input_copy);
     return cmd;
@@ -58,33 +59,6 @@ void handle_quotes(char **token)
             (*token)++;        // Skip the initial quotation mark
         }
     }
-}
-
-char *get_complete_command(const Command *cmd)
-{
-    int total_length = strlen(cmd->command) + 1; // Include space for the null terminator
-
-    for (int i = 0; i < cmd->num_arguments; ++i)
-    {
-        total_length += strlen(cmd->arguments[i]) + 1; // Include space for the null terminator and space between arguments
-    }
-
-    char *complete_command = malloc(total_length);
-    if (complete_command == NULL)
-    {
-        perror("malloc");
-        exit(EXIT_FAILURE);
-    }
-
-    strcpy(complete_command, cmd->command);
-
-    for (int i = 0; i < cmd->num_arguments; ++i)
-    {
-        strcat(complete_command, " "); // Add space between arguments
-        strcat(complete_command, cmd->arguments[i]);
-    }
-
-    return complete_command;
 }
 
 char **get_complete_command_array(Command *cmd)
@@ -109,6 +83,7 @@ void init_command(Command *cmd)
     cmd->command = NULL;
     cmd->arguments = NULL;
     cmd->complete_command = NULL;
+    cmd->input_string = NULL;
     cmd->redirection.input_file = NULL;
     cmd->redirection.output_file = NULL;
     cmd->redirection.append_input = 0;
@@ -127,4 +102,5 @@ void free_command(Command *cmd)
     free(cmd->redirection.input_file);
     free(cmd->redirection.output_file);
     free(cmd->complete_command);
+    free(cmd->input_string);
 }
