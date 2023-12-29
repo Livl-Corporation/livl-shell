@@ -56,15 +56,17 @@ void preprocess_input(char *input)
     for (int i = 0; i < strlen(input); i++)
     {
 
-        OperatorType operator_type = get_operator_type(&input[i]);
+        char token[2] = {input[i], input[i + 1]};
+        OperatorType operator_type = get_operator_type(&token);
 
         if (operator_type != UNKNOWN)
         {
 
+            char *operator_string = get_operator_string(operator_type);
             int operator_length = strlen(get_operator_string(operator_type));
 
             new_input[j++] = ' ';
-            strncpy(&new_input[j], &input[i], operator_length);
+            strncpy(&new_input[j], operator_string, operator_length);
             j += operator_length;
             new_input[j++] = ' ';
             i += operator_length - 1;

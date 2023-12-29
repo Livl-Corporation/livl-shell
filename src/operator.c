@@ -11,47 +11,51 @@ OperatorType get_operator_type(const char *operator_str)
         return UNKNOWN;
     }
 
-    if (strcmp(operator_str, "&&") == 0)
+    size_t len = 2;
+
+    if (strncmp(operator_str, "&&", len) == 0)
     {
         return AND;
     }
 
-    if (strcmp(operator_str, "||") == 0)
+    if (strncmp(operator_str, "||", len) == 0)
     {
         return OR;
     }
 
-    if (strcmp(operator_str, ">>") == 0)
+    if (strncmp(operator_str, ">>", len) == 0)
     {
         return REDIRECTION_APPEND_OUTPUT;
     }
 
-    if (strcmp(operator_str, "<<") == 0)
+    if (strncmp(operator_str, "<<", len) == 0)
     {
         return REDIRECTION_APPEND_INPUT;
     }
 
-    if (strcmp(operator_str, ";") == 0)
+    len = 1;
+
+    if (strncmp(operator_str, ";", len) == 0)
     {
         return SEMICOLON;
     }
 
-    if (strcmp(operator_str, "|") == 0)
+    if (strncmp(operator_str, "|", len) == 0)
     {
         return PIPE;
     }
 
-    if (strcmp(operator_str, "&") == 0)
+    if (strncmp(operator_str, "&", len) == 0)
     {
         return BACKGROUND;
     }
 
-    if (strcmp(operator_str, ">") == 0)
+    if (strncmp(operator_str, ">", len) == 0)
     {
         return REDIRECTION_OUTPUT;
     }
 
-    if (strcmp(operator_str, "<") == 0)
+    if (strncmp(operator_str, "<", len) == 0)
     {
         return REDIRECTION_INPUT;
     }
