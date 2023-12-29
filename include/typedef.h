@@ -16,16 +16,16 @@
  */
 typedef enum
 {
-    AND,
-    OR,
-    REDIRECTION_APPEND_OUTPUT,
-    REDIRECTION_APPEND_INPUT,
-    SEMICOLON,
-    PIPE,
-    BACKGROUND,
-    REDIRECTION_OUTPUT,
-    REDIRECTION_INPUT,
-    UNKNOWN,
+    AND,                       // &&
+    OR,                        // ||
+    REDIRECTION_APPEND_OUTPUT, // >>
+    REDIRECTION_APPEND_INPUT,  // <<
+    SEMICOLON,                 // ;
+    PIPE,                      // |
+    BACKGROUND,                // &
+    REDIRECTION_OUTPUT,        // >
+    REDIRECTION_INPUT,         // <
+    UNKNOWN,                   // Unknown operator
 } OperatorType;
 
 /**

@@ -1,88 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Livl Shell - Documentation</title>
-        <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/Livl-Corporation/livl-shell/master/img/livl_logo.ico?">
-        <style>
-            @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-            body {
-                font-family: 'Inter', sans-serif;
-            }
-            code {
-                font-size: small;
-                background-color: #f7fafc;
-                color: #374151;
-                padding: 0.25rem;
-                border-radius: 0.25rem;
-            }
-        </style>
-    </head>
-    <body class="p-10">
-        <div class="flex flex-col items-center">
-            <img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png" width="224px"/>
-            <h1 class="text-center text-4xl font-bold my-4"><br/>
-                Livl Shell - Documentation
-            </h1> 
-        </div>
-        
-        <p class="text-center text-lg opacity-70">Livl Shell is an intermediate reimplementation of the bash shell in C language.</p> 
 
-        <div class="mt-10">
-            <h2 class="text-3xl font-bold my-5">⛓️ Links of the different documentations</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livl Shell - Documentation</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/Livl-Corporation/livl-shell/master/img/livl_logo.ico?">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer components {
+          code {
+            @apply bg-gray-100 text-gray-800 p-1 rounded text-sm font-mono;
+          }
 
-            <ul class="list-disc list-inside space-y-2">
-                <li class="p-3 rounded-md bg-blue-100 hover:bg-blue-200 transition-colors duration-200"> 
-                    <a class="text-blue-700 font-semibold hover:underline" href="https://livl-corporation.github.io/livl-shell/doc/html/">
-                        <span class="inline-block p-1 px-2 mr-2 rounded bg-blue-500 text-white text-xs">DOXYGEN</span>
-                        Visit the generated Doxygen documentation.
-                    </a>
-                </li>
-                <li class="p-3 rounded-md bg-green-100 hover:bg-green-200 transition-colors duration-200">
-                    <a class="text-green-700 font-semibold hover:underline" href="https://livl-corporation.github.io/livl-shell/gcov/report/">
-                        <span class="inline-block p-1 px-2 mr-2 rounded bg-green-500 text-white text-xs">GCOV</span>
-                        Visit the generated GCOV coverage report.
-                    </a>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="mt-8 p-4 rounded-md bg-blue-100">
-            <h2 class="text-3xl font-bold my-4">🆕 Generate the documentation</h2>
-        
-            <div class="my-4 p-4 rounded-md bg-white shadow">
-                <h3 class="text-xl font-bold my-4">Generate DOXYGEN documentation</h3>
-                <h3 class="text-lg font-bold my-2">📦 Prerequisites of gcov</h3>
-                <ul class="list-disc list-inside">
-                    <li><code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">doxygen</code>: <pre class="inline bg-gray-100 rounded"><code>sudo apt install doxygen</code></pre></li>
-                </ul>
-                
-                <h3 class="text-lg font-bold my-2">🚀 How to run it</h3>
-                <ul class="list-disc list-inside">
-                    <li>Run <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">make doc</code> to generate the documentation</li>
-                    <li>To view the documentation, open the <a class="text-blue-500 hover:underline" href="/doc/html/index.html">index.html</a> file in the <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">doc</code> folder</li>
-                </ul>
-            </div>
-        
-            <div class="my-8 p-4 rounded-md bg-white shadow">
-                <h3 class="text-xl font-bold my-4">Generate GCOV test coverage</h3>
-                <p>GCOV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code.</p>
-                <h3 class="text-lg font-bold my-2">📦 Prerequisites of gcov</h3>
-                <ul class="list-disc list-inside">
-                    <li><code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">gcov</code>: <pre class="inline bg-gray-100 rounded"><code>sudo apt install gcov</code></pre></li>
-                    <li><code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">lcov</code>: <pre class="inline bg-gray-100 rounded"><code>sudo apt install lcov</code></pre></li>
-                </ul>
-                <h3 class="text-lg font-bold my-2">🚀 How to run it</h3>
-                <ul class="list-disc list-inside">
-                    <li>Run <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">make gcov</code> to generate the coverage report</li>
-                    <li>To exit the coverage report, press <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">exit</code> two times (one for the shell and one for the coverage report)</li>
-                    <li>To view the coverage report, open the <a class="text-blue-500 hover:underline" href="/gcov/report/index.html">index.html</a> file in the <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">gcov/report/</code> folder or run <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">gcovr -r .</code></li>
-                    <li>Run <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">make clean-gcov</code> to clean the <code class="text-sm bg-gray-100 text-gray-800 p-1 rounded">gcov</code> folder</li>
-                </ul>
-            </div>
-        </div>
-        
-    </body>
+          .card {
+            @apply p-6 rounded-md border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition lg:max-w-72 flex flex-col gap-3 text-3xl text-slate-700 hover:text-slate-900;
+          }
+
+          .badge {
+            @apply inline p-1 px-2 rounded text-white w-fit text-sm;
+          }
+
+          h1 {
+            @apply text-4xl font-medium;
+          }
+
+          p {
+            @apply text-slate-600;
+          }
+        }
+      </style>
+</head>
+
+<body class="p-10 container mx-auto flex flex-col gap-12">
+    <div class="flex flex-col gap-4">
+        <img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png"
+            class="w-52 rounded" />
+        <h1 class="mt-4">
+            Livl Shell documentation
+        </h1>
+        <p class="text-lg">
+            Livl Shell is an intermediate reimplementation of the bash shell in C language.
+        </p>
+    </div>
+
+
+    <div class="flex gap-2 max-lg:flex-col items-stretch">
+        <a href="https://livl-corporation.github.io/livl-shell/doc/html/" class="card">
+            <span class="badge bg-blue-500">DOXYGEN</span>
+            Visit the Doxygen documentation
+        </a>
+        <a href="https://livl-corporation.github.io/livl-shell/gcov/report/" class="card">
+            <span class="badge bg-green-500">GCOV</span>
+            Visit the GCOV coverage report
+        </a>
+    </div>
+
+    <a href="https://github.com/Livl-Corporation/livl-shell"
+        class="text-lg text-blue-600 hover:text-blue-500">GitHub</a>
+
+</body>
+
 </html>
