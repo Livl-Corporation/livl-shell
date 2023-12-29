@@ -3,40 +3,49 @@
 #include "input_parser.h"
 #include "history_command.h"
 
-char* read_input() {
-    char* input = malloc(MAX_INPUT_LENGTH * sizeof(char));
-    if (input == NULL) {
+char *read_input()
+{
+    char *input = malloc(MAX_INPUT_LENGTH * sizeof(char));
+    if (input == NULL)
+    {
         perror("malloc");
         return NULL;
     }
 
-    if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL) {
+    if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL)
+    {
         perror("fgets");
         free(input);
         return NULL;
     }
 
     size_t len = strlen(input);
-    if (len > 0 && input[len - 1] == '\n') {
+    if (len > 0 && input[len - 1] == '\n')
+    {
         input[len - 1] = '\0';
     }
 
     return input;
 }
 
-int is_all_whitespace(const char* input) {
-    for (int i = 0; i < strlen(input); i++) {
-        if (!isspace(input[i])) {
+int is_all_whitespace(const char *input)
+{
+    for (int i = 0; i < strlen(input); i++)
+    {
+        if (!isspace(input[i]))
+        {
             return 0;
         }
     }
     return 1;
 }
 
-void preprocess_input(char* input) {
-    char* new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input
+void preprocess_input(char *input)
+{
+    char *new_input = malloc(strlen(input) * 2 + 1); // Allocate enough space for the new input
 
-    if (new_input == NULL) {
+    if (new_input == NULL)
+    {
         perror("malloc");
         return;
     }
@@ -44,23 +53,25 @@ void preprocess_input(char* input) {
     int j = 0;
 
     // Iterate over the input and add spaces around the operators
-    for (int i = 0; i < strlen(input); i++) {
-        int found = 0;
+    for (int i = 0; i < strlen(input); i++)
+    {
 
-        // Check if the current character is an operator
-        for (int k = 0; k < num_operators; k++) {
-            // strncmp compares the first n characters of two strings
-            if (strncmp(&input[i], operators[k], strlen(operators[k])) == 0) {
-                new_input[j++] = ' ';
-                strncpy(&new_input[j], &input[i], strlen(operators[k]));
-                j += strlen(operators[k]);
-                new_input[j++] = ' ';
-                i += strlen(operators[k]) - 1;
-                found = 1;
-                break;
-            }
+        OperatorType operator_type = get_operator_type(&input[i]);
+
+        if (operator_type != UNKNOWN)
+        {
+
+            int operator_length = strlen(get_operator_string(operator_type));
+
+            new_input[j++] = ' ';
+            strncpy(&new_input[j], &input[i], operator_length);
+            j += operator_length;
+            new_input[j++] = ' ';
+            i += operator_length - 1;
+            continue;
         }
-        if (!found) {
+        else
+        {
             new_input[j++] = input[i];
         }
     }
@@ -68,4 +79,3 @@ void preprocess_input(char* input) {
     strcpy(input, new_input);
     free(new_input);
 }
-
