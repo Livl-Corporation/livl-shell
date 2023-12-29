@@ -24,4 +24,10 @@ void run_batch_mode(char *argv[], int argc);
  */
 void run_interactive_mode();
 
-#endif //MAIN_H
+/**
+ * @brief Handle the input.
+ * @param input The input to handle.
+ */
+void handle_input(char *input);
+
+#endif // MAIN_H
