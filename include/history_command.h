@@ -11,16 +11,7 @@
 #include <stdlib.h>
 #include "typedef.h"
 #include <string.h>
-
-/**
- * @brief The max size of the history
- */
-#define MAX_HISTORY_SIZE 1000
-
-/**
- * @brief The history file name
- */
-#define HISTORY_FILE "history.txt"
+#include "constants.h"
 
 /**
  * @brief The global history of commands entered by the user

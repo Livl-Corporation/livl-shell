@@ -9,6 +9,7 @@
 
 #include <stddef.h>
 #include <sys/types.h>
+#include "constants.h"
 
 /**
  * Enum that represents the type of an operator
@@ -134,7 +135,7 @@ typedef struct
  */
 typedef struct
 {
-    char history[1000][1000];
+    char history[MAX_HISTORY_SIZE][MAX_INPUT_LENGTH];
     int history_count;
     int current_index;
 } CommandHistory;

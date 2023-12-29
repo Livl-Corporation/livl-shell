@@ -19,11 +19,7 @@
 #include "redirection.h"
 #include "operator.h"
 #include "background_manager.h"
-
-/**
- * @brief The child process id (pid)
- */
-#define CHILD_PROCESS 0
+#include "constants.h"
 
 /**
  * @brief Executes an external command
