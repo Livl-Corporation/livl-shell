@@ -13,11 +13,7 @@
 #include <sys/wait.h>
 #include "typedef.h"
 #include "command.h"
-
-/*!
- * \brief Variable that represents the number of background processes
- */
-#define MAX_BACKGROUND_PROCESSES 100
+#include "constants.h"
 
 /*!
  * \brief Method that checks if a background process has completed
@@ -32,4 +28,4 @@ void check_completed_background_processes();
  */
 void add_background_process(pid_t pid, const Command *command);
 
-#endif //BACKGROUND_MANAGER_H
+#endif // BACKGROUND_MANAGER_H
