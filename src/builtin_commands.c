@@ -23,7 +23,7 @@ void exit_shell() {
     exit(EXIT_SUCCESS);
 }
 
-void echo(const Command* command) {
+void builtin_echo(const Command* command) {
     for (int i = 0; i < command->num_arguments; i++) {
         printf("%s ", command->arguments[i]);
     }
@@ -51,7 +51,7 @@ int execute_builtin_command(const Command* command) {
         perror("Usage: exit");
     } else if (is_builtin_command(command, "echo")) {
         if (command->num_arguments >= 1) {
-            echo(command);
+            builtin_echo(command);
             return IS_BUILTIN_COMMAND;
         }
         perror("Usage: echo <message>");

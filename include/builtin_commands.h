@@ -49,6 +49,6 @@ void exit_shell();
  * @brief Prints a message
  * @param command The command to execute to be able to print all the arguments
  */
-void echo(const Command *command);
+void builtin_echo(const Command *command);
 
 #endif // BUILTIN_COMMANDS_H

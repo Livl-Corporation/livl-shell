@@ -14,11 +14,6 @@
 #include "constants.h"
 
 /**
- * @brief The global history of commands entered by the user
- */
-extern CommandHistory global_command_history;
-
-/**
  * @brief Initialize the global command history
  */
 void init_command_history();
@@ -33,13 +28,13 @@ void add_to_command_history(const char *command);
  * @brief Get the previous command from the global command history
  * @return The previous command
  */
-const char *get_previous_command();
+void get_previous_command(char *input);
 
 /**
  * @brief Get the next command from the global command history
  * @return The next command
  */
-const char *get_next_command();
+void get_next_command(char *input);
 
 /**
  * @brief Save the command history to the history file
@@ -50,5 +45,10 @@ void save_command_history_to_file();
  * @brief Load the command history from the history file
  */
 void load_command_history_from_file();
+
+/**
+ * @brief Reset current index to the end of the history
+ */
+void reset_current_index();
 
 #endif // HISTORY_COMMAND_H

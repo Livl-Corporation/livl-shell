@@ -1,21 +1,21 @@
 #include "history_command.h"
 
-CommandHistory global_command_history;
+CommandHistory command_history;
 
 void init_command_history()
 {
-    global_command_history.history_count = 0;
-    global_command_history.current_index = -1;
+    command_history.history_count = 0;
+    command_history.current_index = -1;
     load_command_history_from_file();
 }
 
 void add_to_command_history(const char *command)
 {
-    if (global_command_history.history_count < MAX_HISTORY_SIZE)
+    if (command_history.history_count < MAX_HISTORY_SIZE)
     {
-        strcpy(global_command_history.history[global_command_history.history_count], command);
-        global_command_history.history_count++;
-        global_command_history.current_index = global_command_history.history_count;
+        strcpy(command_history.history[command_history.history_count], command);
+        command_history.history_count++;
+        command_history.current_index = command_history.history_count;
         save_command_history_to_file();
     }
     else
@@ -24,29 +24,30 @@ void add_to_command_history(const char *command)
     }
 }
 
-const char *get_previous_command()
+void get_previous_command(char *input)
 {
-    if (global_command_history.current_index > 0)
+    if (command_history.current_index > 0)
     {
-        global_command_history.current_index--;
-        return global_command_history.history[global_command_history.current_index];
+        command_history.current_index--;
+        strcpy(input, command_history.history[command_history.current_index]);
     }
     else
-    { // Already at the earliest command
-        return NULL;
+    {
+        strcpy(input, "");
     }
 }
 
-const char *get_next_command()
+void get_next_command(char *input)
 {
-    if (global_command_history.current_index < global_command_history.history_count - 1)
+    if (command_history.current_index < command_history.history_count - 1)
     {
-        global_command_history.current_index++;
-        return global_command_history.history[global_command_history.current_index];
+        command_history.current_index++;
+        strcpy(input, command_history.history[command_history.current_index]);
     }
     else
-    { // Already at the latest command
-        return NULL;
+    {
+        command_history.current_index = command_history.history_count;
+        strcpy(input, "");
     }
 }
 
@@ -60,17 +61,17 @@ void save_command_history_to_file()
     }
 
     // Save the new command if it's not already in the history
-    if (global_command_history.history_count > 0)
+    if (command_history.history_count > 0)
     {
-        int last_index = global_command_history.history_count - 1;
-        if (strcmp(global_command_history.history[last_index], global_command_history.history[last_index - 1]) != 0)
+        int last_index = command_history.history_count - 1;
+        if (strcmp(command_history.history[last_index], command_history.history[last_index - 1]) != 0)
         {
-            fprintf(file, "%s\n", global_command_history.history[last_index]);
+            fprintf(file, "%s\n", command_history.history[last_index]);
         }
     }
     else
     {
-        fprintf(file, "%s\n", global_command_history.history[0]);
+        fprintf(file, "%s\n", command_history.history[0]);
     }
 
     fclose(file);
@@ -82,7 +83,7 @@ void load_command_history_from_file()
     if (file != NULL)
     {
         char line[1000];
-        while (fgets(line, sizeof(line), file) != NULL && global_command_history.history_count < MAX_HISTORY_SIZE)
+        while (fgets(line, sizeof(line), file) != NULL && command_history.history_count < MAX_HISTORY_SIZE)
         {
             // Remove newline character if present
             size_t length = strlen(line);
@@ -91,9 +92,9 @@ void load_command_history_from_file()
                 line[length - 1] = '\0';
             }
 
-            strcpy(global_command_history.history[global_command_history.history_count], line);
-            global_command_history.history_count++;
-            global_command_history.current_index = global_command_history.history_count;
+            strcpy(command_history.history[command_history.history_count], line);
+            command_history.history_count++;
+            command_history.current_index = command_history.history_count;
         }
         fclose(file);
     }
@@ -110,4 +111,9 @@ void load_command_history_from_file()
             perror("Error creating history file");
         }
     }
+}
+
+void reset_current_index()
+{
+    command_history.current_index = command_history.history_count;
 }
