@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/62793491/208452652-71416c5c-8261-4501-a002-afc9e2cf0a0b.png" width="224px"/>
+  <img src="./img/livl_shell_logo.png" width="224px">
 
   <b>Livl Shell</b>
 </h1>  
