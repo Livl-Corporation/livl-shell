@@ -28,6 +28,4 @@ void init_aliases();
  */
 int get_alias(char *name, char *command);
 
-char *trim(char *str);
-
 #endif // ALIAS_H
