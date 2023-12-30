@@ -51,7 +51,7 @@ void init_aliases()
     fclose(file);
 }
 
-int get_alias(char *name, char *command)
+int get_alias(const char *name, char *command)
 {
     for (int i = 0; i < MAX_ALIASES; ++i)
     {

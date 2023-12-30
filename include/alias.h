@@ -26,6 +26,6 @@ void init_aliases();
  * @param command The string will be filled with the alias command if exist
  * @return 0 if no alias found, 1 otherwise
  */
-int get_alias(char *name, char *command);
+int get_alias(const char *name, char *command);
 
 #endif // ALIAS_H
