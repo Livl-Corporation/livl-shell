@@ -20,6 +20,7 @@
     - [Command Sequencing](#command-sequencing)
     - [Batch Mode](#batch-mode)
     - [Background Execution](#background-execution)
+    - [History](#history)
 - [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
 - [📜 Doxygen documentation](#-doxygen-documentation)
     - [📦 Prerequisites of Doxygen](#-prerequisites-of-doxygen)
@@ -138,6 +139,12 @@ livl-shell/
 
 - `sleep 3 & echo hey`: Executes a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: `[1] 1234`).
 - `pwd`: Running this command will display the job id of the background process terminated (ex: `[1] done sleep 3`).
+
+## History
+
+The livl-shell has a history feature that allows you to view the history of your commands.
+Use up and down arrows to navigate through the history.
+The history is saved in the [`history.txt`](history.txt) file.
 
 ## 📖 Use the livl-bash `man` command
 
