@@ -43,7 +43,11 @@ char *read_input(char *input)
         {
             handle_backspace(input, &index);
         }
-        else
+        else if (c == 8) // Control (or command on macos) + backspace
+        {
+            handle_control_backspace(input, &index);
+        }
+        else if (isalnum(c) || isspace(c) || ispunct(c)) // Check if the character is alphanumeric, whitespace, or punctuation
         {
             printf("%c", c);
             input[index++] = c;
@@ -146,11 +150,30 @@ void handle_arrow_right(char *input, int *index)
 
 void handle_backspace(char *input, int *index)
 {
-    if (*index > 0)
+    if (*index == 0)
     {
-        printf("\b \b"); // Move cursor back, overwrite character with space, move cursor back again
-        input[((*index)--) - 1] = '\0';
+        return;
     }
+
+    // Shift characters to the left
+    for (int i = *index - 1; i < strlen(input); i++)
+    {
+        input[i] = input[i + 1];
+    }
+
+    // Update index
+    (*index)--;
+
+    // Print the new input
+    printf("\33[2K\r");
+    print_prompt();
+    printf("%s", input);
+    printf("\33[%dD", (int)strlen(input) - *index);
+}
+
+void handle_control_backspace(char *input, int *index)
+{
+    replace_input(input, index, "");
 }
 
 void replace_input(char *input, int *index, const char *replacement)

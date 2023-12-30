@@ -73,6 +73,13 @@ void handle_arrow_right(char *input, int *index);
 void handle_backspace(char *input, int *index);
 
 /**
+ * @brief Handle backspace + control logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_control_backspace(char *input, int *index);
+
+/**
  * @brief Replace input with the provided string
  * @param input The input string
  * @param index The index of the cursor
