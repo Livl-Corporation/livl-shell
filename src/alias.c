@@ -1,6 +1,7 @@
 #include "alias.h"
 
 Alias *aliases;
+int num_aliases;
 
 void init_aliases()
 {
@@ -44,16 +45,16 @@ void init_aliases()
             strcpy(aliases[i].alias, alias);
             strcpy(aliases[i].command, command);
 
-            i++;
+            num_aliases++, i++;
         }
     }
 
     fclose(file);
 }
 
-int get_alias(const char *name, char *command)
-{
-    for (int i = 0; i < MAX_ALIASES; ++i)
+int is_alias(const char *name, char *command)
+{    
+    for (int i = 0; i < num_aliases; ++i)
     {
         if (aliases[i].alias != NULL && strcmp(aliases[i].alias, name) == 0)
         {

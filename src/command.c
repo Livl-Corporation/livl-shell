@@ -2,7 +2,6 @@
 
 Command evaluate_command(const char *input)
 {
-
     Command cmd;
     init_command(&cmd);
 
@@ -13,15 +12,17 @@ Command evaluate_command(const char *input)
 
     // if input is an alias, replace input
     char *alias_command = malloc(sizeof(char) * MAX_INPUT_LENGTH);
-    if (get_alias(input, alias_command))
+    if(alias_command == NULL)
     {
-        input_copy = strdup(alias_command);
-    }
-    else
-    {
-        input_copy = strdup(input);
+        perror("malloc");
+        exit(EXIT_FAILURE);
     }
 
+    if(is_alias(input, alias_command)) 
+        input_copy = strdup(alias_command);
+    else 
+        input_copy = strdup(input);
+    
     // Tokenize by spaces, tabs, and newline characters
     char *token = strtok(input_copy, delimiters);
 

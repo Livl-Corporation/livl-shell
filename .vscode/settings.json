@@ -25,6 +25,7 @@
         "types.h": "c",
         "builtin_commands.h": "c",
         "ctype.h": "c",
-        "history_command.h": "c"
+        "history_command.h": "c",
+        "alias.h": "c"
     }
 }
