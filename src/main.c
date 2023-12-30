@@ -35,6 +35,7 @@ void run_batch_mode(char *argv[], int argc)
 int main(int argc, char *argv[])
 {
     init_command_history();
+    init_aliases();
 
     if (argc > 2 && (strcmp(argv[1], "-c") && strcmp(argv[1], "--command")) == 0)
     {

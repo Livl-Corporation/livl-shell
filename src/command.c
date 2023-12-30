@@ -67,7 +67,6 @@ char **get_complete_command_array(Command *cmd)
     if (new_arguments == NULL)
     {
         perror("malloc");
-        free_command(cmd);
         exit(EXIT_FAILURE);
     }
     new_arguments[0] = cmd->command;

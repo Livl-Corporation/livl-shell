@@ -81,6 +81,18 @@
  */
 #define HISTORY_FILE "history.txt"
 
+// Aliases
+
+/**
+ * @brief Path to the aliases file
+ */
+#define ALIASES_FILE "aliases.txt"
+
+/**
+ * @brief The max number of aliases
+ */
+#define MAX_ALIASES 100
+
 // Scheduler
 
 /**

@@ -141,4 +141,20 @@ typedef struct
     int current_index;
 } CommandHistory;
 
+/**
+ * @struct Alias
+ * @brief Struct that represents an alias.
+ *
+ * @var Alias::alias
+ * Alias.
+ *
+ * @var Alias::command
+ * Command.
+ */
+typedef struct
+{
+    char *alias;
+    char *command;
+} Alias;
+
 #endif // TYPEDEF_H

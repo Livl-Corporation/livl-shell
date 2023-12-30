@@ -11,6 +11,7 @@
 #include "input_parser.h"
 #include "command_sequence.h"
 #include "history_command.h"
+#include "alias.h"
 
 /**
  * @brief Run the shell in batch mode.
