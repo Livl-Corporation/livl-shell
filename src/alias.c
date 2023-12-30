@@ -59,8 +59,8 @@ int is_alias(const char *name, char *command)
         if (aliases[i].alias != NULL && strcmp(aliases[i].alias, name) == 0)
         {
             strcpy(command, aliases[i].command);
-            return 1;
+            return IS_ALIAS_COMMAND;
         }
     }
-    return 0;
+    return IS_NOT_ALIAS_COMMAND;
 }

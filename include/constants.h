@@ -42,6 +42,16 @@
  */
 #define IS_NOT_BUILTIN_COMMAND -1
 
+/**
+ * @brief The value to return when a command is an alias command
+ */
+#define IS_ALIAS_COMMAND 1
+
+/**
+ * @brief The value to return when a command is not an alias command
+ */
+#define IS_NOT_ALIAS_COMMAND 0
+
 // Colors
 
 /**
