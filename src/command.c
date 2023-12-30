@@ -2,33 +2,43 @@
 
 Command evaluate_command(const char *input)
 {
+
     Command cmd;
     init_command(&cmd);
 
     char delimiters[] = " \t\n";
 
     // Copy the input for manipulation
-    char *input_copy = strdup(input);
+    char *input_copy;
+
+    // if input is an alias, replace input
+    char *alias_command = malloc(sizeof(char) * MAX_INPUT_LENGTH);
+    if (get_alias(input, alias_command))
+    {
+        input_copy = strdup(alias_command);
+    }
+    else
+    {
+        input_copy = strdup(input);
+    }
 
     // Tokenize by spaces, tabs, and newline characters
     char *token = strtok(input_copy, delimiters);
 
     // 1. The first part is the command (from the first letter to the one of the first delimiters)
-    if (token != NULL)
-    {
-        cmd.command = strdup(token);
-    }
-    else
+    if (token == NULL)
     {
         perror("strtok");
         free(input_copy);
         return cmd;
     }
 
+    cmd.command = strdup(token);
+
     // 2. After getting the command name, collect all arguments (each token = 1 argument depending on the delimiters)
     while ((token = strtok(NULL, delimiters)) != NULL)
     {
-        handle_quotes(&token);
+        handle_quotes(token);
         cmd.arguments = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
         cmd.arguments[cmd.num_arguments] = strdup(token);
         cmd.num_arguments++;
@@ -44,21 +54,6 @@ Command evaluate_command(const char *input)
 
     free(input_copy);
     return cmd;
-}
-
-void handle_quotes(char **token)
-{
-    char quote_type = (*token)[0];
-    if (quote_type == '"' || quote_type == '\'')
-    {
-        char *end_quote = strchr(&(*token)[1], quote_type);
-
-        if (end_quote != NULL)
-        {
-            *end_quote = '\0'; // Remove the quotation mark
-            (*token)++;        // Skip the initial quotation mark
-        }
-    }
 }
 
 char **get_complete_command_array(Command *cmd)

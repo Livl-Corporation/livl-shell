@@ -26,6 +26,7 @@ void init_aliases()
         // Remove leading and trailing whitespace from alias and command
         alias = trim(alias);
         command = trim(command);
+        handle_quotes(command);
 
         if (alias != NULL && command != NULL)
         {
@@ -42,28 +43,6 @@ void init_aliases()
     fclose(file);
 }
 
-char *trim(char *str)
-{
-    char *end;
-
-    // Trim leading whitespace
-    while (isspace((unsigned char)*str))
-        str++;
-
-    if (*str == 0) // Only whitespace
-        return str;
-
-    // Trim trailing whitespace
-    end = str + strlen(str) - 1;
-    while (end > str && isspace((unsigned char)*end))
-        end--;
-
-    // Null-terminate the trimmed string
-    *(end + 1) = 0;
-
-    return str;
-}
-
 int get_alias(char *name, char *command)
 {
     for (int i = 0; i < MAX_ALIASES; ++i)
@@ -71,7 +50,6 @@ int get_alias(char *name, char *command)
         if (aliases[i].alias != NULL && strcmp(aliases[i].alias, name) == 0)
         {
             strcpy(command, aliases[i].command);
-            printf("Alias found: %s\n", command);
             return 1;
         }
     }

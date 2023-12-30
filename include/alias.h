@@ -13,6 +13,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include "utils.h"
 
 /**
  * @brief Initialize aliases from file

@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "utils.h"
+#include "alias.h"
 
 /**
  * @brief Evaluate a command from a string
@@ -18,12 +20,6 @@
  * @return the command structure
  */
 Command evaluate_command(const char *input);
-
-/**
- * @brief Handle quotes in a string (remove them)
- * @param token: the string to handle
- */
-void handle_quotes(char **token);
 
 /**
  * @brief Free a command
