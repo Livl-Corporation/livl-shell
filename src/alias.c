@@ -7,8 +7,16 @@ void init_aliases()
     FILE *file = fopen(ALIASES_FILE, "r");
     if (file == NULL)
     {
-        perror("Error opening aliases file for reading");
-        return;
+        // Create the alias file if it doesn't exist
+        file = fopen(ALIASES_FILE, "w");
+        if (file != NULL)
+        {
+            fclose(file);
+        }
+        else
+        {
+            perror("Error creating aliases file.");
+        }
     }
 
     aliases = malloc(sizeof(Alias) * MAX_ALIASES);
