@@ -57,12 +57,12 @@ void preprocess_input(char *input)
     {
 
         char token[2] = {input[i], input[i + 1]};
-        OperatorType operator_type = get_operator_type(&token);
+        OperatorType operator_type = get_operator_type(token);
 
         if (operator_type != UNKNOWN)
         {
 
-            char *operator_string = get_operator_string(operator_type);
+            const char *operator_string = get_operator_string(operator_type);
             int operator_length = strlen(get_operator_string(operator_type));
 
             new_input[j++] = ' ';

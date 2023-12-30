@@ -49,7 +49,7 @@ void print_prompt()
     // if(username == NULL)
     //     username = "hostname";
 
-    printf(YELLOW "%s" RESET "@" BLUE "livl-shell" GREEN " %s" RESET " $ ", username, cwd);
+    printf(YELLOW "%s" RESET "@" BLUE "livl-shell" GREEN ":~%s" RESET "$ ", username, cwd);
 }
 
 void print_exit_info()
