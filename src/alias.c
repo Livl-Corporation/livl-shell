@@ -40,7 +40,18 @@ void init_aliases()
         if (alias != NULL && command != NULL)
         {
             aliases[i].alias = malloc(sizeof(char) * (strlen(alias) + 1));
+            if(aliases[i].alias == NULL)
+            {
+                perror("malloc");
+                exit(EXIT_FAILURE);
+            }
+
             aliases[i].command = malloc(sizeof(char) * (strlen(command) + 1));
+            if(aliases[i].command == NULL)
+            {
+                perror("malloc");
+                exit(EXIT_FAILURE);
+            }
 
             strcpy(aliases[i].alias, alias);
             strcpy(aliases[i].command, command);
