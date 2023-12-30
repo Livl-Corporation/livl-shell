@@ -96,6 +96,7 @@ typedef struct
     char *command;
     char **arguments;
     char **complete_command;
+    char *input_string;
     int num_arguments;
     Redirection redirection;
 } Command;

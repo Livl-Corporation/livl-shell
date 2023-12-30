@@ -2,43 +2,91 @@
 
 /**
  * Order by operator length (longest first) to avoid matching << when looking for <
-*/
-const char *operators[] = {
-    "&&",
-    "||",
-    ">>",
-    "<<",
-    ";",
-    "|",
-    "&",
-    "<",
-    ">",
-};
+ */
+OperatorType get_operator_type(const char *operator_str)
+{
 
-const int num_operators = sizeof(operators) / sizeof(char*);
-
-int is_operator(const char *token) {
-    for (int i = 0; i < num_operators; i++) {
-        if (strcmp(token, operators[i]) == 0) {
-            return 1; // The token is an operator
-        }
+    if (operator_str == NULL)
+    {
+        return UNKNOWN;
     }
 
-    return 0; // The token is not an operator
-}
+    size_t len = 2;
 
-OperatorType get_operator_type(const char *operator_str) {
-    for (int i = 0; i < num_operators; i++) {
-        if (strcmp(operator_str, operators[i]) == 0) {
-            return (OperatorType)i;
-        }
+    if (strncmp(operator_str, "&&", len) == 0)
+    {
+        return AND;
     }
+
+    if (strncmp(operator_str, "||", len) == 0)
+    {
+        return OR;
+    }
+
+    if (strncmp(operator_str, ">>", len) == 0)
+    {
+        return REDIRECTION_APPEND_OUTPUT;
+    }
+
+    if (strncmp(operator_str, "<<", len) == 0)
+    {
+        return REDIRECTION_APPEND_INPUT;
+    }
+
+    len = 1;
+
+    if (strncmp(operator_str, ";", len) == 0)
+    {
+        return SEMICOLON;
+    }
+
+    if (strncmp(operator_str, "|", len) == 0)
+    {
+        return PIPE;
+    }
+
+    if (strncmp(operator_str, "&", len) == 0)
+    {
+        return BACKGROUND;
+    }
+
+    if (strncmp(operator_str, ">", len) == 0)
+    {
+        return REDIRECTION_OUTPUT;
+    }
+
+    if (strncmp(operator_str, "<", len) == 0)
+    {
+        return REDIRECTION_INPUT;
+    }
+
     return UNKNOWN;
 }
 
-const char *get_operator_string(OperatorType op) {
-    if (op >= 0 && op < num_operators) {
-        return operators[op];
+const char *get_operator_string(OperatorType operator_type)
+{
+
+    switch (operator_type)
+    {
+    case AND:
+        return "&&";
+    case OR:
+        return "||";
+    case REDIRECTION_APPEND_OUTPUT:
+        return ">>";
+    case REDIRECTION_APPEND_INPUT:
+        return "<<";
+    case SEMICOLON:
+        return ";";
+    case PIPE:
+        return "|";
+    case BACKGROUND:
+        return "&";
+    case REDIRECTION_OUTPUT:
+        return ">";
+    case REDIRECTION_INPUT:
+        return "<";
+    default:
+        return "UNKNOWN";
     }
-    return "UNKNOWN";
 }
