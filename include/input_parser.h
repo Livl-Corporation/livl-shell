@@ -22,7 +22,7 @@
  * @brief Reads the input from the console
  * @return The input string
  */
-char *read_input();
+char *read_input(char *input);
 
 /**
  * @brief Checks if the input string is all whitespace

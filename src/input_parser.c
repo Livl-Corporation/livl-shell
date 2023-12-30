@@ -1,11 +1,10 @@
 #include "input_parser.h"
 
-char *read_input()
+char *read_input(char *input)
 {
-    char *input = malloc(MAX_INPUT_LENGTH * sizeof(char));
     if (input == NULL)
     {
-        perror("malloc");
+        perror("input is not allocated");
         return NULL;
     }
 
