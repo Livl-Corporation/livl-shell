@@ -24,7 +24,7 @@ void init_aliases()
 
     char line[MAX_INPUT_LENGTH];
 
-    int i = 0;
+    int i, num_aliases = 0;
 
     while (fgets(line, sizeof(line), file) != NULL && i < MAX_ALIASES)
     {
