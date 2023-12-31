@@ -75,3 +75,13 @@ int is_alias(const char *name, char *command)
     }
     return IS_NOT_ALIAS_COMMAND;
 }
+
+void free_aliases()
+{
+    for (int i = 0; i < num_aliases; ++i)
+    {
+        free(aliases[i].alias);
+        free(aliases[i].command);
+    }
+    free(aliases);
+}

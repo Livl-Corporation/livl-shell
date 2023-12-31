@@ -13,6 +13,7 @@
 #include <string.h>
 #include "typedef.h"
 #include "constants.h"
+#include "main.h"
 
 /**
  * @brief Executes a command
@@ -39,11 +40,6 @@ void cd(const char *path);
  * @return 1 if the command is a built-in command, 0 if not
  */
 int is_builtin_command(const Command *command, const char *expected);
-
-/**
- * @brief Exits the shell
- */
-void exit_shell();
 
 /**
  * @brief Prints a message

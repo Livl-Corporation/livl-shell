@@ -51,4 +51,9 @@ void load_command_history_from_file();
  */
 void reset_current_index();
 
+/**
+ * @brief Free the global command history
+ */
+void free_command_history();
+
 #endif // HISTORY_COMMAND_H

@@ -31,4 +31,9 @@ void run_interactive_mode();
  */
 void handle_input(char *input);
 
+/**
+ * @brief Exit the shell.
+ */
+int exit_shell(int status);
+
 #endif // MAIN_H

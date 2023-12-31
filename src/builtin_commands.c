@@ -26,11 +26,6 @@ void pwd()
     }
 }
 
-void exit_shell()
-{
-    exit(EXIT_SUCCESS);
-}
-
 void echo(const Command *command)
 {
     for (int i = 0; i < command->num_arguments; i++)
@@ -64,7 +59,7 @@ int execute_builtin_command(const Command *command)
     {
         if (command->num_arguments == 0)
         {
-            exit_shell();
+            exit_shell(EXIT_SUCCESS);
             return IS_BUILTIN_COMMAND;
         }
         perror("Usage: exit");

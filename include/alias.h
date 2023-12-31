@@ -28,4 +28,9 @@ void init_aliases();
  */
 int is_alias(const char *name, char *command);
 
+/**
+ * @brief Free aliases
+ */
+void free_aliases();
+
 #endif // ALIAS_H
