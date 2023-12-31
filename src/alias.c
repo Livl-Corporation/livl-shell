@@ -60,8 +60,6 @@ void init_aliases()
         }
     }
 
-    printf("Loaded %d aliases.\n", num_aliases);
-
     fclose(file);
 }
 
