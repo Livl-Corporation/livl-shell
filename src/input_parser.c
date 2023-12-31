@@ -156,19 +156,26 @@ void handle_backspace(char *input, int *index)
     }
 
     // Shift characters to the left
-    for (int i = *index - 1; i < strlen(input); i++)
+    for (int i = *index - 1; i < strlen(input) - 1; i++)
     {
         input[i] = input[i + 1];
     }
 
+    // Delete the last character
+    input[strlen(input) - 1] = '\0';
+
     // Update index
     (*index)--;
 
-    // Print the new input
+    // Print the new input and move the cursor back to the correct position
     printf("\33[2K\r");
     print_prompt();
     printf("%s", input);
-    printf("\33[%dD", (int)strlen(input) - *index);
+    int num_chars_to_move = strlen(input) - *index;
+    if (num_chars_to_move > 0)
+    {
+        printf("\033[%dD", num_chars_to_move);
+    }
 }
 
 void handle_control_backspace(char *input, int *index)
