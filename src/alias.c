@@ -24,9 +24,9 @@ void init_aliases()
 
     char line[MAX_INPUT_LENGTH];
 
-    int i, num_aliases = 0;
+    num_aliases = 0;
 
-    while (fgets(line, sizeof(line), file) != NULL && i < MAX_ALIASES)
+    while (fgets(line, sizeof(line), file) != NULL && num_aliases < MAX_ALIASES)
     {
         // Extract alias and command from line
         char *alias = strtok(line, "=");
@@ -39,32 +39,34 @@ void init_aliases()
 
         if (alias != NULL && command != NULL)
         {
-            aliases[i].alias = malloc(sizeof(char) * (strlen(alias) + 1));
-            if(aliases[i].alias == NULL)
+            aliases[num_aliases].alias = malloc(sizeof(char) * (strlen(alias) + 1));
+            if (aliases[num_aliases].alias == NULL)
             {
                 perror("malloc");
                 exit(EXIT_FAILURE);
             }
 
-            aliases[i].command = malloc(sizeof(char) * (strlen(command) + 1));
-            if(aliases[i].command == NULL)
+            aliases[num_aliases].command = malloc(sizeof(char) * (strlen(command) + 1));
+            if (aliases[num_aliases].command == NULL)
             {
                 perror("malloc");
                 exit(EXIT_FAILURE);
             }
 
-            strcpy(aliases[i].alias, alias);
-            strcpy(aliases[i].command, command);
+            strcpy(aliases[num_aliases].alias, alias);
+            strcpy(aliases[num_aliases].command, command);
 
-            num_aliases++, i++;
+            num_aliases++;
         }
     }
+
+    printf("Loaded %d aliases.\n", num_aliases);
 
     fclose(file);
 }
 
 int is_alias(const char *name, char *command)
-{    
+{
     for (int i = 0; i < num_aliases; ++i)
     {
         if (aliases[i].alias != NULL && strcmp(aliases[i].alias, name) == 0)
