@@ -70,11 +70,12 @@ char **get_complete_command_array(Command *cmd)
         free_command(cmd);
         exit(EXIT_FAILURE);
     }
-    new_arguments[0] = cmd->command;
+    new_arguments[0] = strdup(cmd->command);
     for (int i = 0; i < cmd->num_arguments; ++i)
     {
-        new_arguments[i + 1] = cmd->arguments[i];
+        new_arguments[i + 1] = strdup(cmd->arguments[i]);
     }
+    new_arguments[cmd->num_arguments + 1] = NULL;
     return new_arguments;
 }
 
