@@ -4,7 +4,7 @@ char *read_input(char *input)
 {
     if (input == NULL)
     {
-        perror("input is not allocated");
+        perror("malloc: input");
         return NULL;
     }
 
