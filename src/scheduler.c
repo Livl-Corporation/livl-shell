@@ -61,16 +61,19 @@ int execute_command_sequence(const CommandSequence *sequence) {
             continue;
         }
 
-        if(sequence->operators[i] != NULL) 
+        // Check if operator exist for the current command
+        if(sequence->num_operators > i) 
+        {
             current_operator = get_operator_type(sequence->operators[i]);
 
-        // Before executing the current command, check if it is a pipe or a background operator
-        if(current_operator == PIPE && i < last_command) {
-            execute_pipe(&(sequence->commands[i]), &(sequence->commands[i + 1]));
-            is_skipping_next_command = 1;
-            continue; // No need to execute the current command because it is a pipe
-        } else if (current_operator == BACKGROUND) {
-            is_running_in_background = 1;
+            // Before executing the current command, check if it is a pipe or a background operator
+            if(current_operator == PIPE && i < last_command) {
+                execute_pipe(&(sequence->commands[i]), &(sequence->commands[i + 1]));
+                is_skipping_next_command = 1;
+                continue; // No need to execute the current command because it is a pipe
+            } else if (current_operator == BACKGROUND) {
+                is_running_in_background = 1;
+            }
         }
 
         status = execute_command(&(sequence->commands[i]), is_running_in_background);
