@@ -14,11 +14,6 @@
 #include "constants.h"
 
 /**
- * @brief Print the title of the program
- */
-void print_title();
-
-/**
  * @brief Generic print information to the console
  * @param text The text to be printed
  * @param ... optional arguments like %s, %d, etc.
@@ -36,10 +31,5 @@ void print_prompt();
  * @param ... optional arguments like %s, %d, etc.
  */
 void print_perror(const char *format, ...);
-
-/**
- * @brief Print the exit information to the console
- */
-void print_exit_info();
 
 #endif // CONSOLE_H
