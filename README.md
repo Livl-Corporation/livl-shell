@@ -142,8 +142,10 @@ livl-shell/
 
 ## History
 
-The livl-shell has a history feature that allows you to view the history of your commands.
-Use up and down arrows to navigate through the history.
+The livl-shell has an ex history feature that allows you to view the history of your commands.
+
+**Experimental**: Use up and down arrows to navigate through the history. To be able to use this feature, you need to go to the branch  `feat/history`. This feature is not available on the `master` branch because some issues have been detected when using the left and right arrows.
+
 The history is saved in the [`history.txt`](history.txt) file.
 
 ## 📖 Use the livl-bash `man` command
