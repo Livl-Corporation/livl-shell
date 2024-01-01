@@ -30,12 +30,12 @@ int execute_external_command(const Command *command, int run_in_background) {
 }
 
 
-int execute_command(const Command *command, int run_in_background) {
+int execute_command(const Command *command, CommandSequence *commandSequence, int run_in_background) {
     if (is_redirection_command(command)) {
         return execute_external_command(command, run_in_background);
     }
 
-    int execution_status = execute_builtin_command(command);
+    int execution_status = execute_builtin_command(command, commandSequence);
 
     if (execution_status == IS_NOT_BUILTIN_COMMAND) {
         execution_status = execute_external_command(command, run_in_background);
@@ -44,7 +44,7 @@ int execute_command(const Command *command, int run_in_background) {
     return execution_status;
 }
 
-int execute_command_sequence(const CommandSequence *sequence) {
+int execute_command_sequence(CommandSequence *sequence) {
     int status = 0;
     int is_current_command_failed = 0;
     int is_skipping_next_command = 0;
@@ -76,7 +76,7 @@ int execute_command_sequence(const CommandSequence *sequence) {
             }
         }
 
-        status = execute_command(&(sequence->commands[i]), is_running_in_background);
+        status = execute_command(&(sequence->commands[i]), sequence , is_running_in_background);
         is_current_command_failed = WIFEXITED(status) && WEXITSTATUS(status) == 0;
 
         // If the current command is the last one, break the loop because there is no next command

@@ -126,7 +126,7 @@ livl-shell/
 - `sleep 4 && echo "Second command executed"`: Executes a command after another one.
 - `false && echo "This won't be executed"`: Executes a command after another one only if the first one succeeded.
 - `false || echo "This will be executed"`: Executes a command after another one only if the first one failed.
-- `echo "Command 1"; sleep 3; echo "Command 2"; ls -l`: Executes multiple commands regardless of the success of the previous ones.
+- `echo "Command 1"; sleep 3; echo "Command 2"; ls -l`: Executes multiple commands regardless of the success of the previous ones. The `ls -l` won't be executed because the shell is limited to run a maximum of 3 commands in a row.
 
 ### Batch Mode
 

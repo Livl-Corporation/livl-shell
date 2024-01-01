@@ -106,4 +106,13 @@ void free_command_sequence(CommandSequence *sequence)
         free_command(&sequence->commands[i]);
     }
     free(sequence->commands);
+    sequence->commands = NULL;
+    
+    for (int i = 0; i < sequence->num_operators; ++i)
+    {
+        free(sequence->operators[i]);
+        sequence->operators[i] = NULL;
+    }
+    free(sequence->operators);
+    sequence->operators = NULL;
 }
