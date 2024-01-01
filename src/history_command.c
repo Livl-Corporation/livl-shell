@@ -24,33 +24,6 @@ void add_to_command_history(const char *command)
     }
 }
 
-void get_previous_command(char *input)
-{
-    if (command_history.current_index > 0)
-    {
-        command_history.current_index--;
-        strcpy(input, command_history.history[command_history.current_index]);
-    }
-    else
-    {
-        strcpy(input, "");
-    }
-}
-
-void get_next_command(char *input)
-{
-    if (command_history.current_index < command_history.history_count - 1)
-    {
-        command_history.current_index++;
-        strcpy(input, command_history.history[command_history.current_index]);
-    }
-    else
-    {
-        command_history.current_index = command_history.history_count;
-        strcpy(input, "");
-    }
-}
-
 void save_command_history_to_file()
 {
     FILE *file = fopen(HISTORY_FILE, "a"); // Open in append mode
@@ -111,9 +84,4 @@ void load_command_history_from_file()
             perror("Error creating history file");
         }
     }
-}
-
-void reset_current_index()
-{
-    command_history.current_index = command_history.history_count;
 }
