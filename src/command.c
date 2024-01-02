@@ -10,7 +10,7 @@ Command evaluate_command(const char *input)
 
     // Handle aliases
     parse_aliases(input_copy);
-
+   
     // Tokenize by spaces, tabs, and newline characters
     char *token = strtok(input_copy, CMD_DELIMITERS);
 
@@ -38,7 +38,7 @@ Command evaluate_command(const char *input)
     cmd.arguments[cmd.num_arguments] = NULL;
 
     // Get the complete command
-    cmd.complete_command = get_complete_command_array(&cmd);
+    get_complete_command_array(&cmd);
     cmd.input_string = strdup(input);
 
     free(token);
@@ -46,7 +46,7 @@ Command evaluate_command(const char *input)
     return cmd;
 }
 
-char **get_complete_command_array(Command *cmd)
+void get_complete_command_array(Command *cmd)
 {
     char **new_arguments = malloc((cmd->num_arguments + 2) * sizeof(char *));
     if (new_arguments == NULL)
@@ -60,7 +60,8 @@ char **get_complete_command_array(Command *cmd)
         new_arguments[i + 1] = strdup(cmd->arguments[i]);
     }
     new_arguments[cmd->num_arguments + 1] = NULL;
-    return new_arguments;
+    
+    cmd->complete_command = new_arguments;
 }
 
 void init_command(Command *cmd)

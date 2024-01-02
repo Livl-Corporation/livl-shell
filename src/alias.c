@@ -88,20 +88,37 @@ void free_aliases()
 
 void parse_aliases(char *input)
 {
+    char *result = malloc(sizeof(char) * MAX_INPUT_LENGTH);
+    if (result == NULL)
+    {
+        perror("malloc");
+        exit(EXIT_FAILURE);
+    }
+    result[0] = '\0';
+    int i = 0;
+
     char *token = strtok(input, CMD_DELIMITERS);
-    char replaced_input[MAX_INPUT_LENGTH] = ""; // Initialize a new string to store the replaced input
-
-    char command[MAX_INPUT_LENGTH];
-    if (is_alias(token, command) == IS_ALIAS_COMMAND)
+    while (token != NULL)
     {
-        strcat(replaced_input, command); // Append the replaced command to the new string
-    }
-    else
-    {
-        strcat(replaced_input, token); // Append the original token to the new string
+        char command[MAX_INPUT_LENGTH];
+        int isAlias = i == 0 ? is_alias(token, command) : IS_NOT_ALIAS_COMMAND;
+        if (isAlias == IS_ALIAS_COMMAND)
+        {
+            strcat(result, command);
+        }
+        else
+        {
+            strcat(result, token);
+        }
+
+        token = strtok(NULL, CMD_DELIMITERS);
+        if (token != NULL)
+        {
+            strcat(result, " ");
+        }
+        i++;
     }
 
-    strcat(replaced_input, " ");                       // Add a space between tokens
-    strcat(replaced_input, input + strlen(token) + 1); // Append the remaining input after the first token
-    strcpy(input, replaced_input);                     // Copy the replaced input back to the original input string
+    strcpy(input, result);
+    free(result);
 }

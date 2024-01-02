@@ -16,7 +16,7 @@ void run_interactive_mode()
     {
         print_prompt();
 
-        char *input = malloc(MAX_INPUT_LENGTH * sizeof(char));
+        char *input = calloc(MAX_INPUT_LENGTH, sizeof(char));
         read_input(input);
         handle_input(input);
         free(input);

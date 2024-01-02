@@ -77,15 +77,17 @@ void process_token(char *token, char **commands, char **operators, char **curren
     else
     {
         size_t len = strlen(*currentCommand) + strlen(token) + 2;
-        char *temp = realloc(*currentCommand, len);
-        if (temp == NULL)
+        char *newCommand = malloc(len);
+        if (newCommand == NULL)
         {
-            perror("realloc");
+            perror("malloc");
             return;
         }
-        *currentCommand = temp;
-        strcat(*currentCommand, " ");
-        strcat(*currentCommand, token);
+        strcpy(newCommand, *currentCommand);
+        strcat(newCommand, " ");
+        strcat(newCommand, token);
+        free(*currentCommand);
+        *currentCommand = newCommand;
     }
 }
 

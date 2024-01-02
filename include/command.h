@@ -31,9 +31,8 @@ void free_command(Command *cmd);
  * @brief Get the complete command (command + arguments) as a string
  * @brief It is useful for execvp(const char* command, char* argv[])
  * @param cmd: the command to get
- * @return the complete command as an array of strings
  */
-char **get_complete_command_array(Command *cmd);
+void get_complete_command_array(Command *cmd);
 
 /**
  * @brief Initialize a command
