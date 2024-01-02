@@ -2,8 +2,6 @@
 
 void command_sequence_init(char *input)
 {
-    const char *delimeters = " \n";
-
     char *commands[MAX_COMMANDS];
     char *operators[MAX_OPERATORS];
 
@@ -17,7 +15,7 @@ void command_sequence_init(char *input)
     sequence.num_commands = 0;
     sequence.num_operators = 0;
 
-    char *token = strtok(input, delimeters);
+    char *token = strtok(input, INPUT_DELIMITERS);
     while (token != NULL)
     {
         if (command_count >= MAX_COMMANDS)
@@ -27,7 +25,7 @@ void command_sequence_init(char *input)
         }
 
         process_token(token, commands, operators, &currentCommand, &command_count, &operator_count);
-        token = strtok(NULL, delimeters);
+        token = strtok(NULL, INPUT_DELIMITERS);
 
         if (token == NULL || get_operator_type(token) != UNKNOWN)
         {
@@ -59,6 +57,7 @@ void command_sequence_init(char *input)
         fprintf(stderr, "An error occurred while executing the commands\n");
     }
 
+    free(token);
     free_command_sequence(&sequence);
 }
 
@@ -107,7 +106,7 @@ void free_command_sequence(CommandSequence *sequence)
     }
     free(sequence->commands);
     sequence->commands = NULL;
-    
+
     for (int i = 0; i < sequence->num_operators; ++i)
     {
         free(sequence->operators[i]);

@@ -110,4 +110,16 @@
  */
 #define CHILD_PROCESS 0
 
+// Parsing
+
+/**
+ * @brief The delimiters used to parse the whole input
+ */
+#define INPUT_DELIMITERS " \n"
+
+/**
+ * @brief The delimiters used to parse a single command string
+ */
+#define CMD_DELIMITERS " \t\n"
+
 #endif // CONSTANTS_H

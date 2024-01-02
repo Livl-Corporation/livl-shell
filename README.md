@@ -153,11 +153,13 @@ The history is saved in the [`history.txt`](history.txt) file.
 
 ### Alias
 
-Livl-shell provide a basic alias support. Alias can be defined only by editing the `alias.txt` file. The syntax is the following:
+Livl-shell provide a basic alias support. Alias can be defined only by editing the `aliases.txt` file. The syntax is the following:
 
 ```
 alias_name="command"
 ```
+
+> Note that you can't use alias inside alias.
 
 For example, if you want to create an alias for the `ls -l` command, you can add the following line to the `alias.txt` file:
 
@@ -167,7 +169,8 @@ ll="ls -l"
 
 Then, you can run the `ll` command to execute the `ls -l` command.
 
-> Note that you can't use alias inside alias, and your input need to be exactly the alias name. You can't add arguments to an alias when using the shell.
+> You can input arguments with your alias, as well as use pipes and redirections. For example, if you input `ll -m` it will be interpreted as `ls -l -m`.
+
 
 ## Working with the documentation
 

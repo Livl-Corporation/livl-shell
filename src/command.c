@@ -5,26 +5,14 @@ Command evaluate_command(const char *input)
     Command cmd;
     init_command(&cmd);
 
-    char delimiters[] = " \t\n";
-
     // Copy the input for manipulation
-    char *input_copy;
+    char *input_copy = strdup(input);
 
-    // if input is an alias, replace input
-    char *alias_command = malloc(sizeof(char) * MAX_INPUT_LENGTH);
-    if(alias_command == NULL)
-    {
-        perror("malloc");
-        exit(EXIT_FAILURE);
-    }
+    // Handle aliases
+    parse_aliases(input_copy);
 
-    if(is_alias(input, alias_command)) 
-        input_copy = strdup(alias_command);
-    else 
-        input_copy = strdup(input);
-    
     // Tokenize by spaces, tabs, and newline characters
-    char *token = strtok(input_copy, delimiters);
+    char *token = strtok(input_copy, CMD_DELIMITERS);
 
     // 1. The first part is the command (from the first letter to the one of the first delimiters)
     if (token == NULL)
@@ -37,7 +25,7 @@ Command evaluate_command(const char *input)
     cmd.command = strdup(token);
 
     // 2. After getting the command name, collect all arguments (each token = 1 argument depending on the delimiters)
-    while ((token = strtok(NULL, delimiters)) != NULL)
+    while ((token = strtok(NULL, CMD_DELIMITERS)) != NULL)
     {
         handle_quotes(token);
         cmd.arguments = realloc(cmd.arguments, (cmd.num_arguments + 1) * sizeof(char *));
@@ -53,6 +41,7 @@ Command evaluate_command(const char *input)
     cmd.complete_command = get_complete_command_array(&cmd);
     cmd.input_string = strdup(input);
 
+    free(token);
     free(input_copy);
     return cmd;
 }
@@ -91,7 +80,7 @@ void free_command(Command *cmd)
 {
     free(cmd->command);
     cmd->command = NULL;
-    
+
     for (int i = 0; i < cmd->num_arguments; ++i)
     {
         free(cmd->arguments[i]);
@@ -99,16 +88,16 @@ void free_command(Command *cmd)
     }
     free(cmd->arguments);
     cmd->arguments = NULL;
-    
+
     free(cmd->redirection.input_file);
     cmd->redirection.input_file = NULL;
-    
+
     free(cmd->redirection.output_file);
     cmd->redirection.output_file = NULL;
-    
+
     free(cmd->complete_command);
     cmd->complete_command = NULL;
-    
+
     free(cmd->input_string);
     cmd->input_string = NULL;
 }
