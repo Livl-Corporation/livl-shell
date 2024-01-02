@@ -1,5 +1,6 @@
 <map id="include/scheduler.h" name="include/scheduler.h">
-<area shape="rect" id="node1" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="41,5,188,32"/>
-<area shape="rect" id="node2" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,80,224,107"/>
-<area shape="rect" id="node3" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="55,155,174,181"/>
+<area shape="rect" id="node1" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="101,5,248,32"/>
+<area shape="rect" id="node2" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="139,80,357,107"/>
+<area shape="rect" id="node3" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="5,155,211,181"/>
+<area shape="rect" id="node4" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="118,229,237,256"/>
 </map>

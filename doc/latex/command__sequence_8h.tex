@@ -9,6 +9,7 @@ File containing the command sequence functions to manage the command sequence (c
 {\ttfamily \#include \char`\"{}scheduler.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}operator.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}redirection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
 Include dependency graph for command\+\_\+sequence.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,24 +21,15 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=244pt]{command__sequence_8h__dep__incl}
+\includegraphics[width=321pt]{command__sequence_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}\label{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}} 
-\#define \mbox{\hyperlink{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}{M\+A\+X\+\_\+\+C\+O\+M\+M\+A\+N\+DS}}~3
-\begin{DoxyCompactList}\small\item\em The maximum number of commands in a command sequence. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{command__sequence_8h_a30892ce590446910ea3159e79f2f31f3}\label{command__sequence_8h_a30892ce590446910ea3159e79f2f31f3}} 
-\#define \mbox{\hyperlink{command__sequence_8h_a30892ce590446910ea3159e79f2f31f3}{M\+A\+X\+\_\+\+O\+P\+E\+R\+A\+T\+O\+RS}}~(\mbox{\hyperlink{command__sequence_8h_a4b2b20c68bee625b7dc737c4d05699fd}{M\+A\+X\+\_\+\+C\+O\+M\+M\+A\+N\+DS}} -\/ 1)
-\begin{DoxyCompactList}\small\item\em The maximum number of operators in a command sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{command__sequence_8h_a047ff92a55b724f995e06df3efab5e2f}{command\+\_\+sequence\+\_\+init}} (char $\ast$input)
 \begin{DoxyCompactList}\small\item\em Initialize the command sequence module. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{command__sequence_8h_a7b190c9089af15a106d006a4e316cc03}{process\+\_\+token}} (char $\ast$token, char $\ast$$\ast$commands, char $\ast$$\ast$\mbox{\hyperlink{operator_8h_a47bfd392ff22b9804148ca320a7ff649}{operators}}, char $\ast$$\ast$current\+Command, int $\ast$cmd\+Index, int $\ast$op\+Index)
+void \mbox{\hyperlink{command__sequence_8h_a7b190c9089af15a106d006a4e316cc03}{process\+\_\+token}} (char $\ast$token, char $\ast$$\ast$commands, char $\ast$$\ast$operators, char $\ast$$\ast$current\+Command, int $\ast$cmd\+Index, int $\ast$op\+Index)
 \begin{DoxyCompactList}\small\item\em Checks if the given token is a command or an operator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{command__sequence_8h_a8946c9988071f3e0e4aed15a3d95dc1a}{store\+\_\+command}} (char $\ast$$\ast$commands, char $\ast$$\ast$current\+Command, int $\ast$cmd\+Index)
 \begin{DoxyCompactList}\small\item\em Stores the current command in the commands array. \end{DoxyCompactList}\item 

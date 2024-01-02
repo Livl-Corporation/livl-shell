@@ -47,6 +47,7 @@ int is_builtin_command(const Command *command, const char *expected);
  * @brief Exits the shell
  *
  * @param sequence The command sequence to free
+ * @param exit_code The exit code status
  */
 int exit_shell(CommandSequence *sequence, int exit_code);
 

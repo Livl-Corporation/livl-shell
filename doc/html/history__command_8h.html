@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -69,32 +69,32 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">history_command.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>File containing the history command functions to manage the history of commands entered by the user (saving, loading, etc.) to a file.  
+<p>File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the user to a file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="typedef_8h_source.html">typedef.h</a>&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="constants_8h_source.html">constants.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for history_command.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="history__command_8h__incl.png" border="0" usemap="#include_2history__command_8h" alt=""/></div>
 <map name="include_2history__command_8h" id="include_2history__command_8h">
-<area shape="rect" title="File containing the history command functions to manage the history of commands entered by the user (..." alt="" coords="81,5,284,32"/>
+<area shape="rect" title="File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the us..." alt="" coords="132,5,335,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,72,107"/>
 <area shape="rect" title=" " alt="" coords="97,80,167,107"/>
 <area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="192,80,275,107"/>
-<area shape="rect" title=" " alt="" coords="299,80,370,107"/>
-<area shape="rect" title=" " alt="" coords="141,155,216,181"/>
-<area shape="rect" title=" " alt="" coords="240,155,336,181"/>
+<area shape="rect" href="constants_8h.html" title="Header file defining constants." alt="" coords="285,155,382,181"/>
+<area shape="rect" title=" " alt="" coords="350,80,421,107"/>
+<area shape="rect" title=" " alt="" coords="65,155,140,181"/>
+<area shape="rect" title=" " alt="" coords="164,155,260,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -102,39 +102,23 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="history__command_8h__dep__incl.png" border="0" usemap="#include_2history__command_8hdep" alt=""/></div>
 <map name="include_2history__command_8hdep" id="include_2history__command_8hdep">
-<area shape="rect" title="File containing the history command functions to manage the history of commands entered by the user (..." alt="" coords="5,5,208,32"/>
-<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="47,80,166,107"/>
+<area shape="rect" title="File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the us..." alt="" coords="47,5,249,32"/>
+<area shape="rect" href="input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="5,80,171,107"/>
+<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="89,155,207,181"/>
 </map>
 </div>
 </div>
 <p><a href="history__command_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a7a7c87173dc0b32eb0086b66359963a5"><td class="memItemLeft" align="right" valign="top"><a id="a7a7c87173dc0b32eb0086b66359963a5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#a7a7c87173dc0b32eb0086b66359963a5">MAX_HISTORY_SIZE</a>&#160;&#160;&#160;1000</td></tr>
-<tr class="memdesc:a7a7c87173dc0b32eb0086b66359963a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max size of the history. <br /></td></tr>
-<tr class="separator:a7a7c87173dc0b32eb0086b66359963a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae41c75682d94c3f1a2c7e1e28ed0391a"><td class="memItemLeft" align="right" valign="top"><a id="ae41c75682d94c3f1a2c7e1e28ed0391a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#ae41c75682d94c3f1a2c7e1e28ed0391a">HISTORY_FILE</a>&#160;&#160;&#160;&quot;history.txt&quot;</td></tr>
-<tr class="memdesc:ae41c75682d94c3f1a2c7e1e28ed0391a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The history file name. <br /></td></tr>
-<tr class="separator:ae41c75682d94c3f1a2c7e1e28ed0391a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeb735e34a5bc474c20650fd8e3b1f83f"><td class="memItemLeft" align="right" valign="top"><a id="aeb735e34a5bc474c20650fd8e3b1f83f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#aeb735e34a5bc474c20650fd8e3b1f83f">initialize_command_history</a> ()</td></tr>
-<tr class="memdesc:aeb735e34a5bc474c20650fd8e3b1f83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the global command history. <br /></td></tr>
-<tr class="separator:aeb735e34a5bc474c20650fd8e3b1f83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8e979cf28d33a3c73ac07c43661aa8"><td class="memItemLeft" align="right" valign="top"><a id="a7b8e979cf28d33a3c73ac07c43661aa8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#a7b8e979cf28d33a3c73ac07c43661aa8">init_command_history</a> ()</td></tr>
+<tr class="memdesc:a7b8e979cf28d33a3c73ac07c43661aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the global command history. <br /></td></tr>
+<tr class="separator:a7b8e979cf28d33a3c73ac07c43661aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0135db9a08f020d272a87145e01d70b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">add_to_command_history</a> (const char *command)</td></tr>
 <tr class="memdesc:a0135db9a08f020d272a87145e01d70b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a command to the global command history.  <a href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">More...</a><br /></td></tr>
 <tr class="separator:a0135db9a08f020d272a87145e01d70b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e425bc624bb440d663e2625cdf0630b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#a5e425bc624bb440d663e2625cdf0630b">get_previous_command</a> ()</td></tr>
-<tr class="memdesc:a5e425bc624bb440d663e2625cdf0630b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the previous command from the global command history.  <a href="history__command_8h.html#a5e425bc624bb440d663e2625cdf0630b">More...</a><br /></td></tr>
-<tr class="separator:a5e425bc624bb440d663e2625cdf0630b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3d6d88d9280692e058c81fb16099cdc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#ab3d6d88d9280692e058c81fb16099cdc">get_next_command</a> ()</td></tr>
-<tr class="memdesc:ab3d6d88d9280692e058c81fb16099cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next command from the global command history.  <a href="history__command_8h.html#ab3d6d88d9280692e058c81fb16099cdc">More...</a><br /></td></tr>
-<tr class="separator:ab3d6d88d9280692e058c81fb16099cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a262bdb9998d3688eac04c371ab16b032"><td class="memItemLeft" align="right" valign="top"><a id="a262bdb9998d3688eac04c371ab16b032"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#a262bdb9998d3688eac04c371ab16b032">save_command_history_to_file</a> ()</td></tr>
 <tr class="memdesc:a262bdb9998d3688eac04c371ab16b032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the command history to the history file. <br /></td></tr>
@@ -143,16 +127,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hist
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#a691462d54fade9c0bc8b49df3333f6bd">load_command_history_from_file</a> ()</td></tr>
 <tr class="memdesc:a691462d54fade9c0bc8b49df3333f6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the command history from the history file. <br /></td></tr>
 <tr class="separator:a691462d54fade9c0bc8b49df3333f6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ae4b79f4ef463444f1dbd4dc15371ae45"><td class="memItemLeft" align="right" valign="top"><a id="ae4b79f4ef463444f1dbd4dc15371ae45"></a>
-<a class="el" href="structCommandHistory.html">CommandHistory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="history__command_8h.html#ae4b79f4ef463444f1dbd4dc15371ae45">global_command_history</a></td></tr>
-<tr class="memdesc:ae4b79f4ef463444f1dbd4dc15371ae45"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global history of commands entered by the user. <br /></td></tr>
-<tr class="separator:ae4b79f4ef463444f1dbd4dc15371ae45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>File containing the history command functions to manage the history of commands entered by the user (saving, loading, etc.) to a file. </p>
+<div class="textblock"><p>File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the user to a file. </p>
 <dl class="section author"><dt>Author</dt><dd>Julien &amp; Franck </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>24 Dec 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -179,46 +156,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ab3d6d88d9280692e058c81fb16099cdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3d6d88d9280692e058c81fb16099cdc">&#9670;&nbsp;</a></span>get_next_command()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* get_next_command </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the next command from the global command history. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next command </dd></dl>
-
-</div>
-</div>
-<a id="a5e425bc624bb440d663e2625cdf0630b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e425bc624bb440d663e2625cdf0630b">&#9670;&nbsp;</a></span>get_previous_command()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* get_previous_command </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the previous command from the global command history. </p>
-<dl class="section return"><dt>Returns</dt><dd>The previous command </dd></dl>
 
 </div>
 </div>

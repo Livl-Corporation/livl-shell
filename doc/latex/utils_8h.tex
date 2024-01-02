@@ -1,0 +1,77 @@
+\hypertarget{utils_8h}{}\doxysection{include/utils.h File Reference}
+\label{utils_8h}\index{include/utils.h@{include/utils.h}}
+
+
+File containing some utilities.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{utils_8h_a259db1c427429658853a91074de1b446}{handle\+\_\+quotes}} (char $\ast$token)
+\begin{DoxyCompactList}\small\item\em Handle quotes in a string (remove them) \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_a06798d058792d39a2eb6f3b784ae1532}{trim}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Remove the spaces at the beginning and the end of a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing some utilities. 
+
+\begin{DoxyAuthor}{Author}
+Julien \& Franck 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+30 Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a259db1c427429658853a91074de1b446}\label{utils_8h_a259db1c427429658853a91074de1b446}} 
+\index{utils.h@{utils.h}!handle\_quotes@{handle\_quotes}}
+\index{handle\_quotes@{handle\_quotes}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{handle\_quotes()}{handle\_quotes()}}
+{\footnotesize\ttfamily void handle\+\_\+quotes (\begin{DoxyParamCaption}\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Handle quotes in a string (remove them) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & the string to handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a06798d058792d39a2eb6f3b784ae1532}\label{utils_8h_a06798d058792d39a2eb6f3b784ae1532}} 
+\index{utils.h@{utils.h}!trim@{trim}}
+\index{trim@{trim}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily char$\ast$ trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Remove the spaces at the beginning and the end of a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string to trim \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the trimmed string 
+\end{DoxyReturn}

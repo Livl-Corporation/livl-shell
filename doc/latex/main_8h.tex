@@ -9,6 +9,8 @@ File containing the main header file to include all the other header files.
 {\ttfamily \#include \char`\"{}input\+\_\+parser.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}command\+\_\+sequence.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}history\+\_\+command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alias.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}builtin\+\_\+commands.\+h\char`\"{}}\newline
 Include dependency graph for main.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -23,7 +25,9 @@ void \mbox{\hyperlink{main_8h_a1f3652e1a594cf101f4f9e7228f90875}{run\+\_\+batch\
 \begin{DoxyCompactList}\small\item\em Run the shell in batch mode. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8h_a0a0d0f3446a5297529f28c6fa9cbfb5e}\label{main_8h_a0a0d0f3446a5297529f28c6fa9cbfb5e}} 
 void \mbox{\hyperlink{main_8h_a0a0d0f3446a5297529f28c6fa9cbfb5e}{run\+\_\+interactive\+\_\+mode}} ()
-\begin{DoxyCompactList}\small\item\em Run the shell in interactive mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Run the shell in interactive mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8h_a5ab245456928d3ff01287b3d41f79309}{handle\+\_\+input}} (char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Handle the input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -38,6 +42,21 @@ Julien \& Franck
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8h_a5ab245456928d3ff01287b3d41f79309}\label{main_8h_a5ab245456928d3ff01287b3d41f79309}} 
+\index{main.h@{main.h}!handle\_input@{handle\_input}}
+\index{handle\_input@{handle\_input}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{handle\_input()}{handle\_input()}}
+{\footnotesize\ttfamily void handle\+\_\+input (\begin{DoxyParamCaption}\item[{char $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Handle the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input to handle. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{main_8h_a1f3652e1a594cf101f4f9e7228f90875}\label{main_8h_a1f3652e1a594cf101f4f9e7228f90875}} 
 \index{main.h@{main.h}!run\_batch\_mode@{run\_batch\_mode}}
 \index{run\_batch\_mode@{run\_batch\_mode}!main.h@{main.h}}

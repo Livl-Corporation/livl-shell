@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -73,12 +73,15 @@ $(function() {
 <li>add_to_command_history()
 : <a class="el" href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">history_command.h</a>
 </li>
+<li>ALIASES_FILE
+: <a class="el" href="constants_8h.html#ab359066370f6dd1713ad3c95cbde0de3">constants.h</a>
+</li>
 </ul>
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>BLUE
-: <a class="el" href="console_8h.html#a79d10e672abb49ad63eeaa8aaef57c38">console.h</a>
+: <a class="el" href="constants_8h.html#a79d10e672abb49ad63eeaa8aaef57c38">constants.h</a>
 </li>
 </ul>
 
@@ -91,7 +94,10 @@ $(function() {
 : <a class="el" href="background__manager_8h.html#a7f2d9e59b9aca24fc1385cb7f3a8972f">background_manager.h</a>
 </li>
 <li>CHILD_PROCESS
-: <a class="el" href="scheduler_8h.html#a6d2f57209406fc467f85e3d235ca0af8">scheduler.h</a>
+: <a class="el" href="constants_8h.html#a6d2f57209406fc467f85e3d235ca0af8">constants.h</a>
+</li>
+<li>CMD_DELIMITERS
+: <a class="el" href="constants_8h.html#ac0cc27cbb9c02da636fac48e1e5a4f09">constants.h</a>
 </li>
 <li>command_sequence_init()
 : <a class="el" href="command__sequence_8h.html#a047ff92a55b724f995e06df3efab5e2f">command_sequence.h</a>
@@ -110,13 +116,13 @@ $(function() {
 : <a class="el" href="redirection_8h.html#a178970ec513c740946e0b00ae4373257">redirection.h</a>
 </li>
 <li>execute_builtin_command()
-: <a class="el" href="builtin__commands_8h.html#a781ff6d524e1f4351da33834f24f8af2">builtin_commands.h</a>
+: <a class="el" href="builtin__commands_8h.html#a19c60e806832841966cb48bd79bf2952">builtin_commands.h</a>
 </li>
 <li>execute_command()
-: <a class="el" href="scheduler_8h.html#ac4af5eae73e9a990c2955968e084086b">scheduler.h</a>
+: <a class="el" href="scheduler_8h.html#acbee3c70acdd7f0ec38519dab9f34081">scheduler.h</a>
 </li>
 <li>execute_command_sequence()
-: <a class="el" href="scheduler_8h.html#a24cf790ac1c74a572125ced4b750ccb6">scheduler.h</a>
+: <a class="el" href="scheduler_8h.html#ad25285cd15266dcfa88e788a8407a3b6">scheduler.h</a>
 </li>
 <li>execute_external_command()
 : <a class="el" href="scheduler_8h.html#aac24a47138916b8751e346825bfef85d">scheduler.h</a>
@@ -125,12 +131,15 @@ $(function() {
 : <a class="el" href="redirection_8h.html#af2eefa532afcb1e65ca49374b1227635">redirection.h</a>
 </li>
 <li>exit_shell()
-: <a class="el" href="builtin__commands_8h.html#ae09b8b85c6e55332d774f081faf8b6e1">builtin_commands.h</a>
+: <a class="el" href="builtin__commands_8h.html#a489950bd5a91a865e309b66fb2b1b95a">builtin_commands.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>free_aliases()
+: <a class="el" href="alias_8h.html#a3fc493cb32a544003b24f80c5d1a9945">alias.h</a>
+</li>
 <li>free_command()
 : <a class="el" href="command_8h.html#a112a3b91bd49d00b07855827655aaa9b">command.h</a>
 </li>
@@ -141,34 +150,25 @@ $(function() {
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
-<li>get_complete_command()
-: <a class="el" href="command_8h.html#a278072a78e1bf5ac797092155fc45a84">command.h</a>
-</li>
 <li>get_complete_command_array()
-: <a class="el" href="command_8h.html#a44d8b1c845b459107d3f038b13f3da07">command.h</a>
-</li>
-<li>get_next_command()
-: <a class="el" href="history__command_8h.html#ab3d6d88d9280692e058c81fb16099cdc">history_command.h</a>
+: <a class="el" href="command_8h.html#ad5af251319d509b5139393572feb542f">command.h</a>
 </li>
 <li>get_operator_string()
-: <a class="el" href="operator_8h.html#a5e15e9215f6d9dc69ebf7a99372d4406">operator.h</a>
+: <a class="el" href="operator_8h.html#a4ad0d08b02a1cef0501333046011b71d">operator.h</a>
 </li>
 <li>get_operator_type()
 : <a class="el" href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">operator.h</a>
 </li>
-<li>get_previous_command()
-: <a class="el" href="history__command_8h.html#a5e425bc624bb440d663e2625cdf0630b">history_command.h</a>
-</li>
-<li>global_command_history
-: <a class="el" href="history__command_8h.html#ae4b79f4ef463444f1dbd4dc15371ae45">history_command.h</a>
-</li>
 <li>GREEN
-: <a class="el" href="console_8h.html#acfbc006ea433ad708fdee3e82996e721">console.h</a>
+: <a class="el" href="constants_8h.html#acfbc006ea433ad708fdee3e82996e721">constants.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_h"></a>- h -</h3><ul>
+<li>handle_input()
+: <a class="el" href="main_8h.html#a5ab245456928d3ff01287b3d41f79309">main.h</a>
+</li>
 <li>handle_input_redirection()
 : <a class="el" href="redirection_8h.html#a0b23a9cf2be37c2a6ec055ab7a0b00aa">redirection.h</a>
 </li>
@@ -176,35 +176,47 @@ $(function() {
 : <a class="el" href="redirection_8h.html#a160de42d6b2073cc297fda577c86444b">redirection.h</a>
 </li>
 <li>handle_quotes()
-: <a class="el" href="command_8h.html#a7066df1c1d72fb9d6c6460eac100f537">command.h</a>
+: <a class="el" href="utils_8h.html#a259db1c427429658853a91074de1b446">utils.h</a>
 </li>
 <li>HISTORY_FILE
-: <a class="el" href="history__command_8h.html#ae41c75682d94c3f1a2c7e1e28ed0391a">history_command.h</a>
+: <a class="el" href="constants_8h.html#ae41c75682d94c3f1a2c7e1e28ed0391a">constants.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
-<li>initialize_command()
-: <a class="el" href="command_8h.html#ac5f62bc2440691f04fdcc0cb5f7e7c03">command.h</a>
+<li>init_aliases()
+: <a class="el" href="alias_8h.html#ae04a00a91d65bc47b2cf275f621f6ae7">alias.h</a>
 </li>
-<li>initialize_command_history()
-: <a class="el" href="history__command_8h.html#aeb735e34a5bc474c20650fd8e3b1f83f">history_command.h</a>
+<li>init_command()
+: <a class="el" href="command_8h.html#a02613c9b574b667bf8ecad12aea58a2b">command.h</a>
+</li>
+<li>init_command_history()
+: <a class="el" href="history__command_8h.html#a7b8e979cf28d33a3c73ac07c43661aa8">history_command.h</a>
+</li>
+<li>INPUT_DELIMITERS
+: <a class="el" href="constants_8h.html#aea89ca0dee84b28856b22adafa004150">constants.h</a>
+</li>
+<li>is_alias()
+: <a class="el" href="alias_8h.html#ab82a843b2fbe36873aa1258a3dc4ea53">alias.h</a>
+</li>
+<li>IS_ALIAS_COMMAND
+: <a class="el" href="constants_8h.html#a17d35c6c3927f73db67c87226e54bb43">constants.h</a>
 </li>
 <li>is_all_whitespace()
 : <a class="el" href="input__parser_8h.html#aed9107ab2657d16984676d83fb78e2f1">input_parser.h</a>
 </li>
 <li>IS_BUILTIN_COMMAND
-: <a class="el" href="builtin__commands_8h.html#af1ac97845439a21cde4ecd82a1cf524b">builtin_commands.h</a>
+: <a class="el" href="constants_8h.html#af1ac97845439a21cde4ecd82a1cf524b">constants.h</a>
 </li>
 <li>is_builtin_command()
 : <a class="el" href="builtin__commands_8h.html#a2ec324aee6306e0d7ff42b6c6746179d">builtin_commands.h</a>
 </li>
-<li>IS_NOT_BUILTIN_COMMAND
-: <a class="el" href="builtin__commands_8h.html#ad889acd58df3e95c48a6fc260dd06cd2">builtin_commands.h</a>
+<li>IS_NOT_ALIAS_COMMAND
+: <a class="el" href="constants_8h.html#a713cef89205243e1c0a32548a79e2baa">constants.h</a>
 </li>
-<li>is_operator()
-: <a class="el" href="operator_8h.html#a1d23d7f69facd5d79e3382f85d6feded">operator.h</a>
+<li>IS_NOT_BUILTIN_COMMAND
+: <a class="el" href="constants_8h.html#ad889acd58df3e95c48a6fc260dd06cd2">constants.h</a>
 </li>
 <li>is_redirection_command()
 : <a class="el" href="redirection_8h.html#aab688e0c0a6a5cc4ffc8f756ee65f5ab">redirection.h</a>
@@ -220,35 +232,28 @@ $(function() {
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
+<li>MAX_ALIASES
+: <a class="el" href="constants_8h.html#a6716a5668174f9bb9c687640ae39b356">constants.h</a>
+</li>
 <li>MAX_BACKGROUND_PROCESSES
-: <a class="el" href="background__manager_8h.html#a1fdfe1cdda4ae5d0820f020bf1769432">background_manager.h</a>
+: <a class="el" href="constants_8h.html#a1fdfe1cdda4ae5d0820f020bf1769432">constants.h</a>
 </li>
 <li>MAX_COMMANDS
-: <a class="el" href="command__sequence_8h.html#a4b2b20c68bee625b7dc737c4d05699fd">command_sequence.h</a>
+: <a class="el" href="constants_8h.html#a4b2b20c68bee625b7dc737c4d05699fd">constants.h</a>
 </li>
 <li>MAX_HISTORY_SIZE
-: <a class="el" href="history__command_8h.html#a7a7c87173dc0b32eb0086b66359963a5">history_command.h</a>
+: <a class="el" href="constants_8h.html#a7a7c87173dc0b32eb0086b66359963a5">constants.h</a>
 </li>
 <li>MAX_INPUT_LENGTH
-: <a class="el" href="input__parser_8h.html#a975fc9874a52790d9a5ca6d4e6a228ce">input_parser.h</a>
+: <a class="el" href="constants_8h.html#a975fc9874a52790d9a5ca6d4e6a228ce">constants.h</a>
 </li>
 <li>MAX_OPERATORS
-: <a class="el" href="command__sequence_8h.html#a30892ce590446910ea3159e79f2f31f3">command_sequence.h</a>
-</li>
-</ul>
-
-
-<h3><a id="index_n"></a>- n -</h3><ul>
-<li>num_operators
-: <a class="el" href="operator_8h.html#a71b1adb143f33ddd1d26a28b8c2dcdf5">operator.h</a>
+: <a class="el" href="constants_8h.html#a30892ce590446910ea3159e79f2f31f3">constants.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
-<li>operators
-: <a class="el" href="operator_8h.html#a47bfd392ff22b9804148ca320a7ff649">operator.h</a>
-</li>
 <li>OperatorType
 : <a class="el" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">typedef.h</a>
 </li>
@@ -256,11 +261,11 @@ $(function() {
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>parse_aliases()
+: <a class="el" href="alias_8h.html#ab0d98bfab884a43c476454ad7a315aeb">alias.h</a>
+</li>
 <li>preprocess_input()
 : <a class="el" href="input__parser_8h.html#a826c6cef019e8e33c896dd991edb98a4">input_parser.h</a>
-</li>
-<li>print_exit_info()
-: <a class="el" href="console_8h.html#a80e223b7ad6fbb37784a6c25ebf1ff0d">console.h</a>
 </li>
 <li>print_info()
 : <a class="el" href="console_8h.html#a19fa75dfae261cf17435162f9f812fb3">console.h</a>
@@ -270,9 +275,6 @@ $(function() {
 </li>
 <li>print_prompt()
 : <a class="el" href="console_8h.html#a21579a20737c3b2b24e18bb5e51d8140">console.h</a>
-</li>
-<li>print_title()
-: <a class="el" href="console_8h.html#a0d07fdb703241f00ec96b4861dd3fd94">console.h</a>
 </li>
 <li>process_token()
 : <a class="el" href="command__sequence_8h.html#a7b190c9089af15a106d006a4e316cc03">command_sequence.h</a>
@@ -285,10 +287,10 @@ $(function() {
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>read_input()
-: <a class="el" href="input__parser_8h.html#ab4bce2e60d1b3548c7511026019e488c">input_parser.h</a>
+: <a class="el" href="input__parser_8h.html#a29ec1d3f4d444673b493bb26eed7ca21">input_parser.h</a>
 </li>
 <li>RESET
-: <a class="el" href="console_8h.html#ab702106cf3b3e96750b6845ded4e0299">console.h</a>
+: <a class="el" href="constants_8h.html#ab702106cf3b3e96750b6845ded4e0299">constants.h</a>
 </li>
 <li>run_batch_mode()
 : <a class="el" href="main_8h.html#a1f3652e1a594cf101f4f9e7228f90875">main.h</a>
@@ -309,12 +311,19 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>trim()
+: <a class="el" href="utils_8h.html#a06798d058792d39a2eb6f3b784ae1532">utils.h</a>
+</li>
+</ul>
+
+
 <h3><a id="index_y"></a>- y -</h3><ul>
 <li>YELB
-: <a class="el" href="console_8h.html#a3513df4b60cd6ffac6234d8c90cdd3d0">console.h</a>
+: <a class="el" href="constants_8h.html#a3513df4b60cd6ffac6234d8c90cdd3d0">constants.h</a>
 </li>
 <li>YELLOW
-: <a class="el" href="console_8h.html#abf681265909adf3d3e8116c93c0ba179">console.h</a>
+: <a class="el" href="constants_8h.html#abf681265909adf3d3e8116c93c0ba179">constants.h</a>
 </li>
 </ul>
 </div><!-- contents -->

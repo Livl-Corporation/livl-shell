@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['max_5fbackground_5fprocesses_181',['MAX_BACKGROUND_PROCESSES',['../background__manager_8h.html#a1fdfe1cdda4ae5d0820f020bf1769432',1,'background_manager.h']]],
-  ['max_5fcommands_182',['MAX_COMMANDS',['../command__sequence_8h.html#a4b2b20c68bee625b7dc737c4d05699fd',1,'command_sequence.h']]],
-  ['max_5fhistory_5fsize_183',['MAX_HISTORY_SIZE',['../history__command_8h.html#a7a7c87173dc0b32eb0086b66359963a5',1,'history_command.h']]],
-  ['max_5finput_5flength_184',['MAX_INPUT_LENGTH',['../input__parser_8h.html#a975fc9874a52790d9a5ca6d4e6a228ce',1,'input_parser.h']]],
-  ['max_5foperators_185',['MAX_OPERATORS',['../command__sequence_8h.html#a30892ce590446910ea3159e79f2f31f3',1,'command_sequence.h']]]
+  ['input_5fdelimiters_196',['INPUT_DELIMITERS',['../constants_8h.html#aea89ca0dee84b28856b22adafa004150',1,'constants.h']]],
+  ['is_5falias_5fcommand_197',['IS_ALIAS_COMMAND',['../constants_8h.html#a17d35c6c3927f73db67c87226e54bb43',1,'constants.h']]],
+  ['is_5fbuiltin_5fcommand_198',['IS_BUILTIN_COMMAND',['../constants_8h.html#af1ac97845439a21cde4ecd82a1cf524b',1,'constants.h']]],
+  ['is_5fnot_5falias_5fcommand_199',['IS_NOT_ALIAS_COMMAND',['../constants_8h.html#a713cef89205243e1c0a32548a79e2baa',1,'constants.h']]],
+  ['is_5fnot_5fbuiltin_5fcommand_200',['IS_NOT_BUILTIN_COMMAND',['../constants_8h.html#ad889acd58df3e95c48a6fc260dd06cd2',1,'constants.h']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['job_5fnumber_166',['job_number',['../structBackgroundProcess.html#a78d2f26191e5c33539f16a3f25f29dd8',1,'BackgroundProcess']]]
+  ['num_5farguments_182',['num_arguments',['../structCommand.html#a8ac69a02f63787cd6508a2aaf2d16c63',1,'Command']]],
+  ['num_5fcommands_183',['num_commands',['../structCommandSequence.html#a4686c3b588ec9d38c77b4381f20d5761',1,'CommandSequence']]],
+  ['num_5foperators_184',['num_operators',['../structCommandSequence.html#aafa0e580e8f6ffbac7d32972af00ad41',1,'CommandSequence']]]
 ];

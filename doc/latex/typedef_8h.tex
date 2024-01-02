@@ -7,11 +7,12 @@ File containing all the typedefs used in the shell program.
 
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
 {\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
 Include dependency graph for typedef.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=226pt]{typedef_8h__incl}
+\includegraphics[width=318pt]{typedef_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -33,7 +34,9 @@ struct \mbox{\hyperlink{structCommand}{Command}}
 struct \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}}
 \begin{DoxyCompactList}\small\item\em Struct that represents a command sequence. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structCommandHistory}{Command\+History}}
-\begin{DoxyCompactList}\small\item\em Struct that represents the command history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Struct that represents the command history. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structAlias}{Alias}}
+\begin{DoxyCompactList}\small\item\em Struct that represents an alias. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 

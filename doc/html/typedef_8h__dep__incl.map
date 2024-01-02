@@ -1,13 +1,14 @@
 <map id="include/typedef.h" name="include/typedef.h">
-<area shape="rect" id="node1" title="File containing all the typedefs used in the shell program." alt="" coords="361,5,495,32"/>
-<area shape="rect" id="node2" href="$background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="460,155,609,196"/>
-<area shape="rect" id="node3" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="299,244,445,271"/>
-<area shape="rect" id="node6" href="$command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="547,80,698,107"/>
-<area shape="rect" id="node7" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="185,80,391,107"/>
-<area shape="rect" id="node8" href="$redirection_8h.html" title="File containing the redirection functions to manage the redirection operators such as &#39;&lt;&#39;,..." alt="" coords="180,162,335,189"/>
-<area shape="rect" id="node9" href="$operator_8h.html" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="17,162,156,189"/>
-<area shape="rect" id="node11" href="$history__command_8h.html" title="File containing the history command functions to manage the history of commands entered by the user (..." alt="" coords="575,319,777,345"/>
-<area shape="rect" id="node4" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="207,319,425,345"/>
-<area shape="rect" id="node5" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="257,393,375,420"/>
-<area shape="rect" id="node10" href="$input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="5,244,171,271"/>
+<area shape="rect" id="node1" title="File containing all the typedefs used in the shell program." alt="" coords="417,5,551,32"/>
+<area shape="rect" id="node2" href="$alias_8h.html" title="Managing livl&#45;shell aliases." alt="" coords="178,80,294,107"/>
+<area shape="rect" id="node3" href="$command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="222,155,373,181"/>
+<area shape="rect" id="node4" href="$background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="323,229,472,271"/>
+<area shape="rect" id="node5" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="339,319,485,345"/>
+<area shape="rect" id="node7" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="5,468,211,495"/>
+<area shape="rect" id="node9" href="$redirection_8h.html" title="File containing the redirection functions to manage the redirection operators such as &#39;&lt;&#39;,..." alt="" coords="547,237,701,263"/>
+<area shape="rect" id="node10" href="$operator_8h.html" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="725,237,864,263"/>
+<area shape="rect" id="node12" href="$history__command_8h.html" title="File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the us..." alt="" coords="888,237,1091,263"/>
+<area shape="rect" id="node8" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="353,543,471,569"/>
+<area shape="rect" id="node6" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="303,393,521,420"/>
+<area shape="rect" id="node11" href="$input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="712,319,877,345"/>
 </map>

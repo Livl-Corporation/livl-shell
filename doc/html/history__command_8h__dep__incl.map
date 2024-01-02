@@ -1,4 +1,5 @@
 <map id="include/history_command.h" name="include/history_command.h">
-<area shape="rect" id="node1" title="File containing the history command functions to manage the history of commands entered by the user (..." alt="" coords="5,5,208,32"/>
-<area shape="rect" id="node2" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="47,80,166,107"/>
+<area shape="rect" id="node1" title="File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the us..." alt="" coords="47,5,249,32"/>
+<area shape="rect" id="node2" href="$input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="5,80,171,107"/>
+<area shape="rect" id="node3" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="89,155,207,181"/>
 </map>

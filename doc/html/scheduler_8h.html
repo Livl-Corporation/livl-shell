@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -69,7 +69,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">scheduler.h File Reference</div>  </div>
@@ -90,29 +89,35 @@ $(function() {
 <code>#include &quot;<a class="el" href="redirection_8h_source.html">redirection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="operator_8h_source.html">operator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="background__manager_8h_source.html">background_manager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="constants_8h_source.html">constants.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for scheduler.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="scheduler_8h__incl.png" border="0" usemap="#include_2scheduler_8h" alt=""/></div>
 <map name="include_2scheduler_8h" id="include_2scheduler_8h">
-<area shape="rect" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="556,5,703,32"/>
-<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="248,229,331,256"/>
-<area shape="rect" title=" " alt="" coords="518,229,584,256"/>
-<area shape="rect" title=" " alt="" coords="620,229,690,256"/>
-<area shape="rect" title=" " alt="" coords="911,229,986,256"/>
-<area shape="rect" title=" " alt="" coords="1108,229,1196,256"/>
-<area shape="rect" title=" " alt="" coords="153,229,224,256"/>
-<area shape="rect" href="command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="240,155,339,181"/>
-<area shape="rect" href="console_8h.html" title="File containing the console functions to manage the console (print information, etc...." alt="" coords="924,155,1008,181"/>
-<area shape="rect" href="builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="464,155,619,181"/>
-<area shape="rect" href="redirection_8h.html" title="File containing the redirection functions to manage the redirection operators such as &#39;&lt;&#39;,..." alt="" coords="795,155,899,181"/>
-<area shape="rect" href="operator_8h.html" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="27,155,115,181"/>
-<area shape="rect" href="background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="340,80,514,107"/>
-<area shape="rect" title=" " alt="" coords="230,304,304,331"/>
-<area shape="rect" title=" " alt="" coords="328,304,424,331"/>
-<area shape="rect" title=" " alt="" coords="1010,229,1084,256"/>
-<area shape="rect" title=" " alt="" coords="714,229,777,256"/>
-<area shape="rect" title=" " alt="" coords="802,229,887,256"/>
+<area shape="rect" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="1091,5,1237,32"/>
+<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="217,379,300,405"/>
+<area shape="rect" href="constants_8h.html" title="Header file defining constants." alt="" coords="1821,453,1918,480"/>
+<area shape="rect" title=" " alt="" coords="1036,379,1103,405"/>
+<area shape="rect" title=" " alt="" coords="1434,379,1505,405"/>
+<area shape="rect" title=" " alt="" coords="1557,304,1632,331"/>
+<area shape="rect" title=" " alt="" coords="944,304,1032,331"/>
+<area shape="rect" title=" " alt="" coords="477,453,547,480"/>
+<area shape="rect" href="command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="635,229,733,256"/>
+<area shape="rect" href="console_8h.html" title="File containing the console functions to manage the console (print information, etc...." alt="" coords="1662,229,1746,256"/>
+<area shape="rect" href="builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="1145,80,1300,107"/>
+<area shape="rect" href="operator_8h.html" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="316,229,404,256"/>
+<area shape="rect" href="redirection_8h.html" title="File containing the redirection functions to manage the redirection operators such as &#39;&lt;&#39;,..." alt="" coords="1176,229,1280,256"/>
+<area shape="rect" href="background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="754,155,929,181"/>
+<area shape="rect" title=" " alt="" coords="221,453,296,480"/>
+<area shape="rect" title=" " alt="" coords="55,453,151,480"/>
+<area shape="rect" href="utils_8h.html" title="File containing some utilities." alt="" coords="651,379,714,405"/>
+<area shape="rect" href="alias_8h.html" title="Managing livl&#45;shell aliases." alt="" coords="651,304,717,331"/>
+<area shape="rect" title=" " alt="" coords="682,453,753,480"/>
+<area shape="rect" title=" " alt="" coords="1757,304,1832,331"/>
+<area shape="rect" href="command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="1017,155,1185,181"/>
+<area shape="rect" title=" " alt="" coords="1107,304,1170,331"/>
+<area shape="rect" title=" " alt="" coords="1195,304,1280,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -120,40 +125,34 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="scheduler_8h__dep__incl.png" border="0" usemap="#include_2scheduler_8hdep" alt=""/></div>
 <map name="include_2scheduler_8hdep" id="include_2scheduler_8hdep">
-<area shape="rect" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="41,5,188,32"/>
-<area shape="rect" href="command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,80,224,107"/>
-<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="55,155,174,181"/>
+<area shape="rect" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="101,5,248,32"/>
+<area shape="rect" href="command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="139,80,357,107"/>
+<area shape="rect" href="builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="5,155,211,181"/>
+<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="118,229,237,256"/>
 </map>
 </div>
 </div>
 <p><a href="scheduler_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a6d2f57209406fc467f85e3d235ca0af8"><td class="memItemLeft" align="right" valign="top"><a id="a6d2f57209406fc467f85e3d235ca0af8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#a6d2f57209406fc467f85e3d235ca0af8">CHILD_PROCESS</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:a6d2f57209406fc467f85e3d235ca0af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The child process id (pid) <br /></td></tr>
-<tr class="separator:a6d2f57209406fc467f85e3d235ca0af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aac24a47138916b8751e346825bfef85d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#aac24a47138916b8751e346825bfef85d">execute_external_command</a> (const <a class="el" href="structCommand.html">Command</a> *command, int run_in_background)</td></tr>
-<tr class="memdesc:aac24a47138916b8751e346825bfef85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a command.  <a href="scheduler_8h.html#aac24a47138916b8751e346825bfef85d">More...</a><br /></td></tr>
+<tr class="memdesc:aac24a47138916b8751e346825bfef85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an external command.  <a href="scheduler_8h.html#aac24a47138916b8751e346825bfef85d">More...</a><br /></td></tr>
 <tr class="separator:aac24a47138916b8751e346825bfef85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4af5eae73e9a990c2955968e084086b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#ac4af5eae73e9a990c2955968e084086b">execute_command</a> (const <a class="el" href="structCommand.html">Command</a> *command, int run_in_background)</td></tr>
-<tr class="memdesc:ac4af5eae73e9a990c2955968e084086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a command.  <a href="scheduler_8h.html#ac4af5eae73e9a990c2955968e084086b">More...</a><br /></td></tr>
-<tr class="separator:ac4af5eae73e9a990c2955968e084086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24cf790ac1c74a572125ced4b750ccb6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#a24cf790ac1c74a572125ced4b750ccb6">execute_command_sequence</a> (const <a class="el" href="structCommandSequence.html">CommandSequence</a> *sequence)</td></tr>
-<tr class="memdesc:a24cf790ac1c74a572125ced4b750ccb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a sequence of commands with operators.  <a href="scheduler_8h.html#a24cf790ac1c74a572125ced4b750ccb6">More...</a><br /></td></tr>
-<tr class="separator:a24cf790ac1c74a572125ced4b750ccb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbee3c70acdd7f0ec38519dab9f34081"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#acbee3c70acdd7f0ec38519dab9f34081">execute_command</a> (const <a class="el" href="structCommand.html">Command</a> *command, <a class="el" href="structCommandSequence.html">CommandSequence</a> *commandSequence, int run_in_background)</td></tr>
+<tr class="memdesc:acbee3c70acdd7f0ec38519dab9f34081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a command internal to the shell.  <a href="scheduler_8h.html#acbee3c70acdd7f0ec38519dab9f34081">More...</a><br /></td></tr>
+<tr class="separator:acbee3c70acdd7f0ec38519dab9f34081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25285cd15266dcfa88e788a8407a3b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler_8h.html#ad25285cd15266dcfa88e788a8407a3b6">execute_command_sequence</a> (<a class="el" href="structCommandSequence.html">CommandSequence</a> *sequence)</td></tr>
+<tr class="memdesc:ad25285cd15266dcfa88e788a8407a3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a sequence of commands with operators.  <a href="scheduler_8h.html#ad25285cd15266dcfa88e788a8407a3b6">More...</a><br /></td></tr>
+<tr class="separator:ad25285cd15266dcfa88e788a8407a3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the scheduler functions to manage the execution of commands. </p>
 <dl class="section author"><dt>Author</dt><dd>Julien &amp; Franck </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>24 Dec 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac4af5eae73e9a990c2955968e084086b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4af5eae73e9a990c2955968e084086b">&#9670;&nbsp;</a></span>execute_command()</h2>
+<a id="acbee3c70acdd7f0ec38519dab9f34081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbee3c70acdd7f0ec38519dab9f34081">&#9670;&nbsp;</a></span>execute_command()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +162,12 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structCommand.html">Command</a> *&#160;</td>
           <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCommandSequence.html">CommandSequence</a> *&#160;</td>
+          <td class="paramname"><em>commandSequence</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -178,10 +183,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a command. </p>
+<p>Executes a command internal to the shell. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">command</td><td>The command to execute </td></tr>
+    <tr><td class="paramname">commandSequence</td><td>The command sequence to free </td></tr>
     <tr><td class="paramname">run_in_background</td><td>0 for false, 1 for true </td></tr>
   </table>
   </dd>
@@ -190,8 +196,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a24cf790ac1c74a572125ced4b750ccb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24cf790ac1c74a572125ced4b750ccb6">&#9670;&nbsp;</a></span>execute_command_sequence()</h2>
+<a id="ad25285cd15266dcfa88e788a8407a3b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25285cd15266dcfa88e788a8407a3b6">&#9670;&nbsp;</a></span>execute_command_sequence()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +205,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int execute_command_sequence </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structCommandSequence.html">CommandSequence</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structCommandSequence.html">CommandSequence</a> *&#160;</td>
           <td class="paramname"><em>sequence</em></td><td>)</td>
           <td></td>
         </tr>
@@ -243,7 +249,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Executes a command. </p>
+<p>Executes an external command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">command</td><td>The command to execute </td></tr>

@@ -1,9 +1,13 @@
 <map id="include/command.h" name="include/command.h">
-<area shape="rect" id="node1" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="167,5,318,32"/>
-<area shape="rect" id="node2" href="$typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="56,80,139,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="163,80,229,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="254,80,325,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="349,80,419,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="104,155,200,181"/>
+<area shape="rect" id="node1" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="375,5,526,32"/>
+<area shape="rect" id="node2" href="$typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="117,155,200,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="224,155,291,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="554,155,625,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="463,229,534,256"/>
+<area shape="rect" id="node9" href="$utils_8h.html" title="File containing some utilities." alt="" coords="467,155,530,181"/>
+<area shape="rect" id="node11" href="$alias_8h.html" title="Managing livl&#45;shell aliases." alt="" coords="358,80,423,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="125,229,200,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,229,101,256"/>
+<area shape="rect" id="node5" href="$constants_8h.html" title="Header file defining constants." alt="" coords="238,229,335,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="366,229,437,256"/>
 </map>

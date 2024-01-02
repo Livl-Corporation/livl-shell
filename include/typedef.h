@@ -84,6 +84,9 @@ typedef struct
  *
  * @var Command::complete_command
  * Complete command.
+ * 
+ * @var Command::input_string
+ * Input string (command + arguments).
  *
  * @var Command::num_arguments
  * Number of arguments.

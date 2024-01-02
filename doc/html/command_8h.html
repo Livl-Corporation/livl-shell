@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -81,18 +81,24 @@ $(function() {
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="alias_8h_source.html">alias.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for command.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="command_8h__incl.png" border="0" usemap="#include_2command_8h" alt=""/></div>
 <map name="include_2command_8h" id="include_2command_8h">
-<area shape="rect" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="167,5,318,32"/>
-<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="56,80,139,107"/>
-<area shape="rect" title=" " alt="" coords="163,80,229,107"/>
-<area shape="rect" title=" " alt="" coords="254,80,325,107"/>
-<area shape="rect" title=" " alt="" coords="349,80,419,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
-<area shape="rect" title=" " alt="" coords="104,155,200,181"/>
+<area shape="rect" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="375,5,526,32"/>
+<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="117,155,200,181"/>
+<area shape="rect" title=" " alt="" coords="224,155,291,181"/>
+<area shape="rect" title=" " alt="" coords="554,155,625,181"/>
+<area shape="rect" title=" " alt="" coords="463,229,534,256"/>
+<area shape="rect" href="utils_8h.html" title="File containing some utilities." alt="" coords="467,155,530,181"/>
+<area shape="rect" href="alias_8h.html" title="Managing livl&#45;shell aliases." alt="" coords="358,80,423,107"/>
+<area shape="rect" title=" " alt="" coords="125,229,200,256"/>
+<area shape="rect" title=" " alt="" coords="5,229,101,256"/>
+<area shape="rect" href="constants_8h.html" title="Header file defining constants." alt="" coords="238,229,335,256"/>
+<area shape="rect" title=" " alt="" coords="366,229,437,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -100,11 +106,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="command_8h__dep__incl.png" border="0" usemap="#include_2command_8hdep" alt=""/></div>
 <map name="include_2command_8hdep" id="include_2command_8hdep">
-<area shape="rect" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="117,5,267,32"/>
-<area shape="rect" href="background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="5,80,155,121"/>
-<area shape="rect" href="scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="59,169,205,196"/>
-<area shape="rect" href="command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="77,244,296,271"/>
-<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="127,319,246,345"/>
+<area shape="rect" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="122,5,273,32"/>
+<area shape="rect" href="background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="11,80,160,121"/>
+<area shape="rect" href="scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="45,169,192,196"/>
+<area shape="rect" href="command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="139,244,357,271"/>
+<area shape="rect" href="builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="5,319,211,345"/>
+<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="118,393,237,420"/>
 </map>
 </div>
 </div>
@@ -115,21 +122,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ad5cc604aca7066b70578c113179f5e8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCommand.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#ad5cc604aca7066b70578c113179f5e8e">evaluate_command</a> (const char *input)</td></tr>
 <tr class="memdesc:ad5cc604aca7066b70578c113179f5e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a command from a string.  <a href="command_8h.html#ad5cc604aca7066b70578c113179f5e8e">More...</a><br /></td></tr>
 <tr class="separator:ad5cc604aca7066b70578c113179f5e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7066df1c1d72fb9d6c6460eac100f537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#a7066df1c1d72fb9d6c6460eac100f537">handle_quotes</a> (char **token)</td></tr>
-<tr class="memdesc:a7066df1c1d72fb9d6c6460eac100f537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle quotes in a string (remove them)  <a href="command_8h.html#a7066df1c1d72fb9d6c6460eac100f537">More...</a><br /></td></tr>
-<tr class="separator:a7066df1c1d72fb9d6c6460eac100f537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a112a3b91bd49d00b07855827655aaa9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#a112a3b91bd49d00b07855827655aaa9b">free_command</a> (<a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
 <tr class="memdesc:a112a3b91bd49d00b07855827655aaa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a command.  <a href="command_8h.html#a112a3b91bd49d00b07855827655aaa9b">More...</a><br /></td></tr>
 <tr class="separator:a112a3b91bd49d00b07855827655aaa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44d8b1c845b459107d3f038b13f3da07"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#a44d8b1c845b459107d3f038b13f3da07">get_complete_command_array</a> (<a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
-<tr class="memdesc:a44d8b1c845b459107d3f038b13f3da07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the complete command (command + arguments) as a string.  <a href="command_8h.html#a44d8b1c845b459107d3f038b13f3da07">More...</a><br /></td></tr>
-<tr class="separator:a44d8b1c845b459107d3f038b13f3da07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f62bc2440691f04fdcc0cb5f7e7c03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#ac5f62bc2440691f04fdcc0cb5f7e7c03">initialize_command</a> (<a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
-<tr class="memdesc:ac5f62bc2440691f04fdcc0cb5f7e7c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a command.  <a href="command_8h.html#ac5f62bc2440691f04fdcc0cb5f7e7c03">More...</a><br /></td></tr>
-<tr class="separator:ac5f62bc2440691f04fdcc0cb5f7e7c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a278072a78e1bf5ac797092155fc45a84"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#a278072a78e1bf5ac797092155fc45a84">get_complete_command</a> (const <a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
-<tr class="memdesc:a278072a78e1bf5ac797092155fc45a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the complete command (command + arguments) as a string.  <a href="command_8h.html#a278072a78e1bf5ac797092155fc45a84">More...</a><br /></td></tr>
-<tr class="separator:a278072a78e1bf5ac797092155fc45a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5af251319d509b5139393572feb542f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#ad5af251319d509b5139393572feb542f">get_complete_command_array</a> (<a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
+<tr class="memdesc:ad5af251319d509b5139393572feb542f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the complete command (command + arguments) as a string.  <a href="command_8h.html#ad5af251319d509b5139393572feb542f">More...</a><br /></td></tr>
+<tr class="separator:ad5af251319d509b5139393572feb542f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02613c9b574b667bf8ecad12aea58a2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="command_8h.html#a02613c9b574b667bf8ecad12aea58a2b">init_command</a> (<a class="el" href="structCommand.html">Command</a> *cmd)</td></tr>
+<tr class="memdesc:a02613c9b574b667bf8ecad12aea58a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a command.  <a href="command_8h.html#a02613c9b574b667bf8ecad12aea58a2b">More...</a><br /></td></tr>
+<tr class="separator:a02613c9b574b667bf8ecad12aea58a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the command functions to manage the commands entered by the user (parsing, evaluation, etc.). </p>
@@ -189,41 +190,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a278072a78e1bf5ac797092155fc45a84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a278072a78e1bf5ac797092155fc45a84">&#9670;&nbsp;</a></span>get_complete_command()</h2>
+<a id="ad5af251319d509b5139393572feb542f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5af251319d509b5139393572feb542f">&#9670;&nbsp;</a></span>get_complete_command_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* get_complete_command </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structCommand.html">Command</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the complete command (command + arguments) as a string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmd</td><td>the command to get </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the complete command as a string </dd></dl>
-
-</div>
-</div>
-<a id="a44d8b1c845b459107d3f038b13f3da07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44d8b1c845b459107d3f038b13f3da07">&#9670;&nbsp;</a></span>get_complete_command_array()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char** get_complete_command_array </td>
+          <td class="memname">void get_complete_command_array </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCommand.html">Command</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
@@ -239,44 +213,17 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the complete command as an array of strings </dd></dl>
 
 </div>
 </div>
-<a id="a7066df1c1d72fb9d6c6460eac100f537"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7066df1c1d72fb9d6c6460eac100f537">&#9670;&nbsp;</a></span>handle_quotes()</h2>
+<a id="a02613c9b574b667bf8ecad12aea58a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02613c9b574b667bf8ecad12aea58a2b">&#9670;&nbsp;</a></span>init_command()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void handle_quotes </td>
-          <td>(</td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>token</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Handle quotes in a string (remove them) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">token</td><td>the string to handle </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac5f62bc2440691f04fdcc0cb5f7e7c03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5f62bc2440691f04fdcc0cb5f7e7c03">&#9670;&nbsp;</a></span>initialize_command()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void initialize_command </td>
+          <td class="memname">void init_command </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structCommand.html">Command</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>

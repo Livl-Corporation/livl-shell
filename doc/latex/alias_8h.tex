@@ -1,0 +1,90 @@
+\hypertarget{alias_8h}{}\doxysection{include/alias.h File Reference}
+\label{alias_8h}\index{include/alias.h@{include/alias.h}}
+
+
+Managing livl-\/shell aliases.  
+
+
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+Include dependency graph for alias.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alias_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alias_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{alias_8h_ae04a00a91d65bc47b2cf275f621f6ae7}\label{alias_8h_ae04a00a91d65bc47b2cf275f621f6ae7}} 
+void \mbox{\hyperlink{alias_8h_ae04a00a91d65bc47b2cf275f621f6ae7}{init\+\_\+aliases}} ()
+\begin{DoxyCompactList}\small\item\em Initialize aliases from file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{alias_8h_ab82a843b2fbe36873aa1258a3dc4ea53}{is\+\_\+alias}} (const char $\ast$name, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Try to get an alias for a given name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{alias_8h_a3fc493cb32a544003b24f80c5d1a9945}\label{alias_8h_a3fc493cb32a544003b24f80c5d1a9945}} 
+void \mbox{\hyperlink{alias_8h_a3fc493cb32a544003b24f80c5d1a9945}{free\+\_\+aliases}} ()
+\begin{DoxyCompactList}\small\item\em Free aliases. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{alias_8h_ab0d98bfab884a43c476454ad7a315aeb}{parse\+\_\+aliases}} (char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Parse the input to replace aliases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Managing livl-\/shell aliases. 
+
+\begin{DoxyAuthor}{Author}
+Julien \& Franck 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+30 Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{alias_8h_ab82a843b2fbe36873aa1258a3dc4ea53}\label{alias_8h_ab82a843b2fbe36873aa1258a3dc4ea53}} 
+\index{alias.h@{alias.h}!is\_alias@{is\_alias}}
+\index{is\_alias@{is\_alias}!alias.h@{alias.h}}
+\doxysubsubsection{\texorpdfstring{is\_alias()}{is\_alias()}}
+{\footnotesize\ttfamily int is\+\_\+alias (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+Try to get an alias for a given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the alias \\
+\hline
+{\em command} & The string will be filled with the alias command if exist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no alias found, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{alias_8h_ab0d98bfab884a43c476454ad7a315aeb}\label{alias_8h_ab0d98bfab884a43c476454ad7a315aeb}} 
+\index{alias.h@{alias.h}!parse\_aliases@{parse\_aliases}}
+\index{parse\_aliases@{parse\_aliases}!alias.h@{alias.h}}
+\doxysubsubsection{\texorpdfstring{parse\_aliases()}{parse\_aliases()}}
+{\footnotesize\ttfamily void parse\+\_\+aliases (\begin{DoxyParamCaption}\item[{char $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Parse the input to replace aliases. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string \\
+\hline
+\end{DoxyParams}

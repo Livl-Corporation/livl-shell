@@ -1,0 +1,10 @@
+<map id="include/utils.h" name="include/utils.h">
+<area shape="rect" id="node1" title="File containing some utilities." alt="" coords="234,5,347,32"/>
+<area shape="rect" id="node2" href="$alias_8h.html" title="Managing livl&#45;shell aliases." alt="" coords="285,80,401,107"/>
+<area shape="rect" id="node3" href="$command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="159,155,310,181"/>
+<area shape="rect" id="node7" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="156,468,361,495"/>
+<area shape="rect" id="node8" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="199,543,318,569"/>
+<area shape="rect" id="node4" href="$background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="161,229,311,271"/>
+<area shape="rect" id="node5" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="137,319,284,345"/>
+<area shape="rect" id="node6" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,393,224,420"/>
+</map>

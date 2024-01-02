@@ -11,7 +11,7 @@ Include dependency graph for operator.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=260pt]{operator_8h__incl}
+\includegraphics[width=318pt]{operator_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -24,19 +24,10 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{operator_8h_a1d23d7f69facd5d79e3382f85d6feded}{is\+\_\+operator}} (const char $\ast$token)
-\begin{DoxyCompactList}\small\item\em Checks if the given token is an operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{typedef_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}} \mbox{\hyperlink{operator_8h_a9a24836357c03adbcf552db9cc709e24}{get\+\_\+operator\+\_\+type}} (const char $\ast$operator\+\_\+str)
 \begin{DoxyCompactList}\small\item\em Gets the type of the given operator. \end{DoxyCompactList}\item 
-const char $\ast$ \mbox{\hyperlink{operator_8h_a5e15e9215f6d9dc69ebf7a99372d4406}{get\+\_\+operator\+\_\+string}} (\mbox{\hyperlink{typedef_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}} op)
-\begin{DoxyCompactList}\small\item\em Gets the string representation of the given operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const char $\ast$ \mbox{\hyperlink{operator_8h_a47bfd392ff22b9804148ca320a7ff649}{operators}} \mbox{[}$\,$\mbox{]}
-\item 
-const int \mbox{\hyperlink{operator_8h_a71b1adb143f33ddd1d26a28b8c2dcdf5}{num\+\_\+operators}}
-\end{DoxyCompactItemize}
+const char $\ast$ \mbox{\hyperlink{operator_8h_a4ad0d08b02a1cef0501333046011b71d}{get\+\_\+operator\+\_\+string}} (\mbox{\hyperlink{typedef_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}} operator\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Gets the string corresponding to the given operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -51,23 +42,23 @@ Julien \& Franck
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{operator_8h_a5e15e9215f6d9dc69ebf7a99372d4406}\label{operator_8h_a5e15e9215f6d9dc69ebf7a99372d4406}} 
+\mbox{\Hypertarget{operator_8h_a4ad0d08b02a1cef0501333046011b71d}\label{operator_8h_a4ad0d08b02a1cef0501333046011b71d}} 
 \index{operator.h@{operator.h}!get\_operator\_string@{get\_operator\_string}}
 \index{get\_operator\_string@{get\_operator\_string}!operator.h@{operator.h}}
 \doxysubsubsection{\texorpdfstring{get\_operator\_string()}{get\_operator\_string()}}
-{\footnotesize\ttfamily const char$\ast$ get\+\_\+operator\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}}}]{op }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const char$\ast$ get\+\_\+operator\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}}}]{operator\+\_\+type }\end{DoxyParamCaption})}
 
 
 
-Gets the string representation of the given operator. 
+Gets the string corresponding to the given operator. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em op} & The operator \\
+{\em operator\+\_\+type} & The operator type \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The string representation of the operator 
+The string corresponding to the operator 
 \end{DoxyReturn}
 \mbox{\Hypertarget{operator_8h_a9a24836357c03adbcf552db9cc709e24}\label{operator_8h_a9a24836357c03adbcf552db9cc709e24}} 
 \index{operator.h@{operator.h}!get\_operator\_type@{get\_operator\_type}}
@@ -85,41 +76,6 @@ Gets the type of the given operator.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The type of the operator 
+The type of the operator
 \end{DoxyReturn}
-\mbox{\Hypertarget{operator_8h_a1d23d7f69facd5d79e3382f85d6feded}\label{operator_8h_a1d23d7f69facd5d79e3382f85d6feded}} 
-\index{operator.h@{operator.h}!is\_operator@{is\_operator}}
-\index{is\_operator@{is\_operator}!operator.h@{operator.h}}
-\doxysubsubsection{\texorpdfstring{is\_operator()}{is\_operator()}}
-{\footnotesize\ttfamily int is\+\_\+operator (\begin{DoxyParamCaption}\item[{const char $\ast$}]{token }\end{DoxyParamCaption})}
-
-
-
-Checks if the given token is an operator. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em token} & The token to be checked \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-1 if the token is an operator, 0 otherwise 
-\end{DoxyReturn}
-
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{operator_8h_a71b1adb143f33ddd1d26a28b8c2dcdf5}\label{operator_8h_a71b1adb143f33ddd1d26a28b8c2dcdf5}} 
-\index{operator.h@{operator.h}!num\_operators@{num\_operators}}
-\index{num\_operators@{num\_operators}!operator.h@{operator.h}}
-\doxysubsubsection{\texorpdfstring{num\_operators}{num\_operators}}
-{\footnotesize\ttfamily const int num\+\_\+operators}
-
-The number of operators that can be used \mbox{\Hypertarget{operator_8h_a47bfd392ff22b9804148ca320a7ff649}\label{operator_8h_a47bfd392ff22b9804148ca320a7ff649}} 
-\index{operator.h@{operator.h}!operators@{operators}}
-\index{operators@{operators}!operator.h@{operator.h}}
-\doxysubsubsection{\texorpdfstring{operators}{operators}}
-{\footnotesize\ttfamily const char$\ast$ operators\mbox{[}$\,$\mbox{]}}
-
-The list of operators that can be used
-
 Order by operator length (longest first) to avoid matching $<$$<$ when looking for $<$ 

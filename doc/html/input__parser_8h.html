@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -69,7 +69,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">input_parser.h File Reference</div>  </div>
@@ -83,20 +82,31 @@ $(function() {
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="operator_8h_source.html">operator.h</a>&quot;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="constants_8h_source.html">constants.h</a>&quot;</code><br />
+<code>#include &lt;termios.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="history__command_8h_source.html">history_command.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="console_8h_source.html">console.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for input_parser.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__parser_8h__incl.png" border="0" usemap="#include_2input__parser_8h" alt=""/></div>
 <map name="include_2input__parser_8h" id="include_2input__parser_8h">
-<area shape="rect" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="69,5,235,32"/>
-<area shape="rect" title=" " alt="" coords="34,155,105,181"/>
-<area shape="rect" title=" " alt="" coords="23,80,94,107"/>
-<area shape="rect" title=" " alt="" coords="119,80,185,107"/>
-<area shape="rect" href="operator_8h.html" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="209,80,297,107"/>
-<area shape="rect" title=" " alt="" coords="322,80,393,107"/>
-<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="212,155,295,181"/>
-<area shape="rect" title=" " alt="" coords="161,229,236,256"/>
-<area shape="rect" title=" " alt="" coords="260,229,356,256"/>
+<area shape="rect" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="401,5,567,32"/>
+<area shape="rect" title=" " alt="" coords="22,155,93,181"/>
+<area shape="rect" title=" " alt="" coords="326,155,397,181"/>
+<area shape="rect" title=" " alt="" coords="421,155,488,181"/>
+<area shape="rect" href="operator_8h.html" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="107,80,195,107"/>
+<area shape="rect" href="constants_8h.html" title="Header file defining constants." alt="" coords="234,229,331,256"/>
+<area shape="rect" title=" " alt="" coords="707,80,778,107"/>
+<area shape="rect" title=" " alt="" coords="802,80,886,107"/>
+<area shape="rect" title=" " alt="" coords="661,155,736,181"/>
+<area shape="rect" href="history__command_8h.html" title="File containing the functions to manage (load &amp; save, etc.) the history of commands entered by the us..." alt="" coords="270,80,421,107"/>
+<area shape="rect" href="console_8h.html" title="File containing the console functions to manage the console (print information, etc...." alt="" coords="547,80,631,107"/>
+<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="117,155,200,181"/>
+<area shape="rect" title=" " alt="" coords="125,229,200,256"/>
+<area shape="rect" title=" " alt="" coords="5,229,101,256"/>
+<area shape="rect" title=" " alt="" coords="563,155,637,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -111,18 +121,11 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="input__parser_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a975fc9874a52790d9a5ca6d4e6a228ce"><td class="memItemLeft" align="right" valign="top"><a id="a975fc9874a52790d9a5ca6d4e6a228ce"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__parser_8h.html#a975fc9874a52790d9a5ca6d4e6a228ce">MAX_INPUT_LENGTH</a>&#160;&#160;&#160;1024</td></tr>
-<tr class="memdesc:a975fc9874a52790d9a5ca6d4e6a228ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max length of the input string. <br /></td></tr>
-<tr class="separator:a975fc9874a52790d9a5ca6d4e6a228ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab4bce2e60d1b3548c7511026019e488c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__parser_8h.html#ab4bce2e60d1b3548c7511026019e488c">read_input</a> ()</td></tr>
-<tr class="memdesc:ab4bce2e60d1b3548c7511026019e488c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the input from the console.  <a href="input__parser_8h.html#ab4bce2e60d1b3548c7511026019e488c">More...</a><br /></td></tr>
-<tr class="separator:ab4bce2e60d1b3548c7511026019e488c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ec1d3f4d444673b493bb26eed7ca21"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__parser_8h.html#a29ec1d3f4d444673b493bb26eed7ca21">read_input</a> (char *input)</td></tr>
+<tr class="memdesc:a29ec1d3f4d444673b493bb26eed7ca21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the input from the console.  <a href="input__parser_8h.html#a29ec1d3f4d444673b493bb26eed7ca21">More...</a><br /></td></tr>
+<tr class="separator:a29ec1d3f4d444673b493bb26eed7ca21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed9107ab2657d16984676d83fb78e2f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__parser_8h.html#aed9107ab2657d16984676d83fb78e2f1">is_all_whitespace</a> (const char *input)</td></tr>
 <tr class="memdesc:aed9107ab2657d16984676d83fb78e2f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the input string is all whitespace.  <a href="input__parser_8h.html#aed9107ab2657d16984676d83fb78e2f1">More...</a><br /></td></tr>
 <tr class="separator:aed9107ab2657d16984676d83fb78e2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,8 +191,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab4bce2e60d1b3548c7511026019e488c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4bce2e60d1b3548c7511026019e488c">&#9670;&nbsp;</a></span>read_input()</h2>
+<a id="a29ec1d3f4d444673b493bb26eed7ca21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ec1d3f4d444673b493bb26eed7ca21">&#9670;&nbsp;</a></span>read_input()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +200,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">char* read_input </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

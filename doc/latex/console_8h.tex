@@ -9,6 +9,7 @@ File containing the console functions to manage the console (print information, 
 {\ttfamily \#include $<$stdarg.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
 Include dependency graph for console.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,43 +21,19 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=281pt]{console_8h__dep__incl}
+\includegraphics[width=350pt]{console_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{console_8h_a3513df4b60cd6ffac6234d8c90cdd3d0}\label{console_8h_a3513df4b60cd6ffac6234d8c90cdd3d0}} 
-\#define \mbox{\hyperlink{console_8h_a3513df4b60cd6ffac6234d8c90cdd3d0}{Y\+E\+LB}}~\char`\"{}\textbackslash{}e\mbox{[}43m\char`\"{}
-\begin{DoxyCompactList}\small\item\em The Y\+E\+LB color. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{console_8h_ab702106cf3b3e96750b6845ded4e0299}\label{console_8h_ab702106cf3b3e96750b6845ded4e0299}} 
-\#define \mbox{\hyperlink{console_8h_ab702106cf3b3e96750b6845ded4e0299}{R\+E\+S\+ET}}~\char`\"{}\textbackslash{}e\mbox{[}0m\char`\"{}
-\begin{DoxyCompactList}\small\item\em The R\+E\+S\+ET color (default color) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{console_8h_a79d10e672abb49ad63eeaa8aaef57c38}\label{console_8h_a79d10e672abb49ad63eeaa8aaef57c38}} 
-\#define \mbox{\hyperlink{console_8h_a79d10e672abb49ad63eeaa8aaef57c38}{B\+L\+UE}}~\char`\"{}\textbackslash{}e\mbox{[}1;34m\char`\"{}
-\begin{DoxyCompactList}\small\item\em The R\+ED color. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{console_8h_acfbc006ea433ad708fdee3e82996e721}\label{console_8h_acfbc006ea433ad708fdee3e82996e721}} 
-\#define \mbox{\hyperlink{console_8h_acfbc006ea433ad708fdee3e82996e721}{G\+R\+E\+EN}}~\char`\"{}\textbackslash{}e\mbox{[}1;32m\char`\"{}
-\begin{DoxyCompactList}\small\item\em The R\+ED color. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{console_8h_abf681265909adf3d3e8116c93c0ba179}\label{console_8h_abf681265909adf3d3e8116c93c0ba179}} 
-\#define \mbox{\hyperlink{console_8h_abf681265909adf3d3e8116c93c0ba179}{Y\+E\+L\+L\+OW}}~\char`\"{}\textbackslash{}e\mbox{[}1;33m\char`\"{}
-\begin{DoxyCompactList}\small\item\em The R\+ED color. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{console_8h_a0d07fdb703241f00ec96b4861dd3fd94}\label{console_8h_a0d07fdb703241f00ec96b4861dd3fd94}} 
-void \mbox{\hyperlink{console_8h_a0d07fdb703241f00ec96b4861dd3fd94}{print\+\_\+title}} ()
-\begin{DoxyCompactList}\small\item\em Print the title of the program. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{console_8h_a19fa75dfae261cf17435162f9f812fb3}{print\+\_\+info}} (const char $\ast$text,...)
 \begin{DoxyCompactList}\small\item\em Generic print information to the console. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{console_8h_a21579a20737c3b2b24e18bb5e51d8140}\label{console_8h_a21579a20737c3b2b24e18bb5e51d8140}} 
 void \mbox{\hyperlink{console_8h_a21579a20737c3b2b24e18bb5e51d8140}{print\+\_\+prompt}} ()
 \begin{DoxyCompactList}\small\item\em Print the prompt to the console (username @ hostname\+:\$) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{console_8h_a21021a40429d2b420cbfa562eeeee29d}{print\+\_\+perror}} (const char $\ast$format,...)
-\begin{DoxyCompactList}\small\item\em Print the error to the console. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{console_8h_a80e223b7ad6fbb37784a6c25ebf1ff0d}\label{console_8h_a80e223b7ad6fbb37784a6c25ebf1ff0d}} 
-void \mbox{\hyperlink{console_8h_a80e223b7ad6fbb37784a6c25ebf1ff0d}{print\+\_\+exit\+\_\+info}} ()
-\begin{DoxyCompactList}\small\item\em Print the exit information to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Print the error to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
