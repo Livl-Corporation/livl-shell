@@ -99,6 +99,7 @@ livl-shell/
 ├── livl-shell.1 # Manual of the livl-shell
 ├── index.html # Static Livl Shell website
 ├── history.txt # History of your commands
+├── aliases.txt # List of aliases
 └── Makefile # Makefile
 ```
 
@@ -147,7 +148,7 @@ livl-shell/
 
 The livl-shell has an ex history feature that allows you to view the history of your commands.
 
-**Experimental**: Use up and down arrows to navigate through the history. To be able to use this feature, you need to go to the branch  `feat/history`. This feature is not available on the `master` branch because some issues have been detected when using the left and right arrows.
+**Experimental**: Use up / down and left / right arrows. To be able to use this feature, you need to go to the branch [`feat/history-navigation`](https://github.com/Livl-Corporation/livl-shell/tree/feat/history-navigation). This feature is not available on the `master` branch because some issues have been detected when using the left / right arrows to move the cursor in the command line and the up / down arrows to navigate through the history. But feel free to contribute to this branch if you want to fix this issue. 😀
 
 The history is saved in the [`history.txt`](history.txt) file.
 
