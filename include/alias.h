@@ -33,4 +33,10 @@ int is_alias(const char *name, char *command);
  */
 void free_aliases();
 
+/**
+ * @brief Parse the input to replace aliases
+ * @param input The input string
+ */
+void parse_aliases(char *input);
+
 #endif // ALIAS_H

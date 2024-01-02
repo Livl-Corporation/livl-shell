@@ -85,3 +85,23 @@ void free_aliases()
     }
     free(aliases);
 }
+
+void parse_aliases(char *input)
+{
+    char *token = strtok(input, CMD_DELIMITERS);
+    char replaced_input[MAX_INPUT_LENGTH] = ""; // Initialize a new string to store the replaced input
+
+    char command[MAX_INPUT_LENGTH];
+    if (is_alias(token, command) == IS_ALIAS_COMMAND)
+    {
+        strcat(replaced_input, command); // Append the replaced command to the new string
+    }
+    else
+    {
+        strcat(replaced_input, token); // Append the original token to the new string
+    }
+
+    strcat(replaced_input, " ");                       // Add a space between tokens
+    strcat(replaced_input, input + strlen(token) + 1); // Append the remaining input after the first token
+    strcpy(input, replaced_input);                     // Copy the replaced input back to the original input string
+}
