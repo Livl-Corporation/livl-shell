@@ -23,7 +23,7 @@
     - [History](#history)
     - [Alias](#alias)
 - [Working with the documentation](#working-with-the-documentation)
-    - [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
+    - [📖 Use the livl-shell man command](#use-the-livl-shell-man-command)
     - [📜 Doxygen documentation](#-doxygen-documentation)
         - [📦 Prerequisites of Doxygen](#-prerequisites-of-doxygen)
         - [🚀 Generate the Doxygen documentation](#-generate-the-doxygen-documentation)
@@ -177,7 +177,7 @@ Then, you can run the `ll` command to execute the `ls -l` command.
 
 ## Working with the documentation
 
-### 📖 Use the livl-bash `man` command
+### 📖 Use the livl-shell man command
 
 > To edit the man you can download a TROFF Syntax Highlighter for Visual Studio Code.
 
