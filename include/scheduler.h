@@ -32,16 +32,17 @@ int execute_external_command(const Command *command, int run_in_background);
 /**
  * @brief Executes a command internal to the shell
  * @param command The command to execute
+ * @param commandSequence The command sequence to free
  * @param run_in_background 0 for false, 1 for true
  * @return The status of the execution
  */
-int execute_command(const Command *command, int run_in_background);
+int execute_command(const Command *command, CommandSequence *commandSequence, int run_in_background);
 
 /**
  * @brief Executes a sequence of commands with operators
  * @param sequence The sequence of commands to execute
  * @return The status of the execution
  */
-int execute_command_sequence(const CommandSequence *sequence);
+int execute_command_sequence(CommandSequence *sequence);
 
 #endif // SCHEDULER_H

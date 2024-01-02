@@ -12,6 +12,7 @@
 #include "command_sequence.h"
 #include "history_command.h"
 #include "alias.h"
+#include "builtin_commands.h"
 
 /**
  * @brief Run the shell in batch mode.
@@ -30,10 +31,5 @@ void run_interactive_mode();
  * @param input The input to handle.
  */
 void handle_input(char *input);
-
-/**
- * @brief Exit the shell.
- */
-int exit_shell(int status);
 
 #endif // MAIN_H

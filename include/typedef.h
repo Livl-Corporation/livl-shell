@@ -113,12 +113,16 @@ typedef struct
  *
  * @var CommandSequence::num_commands
  * Number of commands.
+ * 
+ * @var CommandSequence::num_operators
+ * Number of operators.
  */
 typedef struct
 {
     Command *commands;   // Array of commands
     char **operators;    // Array of operators
     size_t num_commands; // Number of commands
+    size_t num_operators; // Number of operators
 } CommandSequence;
 
 /**

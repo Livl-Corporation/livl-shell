@@ -1,15 +1,5 @@
 #include "console.h"
 
-void print_title()
-{
-    printf("\n" YELB "    __    _____    ____       _____ __  __________    __  " RESET);
-    printf("\n" YELB "   / /   /  _/ |  / / /      / ___// / / / ____/ /   / /  " RESET);
-    printf("\n" YELB "  / /    / / | | / / /       \\__ \\/ /_/ / __/ / /   / /   " RESET);
-    printf("\n" YELB " / /____/ /  | |/ / /___    ___/ / __  / /___/ /___/ /___ " RESET);
-    printf("\n" YELB "/_____/___/  |___/_____/   /____/_/ /_/_____/_____/_____/ " RESET);
-    printf("\n" YELB "                                                          " RESET "\n\n");
-}
-
 void print_perror(const char *format, ...)
 {
     va_list args;
@@ -50,10 +40,4 @@ void print_prompt()
     //     username = "hostname";
 
     printf(YELLOW "%s" RESET "@" BLUE "livl-shell" GREEN ":~%s" RESET "$ ", username, cwd);
-}
-
-void print_exit_info()
-{
-    printf("\n" GREEN "Thank you for using livl-shell!\n" RESET);
-    printf(YELLOW "All commands are stored in an history.txt file.\n" RESET);
 }

@@ -34,13 +34,6 @@ void run_batch_mode(char *argv[], int argc)
     handle_input(input);
 }
 
-int exit_shell(int status)
-{
-    free_aliases();
-    exit(status);
-    return status;
-}
-
 int main(int argc, char *argv[])
 {
     init_command_history();
@@ -60,5 +53,5 @@ int main(int argc, char *argv[])
         run_interactive_mode();
     }
 
-    return exit_shell(EXIT_SUCCESS);
+    return exit_shell(NULL, EXIT_SUCCESS);
 }

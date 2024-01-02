@@ -13,14 +13,16 @@
 #include <string.h>
 #include "typedef.h"
 #include "constants.h"
-#include "main.h"
+#include "command_sequence.h"
+#include "alias.h"
 
 /**
  * @brief Executes a command
  * @param command The command to execute
+ * @param sequence The command sequence to free
  * @return The status of the execution (0 if success, -1 if not a built-in command, 1 if error)
  */
-int execute_builtin_command(const Command *command);
+int execute_builtin_command(const Command *command, CommandSequence *sequence);
 
 /**
  * @brief Prints the current working directory
@@ -40,6 +42,13 @@ void cd(const char *path);
  * @return 1 if the command is a built-in command, 0 if not
  */
 int is_builtin_command(const Command *command, const char *expected);
+
+/**
+ * @brief Exits the shell
+ *
+ * @param sequence The command sequence to free
+ */
+int exit_shell(CommandSequence *sequence, int exit_code);
 
 /**
  * @brief Prints a message

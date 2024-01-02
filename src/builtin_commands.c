@@ -26,6 +26,17 @@ void pwd()
     }
 }
 
+int exit_shell(CommandSequence *sequence, int exit_code)
+{
+    if (sequence != NULL)
+    {
+        free_command_sequence(sequence);
+    }
+    free_aliases();
+    exit(exit_code);
+    return exit_code;
+}
+
 void echo(const Command *command)
 {
     for (int i = 0; i < command->num_arguments; i++)
@@ -35,7 +46,7 @@ void echo(const Command *command)
     printf("\n");
 }
 
-int execute_builtin_command(const Command *command)
+int execute_builtin_command(const Command *command, CommandSequence *sequence)
 {
     if (is_builtin_command(command, "cd"))
     {
@@ -59,7 +70,7 @@ int execute_builtin_command(const Command *command)
     {
         if (command->num_arguments == 0)
         {
-            exit_shell(EXIT_SUCCESS);
+            exit_shell(sequence, EXIT_SUCCESS);
             return IS_BUILTIN_COMMAND;
         }
         perror("Usage: exit");

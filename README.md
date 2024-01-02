@@ -128,7 +128,7 @@ livl-shell/
 - `sleep 4 && echo "Second command executed"`: Executes a command after another one.
 - `false && echo "This won't be executed"`: Executes a command after another one only if the first one succeeded.
 - `false || echo "This will be executed"`: Executes a command after another one only if the first one failed.
-- `echo "Command 1"; sleep 3; echo "Command 2"; ls -l`: Executes multiple commands regardless of the success of the previous ones.
+- `echo "Command 1"; sleep 3; echo "Command 2"; ls -l`: Executes multiple commands regardless of the success of the previous ones. The `ls -l` won't be executed because the shell is limited to run a maximum of 3 commands in a row.
 
 ### Batch Mode
 
@@ -144,8 +144,10 @@ livl-shell/
 
 ### History
 
-The livl-shell has a history feature that allows you to view the history of your commands.
-Use up and down arrows to navigate through the history.
+The livl-shell has an ex history feature that allows you to view the history of your commands.
+
+**Experimental**: Use up and down arrows to navigate through the history. To be able to use this feature, you need to go to the branch  `feat/history`. This feature is not available on the `master` branch because some issues have been detected when using the left and right arrows.
+
 The history is saved in the [`history.txt`](history.txt) file.
 
 ### Alias

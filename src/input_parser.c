@@ -8,56 +8,18 @@ char *read_input(char *input)
         return NULL;
     }
 
-    struct termios old_termios, new_termios;
-    tcgetattr(STDIN_FILENO, &old_termios);
-    new_termios = old_termios;
-    new_termios.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &new_termios);
-
-    int index = 0;
-    int c;
-    while ((c = getchar()) != '\n')
+    if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL)
     {
-        if (c == 27) // Escape character
-        {
-            getchar(); // Skip the [
-            switch (getchar())
-            {
-            case 'A': // Arrow up
-                handle_arrow_up(input, &index);
-                break;
-            case 'B': // Arrow down
-                handle_arrow_down(input, &index);
-                break;
-            case 'D': // Arrow left
-                handle_arrow_left(input, &index);
-                break;
-            case 'C': // Arrow right
-                handle_arrow_right(input, &index);
-                break;
-            default:
-                break;
-            }
-        }
-        else if (c == 127) // Backspace
-        {
-            handle_backspace(input, &index);
-        }
-        else if (c == 8) // Control (or command on macos) + backspace
-        {
-            handle_control_backspace(input, &index);
-        }
-        else if (isalnum(c) || isspace(c) || ispunct(c)) // Check if the character is alphanumeric, whitespace, or punctuation
-        {
-            printf("%c", c);
-            input[index++] = c;
-        }
+        perror("fgets");
+        free(input);
+        return NULL;
     }
-    input[strlen(input)] = '\0';
 
-    tcsetattr(STDIN_FILENO, TCSANOW, &old_termios);
-    printf("\n");
-    reset_current_index();
+    size_t len = strlen(input);
+    if (len > 0 && input[len - 1] == '\n')
+    {
+        input[len - 1] = '\0';
+    }
 
     return input;
 }
@@ -114,80 +76,4 @@ void preprocess_input(char *input)
     new_input[j] = '\0';
     strcpy(input, new_input);
     free(new_input);
-}
-
-void handle_arrow_up(char *input, int *index)
-{
-    char command[MAX_INPUT_LENGTH];
-    get_previous_command(command);
-    replace_input(input, index, command);
-}
-
-void handle_arrow_down(char *input, int *index)
-{
-    char command[MAX_INPUT_LENGTH];
-    get_next_command(command);
-    replace_input(input, index, command);
-}
-
-void handle_arrow_left(char *input, int *index)
-{
-    if (*index > 0)
-    {
-        printf("\b");
-        (*index)--;
-    }
-}
-
-void handle_arrow_right(char *input, int *index)
-{
-    if (*index < strlen(input))
-    {
-        printf("%c", input[*index]);
-        (*index)++;
-    }
-}
-
-void handle_backspace(char *input, int *index)
-{
-    if (*index == 0)
-    {
-        return;
-    }
-
-    // Shift characters to the left
-    for (int i = *index - 1; i < strlen(input) - 1; i++)
-    {
-        input[i] = input[i + 1];
-    }
-
-    // Delete the last character
-    input[strlen(input) - 1] = '\0';
-
-    // Update index
-    (*index)--;
-
-    // Print the new input and move the cursor back to the correct position
-    printf("\33[2K\r");
-    print_prompt();
-    printf("%s", input);
-    int num_chars_to_move = strlen(input) - *index;
-    if (num_chars_to_move > 0)
-    {
-        printf("\033[%dD", num_chars_to_move);
-    }
-}
-
-void handle_control_backspace(char *input, int *index)
-{
-    replace_input(input, index, "");
-}
-
-void replace_input(char *input, int *index, const char *replacement)
-{
-    printf("\33[2K\r");
-    print_prompt();
-    printf("%s", replacement);
-    strcpy(input, replacement);
-    *index = strlen(replacement);
 }

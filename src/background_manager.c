@@ -44,7 +44,13 @@ void add_background_process(pid_t pid, const Command *command)
 {
     background_processes[num_background_processes].pid = pid;
     background_processes[num_background_processes].job_number = num_background_processes + 1;
-    background_processes[num_background_processes].command = command->input_string;
-    printf("[%d] %d\n", background_processes[num_background_processes].job_number, pid);
+    background_processes[num_background_processes].command = strdup(command->input_string);
+
+    if (background_processes[num_background_processes].command == NULL) {
+        perror("strdup");
+        exit(EXIT_FAILURE);
+    }    
+    
+    printf("[%d] %d %s\n", background_processes[num_background_processes].job_number, pid, background_processes[num_background_processes].command);
     num_background_processes++;
 }

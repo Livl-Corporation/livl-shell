@@ -65,11 +65,12 @@ char **get_complete_command_array(Command *cmd)
         perror("malloc");
         exit(EXIT_FAILURE);
     }
-    new_arguments[0] = cmd->command;
+    new_arguments[0] = strdup(cmd->command);
     for (int i = 0; i < cmd->num_arguments; ++i)
     {
-        new_arguments[i + 1] = cmd->arguments[i];
+        new_arguments[i + 1] = strdup(cmd->arguments[i]);
     }
+    new_arguments[cmd->num_arguments + 1] = NULL;
     return new_arguments;
 }
 
@@ -89,13 +90,25 @@ void init_command(Command *cmd)
 void free_command(Command *cmd)
 {
     free(cmd->command);
+    cmd->command = NULL;
+    
     for (int i = 0; i < cmd->num_arguments; ++i)
     {
         free(cmd->arguments[i]);
+        cmd->arguments[i] = NULL;
     }
     free(cmd->arguments);
+    cmd->arguments = NULL;
+    
     free(cmd->redirection.input_file);
+    cmd->redirection.input_file = NULL;
+    
     free(cmd->redirection.output_file);
+    cmd->redirection.output_file = NULL;
+    
     free(cmd->complete_command);
+    cmd->complete_command = NULL;
+    
     free(cmd->input_string);
+    cmd->input_string = NULL;
 }

@@ -15,6 +15,7 @@ void command_sequence_init(char *input)
     sequence.commands = malloc(MAX_COMMANDS * sizeof(Command));
     sequence.operators = malloc(MAX_OPERATORS * sizeof(char *));
     sequence.num_commands = 0;
+    sequence.num_operators = 0;
 
     char *token = strtok(input, delimeters);
     while (token != NULL)
@@ -42,6 +43,7 @@ void command_sequence_init(char *input)
     }
 
     // Build the command sequence with its operators
+    sequence.num_operators = operator_count;
     for (int i = 0; i < operator_count; i++)
     {
         sequence.operators[i] = strdup(operators[i]);
@@ -104,4 +106,13 @@ void free_command_sequence(CommandSequence *sequence)
         free_command(&sequence->commands[i]);
     }
     free(sequence->commands);
+    sequence->commands = NULL;
+    
+    for (int i = 0; i < sequence->num_operators; ++i)
+    {
+        free(sequence->operators[i]);
+        sequence->operators[i] = NULL;
+    }
+    free(sequence->operators);
+    sequence->operators = NULL;
 }
