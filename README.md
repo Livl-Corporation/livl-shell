@@ -171,6 +171,8 @@ Then, you can run the `ll` command to execute the `ls -l` command.
 
 > You can input arguments with your alias, as well as use pipes and redirections. For example, if you input `ll -m` it will be interpreted as `ls -l -m`.
 
+> Command sequencing, pipes & redirections are **not supported** in aliases. Alias can only work for a single command.
+
 
 ## Working with the documentation
 
