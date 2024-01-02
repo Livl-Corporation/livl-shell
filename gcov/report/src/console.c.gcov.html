@@ -31,18 +31,18 @@
             <td class="headerValue">report.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntry">31</td>
-            <td class="headerCovTableEntryLo">58.1 %</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntryLo">61.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-24 13:00:23</td>
+            <td class="headerValue">2024-01-02 12:43:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntryLo">60.0 %</td>
+            <td class="headerCovTableEntryLo">66.7 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -62,56 +62,47 @@
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;console.h&quot;</a>
 <a name="2"><span class="lineNum">       2 </span>            : </a>
-<a name="3"><span class="lineNum">       3 </span><span class="lineNoCov">          0 : void print_title()</span></a>
+<a name="3"><span class="lineNum">       3 </span><span class="lineNoCov">          0 : void print_perror(const char *format, ...)</span></a>
 <a name="4"><span class="lineNum">       4 </span>            : {</a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; YELB&quot;    __    _____    ____       _____ __  __________    __  &quot; RESET);</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; YELB&quot;   / /   /  _/ |  / / /      / ___// / / / ____/ /   / /  &quot; RESET);</span></a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; YELB&quot;  / /    / / | | / / /       \\__ \\/ /_/ / __/ / /   / /   &quot; RESET);</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; YELB&quot; / /____/ /  | |/ / /___    ___/ / __  / /___/ /___/ /___ &quot; RESET);</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; YELB&quot;/_____/___/  |___/_____/   /____/_/ /_/_____/_____/_____/ &quot; RESET);</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; YELB&quot;                                                          &quot;RESET &quot;\n\n&quot;);</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineNoCov">          0 : }</span></a>
-<a name="12"><span class="lineNum">      12 </span>            : </a>
-<a name="13"><span class="lineNum">      13 </span><span class="lineCov">          3 : void print_perror(const char *format, ...) {</span></a>
-<a name="14"><span class="lineNum">      14 </span>            :     va_list args;</a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          3 :     va_start(args, format);</span></a>
-<a name="16"><span class="lineNum">      16 </span>            : </a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">          3 :     vfprintf(stderr, format, args);</span></a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineCov">          3 :     perror(&quot;&quot;);</span></a>
-<a name="19"><span class="lineNum">      19 </span>            : </a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          3 :     va_end(args);</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          3 : }</span></a>
-<a name="22"><span class="lineNum">      22 </span>            : </a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          1 : void print_info(const char *text, ...)</span></a>
-<a name="24"><span class="lineNum">      24 </span>            : {</a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          1 :     printf(BLUE);</span></a>
-<a name="26"><span class="lineNum">      26 </span>            :     va_list args;</a>
-<a name="27"><span class="lineNum">      27 </span><span class="lineCov">          1 :     va_start(args, text);</span></a>
-<a name="28"><span class="lineNum">      28 </span><span class="lineCov">          1 :     vprintf(text, args);</span></a>
-<a name="29"><span class="lineNum">      29 </span><span class="lineCov">          1 :     va_end(args);</span></a>
-<a name="30"><span class="lineNum">      30 </span><span class="lineCov">          1 :     printf(RESET &quot;\n&quot;);</span></a>
-<a name="31"><span class="lineNum">      31 </span><span class="lineCov">          1 : }</span></a>
-<a name="32"><span class="lineNum">      32 </span>            : </a>
-<a name="33"><span class="lineNum">      33 </span><span class="lineCov">         18 : void print_prompt()</span></a>
-<a name="34"><span class="lineNum">      34 </span>            : {</a>
-<a name="35"><span class="lineNum">      35 </span><span class="lineCov">         18 :     char* username = getenv(&quot;USER&quot;);</span></a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">         18 :     if(username == NULL)</span></a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineNoCov">          0 :         username = &quot;username&quot;;</span></a>
-<a name="38"><span class="lineNum">      38 </span>            : </a>
-<a name="39"><span class="lineNum">      39 </span>            :     // Use this if you want to print the hostname</a>
-<a name="40"><span class="lineNum">      40 </span>            :     // char hostname[1024];</a>
-<a name="41"><span class="lineNum">      41 </span>            :     // gethostname(hostname, 1024);</a>
-<a name="42"><span class="lineNum">      42 </span>            :     // if(username == NULL)</a>
-<a name="43"><span class="lineNum">      43 </span>            :     //     username = &quot;hostname&quot;;</a>
-<a name="44"><span class="lineNum">      44 </span>            : </a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">         18 :     printf(YELLOW &quot;%s&quot; RESET &quot;@&quot; BLUE &quot;livl-shell&quot; RESET &quot;:$ &quot;, username);</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">         18 : }</span></a>
-<a name="47"><span class="lineNum">      47 </span>            : </a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineNoCov">          0 : void print_exit_info()</span></a>
-<a name="49"><span class="lineNum">      49 </span>            : {</a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot; GREEN &quot;Thank you for using livl-shell!\n&quot; RESET);</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineNoCov">          0 :     printf(YELLOW &quot;All commands are stored in an history.txt file.\n&quot; RESET);</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="5"><span class="lineNum">       5 </span>            :     va_list args;</a>
+<a name="6"><span class="lineNum">       6 </span><span class="lineNoCov">          0 :     va_start(args, format);</span></a>
+<a name="7"><span class="lineNum">       7 </span>            : </a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineNoCov">          0 :     vfprintf(stderr, format, args);</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineNoCov">          0 :     perror(&quot;&quot;);</span></a>
+<a name="10"><span class="lineNum">      10 </span>            : </a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineNoCov">          0 :     va_end(args);</span></a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="13"><span class="lineNum">      13 </span>            : </a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">          1 : void print_info(const char *text, ...)</span></a>
+<a name="15"><span class="lineNum">      15 </span>            : {</a>
+<a name="16"><span class="lineNum">      16 </span><span class="lineCov">          1 :     printf(BLUE);</span></a>
+<a name="17"><span class="lineNum">      17 </span>            :     va_list args;</a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">          1 :     va_start(args, text);</span></a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">          1 :     vprintf(text, args);</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          1 :     va_end(args);</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     printf(RESET &quot;\n&quot;);</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 : }</span></a>
+<a name="23"><span class="lineNum">      23 </span>            : </a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">         20 : void print_prompt()</span></a>
+<a name="25"><span class="lineNum">      25 </span>            : {</a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">         20 :     char *username = getenv(&quot;USER&quot;);</span></a>
+<a name="27"><span class="lineNum">      27 </span><span class="lineCov">         20 :     if (username == NULL)</span></a>
+<a name="28"><span class="lineNum">      28 </span><span class="lineNoCov">          0 :         username = &quot;&quot;;</span></a>
+<a name="29"><span class="lineNum">      29 </span>            : </a>
+<a name="30"><span class="lineNum">      30 </span>            :     char cwd[MAX_INPUT_LENGTH];</a>
+<a name="31"><span class="lineNum">      31 </span><span class="lineCov">         20 :     if (getcwd(cwd, sizeof(cwd)) == NULL)</span></a>
+<a name="32"><span class="lineNum">      32 </span>            :     {</a>
+<a name="33"><span class="lineNum">      33 </span><span class="lineNoCov">          0 :         cwd[0] = '\0';</span></a>
+<a name="34"><span class="lineNum">      34 </span>            :     }</a>
+<a name="35"><span class="lineNum">      35 </span>            : </a>
+<a name="36"><span class="lineNum">      36 </span>            :     // Use this if you want to print the hostname</a>
+<a name="37"><span class="lineNum">      37 </span>            :     // char hostname[1024];</a>
+<a name="38"><span class="lineNum">      38 </span>            :     // gethostname(hostname, 1024);</a>
+<a name="39"><span class="lineNum">      39 </span>            :     // if(username == NULL)</a>
+<a name="40"><span class="lineNum">      40 </span>            :     //     username = &quot;hostname&quot;;</a>
+<a name="41"><span class="lineNum">      41 </span>            : </a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">         20 :     printf(YELLOW &quot;%s&quot; RESET &quot;@&quot; BLUE &quot;livl-shell&quot; GREEN &quot;:~%s&quot; RESET &quot;$ &quot;, username, cwd);</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">         20 : }</span></a>
 </pre>
       </td>
     </tr>
