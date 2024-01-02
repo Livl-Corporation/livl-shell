@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -69,8 +69,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">operator.h File Reference</div>  </div>
 </div><!--header-->
@@ -85,11 +84,12 @@ Include dependency graph for operator.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="operator_8h__incl.png" border="0" usemap="#include_2operator_8h" alt=""/></div>
 <map name="include_2operator_8h" id="include_2operator_8h">
-<area shape="rect" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="22,5,161,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
-<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="101,80,183,107"/>
-<area shape="rect" title=" " alt="" coords="50,155,125,181"/>
-<area shape="rect" title=" " alt="" coords="149,155,245,181"/>
+<area shape="rect" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="32,5,171,32"/>
+<area shape="rect" title=" " alt="" coords="15,80,86,107"/>
+<area shape="rect" href="typedef_8h.html" title="File containing all the typedefs used in the shell program." alt="" coords="111,80,193,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
+<area shape="rect" title=" " alt="" coords="104,155,200,181"/>
+<area shape="rect" href="constants_8h.html" title="Header file defining constants." alt="" coords="225,155,322,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -97,11 +97,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="operator_8h__dep__incl.png" border="0" usemap="#include_2operator_8hdep" alt=""/></div>
 <map name="include_2operator_8hdep" id="include_2operator_8hdep">
-<area shape="rect" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="156,5,295,32"/>
-<area shape="rect" href="scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="41,80,188,107"/>
+<area shape="rect" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="183,5,321,32"/>
+<area shape="rect" href="scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="179,80,325,107"/>
 <area shape="rect" href="command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,155,224,181"/>
-<area shape="rect" href="input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="248,155,413,181"/>
-<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="163,229,282,256"/>
+<area shape="rect" href="input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="301,155,467,181"/>
+<area shape="rect" href="builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="145,229,351,256"/>
+<area shape="rect" href="main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="189,304,307,331"/>
 </map>
 </div>
 </div>
@@ -109,30 +110,20 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1d23d7f69facd5d79e3382f85d6feded"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operator_8h.html#a1d23d7f69facd5d79e3382f85d6feded">is_operator</a> (const char *token)</td></tr>
-<tr class="memdesc:a1d23d7f69facd5d79e3382f85d6feded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given token is an operator.  <a href="operator_8h.html#a1d23d7f69facd5d79e3382f85d6feded">More...</a><br /></td></tr>
-<tr class="separator:a1d23d7f69facd5d79e3382f85d6feded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a24836357c03adbcf552db9cc709e24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">get_operator_type</a> (const char *operator_str)</td></tr>
 <tr class="memdesc:a9a24836357c03adbcf552db9cc709e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the given operator.  <a href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">More...</a><br /></td></tr>
 <tr class="separator:a9a24836357c03adbcf552db9cc709e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e15e9215f6d9dc69ebf7a99372d4406"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operator_8h.html#a5e15e9215f6d9dc69ebf7a99372d4406">get_operator_string</a> (<a class="el" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a> op)</td></tr>
-<tr class="memdesc:a5e15e9215f6d9dc69ebf7a99372d4406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string representation of the given operator.  <a href="operator_8h.html#a5e15e9215f6d9dc69ebf7a99372d4406">More...</a><br /></td></tr>
-<tr class="separator:a5e15e9215f6d9dc69ebf7a99372d4406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a47bfd392ff22b9804148ca320a7ff649"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operator_8h.html#a47bfd392ff22b9804148ca320a7ff649">operators</a> []</td></tr>
-<tr class="separator:a47bfd392ff22b9804148ca320a7ff649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71b1adb143f33ddd1d26a28b8c2dcdf5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operator_8h.html#a71b1adb143f33ddd1d26a28b8c2dcdf5">num_operators</a></td></tr>
-<tr class="separator:a71b1adb143f33ddd1d26a28b8c2dcdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad0d08b02a1cef0501333046011b71d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operator_8h.html#a4ad0d08b02a1cef0501333046011b71d">get_operator_string</a> (<a class="el" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a> operator_type)</td></tr>
+<tr class="memdesc:a4ad0d08b02a1cef0501333046011b71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string corresponding to the given operator.  <a href="operator_8h.html#a4ad0d08b02a1cef0501333046011b71d">More...</a><br /></td></tr>
+<tr class="separator:a4ad0d08b02a1cef0501333046011b71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File containing the operator functions to manage the operators that can be used in the shell. </p>
 <dl class="section author"><dt>Author</dt><dd>Julien &amp; Franck </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>24 Dec 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a5e15e9215f6d9dc69ebf7a99372d4406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e15e9215f6d9dc69ebf7a99372d4406">&#9670;&nbsp;</a></span>get_operator_string()</h2>
+<a id="a4ad0d08b02a1cef0501333046011b71d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad0d08b02a1cef0501333046011b71d">&#9670;&nbsp;</a></span>get_operator_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,20 +132,20 @@ Variables</h2></td></tr>
           <td class="memname">const char* get_operator_string </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a>&#160;</td>
-          <td class="paramname"><em>op</em></td><td>)</td>
+          <td class="paramname"><em>operator_type</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the string representation of the given operator. </p>
+<p>Gets the string corresponding to the given operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">op</td><td>The operator </td></tr>
+    <tr><td class="paramname">operator_type</td><td>The operator type </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The string representation of the operator </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The string corresponding to the operator </dd></dl>
 
 </div>
 </div>
@@ -181,65 +172,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The type of the operator </dd></dl>
-
-</div>
-</div>
-<a id="a1d23d7f69facd5d79e3382f85d6feded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d23d7f69facd5d79e3382f85d6feded">&#9670;&nbsp;</a></span>is_operator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int is_operator </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>token</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks if the given token is an operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">token</td><td>The token to be checked </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>1 if the token is an operator, 0 otherwise </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a71b1adb143f33ddd1d26a28b8c2dcdf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71b1adb143f33ddd1d26a28b8c2dcdf5">&#9670;&nbsp;</a></span>num_operators</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int num_operators</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The number of operators that can be used </p>
-
-</div>
-</div>
-<a id="a47bfd392ff22b9804148ca320a7ff649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47bfd392ff22b9804148ca320a7ff649">&#9670;&nbsp;</a></span>operators</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* operators[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The list of operators that can be used</p>
+<dl class="section return"><dt>Returns</dt><dd>The type of the operator</dd></dl>
 <p>Order by operator length (longest first) to avoid matching &lt;&lt; when looking for &lt; </p>
 
 </div>

@@ -10,6 +10,11 @@ File containing the input parser functions to manage the input entered by the us
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}operator.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}history\+\_\+command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}console.\+h\char`\"{}}\newline
 Include dependency graph for input\+\_\+parser.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -24,16 +29,10 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \includegraphics[width=204pt]{input__parser_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{input__parser_8h_a975fc9874a52790d9a5ca6d4e6a228ce}\label{input__parser_8h_a975fc9874a52790d9a5ca6d4e6a228ce}} 
-\#define \mbox{\hyperlink{input__parser_8h_a975fc9874a52790d9a5ca6d4e6a228ce}{M\+A\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+L\+E\+N\+G\+TH}}~1024
-\begin{DoxyCompactList}\small\item\em The max length of the input string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{input__parser_8h_ab4bce2e60d1b3548c7511026019e488c}{read\+\_\+input}} ()
+char $\ast$ \mbox{\hyperlink{input__parser_8h_a29ec1d3f4d444673b493bb26eed7ca21}{read\+\_\+input}} (char $\ast$input)
 \begin{DoxyCompactList}\small\item\em Reads the input from the console. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input__parser_8h_aed9107ab2657d16984676d83fb78e2f1}{is\+\_\+all\+\_\+whitespace}} (const char $\ast$input)
 \begin{DoxyCompactList}\small\item\em Checks if the input string is all whitespace. \end{DoxyCompactList}\item 
@@ -86,11 +85,11 @@ Parses the input string into commands and operators.
 {\em input} & The input string to be parsed \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{input__parser_8h_ab4bce2e60d1b3548c7511026019e488c}\label{input__parser_8h_ab4bce2e60d1b3548c7511026019e488c}} 
+\mbox{\Hypertarget{input__parser_8h_a29ec1d3f4d444673b493bb26eed7ca21}\label{input__parser_8h_a29ec1d3f4d444673b493bb26eed7ca21}} 
 \index{input\_parser.h@{input\_parser.h}!read\_input@{read\_input}}
 \index{read\_input@{read\_input}!input\_parser.h@{input\_parser.h}}
 \doxysubsubsection{\texorpdfstring{read\_input()}{read\_input()}}
-{\footnotesize\ttfamily char$\ast$ read\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char$\ast$ read\+\_\+input (\begin{DoxyParamCaption}\item[{char $\ast$}]{input }\end{DoxyParamCaption})}
 
 
 

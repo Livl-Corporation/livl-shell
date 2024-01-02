@@ -16,7 +16,7 @@ void run_interactive_mode()
     {
         print_prompt();
 
-        char *input = malloc(MAX_INPUT_LENGTH * sizeof(char));
+        char *input = calloc(MAX_INPUT_LENGTH, sizeof(char));
         read_input(input);
         handle_input(input);
         free(input);
@@ -37,8 +37,14 @@ void run_batch_mode(char *argv[], int argc)
 int main(int argc, char *argv[])
 {
     init_command_history();
+    init_aliases();
 
-    if (argc > 2 && (strcmp(argv[1], "-c") && strcmp(argv[1], "--command")) == 0)
+    // Check if the first argument is "gcov"
+    if (argc > 1 && strcmp(argv[1], "gcov") == 0)
+    {
+        run_interactive_mode();
+    }
+    else if (argc > 2 && (strcmp(argv[1], "-c") && strcmp(argv[1], "--command")) == 0)
     {
         run_batch_mode(argv, argc);
     }
@@ -52,5 +58,5 @@ int main(int argc, char *argv[])
         run_interactive_mode();
     }
 
-    return EXIT_SUCCESS;
+    return exit_shell(NULL, EXIT_SUCCESS);
 }

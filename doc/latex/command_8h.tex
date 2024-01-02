@@ -9,6 +9,8 @@ File containing the command functions to manage the commands entered by the user
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alias.\+h\char`\"{}}\newline
 Include dependency graph for command.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,7 +22,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=298pt]{command_8h__dep__incl}
+\includegraphics[width=344pt]{command_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Functions}
@@ -28,16 +30,12 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \item 
 \mbox{\hyperlink{structCommand}{Command}} \mbox{\hyperlink{command_8h_ad5cc604aca7066b70578c113179f5e8e}{evaluate\+\_\+command}} (const char $\ast$input)
 \begin{DoxyCompactList}\small\item\em Evaluate a command from a string. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{command_8h_a7066df1c1d72fb9d6c6460eac100f537}{handle\+\_\+quotes}} (char $\ast$$\ast$token)
-\begin{DoxyCompactList}\small\item\em Handle quotes in a string (remove them) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{command_8h_a112a3b91bd49d00b07855827655aaa9b}{free\+\_\+command}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
 \begin{DoxyCompactList}\small\item\em Free a command. \end{DoxyCompactList}\item 
-char $\ast$$\ast$ \mbox{\hyperlink{command_8h_a44d8b1c845b459107d3f038b13f3da07}{get\+\_\+complete\+\_\+command\+\_\+array}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
+void \mbox{\hyperlink{command_8h_ad5af251319d509b5139393572feb542f}{get\+\_\+complete\+\_\+command\+\_\+array}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
 \begin{DoxyCompactList}\small\item\em Get the complete command (command + arguments) as a string. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{command_8h_ac5f62bc2440691f04fdcc0cb5f7e7c03}{initialize\+\_\+command}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
-\begin{DoxyCompactList}\small\item\em Initialize a command. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{command_8h_a278072a78e1bf5ac797092155fc45a84}{get\+\_\+complete\+\_\+command}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
-\begin{DoxyCompactList}\small\item\em Get the complete command (command + arguments) as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{command_8h_a02613c9b574b667bf8ecad12aea58a2b}{init\+\_\+command}} (\mbox{\hyperlink{structCommand}{Command}} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Initialize a command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -85,29 +83,11 @@ Free a command.
 {\em cmd} & the command to free \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{command_8h_a278072a78e1bf5ac797092155fc45a84}\label{command_8h_a278072a78e1bf5ac797092155fc45a84}} 
-\index{command.h@{command.h}!get\_complete\_command@{get\_complete\_command}}
-\index{get\_complete\_command@{get\_complete\_command}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{get\_complete\_command()}{get\_complete\_command()}}
-{\footnotesize\ttfamily char$\ast$ get\+\_\+complete\+\_\+command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
-
-
-
-Get the complete command (command + arguments) as a string. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em cmd} & the command to get \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the complete command as a string 
-\end{DoxyReturn}
-\mbox{\Hypertarget{command_8h_a44d8b1c845b459107d3f038b13f3da07}\label{command_8h_a44d8b1c845b459107d3f038b13f3da07}} 
+\mbox{\Hypertarget{command_8h_ad5af251319d509b5139393572feb542f}\label{command_8h_ad5af251319d509b5139393572feb542f}} 
 \index{command.h@{command.h}!get\_complete\_command\_array@{get\_complete\_command\_array}}
 \index{get\_complete\_command\_array@{get\_complete\_command\_array}!command.h@{command.h}}
 \doxysubsubsection{\texorpdfstring{get\_complete\_command\_array()}{get\_complete\_command\_array()}}
-{\footnotesize\ttfamily char$\ast$$\ast$ get\+\_\+complete\+\_\+command\+\_\+array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void get\+\_\+complete\+\_\+command\+\_\+array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
 
 
 
@@ -118,29 +98,11 @@ It is useful for execvp(const char$\ast$ command, char$\ast$ argv\mbox{[}$\,$\mb
 {\em cmd} & the command to get \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the complete command as an array of strings 
-\end{DoxyReturn}
-\mbox{\Hypertarget{command_8h_a7066df1c1d72fb9d6c6460eac100f537}\label{command_8h_a7066df1c1d72fb9d6c6460eac100f537}} 
-\index{command.h@{command.h}!handle\_quotes@{handle\_quotes}}
-\index{handle\_quotes@{handle\_quotes}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{handle\_quotes()}{handle\_quotes()}}
-{\footnotesize\ttfamily void handle\+\_\+quotes (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{token }\end{DoxyParamCaption})}
-
-
-
-Handle quotes in a string (remove them) 
-
-
-\begin{DoxyParams}{Parameters}
-{\em token} & the string to handle \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{command_8h_ac5f62bc2440691f04fdcc0cb5f7e7c03}\label{command_8h_ac5f62bc2440691f04fdcc0cb5f7e7c03}} 
-\index{command.h@{command.h}!initialize\_command@{initialize\_command}}
-\index{initialize\_command@{initialize\_command}!command.h@{command.h}}
-\doxysubsubsection{\texorpdfstring{initialize\_command()}{initialize\_command()}}
-{\footnotesize\ttfamily void initialize\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{command_8h_a02613c9b574b667bf8ecad12aea58a2b}\label{command_8h_a02613c9b574b667bf8ecad12aea58a2b}} 
+\index{command.h@{command.h}!init\_command@{init\_command}}
+\index{init\_command@{init\_command}!command.h@{command.h}}
+\doxysubsubsection{\texorpdfstring{init\_command()}{init\_command()}}
+{\footnotesize\ttfamily void init\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommand}{Command}} $\ast$}]{cmd }\end{DoxyParamCaption})}
 
 
 

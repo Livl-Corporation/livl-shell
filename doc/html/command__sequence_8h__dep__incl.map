@@ -1,4 +1,6 @@
 <map id="include/command_sequence.h" name="include/command_sequence.h">
-<area shape="rect" id="node1" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,5,224,32"/>
-<area shape="rect" id="node2" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="55,80,174,107"/>
+<area shape="rect" id="node1" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="48,5,267,32"/>
+<area shape="rect" id="node2" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="55,80,260,107"/>
+<area shape="rect" id="node4" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="207,155,326,181"/>
+<area shape="rect" id="node3" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="5,155,152,181"/>
 </map>

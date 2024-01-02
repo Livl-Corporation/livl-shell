@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -76,28 +76,19 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef OPERATOR_H</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define OPERATOR_H</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="typedef_8h.html">typedef.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="operator_8h.html#a47bfd392ff22b9804148ca320a7ff649">operators</a>[];</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="operator_8h.html#a71b1adb143f33ddd1d26a28b8c2dcdf5">num_operators</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="operator_8h.html#a1d23d7f69facd5d79e3382f85d6feded">is_operator</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a> <a class="code" href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">get_operator_type</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *operator_str);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="operator_8h.html#a5e15e9215f6d9dc69ebf7a99372d4406">get_operator_string</a>(<a class="code" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a> op);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif //OPERATOR_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a> <a class="code" href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">get_operator_type</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *operator_str);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="operator_8h.html#a4ad0d08b02a1cef0501333046011b71d">get_operator_string</a>(<a class="code" href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a> operator_type);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif // OPERATOR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="atypedef_8h_html_a6a02b2d1d62293b20242e3dcfbdd0117"><div class="ttname"><a href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a></div><div class="ttdeci">OperatorType</div><div class="ttdef"><b>Definition:</b> typedef.h:16</div></div>
-<div class="ttc" id="aoperator_8h_html_a1d23d7f69facd5d79e3382f85d6feded"><div class="ttname"><a href="operator_8h.html#a1d23d7f69facd5d79e3382f85d6feded">is_operator</a></div><div class="ttdeci">int is_operator(const char *token)</div><div class="ttdoc">Checks if the given token is an operator.</div><div class="ttdef"><b>Definition:</b> operator.c:20</div></div>
-<div class="ttc" id="aoperator_8h_html_a47bfd392ff22b9804148ca320a7ff649"><div class="ttname"><a href="operator_8h.html#a47bfd392ff22b9804148ca320a7ff649">operators</a></div><div class="ttdeci">const char * operators[]</div><div class="ttdef"><b>Definition:</b> operator.c:6</div></div>
-<div class="ttc" id="aoperator_8h_html_a71b1adb143f33ddd1d26a28b8c2dcdf5"><div class="ttname"><a href="operator_8h.html#a71b1adb143f33ddd1d26a28b8c2dcdf5">num_operators</a></div><div class="ttdeci">const int num_operators</div><div class="ttdef"><b>Definition:</b> operator.c:18</div></div>
-<div class="ttc" id="aoperator_8h_html_a9a24836357c03adbcf552db9cc709e24"><div class="ttname"><a href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">get_operator_type</a></div><div class="ttdeci">OperatorType get_operator_type(const char *operator_str)</div><div class="ttdoc">Gets the type of the given operator.</div><div class="ttdef"><b>Definition:</b> operator.c:30</div></div>
-<div class="ttc" id="aoperator_8h_html_a5e15e9215f6d9dc69ebf7a99372d4406"><div class="ttname"><a href="operator_8h.html#a5e15e9215f6d9dc69ebf7a99372d4406">get_operator_string</a></div><div class="ttdeci">const char * get_operator_string(OperatorType op)</div><div class="ttdoc">Gets the string representation of the given operator.</div><div class="ttdef"><b>Definition:</b> operator.c:39</div></div>
+<div class="ttc" id="atypedef_8h_html_a6a02b2d1d62293b20242e3dcfbdd0117"><div class="ttname"><a href="typedef_8h.html#a6a02b2d1d62293b20242e3dcfbdd0117">OperatorType</a></div><div class="ttdeci">OperatorType</div><div class="ttdef"><b>Definition:</b> typedef.h:17</div></div>
+<div class="ttc" id="aoperator_8h_html_a9a24836357c03adbcf552db9cc709e24"><div class="ttname"><a href="operator_8h.html#a9a24836357c03adbcf552db9cc709e24">get_operator_type</a></div><div class="ttdeci">OperatorType get_operator_type(const char *operator_str)</div><div class="ttdoc">Gets the type of the given operator.</div><div class="ttdef"><b>Definition:</b> operator.c:6</div></div>
 <div class="ttc" id="atypedef_8h_html"><div class="ttname"><a href="typedef_8h.html">typedef.h</a></div><div class="ttdoc">File containing all the typedefs used in the shell program.</div></div>
+<div class="ttc" id="aoperator_8h_html_a4ad0d08b02a1cef0501333046011b71d"><div class="ttname"><a href="operator_8h.html#a4ad0d08b02a1cef0501333046011b71d">get_operator_string</a></div><div class="ttdeci">const char * get_operator_string(OperatorType operator_type)</div><div class="ttdoc">Gets the string corresponding to the given operator.</div><div class="ttdef"><b>Definition:</b> operator.c:66</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

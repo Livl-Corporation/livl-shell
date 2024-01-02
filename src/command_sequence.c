@@ -2,8 +2,6 @@
 
 void command_sequence_init(char *input)
 {
-    const char *delimeters = " \n";
-
     char *commands[MAX_COMMANDS];
     char *operators[MAX_OPERATORS];
 
@@ -17,17 +15,18 @@ void command_sequence_init(char *input)
     sequence.num_commands = 0;
     sequence.num_operators = 0;
 
-    char *token = strtok(input, delimeters);
+    char *token = strtok(input, INPUT_DELIMITERS);
     while (token != NULL)
     {
         if (command_count >= MAX_COMMANDS)
         {
             print_info("livl-shell$ is informing you that only the three first commands will be executed. Limit of commands reached.");
+            token = NULL;
             break;
         }
-
+        
         process_token(token, commands, operators, &currentCommand, &command_count, &operator_count);
-        token = strtok(NULL, delimeters);
+        token = strtok(NULL, INPUT_DELIMITERS);
 
         if (token == NULL || get_operator_type(token) != UNKNOWN)
         {
@@ -59,6 +58,7 @@ void command_sequence_init(char *input)
         fprintf(stderr, "An error occurred while executing the commands\n");
     }
 
+    free(token);
     free_command_sequence(&sequence);
 }
 
@@ -78,15 +78,17 @@ void process_token(char *token, char **commands, char **operators, char **curren
     else
     {
         size_t len = strlen(*currentCommand) + strlen(token) + 2;
-        char *temp = realloc(*currentCommand, len);
-        if (temp == NULL)
+        char *newCommand = malloc(len);
+        if (newCommand == NULL)
         {
-            perror("realloc");
+            perror("malloc");
             return;
         }
-        *currentCommand = temp;
-        strcat(*currentCommand, " ");
-        strcat(*currentCommand, token);
+        strcpy(newCommand, *currentCommand);
+        strcat(newCommand, " ");
+        strcat(newCommand, token);
+        free(*currentCommand);
+        *currentCommand = newCommand;
     }
 }
 
@@ -107,7 +109,7 @@ void free_command_sequence(CommandSequence *sequence)
     }
     free(sequence->commands);
     sequence->commands = NULL;
-    
+
     for (int i = 0; i < sequence->num_operators; ++i)
     {
         free(sequence->operators[i]);

@@ -62,8 +62,8 @@ gcov: $(GEXEC)
 	# generate some data for gcov by calling the generated binary with various options
 	find $(ROOT_DIR) -name "*.gcno" -not -path "./gcov/*" -exec mv {} $(GCOV_DIR) \;
 
-	$(GCOV_DIR)/$(GEXEC) -h
-	$(GCOV_DIR)/$(GEXEC) -i input -o output -v
+	$(GCOV_DIR)/$(GEXEC) gcov -h
+	$(GCOV_DIR)/$(GEXEC) gcov -i input -o output -v
 
 	find $(ROOT_DIR) -name "*.gcda" -not -path "./gcov/*" -exec mv {} $(GCOV_DIR) \;
 	gcov -o $(GCOV_DIR) $(GEXEC)

@@ -1,0 +1,9 @@
+<map id="include/alias.h" name="include/alias.h">
+<area shape="rect" id="node1" title="Managing livl&#45;shell aliases." alt="" coords="290,5,406,32"/>
+<area shape="rect" id="node2" href="$command_8h.html" title="File containing the command functions to manage the commands entered by the user (parsing,..." alt="" coords="135,80,286,107"/>
+<area shape="rect" id="node6" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="156,393,361,420"/>
+<area shape="rect" id="node7" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="199,468,318,495"/>
+<area shape="rect" id="node3" href="$background__manager_8h.html" title="File containing the background manager functions to manage the background processes." alt="" coords="111,155,260,196"/>
+<area shape="rect" id="node4" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="137,244,284,271"/>
+<area shape="rect" id="node5" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,319,224,345"/>
+</map>

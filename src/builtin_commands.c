@@ -26,10 +26,15 @@ void pwd()
     }
 }
 
-void exit_shell(CommandSequence *sequence)
+int exit_shell(CommandSequence *sequence, int exit_code)
 {
-    free_command_sequence(sequence);
-    exit(EXIT_SUCCESS);
+    if (sequence != NULL)
+    {
+        free_command_sequence(sequence);
+    }
+    free_aliases();
+    exit(exit_code);
+    return exit_code;
 }
 
 void echo(const Command *command)
@@ -65,7 +70,7 @@ int execute_builtin_command(const Command *command, CommandSequence *sequence)
     {
         if (command->num_arguments == 0)
         {
-            exit_shell(sequence);
+            exit_shell(sequence, EXIT_SUCCESS);
             return IS_BUILTIN_COMMAND;
         }
         perror("Usage: exit");

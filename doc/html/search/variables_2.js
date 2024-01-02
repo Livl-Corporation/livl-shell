@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['global_5fcommand_5fhistory_162',['global_command_history',['../history__command_8h.html#ae4b79f4ef463444f1dbd4dc15371ae45',1,'history_command.c']]]
+  ['history_177',['history',['../structCommandHistory.html#ab4fb4ed275ea28aeb555fea5d2d5cc1d',1,'CommandHistory']]],
+  ['history_5fcount_178',['history_count',['../structCommandHistory.html#af86804cbd436336d74b2042092252a65',1,'CommandHistory']]]
 ];

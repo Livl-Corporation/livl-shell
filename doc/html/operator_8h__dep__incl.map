@@ -1,7 +1,8 @@
 <map id="include/operator.h" name="include/operator.h">
-<area shape="rect" id="node1" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="156,5,295,32"/>
-<area shape="rect" id="node2" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="41,80,188,107"/>
+<area shape="rect" id="node1" title="File containing the operator functions to manage the operators that can be used in the shell." alt="" coords="183,5,321,32"/>
+<area shape="rect" id="node2" href="$scheduler_8h.html" title="File containing the scheduler functions to manage the execution of commands." alt="" coords="179,80,325,107"/>
 <area shape="rect" id="node3" href="$command__sequence_8h.html" title="File containing the command sequence functions to manage the command sequence (commands and operators..." alt="" coords="5,155,224,181"/>
-<area shape="rect" id="node5" href="$input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="248,155,413,181"/>
-<area shape="rect" id="node4" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="163,229,282,256"/>
+<area shape="rect" id="node6" href="$input__parser_8h.html" title="File containing the input parser functions to manage the input entered by the user (parsing,..." alt="" coords="301,155,467,181"/>
+<area shape="rect" id="node4" href="$builtin__commands_8h.html" title="File containing the built&#45;in commands functions to manage the built&#45;in commands such as cd,..." alt="" coords="145,229,351,256"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="File containing the main header file to include all the other header files." alt="" coords="189,304,307,331"/>
 </map>

@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="livl_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="livl_shell_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Livl Shell
    &#160;<span id="projectnumber">0.1</span>
@@ -80,36 +80,24 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="typedef_8h.html">typedef.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="history__command_8h.html#a7a7c87173dc0b32eb0086b66359963a5">   18</a></span>&#160;<span class="preprocessor">#define MAX_HISTORY_SIZE 1000</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="history__command_8h.html#ae41c75682d94c3f1a2c7e1e28ed0391a">   23</a></span>&#160;<span class="preprocessor">#define HISTORY_FILE &quot;history.txt&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <a class="code" href="structCommandHistory.html">CommandHistory</a> <a class="code" href="history__command_8h.html#ae4b79f4ef463444f1dbd4dc15371ae45">global_command_history</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#aeb735e34a5bc474c20650fd8e3b1f83f">initialize_command_history</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">add_to_command_history</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *command);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="history__command_8h.html#a5e425bc624bb440d663e2625cdf0630b">get_previous_command</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="history__command_8h.html#ab3d6d88d9280692e058c81fb16099cdc">get_next_command</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a262bdb9998d3688eac04c371ab16b032">save_command_history_to_file</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a691462d54fade9c0bc8b49df3333f6bd">load_command_history_from_file</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif //HISTORY_COMMAND_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a7b8e979cf28d33a3c73ac07c43661aa8">init_command_history</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">add_to_command_history</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *command);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a262bdb9998d3688eac04c371ab16b032">save_command_history_to_file</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="history__command_8h.html#a691462d54fade9c0bc8b49df3333f6bd">load_command_history_from_file</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // HISTORY_COMMAND_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="ahistory__command_8h_html_ae4b79f4ef463444f1dbd4dc15371ae45"><div class="ttname"><a href="history__command_8h.html#ae4b79f4ef463444f1dbd4dc15371ae45">global_command_history</a></div><div class="ttdeci">CommandHistory global_command_history</div><div class="ttdoc">The global history of commands entered by the user.</div><div class="ttdef"><b>Definition:</b> history_command.c:3</div></div>
-<div class="ttc" id="astructCommandHistory_html"><div class="ttname"><a href="structCommandHistory.html">CommandHistory</a></div><div class="ttdoc">Struct that represents the command history.</div><div class="ttdef"><b>Definition:</b> typedef.h:132</div></div>
-<div class="ttc" id="ahistory__command_8h_html_a5e425bc624bb440d663e2625cdf0630b"><div class="ttname"><a href="history__command_8h.html#a5e425bc624bb440d663e2625cdf0630b">get_previous_command</a></div><div class="ttdeci">const char * get_previous_command()</div><div class="ttdoc">Get the previous command from the global command history.</div><div class="ttdef"><b>Definition:</b> history_command.c:22</div></div>
-<div class="ttc" id="ahistory__command_8h_html_aeb735e34a5bc474c20650fd8e3b1f83f"><div class="ttname"><a href="history__command_8h.html#aeb735e34a5bc474c20650fd8e3b1f83f">initialize_command_history</a></div><div class="ttdeci">void initialize_command_history()</div><div class="ttdoc">Initialize the global command history.</div><div class="ttdef"><b>Definition:</b> history_command.c:5</div></div>
-<div class="ttc" id="ahistory__command_8h_html_a0135db9a08f020d272a87145e01d70b2"><div class="ttname"><a href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">add_to_command_history</a></div><div class="ttdeci">void add_to_command_history(const char *command)</div><div class="ttdoc">Add a command to the global command history.</div><div class="ttdef"><b>Definition:</b> history_command.c:11</div></div>
-<div class="ttc" id="ahistory__command_8h_html_a691462d54fade9c0bc8b49df3333f6bd"><div class="ttname"><a href="history__command_8h.html#a691462d54fade9c0bc8b49df3333f6bd">load_command_history_from_file</a></div><div class="ttdeci">void load_command_history_from_file()</div><div class="ttdoc">Load the command history from the history file.</div><div class="ttdef"><b>Definition:</b> history_command.c:61</div></div>
-<div class="ttc" id="ahistory__command_8h_html_a262bdb9998d3688eac04c371ab16b032"><div class="ttname"><a href="history__command_8h.html#a262bdb9998d3688eac04c371ab16b032">save_command_history_to_file</a></div><div class="ttdeci">void save_command_history_to_file()</div><div class="ttdoc">Save the command history to the history file.</div><div class="ttdef"><b>Definition:</b> history_command.c:40</div></div>
+<div class="ttc" id="ahistory__command_8h_html_a0135db9a08f020d272a87145e01d70b2"><div class="ttname"><a href="history__command_8h.html#a0135db9a08f020d272a87145e01d70b2">add_to_command_history</a></div><div class="ttdeci">void add_to_command_history(const char *command)</div><div class="ttdoc">Add a command to the global command history.</div><div class="ttdef"><b>Definition:</b> history_command.c:12</div></div>
+<div class="ttc" id="ahistory__command_8h_html_a7b8e979cf28d33a3c73ac07c43661aa8"><div class="ttname"><a href="history__command_8h.html#a7b8e979cf28d33a3c73ac07c43661aa8">init_command_history</a></div><div class="ttdeci">void init_command_history()</div><div class="ttdoc">Initialize the global command history.</div><div class="ttdef"><b>Definition:</b> history_command.c:5</div></div>
+<div class="ttc" id="ahistory__command_8h_html_a691462d54fade9c0bc8b49df3333f6bd"><div class="ttname"><a href="history__command_8h.html#a691462d54fade9c0bc8b49df3333f6bd">load_command_history_from_file</a></div><div class="ttdeci">void load_command_history_from_file()</div><div class="ttdoc">Load the command history from the history file.</div><div class="ttdef"><b>Definition:</b> history_command.c:53</div></div>
+<div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div><div class="ttdoc">Header file defining constants.</div></div>
+<div class="ttc" id="ahistory__command_8h_html_a262bdb9998d3688eac04c371ab16b032"><div class="ttname"><a href="history__command_8h.html#a262bdb9998d3688eac04c371ab16b032">save_command_history_to_file</a></div><div class="ttdeci">void save_command_history_to_file()</div><div class="ttdoc">Save the command history to the history file.</div><div class="ttdef"><b>Definition:</b> history_command.c:27</div></div>
 <div class="ttc" id="atypedef_8h_html"><div class="ttname"><a href="typedef_8h.html">typedef.h</a></div><div class="ttdoc">File containing all the typedefs used in the shell program.</div></div>
-<div class="ttc" id="ahistory__command_8h_html_ab3d6d88d9280692e058c81fb16099cdc"><div class="ttname"><a href="history__command_8h.html#ab3d6d88d9280692e058c81fb16099cdc">get_next_command</a></div><div class="ttdeci">const char * get_next_command()</div><div class="ttdoc">Get the next command from the global command history.</div><div class="ttdef"><b>Definition:</b> history_command.c:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -14,6 +14,7 @@
 #include "typedef.h"
 #include "constants.h"
 #include "command_sequence.h"
+#include "alias.h"
 
 /**
  * @brief Executes a command
@@ -44,10 +45,11 @@ int is_builtin_command(const Command *command, const char *expected);
 
 /**
  * @brief Exits the shell
- * 
+ *
  * @param sequence The command sequence to free
+ * @param exit_code The exit code status
  */
-void exit_shell(CommandSequence *sequence);
+int exit_shell(CommandSequence *sequence, int exit_code);
 
 /**
  * @brief Prints a message

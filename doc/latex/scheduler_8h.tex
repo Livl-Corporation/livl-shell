@@ -17,6 +17,7 @@ File containing the scheduler functions to manage the execution of commands.
 {\ttfamily \#include \char`\"{}redirection.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}operator.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}background\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
 Include dependency graph for scheduler.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -28,23 +29,17 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=244pt]{scheduler_8h__dep__incl}
+\includegraphics[width=344pt]{scheduler_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{scheduler_8h_a6d2f57209406fc467f85e3d235ca0af8}\label{scheduler_8h_a6d2f57209406fc467f85e3d235ca0af8}} 
-\#define \mbox{\hyperlink{scheduler_8h_a6d2f57209406fc467f85e3d235ca0af8}{C\+H\+I\+L\+D\+\_\+\+P\+R\+O\+C\+E\+SS}}~0
-\begin{DoxyCompactList}\small\item\em The child process id (pid) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{scheduler_8h_aac24a47138916b8751e346825bfef85d}{execute\+\_\+external\+\_\+command}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command, int run\+\_\+in\+\_\+background)
-\begin{DoxyCompactList}\small\item\em Executes a command. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{scheduler_8h_ac4af5eae73e9a990c2955968e084086b}{execute\+\_\+command}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command, int run\+\_\+in\+\_\+background)
-\begin{DoxyCompactList}\small\item\em Executes a command. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{scheduler_8h_a24cf790ac1c74a572125ced4b750ccb6}{execute\+\_\+command\+\_\+sequence}} (const \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$sequence)
+\begin{DoxyCompactList}\small\item\em Executes an external command. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scheduler_8h_acbee3c70acdd7f0ec38519dab9f34081}{execute\+\_\+command}} (const \mbox{\hyperlink{structCommand}{Command}} $\ast$command, \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$command\+Sequence, int run\+\_\+in\+\_\+background)
+\begin{DoxyCompactList}\small\item\em Executes a command internal to the shell. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{scheduler_8h_ad25285cd15266dcfa88e788a8407a3b6}{execute\+\_\+command\+\_\+sequence}} (\mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$sequence)
 \begin{DoxyCompactList}\small\item\em Executes a sequence of commands with operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -60,19 +55,21 @@ Julien \& Franck
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{scheduler_8h_ac4af5eae73e9a990c2955968e084086b}\label{scheduler_8h_ac4af5eae73e9a990c2955968e084086b}} 
+\mbox{\Hypertarget{scheduler_8h_acbee3c70acdd7f0ec38519dab9f34081}\label{scheduler_8h_acbee3c70acdd7f0ec38519dab9f34081}} 
 \index{scheduler.h@{scheduler.h}!execute\_command@{execute\_command}}
 \index{execute\_command@{execute\_command}!scheduler.h@{scheduler.h}}
 \doxysubsubsection{\texorpdfstring{execute\_command()}{execute\_command()}}
-{\footnotesize\ttfamily int execute\+\_\+command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{command,  }\item[{int}]{run\+\_\+in\+\_\+background }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int execute\+\_\+command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommand}{Command}} $\ast$}]{command,  }\item[{\mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$}]{command\+Sequence,  }\item[{int}]{run\+\_\+in\+\_\+background }\end{DoxyParamCaption})}
 
 
 
-Executes a command. 
+Executes a command internal to the shell. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em command} & The command to execute \\
+\hline
+{\em command\+Sequence} & The command sequence to free \\
 \hline
 {\em run\+\_\+in\+\_\+background} & 0 for false, 1 for true \\
 \hline
@@ -80,11 +77,11 @@ Executes a command.
 \begin{DoxyReturn}{Returns}
 The status of the execution 
 \end{DoxyReturn}
-\mbox{\Hypertarget{scheduler_8h_a24cf790ac1c74a572125ced4b750ccb6}\label{scheduler_8h_a24cf790ac1c74a572125ced4b750ccb6}} 
+\mbox{\Hypertarget{scheduler_8h_ad25285cd15266dcfa88e788a8407a3b6}\label{scheduler_8h_ad25285cd15266dcfa88e788a8407a3b6}} 
 \index{scheduler.h@{scheduler.h}!execute\_command\_sequence@{execute\_command\_sequence}}
 \index{execute\_command\_sequence@{execute\_command\_sequence}!scheduler.h@{scheduler.h}}
 \doxysubsubsection{\texorpdfstring{execute\_command\_sequence()}{execute\_command\_sequence()}}
-{\footnotesize\ttfamily int execute\+\_\+command\+\_\+sequence (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$}]{sequence }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int execute\+\_\+command\+\_\+sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommandSequence}{Command\+Sequence}} $\ast$}]{sequence }\end{DoxyParamCaption})}
 
 
 
@@ -106,7 +103,7 @@ The status of the execution
 
 
 
-Executes a command. 
+Executes an external command. 
 
 
 \begin{DoxyParams}{Parameters}

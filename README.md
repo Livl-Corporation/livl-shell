@@ -21,14 +21,16 @@
     - [Batch Mode](#batch-mode)
     - [Background Execution](#background-execution)
     - [History](#history)
-- [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
-- [📜 Doxygen documentation](#-doxygen-documentation)
-    - [📦 Prerequisites of Doxygen](#-prerequisites-of-doxygen)
-    - [🚀 Generate the Doxygen documentation](#-generate-the-doxygen-documentation)
-- [🧪 GCOV test coverage](#-gcov-test-coverage)
-    - [📦 Prerequisites of gcov](#-prerequisites-of-gcov)
-    - [🚀 Generate the coverage report](#-generate-the-coverage-report)
-- [🛠️ Pipeline](#️-pipeline)
+    - [Alias](#alias)
+- [Working with the documentation](#working-with-the-documentation)
+    - [📖 Use the livl-bash man command](#-use-the-livl-bash-man-command)
+    - [📜 Doxygen documentation](#-doxygen-documentation)
+        - [📦 Prerequisites of Doxygen](#-prerequisites-of-doxygen)
+        - [🚀 Generate the Doxygen documentation](#-generate-the-doxygen-documentation)
+    - [🧪 GCOV test coverage](#-gcov-test-coverage)
+        - [📦 Prerequisites of gcov](#-prerequisites-of-gcov)
+        - [🚀 Generate the coverage report](#-generate-the-coverage-report)
+- [🛠️ Pipelines](#️-pipelines)
     - [1. C-Make Pipeline](#1-c-make-pipeline)
     - [2. Static Pipeline](#2-static-pipeline)
 - [🧍🏽Project team](#-project-team)
@@ -97,10 +99,11 @@ livl-shell/
 ├── livl-shell.1 # Manual of the livl-shell
 ├── index.html # Static Livl Shell website
 ├── history.txt # History of your commands
+├── aliases.txt # List of aliases
 └── Makefile # Makefile
 ```
 
-## 📝 List of Insane livl-bash Commands
+## 📝 List of Insane livl-bash features
 
 > 💡 The livl-shell is limited to run a maximum of 3 commands in a row.
 
@@ -116,6 +119,7 @@ livl-shell/
 - `ls -l > output.txt`: Redirects the output of a command to a file.
 - `pwd >> output.txt`: Appends the output of a command to a file.
 - `wc -l < output.txt`: Counts the number of lines in the file.
+- `cat << EOF` : let the user enter text until he types 'EOF' (You can change EOF by whatever you want). The text is then displayed on the screen thanks to the cat command.
 
 ### Pipelines
 
@@ -140,51 +144,76 @@ livl-shell/
 - `sleep 3 & echo hey`: Executes a command in the background (the shell will not wait for the command to finish) and it will show you the job id of the background process (ex: `[1] 1234`).
 - `pwd`: Running this command will display the job id of the background process terminated (ex: `[1] done sleep 3`).
 
-## History
+### History
 
 The livl-shell has an ex history feature that allows you to view the history of your commands.
 
-**Experimental**: Use up and down arrows to navigate through the history. To be able to use this feature, you need to go to the branch  `feat/history`. This feature is not available on the `master` branch because some issues have been detected when using the left and right arrows.
+**Experimental**: Use up / down and left / right arrows. To be able to use this feature, you need to go to the branch [`feat/history-navigation`](https://github.com/Livl-Corporation/livl-shell/tree/feat/history-navigation). This feature is not available on the `master` branch because some issues have been detected when using the left / right arrows to move the cursor in the command line and the up / down arrows to navigate through the history. But feel free to contribute to this branch if you want to fix this issue. 😀
 
 The history is saved in the [`history.txt`](history.txt) file.
 
-## 📖 Use the livl-bash `man` command
+### Alias
+
+Livl-shell provide a basic alias support. Alias can be defined only by editing the `aliases.txt` file. The syntax is the following:
+
+```
+alias_name="command"
+```
+
+> Note that you can't use alias inside alias.
+
+For example, if you want to create an alias for the `ls -l` command, you can add the following line to the `alias.txt` file:
+
+```
+ll="ls -l"
+```
+
+Then, you can run the `ll` command to execute the `ls -l` command.
+
+> You can input arguments with your alias, as well as use pipes and redirections. For example, if you input `ll -m` it will be interpreted as `ls -l -m`.
+
+> Command sequencing, pipes & redirections are **not supported** in aliases. Alias can only work for a single command.
+
+
+## Working with the documentation
+
+### 📖 Use the livl-bash `man` command
 
 > To edit the man you can download a TROFF Syntax Highlighter for Visual Studio Code.
 
 - The `man livl-shell` manual is located in the [`livl-shell.1`](livl-shell.1) file
 - To view the manual, run : `man ./livl-shell.1`
 
-## 📜 Doxygen documentation
+### 📜 Doxygen documentation
 
 > ❓ Doxygen is a documentation generator, a tool for writing software reference documentation.
 
-### 📦 Prerequisites of Doxygen
+#### 📦 Prerequisites of Doxygen
 
 - Download doxygen : `sudo apt install doxygen`
 
-### 🚀 Generate the Doxygen documentation
+#### 🚀 Generate the Doxygen documentation
 
 - Run `make doc` to generate the documentation
 - To view the documentation, open the [`index.html`](/doc/html/index.html) file in the `doc/html/` folder.
 
-## 🧪 GCOV test coverage
+### 🧪 GCOV test coverage
 
 > ❓ GCOV is a test coverage program. It helps you determine how much of your source code is being tested by your test suite. It is a useful tool for finding untested code.
 
-### 📦 Prerequisites of gcov
+#### 📦 Prerequisites of gcov
 
 - Download gcov : `sudo apt install gcov`
 - Download lcov : `sudo apt install lcov`
 
-### 🚀 Generate the coverage report
+#### 🚀 Generate the coverage report
 
 - Run `make gcov` to generate the coverage report
 - To exit the coverage report, press `exit` two times (one for the shell and one for the coverage report)
 - To view the coverage report, open the [`index.html`](/gcov/report/index.html) file in the `gcov/report/` folder or run `gcovr -r .`
 - Run `make clean-gcov` to clean the `gcov` folder
 
-## 🛠️ Pipeline
+## 🛠️ Pipelines
 
 Our pipelines are configured to be triggered on each `push` and `pull request` event on the `master` branch. We have two main pipelines:
 
