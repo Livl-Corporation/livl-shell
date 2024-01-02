@@ -39,7 +39,12 @@ int main(int argc, char *argv[])
     init_command_history();
     init_aliases();
 
-    if (argc > 2 && (strcmp(argv[1], "-c") && strcmp(argv[1], "--command")) == 0)
+    // Check if the first argument is "gcov"
+    if (argc > 1 && strcmp(argv[1], "gcov") == 0)
+    {
+        run_interactive_mode();
+    }
+    else if (argc > 2 && (strcmp(argv[1], "-c") && strcmp(argv[1], "--command")) == 0)
     {
         run_batch_mode(argv, argc);
     }
