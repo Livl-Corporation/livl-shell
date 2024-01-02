@@ -42,6 +42,16 @@
  */
 #define IS_NOT_BUILTIN_COMMAND -1
 
+/**
+ * @brief The value to return when a command is an alias command
+ */
+#define IS_ALIAS_COMMAND 1
+
+/**
+ * @brief The value to return when a command is not an alias command
+ */
+#define IS_NOT_ALIAS_COMMAND 0
+
 // Colors
 
 /**
@@ -81,11 +91,35 @@
  */
 #define HISTORY_FILE "history.txt"
 
+// Aliases
+
+/**
+ * @brief Path to the aliases file
+ */
+#define ALIASES_FILE "aliases.txt"
+
+/**
+ * @brief The max number of aliases
+ */
+#define MAX_ALIASES 100
+
 // Scheduler
 
 /**
  * @brief The child process id (pid)
  */
 #define CHILD_PROCESS 0
+
+// Parsing
+
+/**
+ * @brief The delimiters used to parse the whole input
+ */
+#define INPUT_DELIMITERS " \n"
+
+/**
+ * @brief The delimiters used to parse a single command string
+ */
+#define CMD_DELIMITERS " \t\n"
 
 #endif // CONSTANTS_H

@@ -1,20 +1,23 @@
 #include "input_parser.h"
 
-char* read_input(char *input) {
+char *read_input(char *input)
+{
     if (input == NULL)
     {
         perror("input is not allocated");
         return NULL;
     }
 
-    if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL) {
+    if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL)
+    {
         perror("fgets");
         free(input);
         return NULL;
     }
 
     size_t len = strlen(input);
-    if (len > 0 && input[len - 1] == '\n') {
+    if (len > 0 && input[len - 1] == '\n')
+    {
         input[len - 1] = '\0';
     }
 
