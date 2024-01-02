@@ -118,6 +118,7 @@ livl-shell/
 - `ls -l > output.txt`: Redirects the output of a command to a file.
 - `pwd >> output.txt`: Appends the output of a command to a file.
 - `wc -l < output.txt`: Counts the number of lines in the file.
+- `cat << EOF` : let the user enter text until he types 'EOF' (You can change EOF by whatever you want). The text is then displayed on the screen thanks to the cat command.
 
 ### Pipelines
 
