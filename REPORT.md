@@ -36,7 +36,7 @@ For being able to catch the press on arrow keys, we had to ditch the use of a si
 
 It was a lot of work but we sorted out most of the cases. But when trying on other machines (macOS, WSL, ubuntu), we realized that every single platform has his own way of handling the terminal, and that we would have to handle every single case for every single platform. We finally gave up since it was simply not possible for us to make a reliable system without sacrificing our lives and our families...
 
-Our work is still available on the `fg/feat/history` branch. Navigating through history works, but you can except some weird things happening to what you type in the terminal.
+Our work is still available on the `feat/history-navigation` branch. Navigating through history works, but you can except some weird things happening to what you type in the terminal.
 
 ### Builtin commands
 
