@@ -37,4 +37,53 @@ int is_all_whitespace(const char *input);
  */
 void preprocess_input(char *input);
 
+/**
+ * @brief Handle arrow up logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_arrow_up(char *input, int *index);
+
+/**
+ * @brief Handle arrow down logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_arrow_down(char *input, int *index);
+
+/**
+ * @brief Handle arrow left logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_arrow_left(char *input, int *index);
+
+/**
+ * @brief Handle arrow right logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_arrow_right(char *input, int *index);
+
+/**
+ * @brief Handle backspace logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_backspace(char *input, int *index);
+
+/**
+ * @brief Handle backspace + control logic
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void handle_control_backspace(char *input, int *index);
+
+/**
+ * @brief Replace input with the provided string
+ * @param input The input string
+ * @param index The index of the cursor
+ */
+void replace_input(char *input, int *index, const char *replacement);
+
 #endif // INPUT_PARSER_H
