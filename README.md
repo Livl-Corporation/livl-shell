@@ -7,6 +7,8 @@
   An Intermediate Reimplementation of the Bash Shell in C
 </h4>
 
+> Check out the [project report](./REPORT.md) to learn more about our implementation.
+
 ## Table of Contents
 
 - [📦 Prerequisites](#-prerequisites)
